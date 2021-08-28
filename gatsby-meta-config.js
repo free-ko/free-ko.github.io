@@ -1,6 +1,6 @@
 module.exports = {
   title: `WooGee-Codding`,
-  description: `우기의 개발 성장 노트`,
+  description: `우기의 개발노트`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://free-ko.github.io/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
@@ -18,9 +18,9 @@ module.exports = {
       thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
     },
     social: {
-      github: `https://github.com/zoomKoding`,
-      linkedIn: `https://www.linkedin.com/in/jinhyeok-jeong-800871192`,
-      email: `zoomkoding@gmail.com`,
+      github: `https://github.com/free-ko`,
+      linkedIn: `https://www.linkedin.com/in/youngwock-ko-74223921b/`,
+      email: `duddnr654@naver.com`,
     },
   },
 
