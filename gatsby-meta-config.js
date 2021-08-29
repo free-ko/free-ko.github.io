@@ -1,5 +1,5 @@
 module.exports = {
-  title: `WooGee-Codding`,
+  title: `WooGi-Codding`,
   description: `우기의 개발노트`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://free-ko.github.io/`,
@@ -14,7 +14,7 @@ module.exports = {
     name: `고영욱`,
     bio: {
       role: `개발자`,
-      description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
+      description: ['매일 성장하는', '능동적으로 일하는', '이로운 것을 만드는'],
       thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
     },
     social: {
@@ -42,18 +42,18 @@ module.exports = {
       },
       // ========================================================
       // ========================================================
+      //{
+      //   date: '2021.08',
+      //   activity: '개인 블로그 디자인 및 개발',
+      //   links: {
+      //     post: '/gatsby-starter-zoomkoding-introduction',
+      //     github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
+      //     demo: 'https://www.zoomkoding.com',
+      //   },
+      // },
       {
-        date: '2021.02 ~ 2021.03',
-        activity: '개인 블로그 디자인 및 개발',
-        links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
-        },
-      },
-      {
-        date: '2021.03 ~ ',
-        activity: '우아한 개발자🚀',
+        date: '2021.01 ~ ',
+        activity: '에픽모바일 프론트엔드 개발🚀',
       },
     ],
 
