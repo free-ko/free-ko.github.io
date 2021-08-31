@@ -1,13 +1,15 @@
 ---
 emoji: 👨‍💻
-title: let, const 변수
+title: 👨‍💻 let, const 변수
 date: '2021-08-30 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: JS
 ---
 
-# 👋 변수 구분, 글로벌 변수 오해, use strict 사용
+<h1 align="center">
+  👋 변수 구분, 글로벌 변수 오해, use strict 사용
+</h1>
 
 <br>
 
