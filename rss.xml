@@ -1,4 +1,149 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 31 Aug 2021 03:32:51 GMT</lastBuildDate><item><title><![CDATA[👨‍💻 function 블록, try-catch, switch-case]]></title><description><![CDATA[1) function 블록 도 블록 스코프  안과 밖에 같은 이름의  변수 선언 가능 스코프가 다르기 때문 그래서 밖의 와 안의 는 다르게 저장되어 있음  밖의  변수를  안에서 사용 가능() 2) try-catch…]]></description><link>https://free-ko.github.io/study-js-es6-scope/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-scope/</guid><pubDate>Mon, 30 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;h1 align=&quot;center&quot;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 01 Sep 2021 00:05:58 GMT</lastBuildDate><item><title><![CDATA[⭐️ let 변수]]></title><description><![CDATA[1) let 변수 개요  블록 스코프를 가진 변수 변수가 선언된 블록이 스코프 스코프 적용 기준 블록, 문, 표현시 블록 안과 밖이 스코프가 다름 변수 이름이 같아도 값이 대체되지 않음 2) let 변수 선언 Syntax…]]></description><link>https://free-ko.github.io/study-js-es6-let/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-let/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋 let 변수 개요, let 변수 선언, 블록 스코프
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-let-변수-개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-let-%EB%B3%80%EC%88%98-%EA%B0%9C%EC%9A%94&quot; aria-label=&quot;1 let 변수 개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) let 변수 개요&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;축구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;농구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;안:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;밖:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 안: 농구&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 밖: 축구&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;let book = &quot;책&quot;;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;블록 스코프를 가진 변수&lt;/li&gt;
+&lt;li&gt;변수가 선언된 블록이 스코프&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;스코프 적용 기준&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;블록&lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt;, 문, 표현시&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;블록&lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt; 안과 밖이 스코프가 다름&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;변수 이름이 같아도 값이 대체되지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-let-변수-선언&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-let-%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8&quot; aria-label=&quot;2 let 변수 선언 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) let 변수 선언&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Syntax&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let name1 [= value1] [, name2 [= value2]]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;name1&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;name2&lt;/code&gt;에 변수 이름 작성&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;식별자로 사용&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[ ]&lt;/code&gt;는 생략 가능을 나타냄&lt;/li&gt;
+&lt;li&gt;값을 할당하지 않아도 됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; book&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; one&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; two&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let book;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;값을 할당하지 않고 변수만 선언할 수 있음, 초깃값 &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;가 할당됨&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let one, two;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;콤마로 구분하여 다수를 선언할 수 있음&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;value1&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;value2&lt;/code&gt;에 초깃값 작성&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;표현식 작성 가능, 평가 결과 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; book &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;책&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; one &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+two &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// let five = 5, let six = 6;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// let five = 5, var six = 6;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let book = &quot;책&quot;;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;변수를 선언하고 초깃값을 할당했습니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let one = 1, two = (10 + 20);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;콤마로 구분하여 다수의 변수를 선언하고 값을 할당한 형태임&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let five = 5, let six = 6;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;SyntaxError&lt;/code&gt; 발생, &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;을 처음에 한 번만 작성함&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let five = 5, var six = 6;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;콤마로 구분하여 let과 var을 같이 사용할 수 없음&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-블록-스코프&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EB%B8%94%EB%A1%9D-%EC%8A%A4%EC%BD%94%ED%94%84&quot; aria-label=&quot;3 블록 스코프 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3) 블록 스코프&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;블록 기준&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;중괄호 &lt;code class=&quot;language-text&quot;&gt;{ 코드 }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;function name() { 코드 }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;if (a === 1) { 코드 }&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;블록 안과 밖이 스코프가 다름&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;변수 이름이 같아도 값이 대체되지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 블록 스코프&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;축구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;농구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;안:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;밖:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;if (sports) {...}&lt;/code&gt; 블록 &lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt; 안과 밖에 &lt;code class=&quot;language-text&quot;&gt;let sports&lt;/code&gt;를 작성했으며 스코프가 다르므로 같은 이름을 사용할 수 있음&lt;/li&gt;
+&lt;li&gt;변숫값이 대체되지 않고 유지 됨&lt;/li&gt;
+&lt;li&gt;블록 안에서 블록 밖의 변수는 접근 할수 있지만(&lt;code class=&quot;language-text&quot;&gt;if&lt;/code&gt;문 안의 &lt;code class=&quot;language-text&quot;&gt;sports&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;를 빼면 밖의 &lt;code class=&quot;language-text&quot;&gt;sports&lt;/code&gt;에 접근)&lt;/li&gt;
+&lt;li&gt;블록 밖에서 블록 안의 변수는 접근 할수 없음&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;축구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;농구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 농구&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// let sports = &quot;배구&quot;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;탁구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;sports = &quot;농구&quot;;&lt;/code&gt; 스코프에서 &lt;code class=&quot;language-text&quot;&gt;sports&lt;/code&gt; 식별자를 해결함, 바로 앞에 있으므로 값을 할당&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;// let sports = &quot;배구&quot;;&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;을 사용하여 같은 스코프에 같은 이름의 변수를 선언할 수 없음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;{ let sports =&quot;탁구&quot;; }&lt;/code&gt; 블록 &lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt;을 사용했으므로 스코프가 다르므로 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;을 사용하여 변수를 선언할 수 있음&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;스코프에 같은 이름 사용 불가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-let-%EB%B3%80%EC%88%98-%EA%B0%9C%EC%9A%94&quot;&gt;1) let 변수 개요&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-let-%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8&quot;&gt;2) let 변수 선언&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-%EB%B8%94%EB%A1%9D-%EC%8A%A4%EC%BD%94%ED%94%84&quot;&gt;3) 블록 스코프&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[⭐️ function 블록, try-catch, switch-case]]></title><description><![CDATA[1) function 블록 도 블록 스코프  안과 밖에 같은 이름의  변수 선언 가능 스코프가 다르기 때문 그래서 밖의 와 안의 는 다르게 저장되어 있음  밖의  변수를  안에서 사용 가능() 2) try-catch…]]></description><link>https://free-ko.github.io/study-js-es6-scope/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-scope/</guid><pubDate>Mon, 30 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
   👋 블록 스코프 유형
 &lt;/h1&gt;
 &lt;br&gt;
@@ -195,7 +340,8 @@ abc &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; error&lt;span cl
 &lt;li&gt;&lt;a href=&quot;#3-%EB%8D%94-%EB%A9%80%EB%A6%AC-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%8D%94-%EB%86%92%EA%B2%8C&quot;&gt;3) 더 멀리 그리고 더 높게&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot;&gt;결론&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[👨‍💻 let, const 변수]]></title><description><![CDATA[1) 변수 구분 로컬(지역) 변수, 글로벌(전역) 변수 변수를 구분하는 이유는? 기능과 목적이 다르기 때문 글로벌 변수의 기능, 목적 다른 JS…]]></description><link>https://free-ko.github.io/study-js-es6-variable/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-variable/</guid><pubDate>Sun, 29 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;h1 align=&quot;center&quot;&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[⭐️ let, const 변수]]></title><description><![CDATA[1) 변수 구분 로컬(지역) 변수, 글로벌(전역) 변수 변수를 구분하는 이유는? 기능과 목적이 다르기 때문 글로벌 변수의 기능, 목적 다른 JS…]]></description><link>https://free-ko.github.io/study-js-es6-variable/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-variable/</guid><pubDate>Sun, 29 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
   👋 변수 구분, 글로벌 변수 오해, use strict 사용
 &lt;/h1&gt;
 &lt;br&gt;
