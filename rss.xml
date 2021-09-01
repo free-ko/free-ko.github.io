@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 01 Sep 2021 00:05:58 GMT</lastBuildDate><item><title><![CDATA[⭐️ let 변수]]></title><description><![CDATA[1) let 변수 개요  블록 스코프를 가진 변수 변수가 선언된 블록이 스코프 스코프 적용 기준 블록, 문, 표현시 블록 안과 밖이 스코프가 다름 변수 이름이 같아도 값이 대체되지 않음 2) let 변수 선언 Syntax…]]></description><link>https://free-ko.github.io/study-js-es6-let/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-let/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 01 Sep 2021 11:53:43 GMT</lastBuildDate><item><title><![CDATA[let vs var]]></title><description><![CDATA[💡 요약 문에서 반복 할 때마다  변수는 스코프를 갖지 않음  변수는 스코프를 가짐 1) var 변수와 스코프 어떤 것을 클릭하더라도 항상 문이 끝났을 때의 값인 을 출력함 전체의 스코프에서 하나의 값으로 할당되기 때문 for…]]></description><link>https://free-ko.github.io/study-js-es6-letVSvar/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-letVSvar/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋 let 변수와 var 변수 차이
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;-요약&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot; aria-label=&quot; 요약 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;💡 요약&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;for()&lt;/code&gt;문에서 반복 할 때마다&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt; 변수는 스코프를 갖지 않음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수는 스코프를 가짐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-var-변수와-스코프&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-var-%EB%B3%80%EC%88%98%EC%99%80-%EC%8A%A4%EC%BD%94%ED%94%84&quot; aria-label=&quot;1 var 변수와 스코프 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) var 변수와 스코프&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// var변수와 스코프&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; node &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;.sports&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; k &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; k &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; k&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;k&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;style&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;backgroundColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;yellow&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;k&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;어떤 것을 클릭하더라도 항상 &lt;code class=&quot;language-text&quot;&gt;for()&lt;/code&gt;문이 끝났을 때의 값인 &lt;code class=&quot;language-text&quot;&gt;3&lt;/code&gt;을 출력함&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;전체의 스코프에서 하나의 값으로 할당되기 때문&lt;/li&gt;
+&lt;li&gt;for문의 마지막 값인 &lt;code class=&quot;language-text&quot;&gt;3&lt;/code&gt;이 &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt; 선언된 &lt;code class=&quot;language-text&quot;&gt;k&lt;/code&gt; 즉 글로벌 변수에 할당 됨.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var k = 0;&lt;/code&gt; 에서 k 변수의 스코프는 함수 임&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-let-변수와-스코프&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-let-%EB%B3%80%EC%88%98%EC%99%80-%EC%8A%A4%EC%BD%94%ED%94%84&quot; aria-label=&quot;2 let 변수와 스코프 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) let 변수와 스코프&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// let변수와 스코프&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; node &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;.sports&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; k &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; k &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; k&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;k&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;onclick&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;style&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;backgroundColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;yellow&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;k&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 0&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 1&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;이벤트를 설정할 때의 &lt;code class=&quot;language-text&quot;&gt;k&lt;/code&gt;값을 출력 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot;&gt;💡 요약&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1-var-%EB%B3%80%EC%88%98%EC%99%80-%EC%8A%A4%EC%BD%94%ED%94%84&quot;&gt;1) var 변수와 스코프&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-let-%EB%B3%80%EC%88%98%EC%99%80-%EC%8A%A4%EC%BD%94%ED%94%84&quot;&gt;2) let 변수와 스코프&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[let and this]]></title><description><![CDATA[1) 글로벌 오브젝트에서 let변수를 this로 참조 불가 현재 위치는 글로벌 오브젝트   오브젝트에 설정됨   오브젝트에 설정되지 않음 에서 가  오브젝트를 참조 하며 이  오브젝트에 설정되어 있으므로 “음악”이 출력됨 에서 sports…]]></description><link>https://free-ko.github.io/study-js-es6-letAndThis/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-letAndThis/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  let 변수와 this
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-글로벌-오브젝트에서-let변수를-this로-참조-불가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90%EC%84%9C-let%EB%B3%80%EC%88%98%EB%A5%BC-this%EB%A1%9C-%EC%B0%B8%EC%A1%B0-%EB%B6%88%EA%B0%80&quot; aria-label=&quot;1 글로벌 오브젝트에서 let변수를 this로 참조 불가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 글로벌 오브젝트에서 let변수를 this로 참조 불가&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; music &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;음악&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;축구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;music&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 음악, undefined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;현재 위치는 글로벌 오브젝트&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var music = &quot;음악&quot;;&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt; 오브젝트에 설정됨&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let sports = &quot;축구&quot;;&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt; 오브젝트에 설정되지 않음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;this.music&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt; 오브젝트를 참조 하며 &lt;code class=&quot;language-text&quot;&gt;music&lt;/code&gt;이 &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt; 오브젝트에 설정되어 있으므로 “음악”이 출력됨&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;this.sports&lt;/code&gt;에서 sports가 &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt;에 설정되지 않으므로 &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;가 출력됨&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-엔진-관점에서-let-변수-처리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%97%94%EC%A7%84-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-let-%EB%B3%80%EC%88%98-%EC%B2%98%EB%A6%AC&quot; aria-label=&quot;2 엔진 관점에서 let 변수 처리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) 엔진 관점에서 let 변수 처리&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 25.555555555555554%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVQY01WQy07EMBRD+/9/x4Y9Uhloe5s2z0nSdA43HUBgyUqUxbHjIbjIuiV8vFNToJbM+XhwniftbNfZleLOdHtBPl8vR/vGWWdanmjl6aMIQ6oKuzskCD4HnN5ttLjkSCVRW72A1jnG8Z15nrnnTEqJGOM/97dh1+TZLhhvWNzCYr/thFwzP5plZVoEkYUQAqVWSimXswZ475/A3mLzGyYYbOjN/NVuCxsxRx76/S5jDB+3G5vZKVlBCqkK/fFxHLTWGGyyjOuIaCPjDGKFaZ8uYA/73VDTRRvuq6XVQ/cq/FVv6XSWL9LageCjcCQFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;let변수 블록 스코프&quot;
+        title=&quot;let변수 블록 스코프&quot;
+        src=&quot;/static/ea363c9123c8e103e69818aebfc0a156/37523/5_1.png&quot;
+        srcset=&quot;/static/ea363c9123c8e103e69818aebfc0a156/e9ff0/5_1.png 180w,
+/static/ea363c9123c8e103e69818aebfc0a156/f21e7/5_1.png 360w,
+/static/ea363c9123c8e103e69818aebfc0a156/37523/5_1.png 720w,
+/static/ea363c9123c8e103e69818aebfc0a156/1c3a5/5_1.png 981w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수를 블록 안에 작성해야 하지만, 블록이 없으므로 엔진이 블록을 만들고 이를 스코프로 사용하여 설정함&lt;/li&gt;
+&lt;li&gt;위에 언급한 것 같이 현재 &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;에 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수에 할당한 값이 존재&lt;/li&gt;
+&lt;li&gt;이것은 &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;를 하나의 블록 개념으로 &lt;code class=&quot;language-text&quot;&gt;&amp;lt;script&gt;&lt;/code&gt;에 작성한 모든 파일에서 공유 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90%EC%84%9C-let%EB%B3%80%EC%88%98%EB%A5%BC-this%EB%A1%9C-%EC%B0%B8%EC%A1%B0-%EB%B6%88%EA%B0%80&quot;&gt;1) 글로벌 오브젝트에서 let변수를 this로 참조 불가&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%EC%97%94%EC%A7%84-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-let-%EB%B3%80%EC%88%98-%EC%B2%98%EB%A6%AC&quot;&gt;2) 엔진 관점에서 let 변수 처리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[let 변수]]></title><description><![CDATA[1) let 변수 개요  블록 스코프를 가진 변수 변수가 선언된 블록이 스코프 스코프 적용 기준 블록, 문, 표현시 블록 안과 밖이 스코프가 다름 변수 이름이 같아도 값이 대체되지 않음 2) let 변수 선언 Syntax…]]></description><link>https://free-ko.github.io/study-js-es6-let/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-let/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋 let 변수 개요, let 변수 선언, 블록 스코프
 &lt;/h1&gt;
@@ -142,7 +259,203 @@ sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span clas
 &lt;li&gt;&lt;a href=&quot;#2-let-%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8&quot;&gt;2) let 변수 선언&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#3-%EB%B8%94%EB%A1%9D-%EC%8A%A4%EC%BD%94%ED%94%84&quot;&gt;3) 블록 스코프&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[⭐️ function 블록, try-catch, switch-case]]></title><description><![CDATA[1) function 블록 도 블록 스코프  안과 밖에 같은 이름의  변수 선언 가능 스코프가 다르기 때문 그래서 밖의 와 안의 는 다르게 저장되어 있음  밖의  변수를  안에서 사용 가능() 2) try-catch…]]></description><link>https://free-ko.github.io/study-js-es6-scope/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-scope/</guid><pubDate>Mon, 30 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[변수 선언 위치]]></title><description><![CDATA[💡 요약 모든  파일에서 글로벌 오브젝트에 작성한  변수와  변수를 공유  안에 작성하면 공유하지 않음 변수를 어디에 선언하냐에 따라 저장 위치가 다름…]]></description><link>https://free-ko.github.io/study-js-es6-declaration-position/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-declaration-position/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋 변수 선언 위치 정리
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;-요약&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot; aria-label=&quot; 요약 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;💡 요약&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 &lt;code class=&quot;language-text&quot;&gt;JS&lt;/code&gt; 파일에서 글로벌 오브젝트에 작성한 &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt; 변수와 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수를 공유&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;블록&lt;/code&gt; 안에 작성하면 공유하지 않음&lt;/li&gt;
+&lt;li&gt;변수를 어디에 선언하냐에 따라 저장 위치가 다름&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-글로벌-오브젝트에-작성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%9E%91%EC%84%B1&quot; aria-label=&quot;1 글로벌 오브젝트에 작성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 글로벌 오브젝트에 작성&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Scope&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Window&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Local&lt;/code&gt;에 변수가 저장됨&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; global &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;var 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; global &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;let 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; globalBlock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;block 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt;에 설정됨, 공유가능&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;에 설정됨, 공유가능&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;window.sports = {}&lt;/code&gt;처럼 의도적으로 작성하지 않아도 됨&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;{ let 변수 }&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;에 설정됨, 공유 불가능&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;글로벌 오브젝트에서만 사용하는 로컬 변수로 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-함수에-작성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%ED%95%A8%EC%88%98%EC%97%90-%EC%9E%91%EC%84%B1&quot; aria-label=&quot;2 함수에 작성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) 함수에 작성&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;showLocal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; localVar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;var 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; localLet &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;let 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; BlockLet &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Block 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var 변수, let 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Local&lt;/code&gt;에 설정됨&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;{ let 변수 }&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;에 설정됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot;&gt;💡 요약&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%9E%91%EC%84%B1&quot;&gt;1) 글로벌 오브젝트에 작성&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%ED%95%A8%EC%88%98%EC%97%90-%EC%9E%91%EC%84%B1&quot;&gt;2) 함수에 작성&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[호이스팅]]></title><description><![CDATA[1) ES5의 실행 콘텍스트 처리 순서 함수 선언문 설정(함수부터 찾음) 변수 이름을 바인딩, 변숫 값은 (변수 이름 찾고 값은 라고 넣음) 소스 코드 실행 2) var…]]></description><link>https://free-ko.github.io/study-js-es6-hoisting/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-hoisting/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋 호이스팅
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-es5의-실행-콘텍스트-처리-순서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-es5%EC%9D%98-%EC%8B%A4%ED%96%89-%EC%BD%98%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%B2%98%EB%A6%AC-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;1 es5의 실행 콘텍스트 처리 순서 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) ES5의 실행 콘텍스트 처리 순서&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;함수 선언문 설정(함수부터 찾음)&lt;/li&gt;
+&lt;li&gt;변수 이름을 바인딩, 변숫 값은 &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;(변수 이름 찾고 값은 &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;라고 넣음)&lt;/li&gt;
+&lt;li&gt;소스 코드 실행&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-var-변수-호이스팅&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-var-%EB%B3%80%EC%88%98-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85&quot; aria-label=&quot;2 var 변수 호이스팅 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) var 변수 호이스팅&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;music 변수:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; music&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; music &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;음악&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;console.log(&quot;music 변수:&quot;, music);&lt;/code&gt; 코드 아래 &lt;code class=&quot;language-text&quot;&gt;var music = &quot;음악&quot;;&lt;/code&gt; 이 존재&lt;/li&gt;
+&lt;li&gt;변수가 아래에 있지만 식별자 해결을 할 수 있음 단, 이 위에서 &lt;code class=&quot;language-text&quot;&gt;music&lt;/code&gt; 값은 &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;이것을 &lt;code class=&quot;language-text&quot;&gt;호이스팅&lt;/code&gt;이라고 함&lt;/li&gt;
+&lt;li&gt;식별자 해결을 하지 못하면 에러가 발생&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-let-변수-호이스팅-사용-불가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-let-%EB%B3%80%EC%88%98-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80&quot; aria-label=&quot;3 let 변수 호이스팅 사용 불가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3) let 변수 호이스팅 사용 불가&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수는 호이스팅되지 않음, 즉 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수 앞에서 변수 사용 불가&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;호이스팅 불가&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;축구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 호이스팅 불가&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수를 인식하는 시점&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;block&lt;/code&gt; 안에 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수 작성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-es5%EC%9D%98-%EC%8B%A4%ED%96%89-%EC%BD%98%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%B2%98%EB%A6%AC-%EC%88%9C%EC%84%9C&quot;&gt;1) ES5의 실행 콘텍스트 처리 순서&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-var-%EB%B3%80%EC%88%98-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85&quot;&gt;2) var 변수 호이스팅&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-let-%EB%B3%80%EC%88%98-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80&quot;&gt;3) let 변수 호이스팅 사용 불가&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[const 변수]]></title><description><![CDATA[1) const 문법 구문:  값을 바꿀 수 없는 변수 선언(예외로 배열이나, 객체면 값을 바꿀 수 있음) 에 변수 이름 작성, 식별자로 사용  sports를 로 선언하고 값 할당  try 블록도 별도의 스코프이지만 const, let…]]></description><link>https://free-ko.github.io/study-js-es6-const/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-const/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋 const 변수
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-const-문법&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-const-%EB%AC%B8%EB%B2%95&quot; aria-label=&quot;1 const 문법 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) const 문법&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;구문: &lt;code class=&quot;language-text&quot;&gt;name1 [= value1] [, name2 [= value2]]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;값을 바꿀 수 없는 변수 선언(예외로 배열이나, 객체면 값을 바꿀 수 있음)&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;name1&lt;/code&gt;에 변수 이름 작성, 식별자로 사용&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;축구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;농구&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;const 할당 불가&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;const sports = &quot;축구&quot;;&lt;/code&gt; sports를 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt;로 선언하고 값 할당&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;try { sports = &quot;농구;&lt;/code&gt; try 블록도 별도의 스코프이지만 const, let을 작성하지 않았으므로&lt;/li&gt;
+&lt;li&gt;sports 변수에 값을 할당하게 됨 이때 &lt;code class=&quot;language-text&quot;&gt;sports&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 변수 이므로 에러 발생&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-js에서-상수는-대문자-사용이-관례&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-js%EC%97%90%EC%84%9C-%EC%83%81%EC%88%98%EB%8A%94-%EB%8C%80%EB%AC%B8%EC%9E%90-%EC%82%AC%EC%9A%A9%EC%9D%B4-%EA%B4%80%EB%A1%80&quot; aria-label=&quot;2 js에서 상수는 대문자 사용이 관례 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) JS에서 상수는 대문자 사용이 관례&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;```tsx
+const bonus = 100;
+const POINT = 200;
+```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;상수&lt;/code&gt;이지만 값 형태에 따라 바꿀 수 있음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;const POINT=- 200;&lt;/code&gt; 대문자 사용이 코딩 관례이므로 괜찮음&lt;/li&gt;
+&lt;li&gt;우선 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;이 아닌 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 사용 가능을 검토(우선순위 &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-const-변수-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-const-%EB%B3%80%EC%88%98-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;3 const 변수 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3) const 변수 사용&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 변수 전체를 바꿀 수 없지만, &lt;code class=&quot;language-text&quot;&gt;Object&lt;/code&gt;의 프로퍼티 값을 바꿀수 있음&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; book &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;책&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+book &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;음악 책&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;const 전체 할당 불가&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;미술 책&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// const 전체 할당 불가&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 미술 책&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;book = {title: &quot;음악 책&quot;};&lt;/code&gt; book에 값을 할당하면 에러 발생, &lt;code class=&quot;language-text&quot;&gt;book&lt;/code&gt; 전체를 바꿀 수 없음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;book.title = &quot;미술 책&quot;;&lt;/code&gt; 프로퍼티 값은 변경할 수 있음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; 변수의 변경 불가는 &lt;code class=&quot;language-text&quot;&gt;book&lt;/code&gt;에 값을 할당하는 것을 뜻 함&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;배열&lt;/code&gt;의 엘리먼트 값도 바꿀 수 있음&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; book &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;책&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	book &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;음악 책&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;const 전체 할당 불가&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+book&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;미술 책&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;book&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// const 전체 할당 불가&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 미술 책&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;book = [&quot;음악 책&quot;];&lt;/code&gt; book에 값을 할당하면 에러 발생&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;book[0] = &quot;미술 책&quot;;&lt;/code&gt; 엘리먼트 값은 변경할 수 있음&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-const-%EB%AC%B8%EB%B2%95&quot;&gt;1) const 문법&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-js%EC%97%90%EC%84%9C-%EC%83%81%EC%88%98%EB%8A%94-%EB%8C%80%EB%AC%B8%EC%9E%90-%EC%82%AC%EC%9A%A9%EC%9D%B4-%EA%B4%80%EB%A1%80&quot;&gt;2) JS에서 상수는 대문자 사용이 관례&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-const-%EB%B3%80%EC%88%98-%EC%82%AC%EC%9A%A9&quot;&gt;3) const 변수 사용&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[function 블록, try-catch, switch-case]]></title><description><![CDATA[1) function 블록 도 블록 스코프  안과 밖에 같은 이름의  변수 선언 가능 스코프가 다르기 때문 그래서 밖의 와 안의 는 다르게 저장되어 있음  밖의  변수를  안에서 사용 가능() 2) try-catch…]]></description><link>https://free-ko.github.io/study-js-es6-scope/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-scope/</guid><pubDate>Mon, 30 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋 블록 스코프 유형
 &lt;/h1&gt;
@@ -270,77 +583,7 @@ abc &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; error&lt;span cl
 &lt;li&gt;&lt;a href=&quot;#2-try-catch&quot;&gt;2) try-catch&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#3-switch-case&quot;&gt;3) switch-case&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 성장을 꿈꾸는 너에게를 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/book/</link><guid isPermaLink="false">https://free-ko.github.io/book/</guid><pubDate>Sun, 29 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 225px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAEFAgME/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAb7XnxJYBYBIP//EABkQAQACAwAAAAAAAAAAAAAAAAEAAhAgIv/aAAgBAQABBQJhfDKPWn//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAWEAADAAAAAAAAAAAAAAAAAAAAMNH/2gAIAQEABj8CIj//xAAbEAACAgMBAAAAAAAAAAAAAAABEQAQIUFxYf/aAAgBAQABPyE0uxyBRNNezHHtoV//2gAMAwEAAgADAAAAEAwIAP/EABYRAAMAAAAAAAAAAAAAAAAAAAERIP/aAAgBAwEBPxAuP//EABYRAQEBAAAAAAAAAAAAAAAAAAERIP/aAAgBAgEBPxALj//EAB0QAQABBAMBAAAAAAAAAAAAAAERABAhMUFRYZH/2gAIAQEAAT8QUx5BTZksbIfbFSJMFqQBh66sg7ryLf/Z&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;book-1.jpeg&quot;
-        title=&quot;book-1.jpeg&quot;
-        src=&quot;/static/f07222c07b56df4c53915b53de8e97e0/863e1/book-1.jpg&quot;
-        srcset=&quot;/static/f07222c07b56df4c53915b53de8e97e0/4ec73/book-1.jpg 180w,
-/static/f07222c07b56df4c53915b53de8e97e0/863e1/book-1.jpg 225w&quot;
-        sizes=&quot;(max-width: 225px) 100vw, 225px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;1-일을-대하는-마음&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%BC%EC%9D%84-%EB%8C%80%ED%95%98%EB%8A%94-%EB%A7%88%EC%9D%8C&quot; aria-label=&quot;1 일을 대하는 마음 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 일을 대하는 마음&lt;/h2&gt;
-&lt;p&gt;책을 접하기 이전에 나는 약간의 매너리즘에 빠져있었다.
-무언가 열심히 사는 것 같은데 스스로에 대한 확신이 없는채, 제자리 걸음을 하고 있다는 느낌이 강하게 들었었다. 그 때 이 책을 접하게 되었다.
-&lt;br&gt;단순히 직장이 돈을 버는 곳이 아닌 나를 &lt;code class=&quot;language-text&quot;&gt;성장&lt;/code&gt;시켜주는 좋은 장소라는 사실과 &lt;code class=&quot;language-text&quot;&gt;좋은 업무 습관&lt;/code&gt;을 기를 수 있도록 해주며 내가 일하는 &lt;code class=&quot;language-text&quot;&gt;산업 전반&lt;/code&gt;을 파악할 수 있는 곳.
-&lt;br&gt;저자의 말을 통해, 현재 다니고 있는 직장에 대한 불평 불만 보다는 앞으로 성장할 나의 모습에 있어서 좋은 밑거름이 될 수 있다는 확신이 들었다. 이외에도 책에서는 회사를 통해 성장 할 수 있는 다양한 방법을 소개 하고 있다. 그 중 마음에 와 닿았던 부분을 소개 한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// p.41&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; 겸손한 마음을 가지며 직장 생활을 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; 올바른 의사소통으로 직장내 감정소모에 대처한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; 회사가 아니라 자신의 커리어 발전을 위해 일한다는 사실을 염두 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;4.&lt;/span&gt; 장기적인 관점을 가진다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이처럼 나에게 주어진 하루 중 대부분을 일에 사용하는데, 이 시간을 통해 책에서 알려준 방법을 가지고 하나씩 실천하여 더 나은 미래를 만들고 싶다.&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;2-경제적인-사고를-갖춘다는-것&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EA%B2%BD%EC%A0%9C%EC%A0%81%EC%9D%B8-%EC%82%AC%EA%B3%A0%EB%A5%BC-%EA%B0%96%EC%B6%98%EB%8B%A4%EB%8A%94-%EA%B2%83&quot; aria-label=&quot;2 경제적인 사고를 갖춘다는 것 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) 경제적인 사고를 갖춘다는 것&lt;/h2&gt;
-&lt;p&gt;일을 넘어 삶을 살아가는데 필요한 경제적인 사고에 대해서도 이 책은 많은 내용을 알려주고 있다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// p.106&lt;/span&gt;
-&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; 돈은 신이 나에게 잠시 맡긴 것일 뿐 나중에 다시 돌려줘야 하는 것
-    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 자신의 한계를 초과하면서까지 돈을 버는 것은 수익은 있을지언정 대가가 너무 크기 때문에 합리적이지 않다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; 돈은 제대로 사용했을 때 비로소 내 것이 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; 돈과 물건은 나의 생활을 더욱 윤택하게 만들어 주는 것이지 골칫덩어리가 되어서는 안 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 돈으로 인해 삶의 질이 떨어지면 안된 다는 것
-
-&lt;span class=&quot;token number&quot;&gt;4.&lt;/span&gt; 돈은 벌어서 생기는 것이지 아껴서 생기는 것이 아니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;5.&lt;/span&gt; 번 돈을 모두 쓰는 것은 어렵지만 어딘가에 쏟아 붓는 &lt;span class=&quot;token function&quot;&gt;것&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;투자&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 투기&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;은 쉽다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;3-더-멀리-그리고-더-높게&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EB%8D%94-%EB%A9%80%EB%A6%AC-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%8D%94-%EB%86%92%EA%B2%8C&quot; aria-label=&quot;3 더 멀리 그리고 더 높게 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3) 더 멀리 그리고 더 높게&lt;/h2&gt;
-&lt;p&gt;나도 나중에는 나만의 사업을 가지고, 많은 사람들에게 이로움을 주는 그런 리더가 되고 싶다.
-이러한 꿈을 이루기 위해 내 마음에 울림이 되었던 문장을 소개 한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// p247&lt;/span&gt;
-가장 좋은 통치는 국민들이 마음으로 따르게 하는 것이고&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 그 다음은 이익을 이용하여 이끄는 것이며&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-그 다음은 가르쳐 깨우치도록 하는 것이고&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 그 다음은 형벌로 다스리는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-그리고 최악의 통치는 국민과 적이 되어 다투는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;결론&lt;/h2&gt;
-&lt;p&gt;이 책은 나에게 많은 가능성과 확신을 안겨주었다. 단순히 한 번 읽고 끝내는 것이 아니라 계속 읽어야 겠다. &lt;br&gt;
-일을 대할 때&lt;code class=&quot;language-text&quot;&gt;성장&lt;/code&gt;의 자세로 한 걸음씩 나아갈 수 있는 확신있는 사람이 되고 싶어졌다.&lt;/p&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-%EC%9D%BC%EC%9D%84-%EB%8C%80%ED%95%98%EB%8A%94-%EB%A7%88%EC%9D%8C&quot;&gt;1) 일을 대하는 마음&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-%EA%B2%BD%EC%A0%9C%EC%A0%81%EC%9D%B8-%EC%82%AC%EA%B3%A0%EB%A5%BC-%EA%B0%96%EC%B6%98%EB%8B%A4%EB%8A%94-%EA%B2%83&quot;&gt;2) 경제적인 사고를 갖춘다는 것&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3-%EB%8D%94-%EB%A9%80%EB%A6%AC-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%8D%94-%EB%86%92%EA%B2%8C&quot;&gt;3) 더 멀리 그리고 더 높게&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot;&gt;결론&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[⭐️ let, const 변수]]></title><description><![CDATA[1) 변수 구분 로컬(지역) 변수, 글로벌(전역) 변수 변수를 구분하는 이유는? 기능과 목적이 다르기 때문 글로벌 변수의 기능, 목적 다른 JS…]]></description><link>https://free-ko.github.io/study-js-es6-variable/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-variable/</guid><pubDate>Sun, 29 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[let, const 변수]]></title><description><![CDATA[1) 변수 구분 로컬(지역) 변수, 글로벌(전역) 변수 변수를 구분하는 이유는? 기능과 목적이 다르기 때문 글로벌 변수의 기능, 목적 다른 JS…]]></description><link>https://free-ko.github.io/study-js-es6-variable/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-variable/</guid><pubDate>Sun, 29 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋 변수 구분, 글로벌 변수 오해, use strict 사용
 &lt;/h1&gt;
@@ -442,438 +685,74 @@ value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class
 &lt;li&gt;&lt;a href=&quot;#2-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EB%B3%80%EC%88%98-%EC%98%A4%ED%95%B4&quot;&gt;2) 글로벌 변수 오해&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#3-use-strict-%EC%82%AC%EC%9A%A9&quot;&gt;3) Use Strict 사용&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Gatsby 테마로 GitHub Blog 만들기]]></title><description><![CDATA[제 블로그의 테마나 Gatsby의 다른 테마를 활용해서 Github Blog…]]></description><link>https://free-ko.github.io/gatsby-github-blog/</link><guid isPermaLink="false">https://free-ko.github.io/gatsby-github-blog/</guid><pubDate>Mon, 05 Jul 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;제 블로그의 테마나 Gatsby의 다른 테마를 활용해서 Github Blog를 만들고 싶은 분들을 계실텐데요! 이런 분들에게 도움을 드리고자 이 글을 쓰게 되었습니다. 잘 안되는 부분이나 궁금한 점을 댓글로 남겨주면 찾아보고 답변을 달아보도록 하겠습니다!&lt;/p&gt;
-&lt;h2 id=&quot;1-repository-생성하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-repository-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot; aria-label=&quot;1 repository 생성하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Repository 생성하기&lt;/h2&gt;
-&lt;p&gt;GitHub Blog를 만들려면 Github에 Repository를 생성해야 합니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 성장을 꿈꾸는 너에게를 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-1/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-1/</guid><pubDate>Sun, 29 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 225px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACIUlEQVQoz32R227TQBCG/Ww8A7xFcwMPwC2qCqRNaudQVHGRC4SQIm5IqiQNAVQpF6hFqM2ZklPTBOfk2Lter/dn7JSoCoKVP83szOzv2R3tfTb7qFAqXZUrn88+fvpSPSmcVgulcrV4Wgn9D/lCNZcvblGieDHMBTZ3UjzL5Qu1t++yES0W1x8fHb2GbqSgJ1JIpI5hJI9xmHiFaDyBfT2JfSOJqJEgDLw0dLwwDhGjeJzOxPQUnj7P4Fn8DaIH8QOtd9PbqQ8a6I+HHIA0naX8PmjK2dKWK+5JQTEXSjJI6cAlK2gvpU9x3LGyHe4rYLawdrXWdTtSG9QxXpie8qFG5gQ/J32sHAbGxT9ZOXyDZTPPZi76w9GeNhwMI9bcgrW0PFrKthmsxQpOIMh4aNf+eh/0Jn0fDokGInfWow/D0e2e1u8PIuZsgQUJukIoxl10+4Pgb1TIwdyt7mgvxH8EJ5NJxJMKSsGj91CcEvQkcKjYFR6EJ+ESIsTHkm5wOWxgFXR/J/qXIMKlQkHbYWo6nSrTXPPLNNf+dE4+2dlcWdxSJKZsJsi6altwR6mgQ8UJjwpowo50GJeM30cQrhRChpMlQUlCf+Ch4M3tbiD4BPfWwrIxnS/DKVvrCdL1grfzNgRX3Wbd4TimlcuVB+cX3zLdbjfZ6/XS9WY7XWu00s32j9C/qjc3XNYa6WarQ7lOmN/Q6iRanevM1/OLh78BcrQRmkf1U+UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAEFAgME/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAb7XnxJYBYBIP//EABkQAQACAwAAAAAAAAAAAAAAAAEAAhAgIv/aAAgBAQABBQJhfDKPWn//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAWEAADAAAAAAAAAAAAAAAAAAAAMNH/2gAIAQEABj8CIj//xAAbEAACAgMBAAAAAAAAAAAAAAABEQAQIUFxYf/aAAgBAQABPyE0uxyBRNNezHHtoV//2gAMAwEAAgADAAAAEAwIAP/EABYRAAMAAAAAAAAAAAAAAAAAAAERIP/aAAgBAwEBPxAuP//EABYRAQEBAAAAAAAAAAAAAAAAAAERIP/aAAgBAgEBPxALj//EAB0QAQABBAMBAAAAAAAAAAAAAAERABAhMUFRYZH/2gAIAQEAAT8QUx5BTZksbIfbFSJMFqQBh66sg7ryLf/Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog.png&quot;
-        title=&quot;github-blog.png&quot;
-        src=&quot;/static/c496970c1925a1fafbb98168e3207240/37523/github-blog.png&quot;
-        srcset=&quot;/static/c496970c1925a1fafbb98168e3207240/e9ff0/github-blog.png 180w,
-/static/c496970c1925a1fafbb98168e3207240/f21e7/github-blog.png 360w,
-/static/c496970c1925a1fafbb98168e3207240/37523/github-blog.png 720w,
-/static/c496970c1925a1fafbb98168e3207240/302a4/github-blog.png 1080w,
-/static/c496970c1925a1fafbb98168e3207240/07a9c/github-blog.png 1440w,
-/static/c496970c1925a1fafbb98168e3207240/e57e0/github-blog.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        alt=&quot;book-1.jpeg&quot;
+        title=&quot;book-1.jpeg&quot;
+        src=&quot;/static/f07222c07b56df4c53915b53de8e97e0/863e1/book-1.jpg&quot;
+        srcset=&quot;/static/f07222c07b56df4c53915b53de8e97e0/4ec73/book-1.jpg 180w,
+/static/f07222c07b56df4c53915b53de8e97e0/863e1/book-1.jpg 225w&quot;
+        sizes=&quot;(max-width: 225px) 100vw, 225px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;GitHub에 로그인 한 뒤에 우측 상단에 있는 New Repository 버튼을 클릭하면 repository 생성 페이지로 이동하게 됩니다. 이 때 Import a repository 버튼을 클릭합니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABqElEQVQoz5WRyU7jQBBA/W3zDfAX5AJ/geYyhCgEJ2GROCHEzAXIyjIHpByASwSCA05sc0hwnOCt293umirHI0JEkCjpqatcVa9tWftzfLzcaLXua43WdfviqlNvniMXnUb7Ms3P6u3Oaa3ZOfmKs+Y1zjwcHv3OaZuF4mp1dx9KegW2titQru4B1XplB/KFIvzKF6BYKmOvnJ6LKFd3YWOzuKF5nrcC02CInMULmIy4lPPPP4F2IQzDdW0wGOSSJAFEIIpypRQEYQivjgvjNw/c8QSHI2CcA4sZSLwj2/mPoB3HcX5qw+EwRwUGPVRZDmHEYOROppJZUEgSCprNEFSPRqPFwjiOwfd94HhyFMVCfBB9WxgEAVi2DePJBPMQhRLUjGRO/KUw3YsipoaDV8UYVxHC44QaakF8EK5ktzJqIOmf85kvTceSPOZSCCHxDeW09w7VGSwTrpNwDeZCJQqYiOGNBSATumz6eZQnBNZ0zofrunnt8urvj5vbu4PHp6eSZVm6aZq6YRh6r2fqZv9FN/Ds9fspz0Yf63doNmPLtu2Dbre79A8XQB3Mszy2tgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-1.png&quot;
-        title=&quot;github-blog-1.png&quot;
-        src=&quot;/static/153e78ed1e400e6710eafc8bf47fbe8d/37523/github-blog-1.png&quot;
-        srcset=&quot;/static/153e78ed1e400e6710eafc8bf47fbe8d/e9ff0/github-blog-1.png 180w,
-/static/153e78ed1e400e6710eafc8bf47fbe8d/f21e7/github-blog-1.png 360w,
-/static/153e78ed1e400e6710eafc8bf47fbe8d/37523/github-blog-1.png 720w,
-/static/153e78ed1e400e6710eafc8bf47fbe8d/302a4/github-blog-1.png 1080w,
-/static/153e78ed1e400e6710eafc8bf47fbe8d/07a9c/github-blog-1.png 1440w,
-/static/153e78ed1e400e6710eafc8bf47fbe8d/e57e0/github-blog-1.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;아래 페이지에 도달하시면 두 가지 정보를 넣어주셔야 하는데, Your old repository’s clone URL에는 사용하고자 하는 gatsby 테마가 있는 repository의 주소를 넣어주시면 됩니다.&lt;/p&gt;
-&lt;p&gt;제 블로그 테마를 쓰고 싶으신 분들은 여기에 &lt;a href=&quot;https://github.com/zoomKoding/zoomkoding.com&quot;&gt;https://github.com/zoomKoding/zoomkoding.com&lt;/a&gt;를 넣어주세요!&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz62QzU7CQBDH+2q+g74FXPQtiCc+Uj4ViZ6MQS9KoRU8kfRmGqJ36AX6AbTS0t3uOFtaLEQSYpzkl5n9z8x/txWe2u0zWVE+pJ4yfO2/qV25jwzUnjJQpV5f7XSViGdJPkxHHr5I8uf9w2NWKJbE86tmCyq1BpSrdWhc3yCtKJfEKuRLIhRKZRAr9ajP82/Ur5qQL4p5wXGcDGzCR2gaz/PoarWiQRDQ/d4efBdwNidMp9NsGIaAEITFNVBKwbJsMAwTFksX0npSpyCMMTBN81KYzWZZfsDgIovraBEHwETTORr6/hrCuMdn9iBctyzrsCEhFOz5HI18cFwXXPcLCCU7hkkcZciz4yzB83zAf4gXkOjz0mZHvXAzt3XennleE8redY0tvOWPvhndMczEus8bCMXXIJSug5AGJKRc49CQReeEROe7sWFOMAzjAv4pbNsuCJqmnUwmk9vxeFxBan+krOv63Wg0Ov0GAdofQelOG9cAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-2.png&quot;
-        title=&quot;github-blog-2.png&quot;
-        src=&quot;/static/dbe340fff7135c1af7d13df1a3673be1/37523/github-blog-2.png&quot;
-        srcset=&quot;/static/dbe340fff7135c1af7d13df1a3673be1/e9ff0/github-blog-2.png 180w,
-/static/dbe340fff7135c1af7d13df1a3673be1/f21e7/github-blog-2.png 360w,
-/static/dbe340fff7135c1af7d13df1a3673be1/37523/github-blog-2.png 720w,
-/static/dbe340fff7135c1af7d13df1a3673be1/302a4/github-blog-2.png 1080w,
-/static/dbe340fff7135c1af7d13df1a3673be1/07a9c/github-blog-2.png 1440w,
-/static/dbe340fff7135c1af7d13df1a3673be1/e57e0/github-blog-2.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;그럼 이제 Repository Name을 입력해줍니다. 이 때 주의할 점은 Repository명은 꼭 [GitHubID].github.io로 설정하셔야 합니다.&lt;/p&gt;
-&lt;p&gt;그리고 Begin Import 버튼을 클릭하고 조금 기다리면 선택하신 블로그 테마를 import한 Repository가 생성되게 됩니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACDElEQVQoz5WRzXLTMBDH/W68ArxFe6Fv0WGgk+J8qYZyYDh0mGk5QL7LBdImKadkYDgmcWdIsB1JtizbspaVWiCFC+zMf7y78v70l+S8OT19MDgffO72+sNOrzd61+5adfrvR63uAPPeL701anV/9zr9G7V7w1a7/+Xk9dmuc1BxH9bIMRy4TXhcaUCl6kG18RyOnr2AWuMI3FoT3DqBKsrUzeaxzU3vabUBh27dqt704EnFrThBEOzkRQm5AikLULEslcxLpQEU/CHTW6fBX32URAHjfN9ZrVa7WpcAuixQOogoBBsGIY2BCwkiKyDF3ShP4VsYwXT5FSJKQQgBWZ5DWZZGhQGiuUfOer1GoAZUYT40TkFmOTouERzDhkuQCCxKDeYkmVTA4wRzy4CfsyYPw/Au0KxTxkCkqf0x3HD4HjJIZWZrA2EcnScpuvtHIGMcYnRgwsLxaGbdhELXSSLQofgfINMbSrUJyrhOU6nxjmyNQJ0IoaMN1ywW+oZn4w5w5xZoXqrgnCscsq9HKVOUxSqRhRIZvn5WKHSoYh4pkVCVC6nMPrezBrhvgHuwFUmS4DFTm0u8O6XU9tHsPea5gFyihNwehSiKDp3+4Pze5OrTq/HkiuDXG15ceheXIw9rbzSeeOPxhHz4OCTT6Yz4vk/m8zlZLn2y9K/J8toni8XCqI5rL2ez2f0f6/cXevYqyOYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-3.png&quot;
-        title=&quot;github-blog-3.png&quot;
-        src=&quot;/static/d0d4283fe9701965b995d91190d8880f/37523/github-blog-3.png&quot;
-        srcset=&quot;/static/d0d4283fe9701965b995d91190d8880f/e9ff0/github-blog-3.png 180w,
-/static/d0d4283fe9701965b995d91190d8880f/f21e7/github-blog-3.png 360w,
-/static/d0d4283fe9701965b995d91190d8880f/37523/github-blog-3.png 720w,
-/static/d0d4283fe9701965b995d91190d8880f/302a4/github-blog-3.png 1080w,
-/static/d0d4283fe9701965b995d91190d8880f/07a9c/github-blog-3.png 1440w,
-/static/d0d4283fe9701965b995d91190d8880f/e57e0/github-blog-3.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;2-repository-가져오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-repository-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;2 repository 가져오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Repository 가져오기&lt;/h2&gt;
-&lt;p&gt;이제 실제로 수정하고 배포할 수도록 내 컴퓨터(local)에 Repsitory를 가져와볼 건데요! 먼저 Repository에서 아래와 같이 초록색 Code 버튼을 클릭하면 링크가 나오게 되는데, 이 링크를 복사합니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACDklEQVQoz5WRy24TMRSG59V4B3iLdgNvUSGo0lwmcVuEBCuEFLU0aS4tKxJplF2awAKySGcqkWQymfGMx7E9Phy7RUphA0f65Ns5v/9jO2fN5rPrz9dfe/2rYbfX987OW975Rdtrd/reRbtrsfPLnvep1fFanZ5dW7pX93T6w8tO/9uHj81957BUfl4jb+Cw0oBXJRdK1ROo1E/h+PQt1OrHUK41oOI2oGqoE2hgbtUldq9crcNRxbW4jRN4XSqXnDAM94QsQCjgXIJKeaG4KJQGUPAHBbLMV3/tIxyBhNIDZ7FY7GuNqbqQiA6jGMIogXWcAmVbyPAWmqaQUlxnKXz/+QOizQYYy2ErBBRFYZBGEM29dJbLJQpqQKQZaMZBSIlJGuIkhSznkCQUVmFohQHvpihuckz8rjXz9Xr9WNCcU0qxd9sBCiawiRPTikWgIymNY4bu/lEwQZHUODGCKJZlzLo1OVIq6/J/BfUmjrWJOKE6z3ONb2TXCkd8Ox1tqE5Spu/1bDwS3HsQNH1KbFlljNnfQ4cK31Hhxyhmfn8rFTpWKY0Uy2IlGFfmnodaI3jgrFarF7ATpkV0Zeecb0Eptdua/QwhGAiOML5bClEUHTnj8fiJ7/vvbm9v6wiZzWZkPp+T6XRKBoMhGY1G5MtgQG5uJiQIAnvm+wHxgzvi3wXE1CAunr2fTCZPfwHdcRiHYUxTZAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-4.png&quot;
-        title=&quot;github-blog-4.png&quot;
-        src=&quot;/static/138a6ccf5d2c7ff9d5c762501b9c7ed2/37523/github-blog-4.png&quot;
-        srcset=&quot;/static/138a6ccf5d2c7ff9d5c762501b9c7ed2/e9ff0/github-blog-4.png 180w,
-/static/138a6ccf5d2c7ff9d5c762501b9c7ed2/f21e7/github-blog-4.png 360w,
-/static/138a6ccf5d2c7ff9d5c762501b9c7ed2/37523/github-blog-4.png 720w,
-/static/138a6ccf5d2c7ff9d5c762501b9c7ed2/302a4/github-blog-4.png 1080w,
-/static/138a6ccf5d2c7ff9d5c762501b9c7ed2/07a9c/github-blog-4.png 1440w,
-/static/138a6ccf5d2c7ff9d5c762501b9c7ed2/e57e0/github-blog-4.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;그리고 아래 명령어를 수행하여 블로그를 다운로드합니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Repository를 저장할 폴더&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;복사한 주소&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;3-blog-설치하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-blog-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;3 blog 설치하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Blog 설치하기&lt;/h2&gt;
-&lt;p&gt;이제 블로그를 동작시킬 수 있도록 패키지들을 다운로드 해야하는데, 다음 명령어를 실행하시면 받을 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Repository 주소&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;4-blog-배포-준비하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-blog-%EB%B0%B0%ED%8F%AC-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0&quot; aria-label=&quot;4 blog 배포 준비하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Blog 배포 준비하기&lt;/h2&gt;
-&lt;p&gt;그리고 이제 Gatsby 테마를 GitHub 페이지에 올리기 위해 gh-pages라는 패키지를 설치해야 합니다. 설치는 다음 명령어를 실행하시면 됩니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; gh-pages --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;그리고 나서 package.json에 다음을 추가합니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;&quot;deploy&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gatsby build &amp;amp;&amp;amp; gh-pages -d public&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 추가&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;5-blog-배포하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#5-blog-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0&quot; aria-label=&quot;5 blog 배포하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5. Blog 배포하기&lt;/h2&gt;
-&lt;p&gt;드디어 배포 준비는 다 끝났습니다. 이제 다음 명령을 실행하시면 github page에 배포하실 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;조금 기다리신 후에 다음과 같이 &lt;code class=&quot;language-text&quot;&gt;Published&lt;/code&gt;라는 메시지를 받으셨다면 배포는 잘 끝났습니다!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🙋‍♂️ 제 블로그 템플릿을 사용하시는 분들을 &lt;code class=&quot;language-text&quot;&gt;node 버전이 14 이상&lt;/code&gt;이어야 합니다.
-node -v를 통해 node 버전을 확인하신 후 낮은 버전이라면 업그레이드를 진행해주세요!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💡 혹시 그 외에 다른 에러가 발생하신다면 아래에 댓글로 에러 내용을 알려주세요!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXElEQVQoz1WSZ47CMBCFcw1a6BB6AgmkAaEt4v4HeptvJLPZHyOPLfu1sbeIQiVJrP1+rziOdTwetV6vdTqdFIahhsOhgiCwGo1G6vV68n3fVte7PavXTTeKj4mqqlJRFLrdboqiSOfzWdfrVbvdzsggWCwW6na7X5Am0B9gtlVeAwFYlqUej4fSNLX+fr9rs9mYaoC3263m87kVPeqbKr8Ky1rN5XIxRah8Pp8Gkue5AaOOGACYzWaaTqeaTCYGhmJX7D0/D1XdKr1/3l9Q7AJMkSuKAc+yzFTTQzIej00tJOTb7/flZUWp1+tlVrkMGA+JgH2SJDocDpYrg1mtVpYliomDKFgpQL3dObVBfD4fswo74Fh1YMvl0i53Op1/FinOXJnloA4XNh7BjAVUwIiiwWCgVquldrv977EDaw7EhvKs1ZAVfw5bWKDnq0DizlDKmbsHKQ7IrTnpX/ZxEl8jXPmdAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-5.png&quot;
-        title=&quot;github-blog-5.png&quot;
-        src=&quot;/static/0ea9b8b7bed5ce6018b3da93286b48ae/37523/github-blog-5.png&quot;
-        srcset=&quot;/static/0ea9b8b7bed5ce6018b3da93286b48ae/e9ff0/github-blog-5.png 180w,
-/static/0ea9b8b7bed5ce6018b3da93286b48ae/f21e7/github-blog-5.png 360w,
-/static/0ea9b8b7bed5ce6018b3da93286b48ae/37523/github-blog-5.png 720w,
-/static/0ea9b8b7bed5ce6018b3da93286b48ae/302a4/github-blog-5.png 1080w,
-/static/0ea9b8b7bed5ce6018b3da93286b48ae/07a9c/github-blog-5.png 1440w,
-/static/0ea9b8b7bed5ce6018b3da93286b48ae/17d12/github-blog-5.png 1666w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;6-repository-source-branch-변경하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#6-repository-source-branch-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0&quot; aria-label=&quot;6 repository source branch 변경하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6. Repository Source Branch 변경하기&lt;/h2&gt;
-&lt;p&gt;마지막으로 GitHub 페이지가 작동하려면 GitHub의 Repository 설정에서 배포 할 Branch를 선택해야 합니다. 이를 위해서 Repository에 있는 Settings를 클릭하고 죄측 메뉴에서 Pages를 클릭하여 Github Pages 설정 페이지로 이동합니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB90lEQVQoz5WS227TQBBA/W/8Av2L5gX+okJcErm5GKO+IB4QUii9hECSwkuQaUAgAjziXFTJaWyvN/auvZdh1kkhlVAl1j7aWXt0NOOxddhu7/QG/R9n794P+4Mz7+Xhiffq+BTpeEcnXe+488Y7ff3233R7Vww73d7P5y/aFeth1b5Tdw7gkd2C+9UmVPddsJtPwHEPoN58DHa9BXajtd63aThQ229CzW6UNFouPKjaVWsZRrtCARQSOCtAplxLjCXAf8ERSCjds4IgqGiNRq0FaKUJIZBmGRRCQBgRSBIKAuOiKP5gzkopTEe0NrEwwuVyec9aLBYV8xBvgbuOCYWMcRRKCFgI89UFzNNLmCEX7BIWxbIkVBFEKgalS2kpDMPwrxDXRpgAz4tSGMYRxJQAoQmkLAVW5CCwKnNJFG1kNwsJtnglDIIFth0DyxgwloNUZR5+Hri2bq4wJhqFWgipKV3pjDHNOdeccZ3n+ZpCaJTrUrVe14S7GyE3L1arVHKeS4wlpVQSkkjzDOUyzZhknEuzyulijgFz+Ua4Z4R3t0ovp6eULjFtr9s3UxYYS5ww/lMmB2swbHcfRVHN6vUHt85Hn559PB85iDv84Lmjz1/cr9++u74/dSbTmTObrfEneN7wy584PmLi6XTamM/nT8fj8e3fVu4Y+eh3RvQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-6.png&quot;
-        title=&quot;github-blog-6.png&quot;
-        src=&quot;/static/338e207ee37735587d9326b12dad5b66/37523/github-blog-6.png&quot;
-        srcset=&quot;/static/338e207ee37735587d9326b12dad5b66/e9ff0/github-blog-6.png 180w,
-/static/338e207ee37735587d9326b12dad5b66/f21e7/github-blog-6.png 360w,
-/static/338e207ee37735587d9326b12dad5b66/37523/github-blog-6.png 720w,
-/static/338e207ee37735587d9326b12dad5b66/302a4/github-blog-6.png 1080w,
-/static/338e207ee37735587d9326b12dad5b66/07a9c/github-blog-6.png 1440w,
-/static/338e207ee37735587d9326b12dad5b66/e57e0/github-blog-6.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;여기서 Source에 있는 Branch를 master(main)에서 gh-pages로 변경한 후에 저장합니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8klEQVQoz32Ry27TQBSG/Wq8A7xFs4F36CLQgBrRFLUVBdEdSG1zD12mquRtFME6F0pjx3Y89lzs8fwcT4LU0IiRPp0z/5n558yM02lev+gPBj8ur1t3zVbXvbpqu8121211em6nN3A73b7bpdgb3JDesXqbKNf0+t/d4fDWHd7e3vUHNz+/frusOPsHRy9rR+eo1k/xun6Gt41PeHf82XLw/iPpZ1YvqR6e2vkTSK81zrFfaxw6k1/ens9y+KyQfgLtMeiIQ6sCOjMUCanXeY5tSl3kNkqq42G5qjqLxUNFUznPs1wpZTjnEFKCcqQpgxIcBdVNQRamIPQWRUGQgaHacum/cTzPq2A9aAfMMgiRpAK5LrAIUjo1RsQkAqYsUaIQ8wycWhKEoc6MMeVeBEGwNiQBpNMpxkSrGFJlyHINP1b4HQrcLznuQ2XxmEaYFgiIMhaF2W2IHYa0AFEUgcUxBF1da41d47+GMUsMGRoyNAvPN6tVbMq3FVJZjUxtpM7sxTZjy3BvYyjLQsyYVrSD3lDHMdNJmmr6KM1TrqWUFiprMtS0/i9yY1h1fN9/9bh9ISSyzB4IzgVYkoALgZR+nwtFv5/RuxU7rx6GYd0ZjUbPZrPZl+l0+oE4ofykjI/zyWTyRPuH4/l8fjEej5//AXohGKlgO+2ZAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-7.png&quot;
-        title=&quot;github-blog-7.png&quot;
-        src=&quot;/static/d71c3cfa77f66a359e31914c9779e78f/37523/github-blog-7.png&quot;
-        srcset=&quot;/static/d71c3cfa77f66a359e31914c9779e78f/e9ff0/github-blog-7.png 180w,
-/static/d71c3cfa77f66a359e31914c9779e78f/f21e7/github-blog-7.png 360w,
-/static/d71c3cfa77f66a359e31914c9779e78f/37523/github-blog-7.png 720w,
-/static/d71c3cfa77f66a359e31914c9779e78f/302a4/github-blog-7.png 1080w,
-/static/d71c3cfa77f66a359e31914c9779e78f/07a9c/github-blog-7.png 1440w,
-/static/d71c3cfa77f66a359e31914c9779e78f/e57e0/github-blog-7.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;7-배포된-페이지-확인하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#7-%EB%B0%B0%ED%8F%AC%EB%90%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0&quot; aria-label=&quot;7 배포된 페이지 확인하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;7. 배포된 페이지 확인하기&lt;/h2&gt;
-&lt;p&gt;이제 실제로 잘 배포가 되었는지 확인해봅시다. 여태까지 문제가 없으셨다면 [GitHubID].github.io에 접근했을 때 블로그가 잘 보이는 것을 확인하실 수 있으실 겁니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABk0lEQVQoz5VSS07DMBTs1bgDnIKygR1HQGyADShbEEfgCJWyQFGqChqVTZO4+adJ821dP95zPm1RJWCkkTPPzxPb48GXYZwFof8RL5NRFMeq64eqH8TqwvFU02JSe0HU02aOynDObzWNjhuMLOZ8To3ZxcD3/UshBPDtFrZI+ibUdQ1pmgLnXNY61us1lFUF1NbVunVhGN6T4RAaVEjeERv4vu5q2WrV6L15rNNaiKLohgwv2j9tRAPpXpYleJ4HcRxDnueyNtXf4e76HAJ3IbVod0ZrW8Pb3hBxYEgmjuNQkzw+IXZM0N5eocxXjeHuKn437MYeP/T+/J8MKYwkSaAoSnnppDebTR/Sf3ZIQuCRBWO2CIJALJdLEUWhHJMkFXgFovHrcWA4bP9StcHI5Mqi4J7rcgyGuzjiE+IYFK+riuNO+9Rb7lLGHVzBEVDKaIQpR/S+IMsyqPD9UZ2OfQz4Ih4G4/H4xLKsZ9M0n5AKEbUym80UTdMUXdcVwzAUxpisE+fzudL1tny0bftlMpmcfgOkfjsLiw7HXgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;github-blog-8.png&quot;
-        title=&quot;github-blog-8.png&quot;
-        src=&quot;/static/103be36c7556a35b794180d024aed322/37523/github-blog-8.png&quot;
-        srcset=&quot;/static/103be36c7556a35b794180d024aed322/e9ff0/github-blog-8.png 180w,
-/static/103be36c7556a35b794180d024aed322/f21e7/github-blog-8.png 360w,
-/static/103be36c7556a35b794180d024aed322/37523/github-blog-8.png 720w,
-/static/103be36c7556a35b794180d024aed322/302a4/github-blog-8.png 1080w,
-/static/103be36c7556a35b794180d024aed322/07a9c/github-blog-8.png 1440w,
-/static/103be36c7556a35b794180d024aed322/e57e0/github-blog-8.png 4064w&quot;
-        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;8-수정하고-배포하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#8-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0&quot; aria-label=&quot;8 수정하고 배포하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;8. 수정하고 배포하기&lt;/h2&gt;
-&lt;p&gt;블로그를 수정하시는 방법은 각 블로그 테마마다 다를텐데요. 그에 맞춰서 변동사항을 commit하신 후에 아래 명령어를 실행하시면 변동사항이 블로그에 배포됩니다!&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;제 블로그 테마를 수정하는 방법이 궁금하시다면 아래 링크를 참고해주세요!
-&lt;a href=&quot;https://www.zoomkoding.com/gatsby-starter-zoomkoding-introduction&quot;&gt;https://www.zoomkoding.com/gatsby-starter-zoomkoding-introduction&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-repository-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;1. Repository 생성하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-repository-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0&quot;&gt;2. Repository 가져오기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3-blog-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0&quot;&gt;3. Blog 설치하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#4-blog-%EB%B0%B0%ED%8F%AC-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0&quot;&gt;4. Blog 배포 준비하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#5-blog-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0&quot;&gt;5. Blog 배포하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#6-repository-source-branch-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0&quot;&gt;6. Repository Source Branch 변경하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#7-%EB%B0%B0%ED%8F%AC%EB%90%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0&quot;&gt;7. 배포된 페이지 확인하기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#8-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0&quot;&gt;8. 수정하고 배포하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[쉽고 빠르게 나만의 개츠비(Gatsby) 블로그 만들기]]></title><description><![CDATA[👋 소개 블로그를 직접 운영하면서 조금씩 그려봤던 이상적인 개발 블로그 테마를 Gatsby…]]></description><link>https://free-ko.github.io/gatsby-starter-zoomkoding-introduction/</link><guid isPermaLink="false">https://free-ko.github.io/gatsby-starter-zoomkoding-introduction/</guid><pubDate>Mon, 22 Mar 2021 14:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;-소개&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%86%8C%EA%B0%9C&quot; aria-label=&quot; 소개 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👋 소개&lt;/h2&gt;
-&lt;p&gt;블로그를 직접 운영하면서 조금씩 그려봤던 이상적인 개발 블로그 테마를 Gatsby를 통해 만들어보게 되었습니다.&lt;br&gt;
-이 테마가 블로그를 운영하고자 하시는 분들에게 자신의 이야기를 잘 담을 수 있는 공간이 되었으면 좋겠습니다.🙌&lt;/p&gt;
-&lt;p&gt;블로그 테마가 맘에 드셨다면 아래 과정을 통해 자신의 블로그를 만들어보시길 바랍니다!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;혹시 만드시는 과정에서 궁금하신 점이나 어려움이 있으시다면 &lt;a href=&quot;https://github.com/zoomKoding/zoomkoding-gatsby-blog/issues/new&quot;&gt;이슈&lt;/a&gt;를 통해 문의 남겨주세요!&lt;br&gt;
-최대한 빠르게 답변 드리겠습니다! 😀&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;-시작하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0&quot; aria-label=&quot; 시작하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🚀 시작하기&lt;/h2&gt;
-&lt;p&gt;Github Page나 Netlify 중 원하시는 배포 환경에 따라 다음 과정을 진행하시면 빠르게 블로그를 만드실 수 있습니다.&lt;/p&gt;
-&lt;h3 id=&quot;🦖-github-page로-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%F0%9F%A6%96-github-page%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;🦖 github page로 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🦖 GitHub Page로 만들기&lt;/h3&gt;
-&lt;p&gt;깃헙 페이지를 통해 블로그를 만드시다면 아래 글을 참고해주세요!&lt;br&gt;
-&lt;a href=&quot;https://www.zoomkoding.com/gatsby-github-blog/&quot;&gt;Gatsby 테마로 GitHub Blog 만들기&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-netlify로-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-netlify%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot; netlify로 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🔧 Netlify로 만들기&lt;/h3&gt;
-&lt;p&gt;아래 버튼을 활용하면 개인 계정에 &lt;code class=&quot;language-text&quot;&gt;zoomkoding-gatsby-blog&lt;/code&gt;를 사용하고 있는 Repository 생성과 Netlify에 배포를 동시에 진행할 수 있습니다. 이후에, 생성된 Repository를 clone합니다.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://app.netlify.com/start/deploy?repository=https://github.com/zoomkoding/zoomkoding-gatsby-blog&quot;&gt;&lt;img src=&quot;https://www.netlify.com/img/deploy/button.svg&quot; alt=&quot;Deploy to Netlify&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;♀️-실행하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E2%99%80%EF%B8%8F-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0&quot; aria-label=&quot;♀️ 실행하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🏃‍♀️ 실행하기&lt;/h3&gt;
-&lt;p&gt;아래 명령어를 실행하여 로컬 환경에 블로그를 실행합니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Install dependencies&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-일을-대하는-마음&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%BC%EC%9D%84-%EB%8C%80%ED%95%98%EB%8A%94-%EB%A7%88%EC%9D%8C&quot; aria-label=&quot;1 일을 대하는 마음 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 일을 대하는 마음&lt;/h2&gt;
+&lt;p&gt;책을 접하기 이전에 나는 약간의 매너리즘에 빠져있었다.
+무언가 열심히 사는 것 같은데 스스로에 대한 확신이 없는채, 제자리 걸음을 하고 있다는 느낌이 강하게 들었었다. 그 때 이 책을 접하게 되었다.
+&lt;br&gt;단순히 직장이 돈을 버는 곳이 아닌 나를 &lt;code class=&quot;language-text&quot;&gt;성장&lt;/code&gt;시켜주는 좋은 장소라는 사실과 &lt;code class=&quot;language-text&quot;&gt;좋은 업무 습관&lt;/code&gt;을 기를 수 있도록 해주며 내가 일하는 &lt;code class=&quot;language-text&quot;&gt;산업 전반&lt;/code&gt;을 파악할 수 있는 곳.
+&lt;br&gt;저자의 말을 통해, 현재 다니고 있는 직장에 대한 불평 불만 보다는 앞으로 성장할 나의 모습에 있어서 좋은 밑거름이 될 수 있다는 확신이 들었다. 이외에도 책에서는 회사를 통해 성장 할 수 있는 다양한 방법을 소개 하고 있다. 그 중 마음에 와 닿았던 부분을 소개 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// p.41&lt;/span&gt;
 
-&lt;span class=&quot;token comment&quot;&gt;# Start development server&lt;/span&gt;
-$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;p&gt;위 명령어가 문제 없이 실행됐다면 &lt;a href=&quot;http://localhost:8000&quot;&gt;http://localhost:8000&lt;/a&gt;에서 블로그를 확인하실 수 있습니다.&lt;/p&gt;
-&lt;h2 id=&quot;️-블로그-정보-입력하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%A0%95%EB%B3%B4-%EC%9E%85%EB%A0%A5%ED%95%98%EA%B8%B0&quot; aria-label=&quot;️ 블로그 정보 입력하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;⚙️ 블로그 정보 입력하기&lt;/h2&gt;
-&lt;p&gt;위의 과정을 다 진행하셨다면 배포와 개발 환경이 세팅이 끝났습니다! 🙌&lt;br&gt;
-이제 블로그 정보를 입력하게 되면 나만의 블로그가 만들어지게 됩니다. 이를 위해 &lt;code class=&quot;language-text&quot;&gt;gatsby-meta-config.js&lt;/code&gt;에 있는 여러값들을 변경해줍니다.&lt;/p&gt;
-&lt;h3 id=&quot;1-블로그-기본-정보&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B8%B0%EB%B3%B8-%EC%A0%95%EB%B3%B4&quot; aria-label=&quot;1 블로그 기본 정보 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 블로그 기본 정보&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;title&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// zoomkoding.com&lt;/span&gt;
-description&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 줌코딩의 개발일기&lt;/span&gt;
-language&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;ko&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// &apos;ko&apos;, &apos;en&apos; (영어 버전도 지원하고 있습니다.)&lt;/span&gt;
-siteUrl&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// https://www.zoomkoding.com&lt;/span&gt;
-ogImage&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/og-image.png&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 공유할 때 보이는 미리보기 이미지로 &apos;/static&apos; 하위에 넣고 싶은 이미지를 추가하시면 됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;2-댓글-설정&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%8C%93%EA%B8%80-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;2 댓글 설정 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 댓글 설정&lt;/h3&gt;
-&lt;p&gt;블로그 글들에 댓글을 달 수 있길 원하신다면 utterances를 통해서 이를 설정하실 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🦄 utterances 사용방법은 &lt;a href=&quot;https://utteranc.es/&quot;&gt;링크&lt;/a&gt;를 참고해주세요!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;comments&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    utterances&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        repo&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// zoomkoding/zoomkoding-gatsby-blog&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;3-글쓴이-정보&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B8%80%EC%93%B4%EC%9D%B4-%EC%A0%95%EB%B3%B4&quot; aria-label=&quot;3 글쓴이 정보 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 글쓴이 정보&lt;/h3&gt;
-&lt;p&gt;글쓴이(author)에 입력하신 정보는 홈페이지와 about 페이지 상단에 있는 글쓴이를 소개하는 섹션인 bio에서 사용됩니다. &lt;strong&gt;description&lt;/strong&gt;에 자신을 설명하는 문구들을 넣으면 애니메이션으로 보여지게 됩니다. bio에 들어가는 이미지를 바꾸시려면 &lt;code class=&quot;language-text&quot;&gt;assets&lt;/code&gt;에 원하시는 파일을 추가하시고 파일의 이름을 &lt;strong&gt;thumbnail&lt;/strong&gt;에 넣어주시면 됩니다.(gif도 지원합니다!)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;🤖 위에서 설정한 언어에 따라 description의 포맷이 달라집니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;author&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;정진혁&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    bio&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      role&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;개발자&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-      description&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;사람에 가치를 두는&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;능동적으로 일하는&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;이로운 것을 만드는&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-      thumbnail&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;zoomkoding.gif&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    social&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      github&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;https://github.com/zoomKoding&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-      linkedIn&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;https://www.linkedin.com/in/jinhyeok-jeong-800871192&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-      email&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;zoomkoding@gmail.com&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;-about-page-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-about-page-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot; about page 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👤 about page 만들기&lt;/h2&gt;
-&lt;p&gt;about 페이지 또한 gatsby-meta-config.js를 통해 생성됩니다. about 하위에 있는 timestamps와 projects에 각각 정보를 입력하시면 about 페이지가 자동 생성됩니다.&lt;/p&gt;
-&lt;h3 id=&quot;1-timestamps&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-timestamps&quot; aria-label=&quot;1 timestamps permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. timestamps&lt;/h3&gt;
-&lt;p&gt;아래와 같이 각 timestamp 정보를 배열로 제공해주시면 입력하신 순서에 맞춰서 timestamps section에 보여지게 됩니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;links에 해당 정보가 없다면 생략해도 됩니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    date&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;2019.12 ~ 2020.06&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    activity&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;스타트업 인턴 진행 및 Picky 앱 개발&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    links&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        post&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/start-up-app-development&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-        googlePlay&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;https://play.google.com/store/apps/details?id=care.jivaka.picky&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-        appStore&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;https://apps.apple.com/app/picky-skincare-made-smarter/id1504197356&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;2-projects&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-projects&quot; aria-label=&quot;2 projects permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. projects&lt;/h3&gt;
-&lt;p&gt;마찬가지로 각 project 정보를 배열로 제공해주시면 입력하신 순서에 맞춰서 projects section에 보여지게 됩니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    title&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;2020 우아한테크캠프 참여&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    description&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token string&quot;&gt;&apos;스타트업에서 앱 개발을 하면서 좋은 개발에 대한 갈증이 매우 크던 중에 좋은 기회를 잡게 되어 참여하게 되었습니다. 2달 간 몰입해서 좋은 사람들과 웹 개발을 경험하며, 많이 배우고 성장할 수 있었던 시간이었습니다.&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    techStack&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;nodejs&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    thumbnailUrl&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;woowa-tech.png&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    links&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        post&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/woowa-tech-camp-final&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-        github&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;https://github.com/woowa-techcamp-2020/bmart-6&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-        demo&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;http://www.timetable.college&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br/&gt;
-&lt;p&gt;그렇게 내용을 문제 없이 입력하셨다면 나만의 블로그가 탄생한 것을 확인하실 수 있습니다.🎉&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;변동사항을 실행 중인 블로그에서 확인하시려면 &lt;code class=&quot;language-text&quot;&gt;npm start&lt;/code&gt;를 통해 재실행해주세요!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;️-글-쓰기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-%EA%B8%80-%EC%93%B0%EA%B8%B0&quot; aria-label=&quot;️ 글 쓰기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;✍️ 글 쓰기&lt;/h2&gt;
-&lt;p&gt;본격적으로 블로그에 글을 쓰려면 &lt;code class=&quot;language-text&quot;&gt;/content&lt;/code&gt; 아래에 디렉토리를 생성하고 &lt;code class=&quot;language-text&quot;&gt;index.md&lt;/code&gt;에 markdown으로 작성하시면 됩니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;이 때, 폴더의 이름은 경로를 생성하는데 됩니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;️-메타-정보&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EF%B8%8F-%EB%A9%94%ED%83%80-%EC%A0%95%EB%B3%B4&quot; aria-label=&quot;️ 메타 정보 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ℹ️ 메타 정보&lt;/h3&gt;
-&lt;p&gt;index.md 파일의 상단에는 아래와 같이 emoji, title, date, author, tags, categories 정보를 제공해야 합니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;emoji는 글머리에 보여지게 되며, categories는 띄어쓰기로 나누어 여러개를 입력할 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;---
-emoji: 🧢
-title: Getting Started
-date: &apos;2021-03-22 23:00:00&apos;
-author: 줌코딩
-tags: tutorial
-categories: tutorial
----&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;-이미지-경로&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EA%B2%BD%EB%A1%9C&quot; aria-label=&quot; 이미지 경로 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🖼 이미지 경로&lt;/h3&gt;
-&lt;p&gt;글에 이미지를 첨부하고 싶으시다면 같은 디렉토리에 이미지 파일을 추가하셔서 아래와 같이 사용하시면 됩니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;![사진](./[이미지 파일명])&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;-목차-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%B0%A8-%EC%83%9D%EC%84%B1&quot; aria-label=&quot; 목차 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🔍 목차 생성&lt;/h3&gt;
-&lt;p&gt;글의 우측에 목차가 보이기를 원하신다면 &lt;code class=&quot;language-text&quot;&gt;index.md&lt;/code&gt; 파일 맨 아래에 다음 내용을 추가하시면 자동으로 목차가 생성됩니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;```toc
-```&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;-버그-리포트--문의&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%B2%84%EA%B7%B8-%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%AC%B8%EC%9D%98&quot; aria-label=&quot; 버그 리포트  문의 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;💡 버그 리포트 &amp;#x26; 문의&lt;/h3&gt;
-&lt;p&gt;만일 블로그 테마를 적용하시면서 도움이 필요하시거나 궁금하신 점이 있으시다면 &lt;a href=&quot;https://github.com/zoomKoding/zoomkoding-gatsby-blog/issues/new&quot;&gt;이슈&lt;/a&gt;로 남겨주시면 최대한 빠르게 답변 드리도록 하겠습니다!🙋‍♂️&lt;/p&gt;
+&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; 겸손한 마음을 가지며 직장 생활을 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; 올바른 의사소통으로 직장내 감정소모에 대처한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; 회사가 아니라 자신의 커리어 발전을 위해 일한다는 사실을 염두 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;4.&lt;/span&gt; 장기적인 관점을 가진다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이처럼 나에게 주어진 하루 중 대부분을 일에 사용하는데, 이 시간을 통해 책에서 알려준 방법을 가지고 하나씩 실천하여 더 나은 미래를 만들고 싶다.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-경제적인-사고를-갖춘다는-것&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EA%B2%BD%EC%A0%9C%EC%A0%81%EC%9D%B8-%EC%82%AC%EA%B3%A0%EB%A5%BC-%EA%B0%96%EC%B6%98%EB%8B%A4%EB%8A%94-%EA%B2%83&quot; aria-label=&quot;2 경제적인 사고를 갖춘다는 것 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) 경제적인 사고를 갖춘다는 것&lt;/h2&gt;
+&lt;p&gt;일을 넘어 삶을 살아가는데 필요한 경제적인 사고에 대해서도 이 책은 많은 내용을 알려주고 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// p.106&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; 돈은 신이 나에게 잠시 맡긴 것일 뿐 나중에 다시 돌려줘야 하는 것
+    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 자신의 한계를 초과하면서까지 돈을 버는 것은 수익은 있을지언정 대가가 너무 크기 때문에 합리적이지 않다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; 돈은 제대로 사용했을 때 비로소 내 것이 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; 돈과 물건은 나의 생활을 더욱 윤택하게 만들어 주는 것이지 골칫덩어리가 되어서는 안 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 돈으로 인해 삶의 질이 떨어지면 안된 다는 것
+
+&lt;span class=&quot;token number&quot;&gt;4.&lt;/span&gt; 돈은 벌어서 생기는 것이지 아껴서 생기는 것이 아니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;5.&lt;/span&gt; 번 돈을 모두 쓰는 것은 어렵지만 어딘가에 쏟아 붓는 &lt;span class=&quot;token function&quot;&gt;것&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;투자&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 투기&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;은 쉽다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-더-멀리-그리고-더-높게&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EB%8D%94-%EB%A9%80%EB%A6%AC-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%8D%94-%EB%86%92%EA%B2%8C&quot; aria-label=&quot;3 더 멀리 그리고 더 높게 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3) 더 멀리 그리고 더 높게&lt;/h2&gt;
+&lt;p&gt;나도 나중에는 나만의 사업을 가지고, 많은 사람들에게 이로움을 주는 그런 리더가 되고 싶다.
+이러한 꿈을 이루기 위해 내 마음에 울림이 되었던 문장을 소개 한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// p247&lt;/span&gt;
+가장 좋은 통치는 국민들이 마음으로 따르게 하는 것이고&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 그 다음은 이익을 이용하여 이끄는 것이며&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+그 다음은 가르쳐 깨우치도록 하는 것이고&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 그 다음은 형벌로 다스리는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+그리고 최악의 통치는 국민과 적이 되어 다투는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;결론&lt;/h2&gt;
+&lt;p&gt;이 책은 나에게 많은 가능성과 확신을 안겨주었다. 단순히 한 번 읽고 끝내는 것이 아니라 계속 읽어야 겠다. &lt;br&gt;
+일을 대할 때&lt;code class=&quot;language-text&quot;&gt;성장&lt;/code&gt;의 자세로 한 걸음씩 나아갈 수 있는 확신있는 사람이 되고 싶어졌다.&lt;/p&gt;
 &lt;div class=&quot;table-of-contents&quot;&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EC%86%8C%EA%B0%9C&quot;&gt;👋 소개&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0&quot;&gt;🚀 시작하기&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%F0%9F%A6%96-github-page%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot;&gt;🦖 GitHub Page로 만들기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#-netlify%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot;&gt;🔧 Netlify로 만들기&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E2%99%80%EF%B8%8F-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0&quot;&gt;🏃‍♀️ 실행하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#%EF%B8%8F-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%A0%95%EB%B3%B4-%EC%9E%85%EB%A0%A5%ED%95%98%EA%B8%B0&quot;&gt;⚙️ 블로그 정보 입력하기&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B8%B0%EB%B3%B8-%EC%A0%95%EB%B3%B4&quot;&gt;1. 블로그 기본 정보&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-%EB%8C%93%EA%B8%80-%EC%84%A4%EC%A0%95&quot;&gt;2. 댓글 설정&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3-%EA%B8%80%EC%93%B4%EC%9D%B4-%EC%A0%95%EB%B3%B4&quot;&gt;3. 글쓴이 정보&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#-about-page-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot;&gt;👤 about page 만들기&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-timestamps&quot;&gt;1. timestamps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-projects&quot;&gt;2. projects&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;#%EF%B8%8F-%EA%B8%80-%EC%93%B0%EA%B8%B0&quot;&gt;✍️ 글 쓰기&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%EF%B8%8F-%EB%A9%94%ED%83%80-%EC%A0%95%EB%B3%B4&quot;&gt;ℹ️ 메타 정보&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EA%B2%BD%EB%A1%9C&quot;&gt;🖼 이미지 경로&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EB%AA%A9%EC%B0%A8-%EC%83%9D%EC%84%B1&quot;&gt;🔍 목차 생성&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EB%B2%84%EA%B7%B8-%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%AC%B8%EC%9D%98&quot;&gt;💡 버그 리포트 &amp;#x26; 문의&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EC%9D%BC%EC%9D%84-%EB%8C%80%ED%95%98%EB%8A%94-%EB%A7%88%EC%9D%8C&quot;&gt;1) 일을 대하는 마음&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%EA%B2%BD%EC%A0%9C%EC%A0%81%EC%9D%B8-%EC%82%AC%EA%B3%A0%EB%A5%BC-%EA%B0%96%EC%B6%98%EB%8B%A4%EB%8A%94-%EA%B2%83&quot;&gt;2) 경제적인 사고를 갖춘다는 것&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-%EB%8D%94-%EB%A9%80%EB%A6%AC-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%8D%94-%EB%86%92%EA%B2%8C&quot;&gt;3) 더 멀리 그리고 더 높게&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot;&gt;결론&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item></channel></rss>
