@@ -1,6 +1,6 @@
 ---
 emoji: 👨‍💻
-title: ⭐️ function 블록, try-catch, switch-case
+title: function 블록, try-catch, switch-case
 date: '2021-08-31 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
