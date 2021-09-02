@@ -1,7 +1,7 @@
 ---
 emoji: 👨‍💻
 title: Arrow Function 사용
-date: '2021-09-01 00:00:00'
+date: '2021-09-02 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: JS
