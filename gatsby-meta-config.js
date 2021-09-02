@@ -15,7 +15,7 @@ module.exports = {
     bio: {
       role: `개발자`,
       description: ['매일 성장하는', '능동적으로 일하는', '이로운 것을 만드는'],
-      thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
+      thumbnail: 'woogi.gif', // Path to the image in the 'asset' folder
     },
     social: {
       github: `https://github.com/free-ko`,
