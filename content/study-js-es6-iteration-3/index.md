@@ -1,7 +1,7 @@
 ---
 emoji: 👨‍💻
 title: 이터레이터 오브젝트, 프로토콜
-date: '2021-09-04 00:00:00'
+date: '2021-09-05 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: JS
