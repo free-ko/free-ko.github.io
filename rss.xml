@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 14 Sep 2021 23:55:43 GMT</lastBuildDate><item><title><![CDATA[IEEE 754, 64비트 구성, 값을 구하는 방법, Number 상수]]></title><description><![CDATA[1. IEEE 754 IEEE (Institute of Electrical and Electronics Engineers) JS는 IEEE 754에 정의된 64비트 부동 소수점으로 수를 처리 double-precision floating-point…]]></description><link>https://free-ko.github.io/study-js-es6-number-Object-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-number-Object-1/</guid><pubDate>Tue, 14 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 16 Sep 2021 02:54:53 GMT</lastBuildDate><item><title><![CDATA[진수, EPSILON]]></title><description><![CDATA[1. Number.EPSLON  아주 작은 값 2.220446049250313080847263361816E-16 또는 2^-52 사용 사례 미세한 값 차이 형태 JS가 부동소수점 처리를 하기 때문(IEEE 7…]]></description><link>https://free-ko.github.io/study-js-es6-number-Object-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-number-Object-2/</guid><pubDate>Wed, 15 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  진수, EPSILON: Number.EPSILON, 진수
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-numberepslon&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-numberepslon&quot; aria-label=&quot;1 numberepslon permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Number.EPSLON&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Number.EPSILON&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;아주 작은 값&lt;/li&gt;
+&lt;li&gt;2.220446049250313080847263361816E-16&lt;/li&gt;
+&lt;li&gt;또는 2^-52&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사용 사례&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;미세한 값 차이 형태&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; total &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;total&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 0.3000000000000000004&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;total &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;JS가 부동소수점 처리를 하기 때문(IEEE 74)&lt;/li&gt;
+&lt;li&gt;이처럼 미세한 값 차이로 일치하지 않을 때 &lt;code class=&quot;language-text&quot;&gt;EPSILON&lt;/code&gt;을 사용&lt;/li&gt;
+&lt;li&gt;미세한 값 차이를 같은 값으로 간주&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; Number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;EPSILON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;값 차이가 &lt;code class=&quot;language-text&quot;&gt;Number.EPSILON&lt;/code&gt;보다 작으면 &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt;를 반환`&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;0 / 0&lt;/code&gt;으로 &lt;code class=&quot;language-text&quot;&gt;NaN&lt;/code&gt;가 되는 것을 방지&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// NaN&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; Number&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;EPSILON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;(0 + Number.EPSILON)&lt;/code&gt; 처럼 작은 값을 더해 나누면 &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt;이 됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-진수&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%A7%84%EC%88%98&quot; aria-label=&quot;2 진수 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 진수&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Binary(2진수)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;0b0101&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;0B0101&lt;/code&gt; 형태로 작성&lt;/li&gt;
+&lt;li&gt;숫자 &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt; 다음에 &lt;code class=&quot;language-text&quot;&gt;b/B&lt;/code&gt; 작성하고 이어서 &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt;로 값을 작성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0b111&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 7&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1 + 2 + 4&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Octal(8진수)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;0O0105&lt;/code&gt; 형태로 작성&lt;/li&gt;
+&lt;li&gt;숫자 &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt; 다음에 영문 &lt;code class=&quot;language-text&quot;&gt;o/O&lt;/code&gt; 작성하고 이어서 &lt;code class=&quot;language-text&quot;&gt;0~7&lt;/code&gt;로 값을 작성&lt;/li&gt;
+&lt;li&gt;ES3는 첫 자리에 영문 &lt;code class=&quot;language-text&quot;&gt;o/O&lt;/code&gt; 작성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0o1111&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1 + 8 + 64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-numberepslon&quot;&gt;1. Number.EPSLON&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%EC%A7%84%EC%88%98&quot;&gt;2. 진수&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[IEEE 754, 64비트 구성, 값을 구하는 방법, Number 상수]]></title><description><![CDATA[1. IEEE 754 IEEE (Institute of Electrical and Electronics Engineers) JS는 IEEE 754에 정의된 64비트 부동 소수점으로 수를 처리 double-precision floating-point…]]></description><link>https://free-ko.github.io/study-js-es6-number-Object-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-number-Object-1/</guid><pubDate>Tue, 14 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  IEEE 754, 64비트 구성, 값을 구하는 방법, Number 상수
 &lt;/h1&gt;
