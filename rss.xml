@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 02 Oct 2021 00:51:26 GMT</lastBuildDate><item><title><![CDATA[Generic]]></title><description><![CDATA[Generic 스펙에서 아래 문장을 볼 수 있음  ES7 스펙, 22.1.3.3    사용 형태 의 뜻하는 것은? 이  메소드이므로  오브젝트가 처리 대상이지만 은  오브젝트가 아닌 , 를 처리할 수 있다는 것을 뜻함 Generic]]></description><link>https://free-ko.github.io/study-js-es6-array-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-array-3/</guid><pubDate>Fri, 01 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 02 Oct 2021 09:08:23 GMT</lastBuildDate><item><title><![CDATA[Generic]]></title><description><![CDATA[Generic 스펙에서 아래 문장을 볼 수 있음  ES7 스펙, 22.1.3.3    사용 형태 의 뜻하는 것은? 이  메소드이므로  오브젝트가 처리 대상이지만 은  오브젝트가 아닌 , 를 처리할 수 있다는 것을 뜻함 Generic]]></description><link>https://free-ko.github.io/study-js-es6-array-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-array-3/</guid><pubDate>Fri, 01 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Generic
 &lt;/h1&gt;
@@ -128,6 +128,97 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#1-find&quot;&gt;1. find()&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-findindex&quot;&gt;2. findIndex()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 소프트웨어 장인을 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-2/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-2/</guid><pubDate>Fri, 01 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 225px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAMCBAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHuwvE2AYzCwP/EABkQAQEAAwEAAAAAAAAAAAAAAAEAAhARMf/aAAgBAQABBQJsXrNj7MHNf//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABsQAAIBBQAAAAAAAAAAAAAAAAIQAAERUWFx/9oACAEBAAY/AoXWVsuu1//EABkQAAMBAQEAAAAAAAAAAAAAAAABMSERQf/aAAgBAQABPyGhyPZwKD7BUmetaKFCc/XRQ//aAAwDAQACAAMAAAAQ0A8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHhABAAICAQUAAAAAAAAAAAAAAQARMXGxIUFRYcH/2gAIAQEAAT8Q4IzrXj0TFqICk347QpG1cnX5qYNTggCaKPcx6n//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1.jpeg&quot;
+        title=&quot;1.jpeg&quot;
+        src=&quot;/static/74a8302db5442fa9d3df7eaa29d08838/863e1/1.jpg&quot;
+        srcset=&quot;/static/74a8302db5442fa9d3df7eaa29d08838/4ec73/1.jpg 180w,
+/static/74a8302db5442fa9d3df7eaa29d08838/863e1/1.jpg 225w&quot;
+        sizes=&quot;(max-width: 225px) 100vw, 225px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-이-책을-읽은-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 이 책을 읽은 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 이 책을 읽은 이유💡&lt;/h2&gt;
+&lt;p&gt;욕심이 생겼다. 개발자로서 끝까지 가보고 싶은 마음이 생겼다. 그러나 ‘어떻게’, ‘무엇을’ 해야 할지 막막했다.
+마치 바다 한가운데 혼자 있는 듯한 느낌이 많이 받았다. 구글링을 통해 어떻게 하면 개발자로서 성장할 수 있는지 많은 방법이 있었지만 그중에 ‘독서’는 모두가 추천하는 좋은 방법이었다. 그중에서 필독서로 ‘소프트웨어 장인’이라는 책이 눈에 띄어 주문해 읽기 시작하였다.
+저자 또한 초보 개발자때 겪었던 실수와 그 실수를 헤쳐나가며 지금의 개발자가 되기까지의 경험들을 감사하게도 이 책에 써주셨다. 물론 저자와 다른 문화와 지역에서 개발자로서 일을 하고 있지만, 그래도 일맥상통하는 부분은 어디에서나 존재하기 때문에 본질을 보려고 많이 노력했다. 이 글을 쓰고 있는 시점에 나는 많이 지쳐있다. 그래도 글을 쓰다 보니 다시 동기부여도 된다.
+다시 한번 개발자로서 잘하고 싶지만 ‘어떻게’, ‘무엇을’해야 할지 모르는 사람들에게 강력히 추천한다.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-구현을-넘어&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EA%B5%AC%ED%98%84%EC%9D%84-%EB%84%98%EC%96%B4&quot; aria-label=&quot;2 구현을 넘어 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 구현을 넘어🔥&lt;/h2&gt;
+&lt;p&gt;사실 개발이 재밋는 이유 중 하나는 내가 작성한 코드가 바로 앱, 웹에 바로 구현이 되기 때문 에이다. 그래서 이게 다인 줄 알았다.
+저자도 같은 생각을 하며 일을 했다. 자신의 코드를 남들이 이해할 수 없으면 마치 대단한 사람이 된 것 마냥 자뻑(?)에 취해 일을 했다고 한다. 그러나 이직 후 상사에게 “여기서 메모리 할당/해제를 하면 무슨 일이 일어나는지 알고 있나요?”, “try/catch 블록이 이렇게 크면 어떤 일이 일어날 수 있는지 알고 있나요?” 등 전혀 생각지도 못한 질문을 받았다고 한다. 그리고 마지막으로 “이 코드가 얼마나 무례한지 알고 있습니까?”라는 글을 읽었을 때 마지 머리에 망치를 얻어 맞은 기분이었다. 그리고 더 나아가 “일을 하는 것도 중요하지만 그에 못지 않게, 일을 어떻게 하느냐도 중요합니다.라는 문장은 나에게 새로운 시야를 트게 해주었다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 183.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAlABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIEBQMG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHSTiUUBpxlxjNVi+ipiYwmv//EAB0QAAICAgMBAAAAAAAAAAAAAAABAgMRIRATIjH/2gAIAQEAAQUCSihnXW3xN4kP5Y/RY8KT2XvR/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwFf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwFf/8QAGRABAAIDAAAAAAAAAAAAAAAAAQIQEiEw/9oACAEBAAY/AtAU5RF6/wD/xAAbEAACAwEBAQAAAAAAAAAAAAAAEQEQITFBof/aAAgBAQABPyH5uQcDGwe1I5rI00xGzrST0//aAAwDAQACAAMAAAAQU9yw/wDv/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAg/9oACAEDAQE/EIC//8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAgEBPxCazRz/xAAcEAEBAQEBAAMBAAAAAAAAAAABABExIUFhkeH/2gAIAQEAAT8QF8z6y9rx/bScd9ZhPWKn8nIfPs9ZiOxLbPY1bM7bZQiWpv/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;3.jpeg&quot;
+        title=&quot;3.jpeg&quot;
+        src=&quot;/static/367be7dc9b9ef5c1fdc3ed9b372b45cd/80e3c/3.jpg&quot;
+        srcset=&quot;/static/367be7dc9b9ef5c1fdc3ed9b372b45cd/4ec73/3.jpg 180w,
+/static/367be7dc9b9ef5c1fdc3ed9b372b45cd/158ba/3.jpg 360w,
+/static/367be7dc9b9ef5c1fdc3ed9b372b45cd/80e3c/3.jpg 720w,
+/static/367be7dc9b9ef5c1fdc3ed9b372b45cd/47311/3.jpg 1080w,
+/static/367be7dc9b9ef5c1fdc3ed9b372b45cd/644c5/3.jpg 1440w,
+/static/367be7dc9b9ef5c1fdc3ed9b372b45cd/82b8c/3.jpg 1960w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-갈길이-멀다-그렇지만-할-수-있다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B0%88%EA%B8%B8%EC%9D%B4-%EB%A9%80%EB%8B%A4-%EA%B7%B8%EB%A0%87%EC%A7%80%EB%A7%8C-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4&quot; aria-label=&quot;3 갈길이 멀다 그렇지만 할 수 있다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 갈길이 멀다 그렇지만 할 수 있다.💪&lt;/h2&gt;
+&lt;p&gt;이 책을 읽지 않았더라면 내 코드에 자뻑(?)에 빠져 우물 안 개구리가 되었을 것이다. 상상만 해도 아찔하다. 이 책을 통해 앞으로 어떤 부분을 생각하며 업무를 진행해야 하는지 대략적으로 알게 되었다. 사실 이 책을 한 번 읽었다고 이 책에 있는 모든 내용을 숙지해 업무에 적용하지는 못한다. 그렇기에 꾸준히 이 책을 보면서 ‘현재 내가 업무를 잘하고 있나? 혹시 놓친 부분은 없지 않나?’ 지속적으로 셀프 피드백을 가져야겠다. 그것이 곧 성장이라고 생각한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 184.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAlABQDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAECAwUE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAepMpEUWJWt5h0NBHKEv/8QAGhAAAgIDAAAAAAAAAAAAAAAAAQIAEBEhMP/aAAgBAQABBQLgTbNuOYzHP//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BX//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BX//EABQQAQAAAAAAAAAAAAAAAAAAADD/2gAIAQEABj8Cf//EABgQAQEBAQEAAAAAAAAAAAAAAAEQACER/9oACAEBAAE/IWpvIzrF5glQzHv/2gAMAwEAAgADAAAAELAzPQw//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxBf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxBf/8QAGxABAQEBAAMBAAAAAAAAAAAAAQARITFBUYH/2gAIAQEAAT8QeOWwabIrkv5HPN07OWLNlPe/kQnsRHZZ3kpbf//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;4.jpeg&quot;
+        title=&quot;4.jpeg&quot;
+        src=&quot;/static/6b94c8759d7334aac3500ee910108f15/80e3c/4.jpg&quot;
+        srcset=&quot;/static/6b94c8759d7334aac3500ee910108f15/4ec73/4.jpg 180w,
+/static/6b94c8759d7334aac3500ee910108f15/158ba/4.jpg 360w,
+/static/6b94c8759d7334aac3500ee910108f15/80e3c/4.jpg 720w,
+/static/6b94c8759d7334aac3500ee910108f15/47311/4.jpg 1080w,
+/static/6b94c8759d7334aac3500ee910108f15/644c5/4.jpg 1440w,
+/static/6b94c8759d7334aac3500ee910108f15/82b8c/4.jpg 1960w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;결론✅&lt;/h2&gt;
+&lt;p&gt;현재 나는 부족하다. 그렇다고 해서 앞으로 부족하다는 생각은 들지 않는다. 그래도 사람인지라 앞서가고 있는 사람들을 보면 많이 불안해하고, 부러워하겠지만 나 또한 그들처럼 멋진 개발자로서 많은 사람들에게 영향을 주는 사람이 되리라 믿어 의심치 않는다. 항상 겸손히 학습하는 자세로 임하면서 앞으로 나아가야겠다. 솔직히 요즘 몸과 마음이 지쳐 다 내려놓고 싶었지만 다시 이 책을 보며 글을 쓰다 보니 동기부여가 되었고 스스로 되돌아보며 조급하게 생각하지 말자고 다짐했다.&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot;&gt;1. 이 책을 읽은 이유💡&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%EA%B5%AC%ED%98%84%EC%9D%84-%EB%84%98%EC%96%B4&quot;&gt;2. 구현을 넘어🔥&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-%EA%B0%88%EA%B8%B8%EC%9D%B4-%EB%A9%80%EB%8B%A4-%EA%B7%B8%EB%A0%87%EC%A7%80%EB%A7%8C-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4&quot;&gt;3. 갈길이 멀다 그렇지만 할 수 있다.💪&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot;&gt;결론✅&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[배열 엘리먼트 복사, copyWithin()]]></title><description><![CDATA[1. copyWithin…]]></description><link>https://free-ko.github.io/study-js-es6-array-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-array-2/</guid><pubDate>Thu, 30 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
