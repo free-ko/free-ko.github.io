@@ -1,4 +1,152 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 09 Oct 2021 08:46:25 GMT</lastBuildDate><item><title><![CDATA[u 플래그, s 플래그]]></title><description><![CDATA[1. u 플래그 정규 표현식의 패턴을 유니코드의 코드 포인트로 변환하여 매치 u 플래그를 사용하지 않으면 코드 포인트를 문자로 매치 2. s 플래그 정규 표현식에서 dot(점.)은 모든 문자를 매치하지만 줄바꿈 문자는 매치 하지 않음 S…]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Oct 2021 00:29:54 GMT</lastBuildDate><item><title><![CDATA[Generator 함수]]></title><description><![CDATA[1.  Generator function :  키워드를 사용한 함수 제너레이터 함수 형태 : , ,  작성 방법 : 다음에 소괄호() 작성이어서 작성해도 되고 하나 이상 띄워도 됨…]]></description><link>https://free-ko.github.io/study-js-es6-Generator-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Generator-1/</guid><pubDate>Sat, 09 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋   Generator 함수
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-code-classlanguage-textfunctioncode&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-code-classlanguage-textfunctioncode&quot; aria-label=&quot;1 code classlanguage textfunctioncode permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. &lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Generator function : &lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 키워드를 사용한 함수&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;제너레이터 함수 형태 : &lt;code class=&quot;language-text&quot;&gt;function* 선언문&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;function* 표현식&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Generator Function&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;one&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; music &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getProtytpeOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;constructor&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; gen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;music&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;작성 방법 :&lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 다음에 소괄호() 작성이어서 작성해도 되고 하나 이상 띄워도 됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-code-classlanguage-textfuntioncode-선언문&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-code-classlanguage-textfuntioncode-%EC%84%A0%EC%96%B8%EB%AC%B8&quot; aria-label=&quot;2 code classlanguage textfuntioncode 선언문 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. &lt;code class=&quot;language-text&quot;&gt;funtion*&lt;/code&gt; 선언문&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 다음에 함수 이름 작성&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;제너레이터 함수를 호출하면 함수 블록&lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt;을 실행하지 않고&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Generator&lt;/code&gt;오브젝트를 생성하여 반환&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;one&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; two&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; one &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; two&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; sports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// true&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; obj&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// object&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {value: 3, done: false}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. function* sports(one, two){} 선언문 형태의 제너레이터 ㅎ마수 임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. 제너레이터 함수의 타입은 function&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. const obj = sports(1, 2); sports 함수를 호출하면 Generator 오브젝트를 생성하여 반환함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. 이때, 함수 코드를 실행하지 않음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 5. 파라미터 값은 생성한 오브젝트에 설정됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 6. new 연산자를 사용할 수 없음, 단일 함수로 사용하겠다는 뉘앙스&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 7. typeof obj 생성한 Generator 오브젝트 타입 object&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 8. obj.next() Generator 오브젝트가 iterator 오브젝트이므로 next() 함수를 호출 할 수 있으며 이때 함수 코드가 실행 됨&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Generator&lt;/code&gt; 오브젝트는 &lt;code class=&quot;language-text&quot;&gt;iterator&lt;/code&gt; 오브젝트&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;함수 코드 실행&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Generator&lt;/code&gt; 오브젝트의 메소드를 호출 할 때&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-code-classlanguage-textfunctioncode-표현식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-code-classlanguage-textfunctioncode-%ED%91%9C%ED%98%84%EC%8B%9D&quot; aria-label=&quot;3 code classlanguage textfunctioncode 표현식 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. &lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 표현식&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 다음에 함수 이름 작성은 선택&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;일반적으로 함수 이름을 작성하지 않음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 왼쪽에 변수를 선언하며 변수 이름이 함수 이름이 됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;sports&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;one&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; one&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// {value: 100, done: false}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. const sports = function* (one) {} 표현식 형태의 제너레이터 함수 임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. 왼쪽 sports가 함수 이름이 됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 문법 적으로는 * 다음에 함수 이름을 작성할 수 있지만 일반적으로는 사용하지 않음&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;함수를 선언하는 형태만 다를 뿐&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;다른 것은 &lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 선언문과 같음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-function&quot;&gt;1. &lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-funtion-%EC%84%A0%EC%96%B8%EB%AC%B8&quot;&gt;2. &lt;code class=&quot;language-text&quot;&gt;funtion*&lt;/code&gt; 선언문&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-function-%ED%91%9C%ED%98%84%EC%8B%9D&quot;&gt;3. &lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 표현식&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 '인생은 실전이다'를 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-3/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 187px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 144.44444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAdABQDASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAQFAgMG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAD/9oADAMBAAIQAxAAAAHHXaVecw6gpJOUItiYj//EABoQAAIDAQEAAAAAAAAAAAAAAAEDAAIEEBT/2gAIAQEAAQUC8rYc7QSlgj72pFsYDL6VVh2Q6Wk9/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAESEf/aAAgBAwEBPwGEQWzWf//EABcRAAMBAAAAAAAAAAAAAAAAAAABEhH/2gAIAQIBAT8BplkoxH//xAAgEAABAwIHAAAAAAAAAAAAAAAAAhEyASEQEiBScZGh/9oACAEBAAY/Ao+kCCijVYvmXhu4LI7JNo//xAAdEAACAgIDAQAAAAAAAAAAAAABEQAhEIExUWGR/9oACAEBAAE/IfNAkGL6uEkflKjsbqFJBw4SAwYFttL69o4ahg4//9oADAMBAAIAAwAAABBn9f3/xAAZEQEAAgMAAAAAAAAAAAAAAAAAARFBUWH/2gAIAQMBAT8QwWrtMjs//8QAGREBAAIDAAAAAAAAAAAAAAAAAAERQVFh/9oACAECAQE/EMy+kROD/8QAIBABAAICAgEFAAAAAAAAAAAAAREhADFBYRBRgZGhsf/aAAgBAQABPxBoCmpBfePlejV88ZaA6b+YY5otJdazt7ijfA4Mk5PtKSJD34y89Zs+sXlB0IBk5CoE9b8f/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1.jpeg&quot;
+        title=&quot;1.jpeg&quot;
+        src=&quot;/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg&quot;
+        srcset=&quot;/static/bf93e7c385717bbc10874c06450dd051/4ec73/1.jpg 180w,
+/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg 187w&quot;
+        sizes=&quot;(max-width: 187px) 100vw, 187px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-이-책을-읽은-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 이 책을 읽은 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;1. 이 책을 읽은 이유💡&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;단순하다 신박사님과 신사임당 님이 썼기 때문에 이 책이 나오자마자 구매를 했다. 특히 신박사님을 강연회에 가서 직접 뵈고 말씀을 듣고 신박사님과 고 작가님의 책들과 소개해준 책들을 읽으면서 스스로도 많이 성장함을 느꼈기에 특히, 이 책은 너무나 기대가 컸다. 역시나 읽으면서 아주 중요하지만 놓치면서 살고 있다는 것들을 많이 깨닫게 되었다. 요즘 특히 책을 읽으면서 시야가 넓어짐을 느낀다. 그래도 아직 부족하다. 책에 나온 내용들을 체화해서 더 나은 나를 만들고 싶다.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-더-나은-인생을-만들기-위해&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%8D%94-%EB%82%98%EC%9D%80-%EC%9D%B8%EC%83%9D%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9C%84%ED%95%B4&quot; aria-label=&quot;2 더 나은 인생을 만들기 위해 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 더 나은 인생을 만들기 위해👋&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;책에서는 다양한 내용을 소개해준다. 정말 인생 실전에 필요한 무의식에 박혀야 할 내용들 말이다. 그 중에서 새롭게 다가왔던 챕터는 ‘젊어서 고생은 절대 하지 말아라’ 부분이다. 우리는 흔히 어른들로부터 ‘젋어서 고생은 사서 한다’는 이야기를 자주 듣곤 한다. 나도 물론 그렇다고 생각해 20대에 돈을 안 받고 하는 일들(서포터스, 자원봉사 등)을 많이 했다. 물론 하면서 잊지 못할 추억과 경험을 선사해주었다. 그렇지만 무조건 적으로 고생이 좋다는 막연한 사실을 신박사님이 나에게 일침을 날려주셨다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.124&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;125&lt;/span&gt;
+젊을 때는 고생이 아니라 좋은 경험을 해야 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+생산적인 경험을 얻을 수 있다면 자원을 투자해서라도 하는 것이 맞다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+내가 과거로 돌아갈 수 있다면 가장 듣고 싶은 조언중하나다가 바로 다음 내용이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&quot;당신이 젋다고 생각하면 버는 돈의 액수에 너무 집착하지 말아라&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+능력치를 올리는 것이 돈을 버는 것보다 훨씬 중요하다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+능력만 있으면 큰 돈을 벌 기회는 나중에 많이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&quot;
+
+이 조언의 요지는 적은 돈이라도 제대로 버는 것이 중요하다는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+여기서 &lt;span class=&quot;token string&quot;&gt;&apos;제대로&apos;&lt;/span&gt;는 돈도 벌면서 무언가를 배우거나 삶에 대한 시야를 넓혀주는 일들을 말한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;결국 중요한 것은 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;이다. 지금도 주어진 일들에 대해 막연하게 하는 것이 아니라 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;해야 지금의 고생이 성장의 씨앗이 되어 무럭무럭 자라날 수 있다.&lt;br&gt;
+그러니 신박사님이 항상 이야기하는 &lt;code class=&quot;language-text&quot;&gt;의식적 노력을&lt;/code&gt; 체화하자&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-조급해하지-말자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%A1%B0%EA%B8%89%ED%95%B4%ED%95%98%EC%A7%80-%EB%A7%90%EC%9E%90&quot; aria-label=&quot;3 조급해하지 말자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;3. 조급해하지 말자💪&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;가끔 SNS를 보면 젊은 나이에 부자가 된 모습들을 보게 된다. 그럴 때면 ‘나는 이 나이 되도록 뭐했는지, 나는 과연 얻을 수 있을까?‘라는 의문과 조급함이 밀려온다.&lt;br&gt;
+나도 안다. 그들은 정말 극소수이고 내가 놀 때 노력해서 혹은 운이 좋아서 이른 나이에 부자가 되었다는 사실을 그리고 미래에 부자라고 장담할 수 없음을 알고 있다.&lt;br&gt;
+하지만 그래도 부러워 지금 내가 해야 하는 일에 손이 안 잡힐 때가 있다. 그럴 때 이 책을 읽다가 정신 차리게 해주는 챕터를 소개한다.&lt;br&gt;
+바로 &lt;code class=&quot;language-text&quot;&gt;30살 이란 무엇인가?&lt;/code&gt;라는 챕터이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.97&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;살은 젋다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+그것을 빨리 깨닫고 조금씩 부족한 부분을 채워가면 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+이때 부터 미리 준비하면 정말 좋은 것이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+바로 건강한 삶을 유지하기 위한 습관을 일찍부터 만드는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+내가 최선을 다한 일이 정답이 되는 과정이기 때문이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+내 인생의 문제는 스스로 만든 것이기 때문에 답도 내 안에 다 존재한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그렇다. 30살은 젊다. 그리고 지금부터 하나씩 부족한 것들을 채워간다면 나는 꾸준히 성장할 수 있다.&lt;br&gt;
+그리고 내가 원하는 미래를 만들어 갈 수 있다. 그러니 제대로 하나씩 준비해 나아가자.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;결론😋&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;이 책은 우리 가족 대대로 20살이 된 사람들에게 무조건 선물하고 싶은 책이다. 아니 우리가족 모두에게 선물해 주고 싶은 책인다.&lt;br&gt;
+그만큼 삶의 통찰과 내가 생각하지 못했던 생각들을 간접적으로 느낄 수 있는 계기를 만들어 주었으며 한편으로 조급해하던 나를 위로해주었다.&lt;br&gt;
+많은 사람들이 보이지 않은 곳에서 고군분투하고 있다. 물론 나도 열심히 살고 있다. 누구보다 나은 삶을 만들어 가기보다는 서로서로 함께 성장해서 더 나은 세상을 만들어 가고 싶다.&lt;br&gt;
+그렇기 위해서는 내가 먼저 성장해야 하고 좋은 에너지를 주변 사람들에게 주고 싶다.&lt;br&gt;
+요즘 자가격리로 쳐져 있었는데 좋은 동기부여가 되었다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[u 플래그, s 플래그]]></title><description><![CDATA[1. u 플래그 정규 표현식의 패턴을 유니코드의 코드 포인트로 변환하여 매치 u 플래그를 사용하지 않으면 코드 포인트를 문자로 매치 2. s 플래그 정규 표현식에서 dot(점.)은 모든 문자를 매치하지만 줄바꿈 문자는 매치 하지 않음 S…]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  u 플래그, s 플래그
 &lt;/h1&gt;
@@ -64,69 +212,7 @@
 &lt;li&gt;&lt;a href=&quot;#1-u-%ED%94%8C%EB%9E%98%EA%B7%B8&quot;&gt;1. u 플래그&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-s-%ED%94%8C%EB%9E%98%EA%B7%B8&quot;&gt;2. s 플래그&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 '인생은 실전이다'를 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-3/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 187px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 144.44444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAdABQDASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAQFAgMG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAD/9oADAMBAAIQAxAAAAHHXaVecw6gpJOUItiYj//EABoQAAIDAQEAAAAAAAAAAAAAAAEDAAIEEBT/2gAIAQEAAQUC8rYc7QSlgj72pFsYDL6VVh2Q6Wk9/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAESEf/aAAgBAwEBPwGEQWzWf//EABcRAAMBAAAAAAAAAAAAAAAAAAABEhH/2gAIAQIBAT8BplkoxH//xAAgEAABAwIHAAAAAAAAAAAAAAAAAhEyASEQEiBScZGh/9oACAEBAAY/Ao+kCCijVYvmXhu4LI7JNo//xAAdEAACAgIDAQAAAAAAAAAAAAABEQAhEIExUWGR/9oACAEBAAE/IfNAkGL6uEkflKjsbqFJBw4SAwYFttL69o4ahg4//9oADAMBAAIAAwAAABBn9f3/xAAZEQEAAgMAAAAAAAAAAAAAAAAAARFBUWH/2gAIAQMBAT8QwWrtMjs//8QAGREBAAIDAAAAAAAAAAAAAAAAAAERQVFh/9oACAECAQE/EMy+kROD/8QAIBABAAICAgEFAAAAAAAAAAAAAREhADFBYRBRgZGhsf/aAAgBAQABPxBoCmpBfePlejV88ZaA6b+YY5otJdazt7ijfA4Mk5PtKSJD34y89Zs+sXlB0IBk5CoE9b8f/9k=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1.jpeg&quot;
-        title=&quot;1.jpeg&quot;
-        src=&quot;/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg&quot;
-        srcset=&quot;/static/bf93e7c385717bbc10874c06450dd051/4ec73/1.jpg 180w,
-/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg 187w&quot;
-        sizes=&quot;(max-width: 187px) 100vw, 187px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;1-이-책을-읽은-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 이 책을 읽은 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;1. 이 책을 읽은 이유💡&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;단순하다 신박사님과 신사임당 님이 썼기 때문에 이 책이 나오자마자 구매를 했다. 특히 신박사님을 강연회에 가서 직접 뵈고 말씀을 듣고 신박사님과 고 작가님의 책들과 소개해준 책들을 읽으면서 스스로도 많이 성장함을 느꼈기에 특히, 이 책은 너무나 기대가 컸다. 역시나 읽으면서 아주 중요하지만 놓치면서 살고 있다는 것들을 많이 깨닫게 되었다. 요즘 특히 책을 읽으면서 시야가 넓어짐을 느낀다. 그래도 아직 부족하다. 책에 나온 내용들을 체화해서 더 나은 나를 만들고 싶다.&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;2-더-나은-인생을-만들기-위해&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%8D%94-%EB%82%98%EC%9D%80-%EC%9D%B8%EC%83%9D%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9C%84%ED%95%B4&quot; aria-label=&quot;2 더 나은 인생을 만들기 위해 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 더 나은 인생을 만들기 위해👋&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;책에서는 다양한 내용을 소개해준다. 정말 인생 실전에 필요한 무의식에 박혀야 할 내용들 말이다. 그 중에서 새롭게 다가왔던 챕터는 ‘젊어서 고생은 절대 하지 말아라’ 부분이다. 우리는 흔히 어른들로부터 ‘젋어서 고생은 사서 한다’는 이야기를 자주 듣곤 한다. 나도 물론 그렇다고 생각해 20대에 돈을 안 받고 하는 일들(서포터스, 자원봉사 등)을 많이 했다. 물론 하면서 잊지 못할 추억과 경험을 선사해주었다. 그렇지만 무조건 적으로 고생이 좋다는 막연한 사실을 신박사님이 나에게 일침을 날려주셨다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.124&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;125&lt;/span&gt;
-젊을 때는 고생이 아니라 좋은 경험을 해야 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-생산적인 경험을 얻을 수 있다면 자원을 투자해서라도 하는 것이 맞다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-내가 과거로 돌아갈 수 있다면 가장 듣고 싶은 조언중하나다가 바로 다음 내용이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&quot;당신이 젋다고 생각하면 버는 돈의 액수에 너무 집착하지 말아라&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-능력치를 올리는 것이 돈을 버는 것보다 훨씬 중요하다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-능력만 있으면 큰 돈을 벌 기회는 나중에 많이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&quot;
-
-이 조언의 요지는 적은 돈이라도 제대로 버는 것이 중요하다는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-여기서 &lt;span class=&quot;token string&quot;&gt;&apos;제대로&apos;&lt;/span&gt;는 돈도 벌면서 무언가를 배우거나 삶에 대한 시야를 넓혀주는 일들을 말한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;결국 중요한 것은 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;이다. 지금도 주어진 일들에 대해 막연하게 하는 것이 아니라 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;해야 지금의 고생이 성장의 씨앗이 되어 무럭무럭 자라날 수 있다.&lt;br&gt;
-그러니 신박사님이 항상 이야기하는 &lt;code class=&quot;language-text&quot;&gt;의식적 노력을&lt;/code&gt; 체화하자&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;3-조급해하지-말자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%A1%B0%EA%B8%89%ED%95%B4%ED%95%98%EC%A7%80-%EB%A7%90%EC%9E%90&quot; aria-label=&quot;3 조급해하지 말자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;3. 조급해하지 말자💪&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;가끔 SNS를 보면 젊은 나이에 부자가 된 모습들을 보게 된다. 그럴 때면 ‘나는 이 나이 되도록 뭐했는지, 나는 과연 얻을 수 있을까?‘라는 의문과 조급함이 밀려온다.&lt;br&gt;
-나도 안다. 그들은 정말 극소수이고 내가 놀 때 노력해서 혹은 운이 좋아서 이른 나이에 부자가 되었다는 사실을 그리고 미래에 부자라고 장담할 수 없음을 알고 있다.&lt;br&gt;
-하지만 그래도 부러워 지금 내가 해야 하는 일에 손이 안 잡힐 때가 있다. 그럴 때 이 책을 읽다가 정신 차리게 해주는 챕터를 소개한다.&lt;br&gt;
-바로 &lt;code class=&quot;language-text&quot;&gt;30살 이란 무엇인가?&lt;/code&gt;라는 챕터이다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.97&lt;/span&gt;
-&lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;살은 젋다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-그것을 빨리 깨닫고 조금씩 부족한 부분을 채워가면 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-이때 부터 미리 준비하면 정말 좋은 것이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-바로 건강한 삶을 유지하기 위한 습관을 일찍부터 만드는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-내가 최선을 다한 일이 정답이 되는 과정이기 때문이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-내 인생의 문제는 스스로 만든 것이기 때문에 답도 내 안에 다 존재한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;그렇다. 30살은 젊다. 그리고 지금부터 하나씩 부족한 것들을 채워간다면 나는 꾸준히 성장할 수 있다.&lt;br&gt;
-그리고 내가 원하는 미래를 만들어 갈 수 있다. 그러니 제대로 하나씩 준비해 나아가자.&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;결론😋&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;이 책은 우리 가족 대대로 20살이 된 사람들에게 무조건 선물하고 싶은 책이다. 아니 우리가족 모두에게 선물해 주고 싶은 책인다.&lt;br&gt;
-그만큼 삶의 통찰과 내가 생각하지 못했던 생각들을 간접적으로 느낄 수 있는 계기를 만들어 주었으며 한편으로 조급해하던 나를 위로해주었다.&lt;br&gt;
-많은 사람들이 보이지 않은 곳에서 고군분투하고 있다. 물론 나도 열심히 살고 있다. 누구보다 나은 삶을 만들어 가기보다는 서로서로 함께 성장해서 더 나은 세상을 만들어 가고 싶다.&lt;br&gt;
-그렇기 위해서는 내가 먼저 성장해야 하고 좋은 에너지를 주변 사람들에게 주고 싶다.&lt;br&gt;
-요즘 자가격리로 쳐져 있었는데 좋은 동기부여가 되었다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[y 플래그]]></title><description><![CDATA[y 플래그  위치에 매치  부터가 아니라  위치에 매치 매치되면  값이 1증가 ,   값을 지정할 수 있음  프로퍼티에  설정 y 플래그]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-2/</guid><pubDate>Thu, 07 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[y 플래그]]></title><description><![CDATA[y 플래그  위치에 매치  부터가 아니라  위치에 매치 매치되면  값이 1증가 ,   값을 지정할 수 있음  프로퍼티에  설정 y 플래그]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-2/</guid><pubDate>Thu, 07 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  y 플래그
 &lt;/h1&gt;
