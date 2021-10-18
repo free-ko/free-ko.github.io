@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 17 Oct 2021 02:02:55 GMT</lastBuildDate><item><title><![CDATA[yield* 표현식]]></title><description><![CDATA[표현식  의 표현식에 따라 처리하는 방법이 다름 의 표현식이 배열  로 호출할 때마다 배열의 엘리먼트를 하나씩 처리 의 표현식이 제너레이터 함수 함수의 를 먼저 처리  표현식에서 자신 호출 재귀 호출]]></description><link>https://free-ko.github.io/study-js-es6-Generator-8/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Generator-8/</guid><pubDate>Sat, 16 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 Oct 2021 02:23:15 GMT</lastBuildDate><item><title><![CDATA[primitive 값, wrapper 오브젝트]]></title><description><![CDATA[1. Primitive 값 JS에서  값은 오브젝트가 아니라 값이며 함수를 갖고 있지 않음  을 할당하면  변수에 100만 할당되며 아무것도 첨부되지 않음 100이  값 ES5의  값 타입 , , , ,  ES6에서  타입추가 2. Wrapper…]]></description><link>https://free-ko.github.io/study-js-es6-Symbol-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Symbol-1/</guid><pubDate>Sun, 17 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  primitive 값, wrapper 오브젝트
+&lt;/h1&gt;
+&lt;h2 id=&quot;1-primitive-값&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-primitive-%EA%B0%92&quot; aria-label=&quot;1 primitive 값 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Primitive 값&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;JS에서 &lt;code class=&quot;language-text&quot;&gt;Primitive&lt;/code&gt; 값은 오브젝트가 아니라 값이며 함수를 갖고 있지 않음&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const num = 100;&lt;/code&gt; 을 할당하면&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;num&lt;/code&gt; 변수에 100만 할당되며 아무것도 첨부되지 않음&lt;/li&gt;
+&lt;li&gt;100이 &lt;code class=&quot;language-text&quot;&gt;primitive&lt;/code&gt; 값&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ES5의 &lt;code class=&quot;language-text&quot;&gt;primitive&lt;/code&gt; 값 타입&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;string&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;number&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;boolean&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ES6에서 &lt;code class=&quot;language-text&quot;&gt;symbol&lt;/code&gt; 타입추가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-wrapper-오브젝트&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-wrapper-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot; aria-label=&quot;2 wrapper 오브젝트 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Wrapper 오브젝트&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;wrapper&lt;/code&gt; 오브젝트는?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;프리미티브 값이 포함된 오브젝트&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;wrapper&lt;/code&gt; 오브젝트에는 메소드가 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;wrapper&lt;/code&gt; 오브젝트가 있는 프리미티브 값 타입&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;stiring : String, number : Number 오브젝트&lt;/li&gt;
+&lt;li&gt;boolean : Boolean, symbol : Symbol 오브젝트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const obj = new String(100);&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;obj 인스턴스의 &lt;code class=&quot;language-text&quot;&gt;[[PrimitiveValue]]&lt;/code&gt; 에 100이 설정됨&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;[[PrimitiveValue]]&lt;/code&gt; 형태&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. 오른쪽의 sports를 펼치면
+
+	2. [[PrimitiveValue]]: &quot;100&quot;이 있음
+      - [[PrimitiveValue]]가 프리미티브 값을 나타내는
+      - 프로퍼티 이름이며, &quot;100&quot;이 프로퍼티 값
+
+	3. sports가 wrapper 오브젝트 임
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sym &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Symbol&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ABC&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. sports를 펼치면 [[PrimitiveValue]]가 표시 되지만
+
+	2. sym은 펼칠 수가 없으며
+    - [[PrimitiveValue]]가 표시되지 않음
+
+	3. 그렇다고 Symbol에 Primitive 값이 없는 것이 아니며
+
+	4. 이것은 Symbol은 Primitive 값을
+	- 외부에 노출시키지 않는 특성 때문
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;wrapper&lt;/code&gt; 오브젝트 없음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-primitive-%EA%B0%92&quot;&gt;1. Primitive 값&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-wrapper-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot;&gt;2. Wrapper 오브젝트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[yield* 표현식]]></title><description><![CDATA[표현식  의 표현식에 따라 처리하는 방법이 다름 의 표현식이 배열  로 호출할 때마다 배열의 엘리먼트를 하나씩 처리 의 표현식이 제너레이터 함수 함수의 를 먼저 처리  표현식에서 자신 호출 재귀 호출]]></description><link>https://free-ko.github.io/study-js-es6-Generator-8/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Generator-8/</guid><pubDate>Sat, 16 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  yield* 표현식
 &lt;/h1&gt;
