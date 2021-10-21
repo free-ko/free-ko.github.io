@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 20 Oct 2021 02:13:16 GMT</lastBuildDate><item><title><![CDATA[Symbol 사용 형태]]></title><description><![CDATA[Symbol…]]></description><link>https://free-ko.github.io/study-js-es6-Symbol-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Symbol-3/</guid><pubDate>Tue, 19 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Oct 2021 00:47:11 GMT</lastBuildDate><item><title><![CDATA[Well-Known Symbols]]></title><description><![CDATA[1. Well-Known Symbols 스펙에서  형태를 볼 수 있음 ES2019 스펙 :   을 나타내는 기호  와 가 같음 스펙에서는  형태를 사용하고 개발자는  형태를 사용 ES2019 기준 : 1…]]></description><link>https://free-ko.github.io/study-js-es6-Symbol-Property-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Symbol-Property-1/</guid><pubDate>Wed, 20 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  Well-Known Symbols
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-well-known-symbols&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-well-known-symbols&quot; aria-label=&quot;1 well known symbols permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Well-Known Symbols&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;스펙에서 &lt;code class=&quot;language-text&quot;&gt;@@iterator&lt;/code&gt; 형태를 볼 수 있음&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ES2019 스펙 : &lt;code class=&quot;language-text&quot;&gt;Well-Known Symbols&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@@&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Well-Known Symbol&lt;/code&gt;을 나타내는 기호&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@@match&lt;/code&gt; 와 &lt;code class=&quot;language-text&quot;&gt;Symbol.match&lt;/code&gt;가 같음&lt;/li&gt;
+&lt;li&gt;스펙에서는 &lt;code class=&quot;language-text&quot;&gt;@@match&lt;/code&gt; 형태를 사용하고&lt;/li&gt;
+&lt;li&gt;개발자는 &lt;code class=&quot;language-text&quot;&gt;Symbol.match&lt;/code&gt; 형태를 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ES2019 기준 : 12개 &lt;code class=&quot;language-text&quot;&gt;Well-Known Symbols&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Well-Known Symbols&lt;/code&gt; 이란&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;스펙에서 알고리즘에 이름을 부여하고&lt;/li&gt;
+&lt;li&gt;이름으로 참조하기 위한 빌트인 &lt;code class=&quot;language-text&quot;&gt;Symbol&lt;/code&gt; 값&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;개발자 코드 우선 실행&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;match()&lt;/code&gt; 를 실행하면 디폴트로 &lt;code class=&quot;language-text&quot;&gt;@@match&lt;/code&gt; 를 실행&lt;/li&gt;
+&lt;li&gt;소스 코드에 &lt;code class=&quot;language-text&quot;&gt;Symbol.match&lt;/code&gt; 를 작성하면&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;@@match&lt;/code&gt;가 실행 되지 않고 &lt;code class=&quot;language-text&quot;&gt;Symbol.match&lt;/code&gt; 가 실행됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;개발자 코드로 디폴트 기능을 오버라이딩 할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-well-known-symbols-종류&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-well-known-symbols-%EC%A2%85%EB%A5%98&quot; aria-label=&quot;2 well known symbols 종류 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Well-Known Symbols 종류&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 20%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY0z2P4Q6DIAyE9/4POUBAcYIoglE0udEu7keTpvf1en2VUhCXCGM03OhQyo51XZFSgu0tSM8582z8jNBaI20b1vRj+qHn/X3fUWvFa44zOt1BdarBHaZpwtAgOjC4ASEExBhhrYVUEsYaXqY56WSaS+ajf8MHPI6DYQKFlBBtLuQb3nvWqaeU931jnmlPMEsHqdiQGjZsiXzwqGfl14UUba44uRvbq02nD4hdloXrSUhG53niui58AYOTLLdLRP8WAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;종류&quot;
+        title=&quot;종류&quot;
+        src=&quot;/static/d370aaf5cd6aa966d8e6dec808b899c5/37523/1.png&quot;
+        srcset=&quot;/static/d370aaf5cd6aa966d8e6dec808b899c5/e9ff0/1.png 180w,
+/static/d370aaf5cd6aa966d8e6dec808b899c5/f21e7/1.png 360w,
+/static/d370aaf5cd6aa966d8e6dec808b899c5/37523/1.png 720w,
+/static/d370aaf5cd6aa966d8e6dec808b899c5/36c33/1.png 946w&quot;
+        sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-well-known-symbols&quot;&gt;1. Well-Known Symbols&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-well-known-symbols-%EC%A2%85%EB%A5%98&quot;&gt;2. Well-Known Symbols 종류&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Symbol 사용 형태]]></title><description><![CDATA[Symbol…]]></description><link>https://free-ko.github.io/study-js-es6-Symbol-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Symbol-3/</guid><pubDate>Tue, 19 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Symbol 사용 형태
 &lt;/h1&gt;
