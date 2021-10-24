@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Oct 2021 04:14:39 GMT</lastBuildDate><item><title><![CDATA[Symbol.isConcatSpreadable]]></title><description><![CDATA[isConcatSpreadable 은 배열의 엘리먼트를 전개하여 반환  one 배열 끝에 two 배열의 엘리먼트를 하나씩 연결  전개하지 않고 two 배열 자체를 연결  전개 isConcatSpreadable]]></description><link>https://free-ko.github.io/study-js-es6-Symbol-Property-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Symbol-Property-3/</guid><pubDate>Fri, 22 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Oct 2021 01:26:47 GMT</lastBuildDate><item><title><![CDATA[Symbol.species]]></title><description><![CDATA[Symbol.species species…]]></description><link>https://free-ko.github.io/study-js-es6-Symbol-Property-4/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Symbol-Property-4/</guid><pubDate>Sat, 23 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  Symbol.species
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;symbolspecies&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#symbolspecies&quot; aria-label=&quot;symbolspecies permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Symbol.species&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;species의 사전적 의미 : (공통 특성을 지닌) 종류, 인류, 종&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.species&lt;/code&gt; 는 &lt;code class=&quot;language-text&quot;&gt;constructor&lt;/code&gt;를 반환&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;constructor&lt;/code&gt; 를 실행하면 인스턴스를 생성하여 반환하므로 결국, 인스턴스를 반환하게 됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.species&lt;/code&gt; 를 오버라이드 하면 다른 인스턴스를 반환할 수 있다는 의미&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;메소드를 실행한 후의 결과 형태&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. [1, 2, 3]으로 Array 오브젝트를 생성하여 obj에 할달
+
+	2. 오른쪽의 obj를 펼쳐서 obj 구조를 보면
+		- prototype은 없고 __proto__만 있으므로
+	
+	3. obj는 빌트인 Array 오브젝트가 아니라
+		- Array.prototype에 연결된 메소드로 생성한 인스턴스임
+
+	4. 다만, new 연산자를 사용하지 않았으므로 강좌에서 인스턴스라고 하지 않고 오브젝트라고 한 것
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; one &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. 위 코드를 실행한 후의 one과 obj의 구조는 차이가 없으며
+		- 값 [2,3]만 다름
+
+	2. 이것이 인스턴스에 있는 메소드를 호출하면
+		- 메소드 실행 결괏값을 반환하지 않고
+
+	3. 결괏값이 설정된 인스턴스를 반환하기 때문
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; two &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; one&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. 바로 앞에서 반환된 one으로
+		- 메소드를 호출할 수 있다는 것은
+		- one이 인스턴스이기 때문
+
+	2. 또한 slice(1, 2)를 실행하면
+		- 결과 값이 설정된 인스턴스를 반환 함	
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 정리 //&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. Array 인스턴스의 메소드를 호출하면
+		- 값을 반환하는 것이 아니라
+		
+	2. 반환할 Array 인스턴스를 생성하고
+		- 메소드에서 구한 값을 반환할 Array 인스턴스에 설정하여
+		- Array 인스턴스를 반환함
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.speies&lt;/code&gt; 기능&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Sports&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token builtin&quot;&gt;Array&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Sports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; one &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;one&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// [20]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;class Sports extends Array{}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;빌트인 Array 오브젝트를 상속(확장, 연결) 받음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;const obj = new Sports(10,20,30);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;인스턴스를 생성함&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;const one = obj.slice(1,2);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;obj&lt;/code&gt; 인스턴스의 &lt;code class=&quot;language-text&quot;&gt;slice()&lt;/code&gt;를 호출하면&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;slice()&lt;/code&gt; 처리 결과를 인스턴스에 설정하여 인스턴스를 반환함&lt;/li&gt;
+&lt;li&gt;이렇게 인스턴스의 메소드를 호출 했을 때&lt;/li&gt;
+&lt;li&gt;인스턴스를 반환하도록 하는 것이&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.species&lt;/code&gt; 기능임&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#symbolspecies&quot;&gt;Symbol.species&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Symbol.isConcatSpreadable]]></title><description><![CDATA[isConcatSpreadable 은 배열의 엘리먼트를 전개하여 반환  one 배열 끝에 two 배열의 엘리먼트를 하나씩 연결  전개하지 않고 two 배열 자체를 연결  전개 isConcatSpreadable]]></description><link>https://free-ko.github.io/study-js-es6-Symbol-Property-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Symbol-Property-3/</guid><pubDate>Fri, 22 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Symbol.isConcatSpreadable
 &lt;/h1&gt;
