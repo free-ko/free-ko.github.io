@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 31 Oct 2021 23:49:53 GMT</lastBuildDate><item><title><![CDATA[Map 오브젝트 형태, new Map()]]></title><description><![CDATA[1. Map 오브젝트 Map 오브젝트 와 의 컬렉션 Map 오브젝트 형태  형태처럼 대괄호 안에 와 를 작성 다양한 타입을 로 사용할 수 있음 Map의 key 처리  문에서 작성한 순서대로 읽혀짐 2. new Map() Map…]]></description><link>https://free-ko.github.io/study-js-es6-Map-Object-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Map-Object-1/</guid><pubDate>Sun, 31 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 01 Nov 2021 23:47:59 GMT</lastBuildDate><item><title><![CDATA[Map과 Object 비교]]></title><description><![CDATA[Map과 Object 비교 Map 오브젝트 구조 key Map: 타입 제약 없음 Object: ,   수 Map:  프로퍼티로 구함 Object: 전체를 읽어 구해야 함 처리 시간 : MDN 빈번하게 key, value를 추가/삭제 할 때는 Map…]]></description><link>https://free-ko.github.io/study-js-es6-Map-Object-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Map-Object-2/</guid><pubDate>Mon, 01 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  Map과 Object 비교
+&lt;/h1&gt;
+&lt;h2 id=&quot;map과-object-비교&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#map%EA%B3%BC-object-%EB%B9%84%EA%B5%90&quot; aria-label=&quot;map과 object 비교 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Map과 Object 비교&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Map 오브젝트 구조&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; map &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Map&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. Map 오브젝트에 get Symbol(Symbol.species)가 있음
+		- 따라서, constructor를 오버라이드할 수 있음
+
+	2. prototype을 펼치면 Symbol.iterator가 있음
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;one&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;첫 번째&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;two&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;두 번째&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. 오른쪽의 Obj를 펼치면 [[Entries]]가 있음
+		- 대괄호[[]] 두 개는 엔진에서 설정하는 것을 뜻함
+
+	2. [[Entries]]를 펼치면 0: {&quot;one&quot; =&gt; &quot;첫 번째&quot;} 형태임
+
+	3. 인덱스를 부여하여 key로 사용하고
+		- {&quot;one: &quot;첫 번째&quot;}를 value로 설정함
+
+	4. 이것은 배열 형태와 구조가 비슷 함
+		- size가 length 기능을 함
+
+	5. 인덱스를 부여하여 저장하므로 작성한 순서로 읽혀짐
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;key&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Map: 타입 제약 없음&lt;/li&gt;
+&lt;li&gt;Object: &lt;code class=&quot;language-text&quot;&gt;String&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Symbol&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;{key: value}&lt;/code&gt; 수&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Map: &lt;code class=&quot;language-text&quot;&gt;size&lt;/code&gt; 프로퍼티로 구함&lt;/li&gt;
+&lt;li&gt;Object: 전체를 읽어 구해야 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;처리 시간 : MDN&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;빈번하게 key, value를 추가/삭제 할 때는 Map이 Object보다 좋은 경우가 있다고 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#map%EA%B3%BC-object-%EB%B9%84%EA%B5%90&quot;&gt;Map과 Object 비교&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Map 오브젝트 형태, new Map()]]></title><description><![CDATA[1. Map 오브젝트 Map 오브젝트 와 의 컬렉션 Map 오브젝트 형태  형태처럼 대괄호 안에 와 를 작성 다양한 타입을 로 사용할 수 있음 Map의 key 처리  문에서 작성한 순서대로 읽혀짐 2. new Map() Map…]]></description><link>https://free-ko.github.io/study-js-es6-Map-Object-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Map-Object-1/</guid><pubDate>Sun, 31 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Map 오브젝트 형태, new Map()
 &lt;/h1&gt;
