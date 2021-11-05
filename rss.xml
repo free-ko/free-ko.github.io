@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 04 Nov 2021 23:48:14 GMT</lastBuildDate><item><title><![CDATA[콜백 함수, 삭제, 지우기 - forEach(), delete(), clear()]]></title><description><![CDATA[1. forEach() Map 인스턴스를 반복하면서  함수 호출 ,  등의  함수가 동반되는 메소드 사용 불가 callback 함수에서 넘겨주는 파라미터 value, key, Map 인스턴스 key, value 순서가 아님 콜백 함수에서  사용…]]></description><link>https://free-ko.github.io/study-js-es6-Map-Object-5/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Map-Object-5/</guid><pubDate>Thu, 04 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Nov 2021 23:33:28 GMT</lastBuildDate><item><title><![CDATA[WeakMap 오브젝트 개요, new WeakMap()]]></title><description><![CDATA[1. WeakMap 오브젝트 WeakMap: 약한 Map? WeakMap은 Object만 로 사용 가능 number 등의 프리미티브 타입 사용 불가 value는 제한 없음 Map에서 key로 참조한 Object를 삭제하면 object…]]></description><link>https://free-ko.github.io/study-js-es6-weakMap-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-weakMap-1/</guid><pubDate>Fri, 05 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  WeakMap 오브젝트 개요, new WeakMap()
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-weakmap-오브젝트&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-weakmap-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot; aria-label=&quot;1 weakmap 오브젝트 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. WeakMap 오브젝트&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;WeakMap: 약한 Map?&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;WeakMap은 Object만 &lt;code class=&quot;language-text&quot;&gt;Key&lt;/code&gt;로 사용 가능&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;number 등의 프리미티브 타입 사용 불가&lt;/li&gt;
+&lt;li&gt;value는 제한 없음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Map에서 key로 참조한 Object를 삭제하면 object를 사용할 수 없게 되지만 Map에 object가 남음&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;like&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;축구&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;like: 축구&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;like&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;농구&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;메모리 릭 발생&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;WeakMap의 object를 GC가 지움&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GC: Garbage Collection&lt;/li&gt;
+&lt;li&gt;그래서(약한, 부서지기 쉬운) WeakMap?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;WeakMap 오브젝트 메소드&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;set()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;has()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;delete()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CRUD와 관련된 메소드만 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;WeakMap entry의 열거 불가&lt;/li&gt;
+&lt;li&gt;이터레이션 불가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-new-weakmap&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-new-weakmap&quot; aria-label=&quot;2 new weakmap permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. new WeakMap()&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;WeakMap 인스턴스 생성, 반환&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;파라미터 작성&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;대괄호 &lt;code class=&quot;language-text&quot;&gt;[ ]&lt;/code&gt; 안에 이터러블 오브젝트 작성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; empty &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WeakMap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WeakMap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;sports 오브젝트&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; obj&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// object&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. 파라미터를 작성하지 않아도 됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. new 연산자를 사용함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. 인스턴스이므로 타입은 object&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;WeakMap 오브젝트 구조&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; map &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Map&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; weakmap &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; WeakMap&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. map과 weakmap이 구조에서 크게 다르지 않지만
+		
+	2. Map 오브젝트에 Symbol(Symbol.species)가 있지만
+		- WeakMap 오브젝트에는 없음
+
+	3. map.prototype에 Symbol.iterator가 있지만
+		- weakmap.prototype에는 Symbol.iterator가 없음
+
+	4. map.prototype에는 forEach()가 있지만
+		- weakmap.prototype에는 forEach()가 없음
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WeakMap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;sports&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;종목&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. 오른쪽의 obj를 펼치면 [[Entries]]가 있음
+		- 이것은 엔진에서 설정하는 것을 뜻함
+
+	2. [[Entries]]를 펼치면 0: {Object =&gt; &quot;종목&quot;} 형태 임
+		- [Object, &quot;종목&quot;] 형태로 작성한 것을
+		- 인덱스를 부여하여 배열로 만들고
+		- 엘리먼트에 {Object: &quot;종목&quot;} 형태로 변환 함
+
+	3. Map 인스턴스와 구조가 같음
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-weakmap-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8&quot;&gt;1. WeakMap 오브젝트&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-new-weakmap&quot;&gt;2. new WeakMap()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[콜백 함수, 삭제, 지우기 - forEach(), delete(), clear()]]></title><description><![CDATA[1. forEach() Map 인스턴스를 반복하면서  함수 호출 ,  등의  함수가 동반되는 메소드 사용 불가 callback 함수에서 넘겨주는 파라미터 value, key, Map 인스턴스 key, value 순서가 아님 콜백 함수에서  사용…]]></description><link>https://free-ko.github.io/study-js-es6-Map-Object-5/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-Map-Object-5/</guid><pubDate>Thu, 04 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  콜백 함수, 삭제, 지우기: forEach(), delete(), clear()
 &lt;/h1&gt;
