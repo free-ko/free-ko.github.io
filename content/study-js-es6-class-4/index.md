@@ -1,7 +1,7 @@
 ---
 emoji: 👨‍💻
 title: constructor, constructor 반환
-date: '2021-11-19 00:00:00'
+date: '2021-11-18 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: JS
@@ -19,6 +19,7 @@ categories: JS
 
 - `constructor`는 생성자로 인스턴스를 생성하고 초기화 함
 - ES5까지는 `constructor` 를 작성할 수 없었으나 ES6부터는 작성 할 수 있음
+
   ```tsx
   class Point {
     constructor(point) {
@@ -44,6 +45,7 @@ categories: JS
 
 - `constructor` 를 작성하지 않은 상태에서 `new` 연산자로 인스턴스를 생성하면
 - `porototype`에 연결된 `constructor`가 호출 됨
+
   ```tsx
   class Point {
     setPoint(point) {
@@ -65,6 +67,7 @@ categories: JS
 
 - `constructor` 에 `return` 을 작성하지 않으면 생성한 인스턴스를 반환 함
 - `constructor` 에서 `Number`, `String`을 반환 하면 이를 무시하고 인스턴스를 반환 함
+
   ```tsx
   class Point {
     constructor(point) {
@@ -83,7 +86,9 @@ categories: JS
   // 3. console.log(obj.point) obj가 인스턴스이므로 프로퍼티로 값을 구할 수 있음
   // 4. console.log(obj instanceof Point); obj가 Point 클래스로 만든 인스턴스이므로 true가 출력됨
   ```
+
 - `constructor` 에서 `Object`를 반환 하면 인스턴스를 반환하지 않고 `Object` 반환
+
   ```tsx
   class Point {
     constructor(point) {

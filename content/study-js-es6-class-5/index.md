@@ -1,7 +1,7 @@
 ---
 emoji: 👨‍💻
 title: getter, setter, static 메소드, 호이스팅
-date: '2021-11-20 00:00:00'
+date: '2021-11-19 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: JS
