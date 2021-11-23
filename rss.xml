@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 22 Nov 2021 23:48:03 GMT</lastBuildDate><item><title><![CDATA[this 참조, Generator]]></title><description><![CDATA[1. this 참조  형태로 호출하면 메소드에서 가 인스턴스를 참조 함  메소드에서  는 메소드가 속한 클래스를 참조함  에서  는 생성하는 인스턴스가 아니라 클래스 오브젝트를 참조 함 2. Generator…]]></description><link>https://free-ko.github.io/study-js-es6-class-9/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-class-9/</guid><pubDate>Mon, 22 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Nov 2021 23:51:29 GMT</lastBuildDate><item><title><![CDATA[Proxy, 기본 오퍼레이션 논리]]></title><description><![CDATA[1.Proxy 의 사전적 의미 : 대리, 대신  : 기본 오퍼레이션을 중간에 가로채어 오퍼레이션을 대리, 대신하여 실행함 가로 채어 실행하더라도 전체 괘도를 벗어날 수 없으므로 오퍼레이션을 완전하게 바꿀 수는 없음 그럼 무엇을 대리하고 대신 할까?…]]></description><link>https://free-ko.github.io/study-js-es6-proxy-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-proxy-1/</guid><pubDate>Tue, 23 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  Proxy, 기본 오퍼레이션 논리
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1proxy&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1proxy&quot; aria-label=&quot;1proxy permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1.Proxy&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt;의 사전적 의미 : 대리, 대신&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; : 기본 오퍼레이션을 중간에 가로채어 오퍼레이션을 대리, 대신하여 실행함&lt;/li&gt;
+&lt;li&gt;가로 채어 실행하더라도 전체 괘도를 벗어날 수 없으므로 오퍼레이션을 완전하게 바꿀 수는 없음&lt;/li&gt;
+&lt;li&gt;그럼 무엇을 대리하고 대신 할까?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-기본-오퍼레이션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EA%B8%B0%EB%B3%B8-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98&quot; aria-label=&quot;2 기본 오퍼레이션 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 기본 오퍼레이션&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;커피를 주문하는 기본 오퍼레이션은 주문을 받는 카운터로 가서 커피를 주문함, 카운터가 커피를 내려 줌&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이 모습을 &lt;code class=&quot;language-text&quot;&gt;JS&lt;/code&gt; 코드로 표현하면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;order&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &quot;커피&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; 주문자 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; counter&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;order&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;주문자&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;token comment&quot;&gt;// 커피&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. order는 커피를 주문하는 것으로 프로퍼티 key에 해당함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. counter는 주물을 받는 카운터리며 {order: &quot;커피&quot;}를 갖고 있음, 즉 주문을 받을 수 있으며 커피를 갖고 있음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. 카운터에게 커피를 주문하면 주문자에게 &quot;커피&quot;를 내주게 됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. JS로 counter.order를 실행하면 &quot;커피&quot;가 반환됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 5. 함수를 호출하지 않고 프로퍼티로 값을 구했으며 이것은 getter임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 6. 즉, getter를 실행하면 값이 반환됨, 이것이 기본 오퍼레이션&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;여기서 중요한 것은&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;counter.order&lt;/code&gt; 가 &lt;code class=&quot;language-text&quot;&gt;getter&lt;/code&gt; 가 되는 논리 임&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;getter&lt;/code&gt;를 호출하면 &lt;code class=&quot;language-text&quot;&gt;value&lt;/code&gt; 가 반환되는 근거는 무엇이냐는 것임&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-기본-오퍼레이션-논리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B8%B0%EB%B3%B8-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98-%EB%85%BC%EB%A6%AC&quot; aria-label=&quot;3 기본 오퍼레이션 논리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 기본 오퍼레이션 논리&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const counter = {order: &quot;커피&quot;}&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;counter.order&lt;/code&gt; 를 실행하면 “커피”를 구하는 행위를 해야 함&lt;/li&gt;
+&lt;li&gt;즉, 값을 구하는 메소드가 필요함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이때, 엔진은 &lt;code class=&quot;language-text&quot;&gt;getter&lt;/code&gt; 기능을 가진 내부 메소드 &lt;code class=&quot;language-text&quot;&gt;[[Get]]&lt;/code&gt; 을 호출함&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; target &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; order&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;커피&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;order&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 커피&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. getter를 스펙에서 [[Get]]으로 표기 함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. target.order를 실행하면 target 오브젝트의 __proto__에 있는 [[Get]]을 호출 함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. [[Get]]을 호출하면서 파라미터 값으로 &quot;order&quot;를 넘겨 줌&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. [[Get]] 메소드가 order를 프로퍼티 키로 하여 프로퍼티 값을 구해 반환 함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 5. 이것이 기본 오퍼레이션 임&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;ES6에 &lt;code class=&quot;language-text&quot;&gt;[[Get]]&lt;/code&gt; 처럼 기본 오퍼레이션을 제공하는 13개의 내부 메소드가 있음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;ECMAScript&lt;/code&gt; 스펙의 기본 오퍼레이션&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1proxy&quot;&gt;1.Proxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%EA%B8%B0%EB%B3%B8-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98&quot;&gt;2. 기본 오퍼레이션&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-%EA%B8%B0%EB%B3%B8-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98-%EB%85%BC%EB%A6%AC&quot;&gt;3. 기본 오퍼레이션 논리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[this 참조, Generator]]></title><description><![CDATA[1. this 참조  형태로 호출하면 메소드에서 가 인스턴스를 참조 함  메소드에서  는 메소드가 속한 클래스를 참조함  에서  는 생성하는 인스턴스가 아니라 클래스 오브젝트를 참조 함 2. Generator…]]></description><link>https://free-ko.github.io/study-js-es6-class-9/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-class-9/</guid><pubDate>Mon, 22 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  this 참조, Generator
 &lt;/h1&gt;
