@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Nov 2021 23:51:29 GMT</lastBuildDate><item><title><![CDATA[Proxy, 기본 오퍼레이션 논리]]></title><description><![CDATA[1.Proxy 의 사전적 의미 : 대리, 대신  : 기본 오퍼레이션을 중간에 가로채어 오퍼레이션을 대리, 대신하여 실행함 가로 채어 실행하더라도 전체 괘도를 벗어날 수 없으므로 오퍼레이션을 완전하게 바꿀 수는 없음 그럼 무엇을 대리하고 대신 할까?…]]></description><link>https://free-ko.github.io/study-js-es6-proxy-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-proxy-1/</guid><pubDate>Tue, 23 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Nov 2021 23:41:41 GMT</lastBuildDate><item><title><![CDATA[Proxy 논리, Proxy 모습]]></title><description><![CDATA[Proxy 논리 식당에서…]]></description><link>https://free-ko.github.io/study-js-es6-proxy-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-proxy-2/</guid><pubDate>Wed, 24 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋   Proxy 논리, Proxy 모습
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;proxy-논리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#proxy-%EB%85%BC%EB%A6%AC&quot; aria-label=&quot;proxy 논리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Proxy 논리&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;식당에서 3명이 식사 하고 있는 모습에서 왼쪽 사람이 오른쪽 사람 앞의 밥을 가져오려 함&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;왼쪽 사람이 가운데 사람에게 밥을 달라고 말하고&lt;/li&gt;
+&lt;li&gt;가운데 사람이 오른쪽 사람에게 말하면&lt;/li&gt;
+&lt;li&gt;오른쪽 → 가운데 → 왼쪽 순서로 밥을 받을 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;이 모습에서 가운데 사람이 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;왼쪽 사람의 말을 받아 오른쪽 사람에게 말하고&lt;/li&gt;
+&lt;li&gt;오른쪽 사람에게 밥을 받아 왼쪽 사람에게 전달 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;이와 같이 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; 는 중간에서 대리 역할을 함&lt;/li&gt;
+&lt;li&gt;왼쪽 사람이 오른쪽 사람에게 직접 말하고 밥을 받으면 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; 가 필요하지 않음&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;가운데 사람을 거쳐서 받는 모습을 JS로 표현하면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; target &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; food&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;밥&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; middle &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Proxy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; left &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; middle&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;food&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 밥&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. target은 오른쪽 사람이고 food는 프로퍼티 키이며, 밥은 프로퍼티 값임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. Proxy 인스턴스를 생성하여 middle에 할당 함, middle이 가운데 사람이며 target을 알 수 있음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. const left = middle.food 왼쪽 사람이 가운데 사람에게 밥을 달라는 것과 가운데 사람이 오른쪽 사람에게 밥을 달라고 하는 것임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. 할당 연산자(=)는 오른쪽 사람이 준 밥을 받아 왼쪽 사람에게 건네주는 것임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 5. lef는 왼쪽 사람임&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;middle.food&lt;/code&gt;가 실행되면 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;getter&lt;/code&gt;가 호출되며 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;getter&lt;/code&gt;를 호출하면서 &lt;code class=&quot;language-text&quot;&gt;&quot;food&quot;&lt;/code&gt;를 파라미터로 넘겨 줌&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;new Proxy()&lt;/code&gt; 파라미터에 &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt; 을 작성하므로 &lt;code class=&quot;language-text&quot;&gt;middle&lt;/code&gt;에서 &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt;을 알 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;[[Get]]&lt;/code&gt; 이 &lt;code class=&quot;language-text&quot;&gt;food&lt;/code&gt; 값을 구해 &lt;code class=&quot;language-text&quot;&gt;middle&lt;/code&gt;로 반환하고 &lt;code class=&quot;language-text&quot;&gt;middle&lt;/code&gt;로 반환된 값을 &lt;code class=&quot;language-text&quot;&gt;left&lt;/code&gt;에 할당 함&lt;/li&gt;
+&lt;li&gt;이렇게 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; 가 가운데에서 대리 역할을 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#proxy-%EB%85%BC%EB%A6%AC&quot;&gt;Proxy 논리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Proxy, 기본 오퍼레이션 논리]]></title><description><![CDATA[1.Proxy 의 사전적 의미 : 대리, 대신  : 기본 오퍼레이션을 중간에 가로채어 오퍼레이션을 대리, 대신하여 실행함 가로 채어 실행하더라도 전체 괘도를 벗어날 수 없으므로 오퍼레이션을 완전하게 바꿀 수는 없음 그럼 무엇을 대리하고 대신 할까?…]]></description><link>https://free-ko.github.io/study-js-es6-proxy-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-proxy-1/</guid><pubDate>Tue, 23 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Proxy, 기본 오퍼레이션 논리
 &lt;/h1&gt;
