@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Nov 2021 23:41:41 GMT</lastBuildDate><item><title><![CDATA[Proxy 논리, Proxy 모습]]></title><description><![CDATA[Proxy 논리 식당에서…]]></description><link>https://free-ko.github.io/study-js-es6-proxy-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-proxy-2/</guid><pubDate>Wed, 24 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 26 Nov 2021 00:57:05 GMT</lastBuildDate><item><title><![CDATA[handler, trap, target]]></title><description><![CDATA[1. target  대상 오브젝트 임  등을 사용할 수 있음  형태에서 첫 번째 파라미터에 을 작성함 이렇게  인스턴스를 생성하므로  인스턴스와 이 연결됨 2. trap, handler…]]></description><link>https://free-ko.github.io/study-js-es6-proxy-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-proxy-3/</guid><pubDate>Thu, 25 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋   handler, trap, target
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-target&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-target&quot; aria-label=&quot;1 target permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. target&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; 대상 오브젝트 임&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Array, Object&lt;/code&gt; 등을 사용할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;const obj = new Proxy(target, {})&lt;/code&gt; 형태에서 첫 번째 파라미터에 &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt;을 작성함&lt;/li&gt;
+&lt;li&gt;이렇게 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; 인스턴스를 생성하므로 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; 인스턴스와 &lt;code class=&quot;language-text&quot;&gt;target&lt;/code&gt;이 연결됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-trap-handler&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-trap-handler&quot; aria-label=&quot;2 trap handler permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. trap, handler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;trap&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Operating System&lt;/code&gt;에서 사용하는 용어로 실행 중인 프로그램에 이상이 발생했을 때 실행을 중단하고 사전에 정의된 제어로 전환&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;가운데 사람이 밥을 받아 자신 앞에 있는 수저를 같이 건네 준다면 &lt;code class=&quot;language-text&quot;&gt;Porxy&lt;/code&gt;에 수저를 건네주는 코드가 필요함 이것이 &lt;code class=&quot;language-text&quot;&gt;Proxy&lt;/code&gt; 를 사용하는 목적임&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; target &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; food&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;밥&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; hanlder &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; key&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; target&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;.수저&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; key&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; middle &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Proxy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; handler&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; left &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; middle&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;food&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;left&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 밥, 수저&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. trap과 handler를 대략적으로 살펴 봄&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. get()이 getter이고 set()이 setter()임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. get()과 set()을 trap이라고 함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. middle.food를 실행하면 [[Get]] 대신에 get() 트랩을 실행함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 5. target[key]는 target의 [[Get]]이 실행됨, target[key] 값이 &apos;밥&apos;이므로 &apos;밥, 수저&apos;를 반환함&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;const handler = {...}&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;오브젝트에 &lt;code class=&quot;language-text&quot;&gt;get(), set()&lt;/code&gt;이 있음&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;handler&lt;/code&gt;를 핸들러 오브젝트라고 하며 약칭으로 핸들러라고 부름&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-proxy-trap&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-proxy-trap&quot; aria-label=&quot;3 proxy trap permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Proxy Trap&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 458px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 76.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAACPklEQVQ4y2VUa4+CQAz0//+4QxM9EVh2AQV8A75FM9cpQkzuQ6PuttPpTNfR5XLBYb+Hcw5ZliFNU0RRhDi2yPMcdVXjdDqDecwxxmiecwnCMNSzuq4lGrRti9HhcNDD8XiM6XSK2WyGH+8H3tjDcrnE8XhEUZRYrVaYTCbwPG/IC4IASZJIwxOqqsLz+cRovV5jsVggtrGyM3Es7GIE0v16u6FpGmXl+z7SLIWV5ryLrVWAtn3hfr8rqDJcr0vtFEYhIhNh7s/l0yirmwCyMyegDCY2+J3/Kthms8H1esX53MnBsRWQFwQgdRaQzUq0a06NjkuGy2WmoM5ZbVwUhZ4T5PF4KFOCdoDbDax1AugUlIU6+geYDKifpSQ6skWSJiqRkxpOUNUV6IUCbrdbHYdgTCQbTRZgNiMT3lFXniXSzMrIBCdTBrchl88nAcuyVFP8ha9rsBA9O2OMsinKQkcNwgCZNLM6ugPraAZ15tiDKVthwfGYRHYsYteH6PJ6vTSR55Shc7XVIAgBGQoo0gwjB7qgCd7vN1opYgI79+uQfHTl+Xd8A557QO4hdywUHekaV4FgPSDPqBnHp+s0oXefuX0+f7e9hmRoZAe5jyzonpI8ufNJE7vnGOpaRZFRd/MiV6B/gByZ7zYVh6kfXeSa0FUacrlcRdNc14pAu91OtX1+pPm3h0zguqTy4LvLhxYwqCkZ5PlKXd8f9oMxfQ6/M48sB4aq0Sc4OumzI4MS8E+CGnbLnAx339GP/AcdTGGEe6WiDQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;proxy trap&quot;
+        title=&quot;proxy trap&quot;
+        src=&quot;/static/880af2c7baed7d13ee87a067df763aa1/f7a31/1.png&quot;
+        srcset=&quot;/static/880af2c7baed7d13ee87a067df763aa1/e9ff0/1.png 180w,
+/static/880af2c7baed7d13ee87a067df763aa1/f21e7/1.png 360w,
+/static/880af2c7baed7d13ee87a067df763aa1/f7a31/1.png 458w&quot;
+        sizes=&quot;(max-width: 458px) 100vw, 458px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;enumerate()&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ES6에는 있었느나 ES7에서 &lt;code class=&quot;language-text&quot;&gt;deprecated&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-target&quot;&gt;1. target&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-trap-handler&quot;&gt;2. trap, handler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-proxy-trap&quot;&gt;3. Proxy Trap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Proxy 논리, Proxy 모습]]></title><description><![CDATA[Proxy 논리 식당에서…]]></description><link>https://free-ko.github.io/study-js-es6-proxy-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-proxy-2/</guid><pubDate>Wed, 24 Nov 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋   Proxy 논리, Proxy 모습
 &lt;/h1&gt;
