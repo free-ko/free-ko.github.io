@@ -1,7 +1,7 @@
 ---
 emoji: 👨‍💻
 title: set()의 4번째 파라미터, set()과 this
-date: '2021-11-30 00:00:00'
+date: '2021-11-29 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: JS
