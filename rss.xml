@@ -1,4 +1,193 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 14 Dec 2021 23:49:31 GMT</lastBuildDate><item><title><![CDATA[Promise - 개요, 처리 흐름, 상태]]></title><description><![CDATA[1. Promise 개요 JS…]]></description><link>https://free-ko.github.io/study-js-es6-promise-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-promise-1/</guid><pubDate>Tue, 14 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 16 Dec 2021 10:51:25 GMT</lastBuildDate><item><title><![CDATA[Promise - 인스턴스 생성]]></title><description><![CDATA[1. new Promise()  인스턴스를 생성하여 반환함 파라미터 실행자 함수를 작성함 성공, 실패 처리 함수 이름 실행자 코드 스펙 :  MDN: Promise chain  Promise 오브젝트 형태 1. new Promise()]]></description><link>https://free-ko.github.io/study-js-es6-promise-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-promise-2/</guid><pubDate>Wed, 15 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  Promise 인스턴스 생성
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-new-promise&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-new-promise&quot; aria-label=&quot;1 new promise permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. new Promise()&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Promise&lt;/code&gt; 인스턴스를 생성하여 반환함&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;파라미터 실행자&lt;code class=&quot;language-text&quot;&gt;(excuter)&lt;/code&gt; 함수를 작성함&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;성공, 실패 처리 함수 이름&lt;/li&gt;
+&lt;li&gt;실행자 코드&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token builtin&quot;&gt;Promise&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;resolve&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; reject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;성공&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;실팽&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;reason&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;reason&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;끝&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. const obj = new Promise((resolve, reject) =&gt; {...} Promise 인스턴스를 생성하여 obj에 할당함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. resolve와 reject 이름의 Function 오브젝트를 생성하여 인스턴스에 설정함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. resolve(&quot;성공&quot;); reject(&quot;실팽&quot;); 실행자 처리를 성공하면 resolve()가 호출되고 실패하면 reject()가 호출됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. 지금 호출하지 않고 코드 끝까지 실행한 후 호출함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 5. 이것이 Promise의 비동기 처리(실행) 임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 6. obj.then((value) =&gt; {.1.}, (reason) =&gt; {.2.}): then()을 실행하지 않음 아래로 내려 감&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 7. console.log(&quot;끝&quot;)을 실행함 여기서 전체 흐름이 끝나지만 실행자의 resolve()와 reject() 실행이 남았음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 8. 실행자에서 resolve(&quot;성공&quot;) 또는 reject(&quot;실패&quot;)를 호출함 상태가 하나만 발생하므로 상태에 해당하는 함수만 호출함 여기서는 resolve(&quot;성공&quot;)을 호출함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 9. then()을 호출함 then() 단위로 파라미터의 함수를 실행하게 됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 10. then((value) =&gt; {console.log(value)}, 실행자에서 resolve(&quot;성공&quot;)에서 &quot;성공&quot;이 value에 설정됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 11. 엔진에서는 상태(fulfilled, rejected)에 따라 파라미터의 핸들러 함수를 실행함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 12. then((reason) =&gt; { console.log(reason)}; 실행자에서 reject(&quot;실패&quot;)를 호출하면 then()의 두 번째 파라미터 함수가 실행되며 reject(&quot;실패&quot;)에서 &quot;실패&quot;가 reason에 설정됨&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// [ 실행결과 ]&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 끝&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 성공&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;스펙 : &lt;code class=&quot;language-text&quot;&gt;deferred action&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MDN: Promise chain&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;obj.then((value) ⇒ {console.log(value)}, (reson) ⇒ {console.log(reson)};&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Promise 오브젝트 형태&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; promise &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. Promise 오브젝트 형태를 살펴봄
+
+	2. promise를 펼치면 프로퍼티와 함수가 있음
+
+	3. prototype에 constructor가 있으며 메소드가 있음
+		- JS의 일반적인 형태
+*/&lt;/span&gt;
+
+cosnt ojb &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token builtin&quot;&gt;Promise&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;resolve&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; reject&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;실패&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;실행자&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. resolve와 reject 이름의 Function 오브젝트를 생성함
+		- Function 오브젝트이므로 호출할 수 있음
+
+	*** 코드가 끝까지 처리한 후 실행함 ***
+	resolve([1,2,3])을 호출하며 then()이 호출됨
+		- [[PromiseStatus]]: &quot;resolved&quot; 이므로 then()의 첫 번째 파라미터 함수르 실행하게 됨
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	2. obj.__proto__를 펼치면 Promise.prototype에 연결된 메소드가 표시됨
+
+	3. [[PromiseStatus]]: &quot;resolved&quot; Promise 상태를 나타내며 &quot;fulfilled&quot; 상태를 뜻함
+
+	4. [[PromiseValue]]: Array(3) resolve([1,2,3])의 파라미터에 작성한 값
+*/&lt;/span&gt;
+
+obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;// resolve([1,2,3])의 [1,2,3]이 value에 설정됨&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;reason&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;reason&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// then()의 파라미터에 성공, 실패 핸들러 함수를 작성함&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;끝&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-new-promise&quot;&gt;1. new Promise()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[HTTP - 4.HTTP 메서드(1)]]></title><description><![CDATA[1.HTTP API를 만들어보자 HTTP API를 만들어보자 HTTP 메서드 - GET, POST HTTP 메서드 - PUT, PATCH, DELETE HTTP 메서드의 속성 2.요구사항 ex) 회원 정보 관리 API…]]></description><link>https://free-ko.github.io/study-cs-HTTP-6/</link><guid isPermaLink="false">https://free-ko.github.io/study-cs-HTTP-6/</guid><pubDate>Wed, 15 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  HTTP 메서드
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1http-api를-만들어보자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1http-api%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90&quot; aria-label=&quot;1http api를 만들어보자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1.HTTP API를 만들어보자&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;HTTP API를 만들어보자&lt;/li&gt;
+&lt;li&gt;HTTP 메서드 - GET, POST&lt;/li&gt;
+&lt;li&gt;HTTP 메서드 - PUT, PATCH, DELETE&lt;/li&gt;
+&lt;li&gt;HTTP 메서드의 속성&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2요구사항-ex-회원-정보-관리-api를-만들어라&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-ex-%ED%9A%8C%EC%9B%90-%EC%A0%95%EB%B3%B4-%EA%B4%80%EB%A6%AC-api%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%9D%BC&quot; aria-label=&quot;2요구사항 ex 회원 정보 관리 api를 만들어라 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.요구사항 ex) 회원 정보 관리 API를 만들어라&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;회원 목록 조회&lt;/li&gt;
+&lt;li&gt;회원 조회&lt;/li&gt;
+&lt;li&gt;회원 등록&lt;/li&gt;
+&lt;li&gt;회원 수정&lt;/li&gt;
+&lt;li&gt;회원 삭제&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3api-url-설정--초보-개발자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3api-url-%EC%84%A4%EC%A0%95--%EC%B4%88%EB%B3%B4-%EA%B0%9C%EB%B0%9C%EC%9E%90&quot; aria-label=&quot;3api url 설정  초보 개발자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.API URL 설정 : 초보 개발자&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;회원 목록 조회 : &lt;code class=&quot;language-text&quot;&gt;/read-member-list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;회원 조회 : &lt;code class=&quot;language-text&quot;&gt;/read-member-by-id&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;회원 등록 : &lt;code class=&quot;language-text&quot;&gt;/create-memger&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;회원 수정 : &lt;code class=&quot;language-text&quot;&gt;/update-member&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;회원 삭제 : &lt;code class=&quot;language-text&quot;&gt;/delete-member&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;—&gt; 이것은 좋은 URI 설계일까?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;—&gt; 가장 중요한 것은 리소스 식별&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;4api-uri-고민&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4api-uri-%EA%B3%A0%EB%AF%BC&quot; aria-label=&quot;4api uri 고민 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.API URI 고민&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;리소스의 의미는 뭘까?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;회원을 등록하고 수정하고 조회하는게 리소스가 아니다!
+ex) 미네랄을 캐라 —&gt; 미네랄이 리소스&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;회원&lt;/strong&gt;이라는 개념 자체가 바로 리소스이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;리소스를 어떻게 식별하는게 좋을까?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;회원을 등록하고 수정하고 조회하는 것을 모두 배제&lt;/li&gt;
+&lt;li&gt;회원이라는 리소스만 식별하면 된다. —&gt; 회원 리소스를 URI에 매핑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;5api-url-설정--위-상황-고려&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#5api-url-%EC%84%A4%EC%A0%95--%EC%9C%84-%EC%83%81%ED%99%A9-%EA%B3%A0%EB%A0%A4&quot; aria-label=&quot;5api url 설정  위 상황 고려 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5.API URL 설정 : 위 상황 고려&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;회원&lt;/code&gt; 목록 조회 : &lt;code class=&quot;language-text&quot;&gt;/members&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;회원&lt;/code&gt; 조회 &lt;code class=&quot;language-text&quot;&gt;/members/{id}&lt;/code&gt; &lt;strong&gt;—&gt; 어떻게 구분하지?&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;회원&lt;/code&gt; 등록 : &lt;code class=&quot;language-text&quot;&gt;/members/{id}&lt;/code&gt; &lt;strong&gt;—&gt; 어떻게 구분하지?&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;회원&lt;/code&gt; 수정 : &lt;code class=&quot;language-text&quot;&gt;/members/{id}&lt;/code&gt; &lt;strong&gt;—&gt; 어떻게 구분하지?&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;회원&lt;/code&gt; 삭제 : &lt;code class=&quot;language-text&quot;&gt;/members/{id}&lt;/code&gt; &lt;strong&gt;—&gt; 어떻게 구분하지?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;참고 : 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장 ( memeber —&gt; members )&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;6리소스와-행위를-분리--가장-중요한-것은-리소스를-식별하는-것&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#6%EB%A6%AC%EC%86%8C%EC%8A%A4%EC%99%80-%ED%96%89%EC%9C%84%EB%A5%BC-%EB%B6%84%EB%A6%AC--%EA%B0%80%EC%9E%A5-%EC%A4%91%EC%9A%94%ED%95%9C-%EA%B2%83%EC%9D%80-%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A5%BC-%EC%8B%9D%EB%B3%84%ED%95%98%EB%8A%94-%EA%B2%83&quot; aria-label=&quot;6리소스와 행위를 분리  가장 중요한 것은 리소스를 식별하는 것 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6.리소스와 행위를 분리 : 가장 중요한 것은 리소스를 식별하는 것&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;URI는 리소스만 식별&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;리소스와&lt;/strong&gt; 해당 리소스를 대상으로 하는 &lt;strong&gt;행위를&lt;/strong&gt; 분리&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;리소스&lt;/strong&gt; : 회원&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;행위&lt;/strong&gt; : 조회, 등록, 삭제, 변경&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;리소는 명사, 행위는 동사&lt;/li&gt;
+&lt;li&gt;행위는 어떻게 구분??? —&gt; HTTP 메서드 : GET, POST로&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1http-api%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90&quot;&gt;1.HTTP API를 만들어보자&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-ex-%ED%9A%8C%EC%9B%90-%EC%A0%95%EB%B3%B4-%EA%B4%80%EB%A6%AC-api%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%9D%BC&quot;&gt;2.요구사항 ex) 회원 정보 관리 API를 만들어라&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3api-url-%EC%84%A4%EC%A0%95--%EC%B4%88%EB%B3%B4-%EA%B0%9C%EB%B0%9C%EC%9E%90&quot;&gt;3.API URL 설정 : 초보 개발자&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#4api-uri-%EA%B3%A0%EB%AF%BC&quot;&gt;4.API URI 고민&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#5api-url-%EC%84%A4%EC%A0%95--%EC%9C%84-%EC%83%81%ED%99%A9-%EA%B3%A0%EB%A0%A4&quot;&gt;5.API URL 설정 : 위 상황 고려&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#6%EB%A6%AC%EC%86%8C%EC%8A%A4%EC%99%80-%ED%96%89%EC%9C%84%EB%A5%BC-%EB%B6%84%EB%A6%AC--%EA%B0%80%EC%9E%A5-%EC%A4%91%EC%9A%94%ED%95%9C-%EA%B2%83%EC%9D%80-%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A5%BC-%EC%8B%9D%EB%B3%84%ED%95%98%EB%8A%94-%EA%B2%83&quot;&gt;6.리소스와 행위를 분리 : 가장 중요한 것은 리소스를 식별하는 것&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Promise - 개요, 처리 흐름, 상태]]></title><description><![CDATA[1. Promise 개요 JS…]]></description><link>https://free-ko.github.io/study-js-es6-promise-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-promise-1/</guid><pubDate>Tue, 14 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Promise 개요, Promise 처리 흐름, Promise 상태
 &lt;/h1&gt;
