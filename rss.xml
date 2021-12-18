@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Dec 2021 10:27:37 GMT</lastBuildDate><item><title><![CDATA[Promise - resolve(), thenable, reject()]]></title><description><![CDATA[1. resolve() 성공(fullfilled…]]></description><link>https://free-ko.github.io/study-js-es6-promise-4/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-promise-4/</guid><pubDate>Fri, 17 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi-Codding]]></title><description><![CDATA[우기의 개발노트]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Dec 2021 13:00:31 GMT</lastBuildDate><item><title><![CDATA[Promise - resolve(), thenable, reject()]]></title><description><![CDATA[1. resolve() 성공(fullfilled…]]></description><link>https://free-ko.github.io/study-js-es6-promise-4/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-promise-4/</guid><pubDate>Fri, 17 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Promise -  resolve(), thenable, reject()
 &lt;/h1&gt;
@@ -8639,69 +8639,7 @@ status &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span clas
 &lt;li&gt;&lt;a href=&quot;#2-funtion-%EC%84%A0%EC%96%B8%EB%AC%B8&quot;&gt;2. &lt;code class=&quot;language-text&quot;&gt;funtion*&lt;/code&gt; 선언문&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#3-function-%ED%91%9C%ED%98%84%EC%8B%9D&quot;&gt;3. &lt;code class=&quot;language-text&quot;&gt;function*&lt;/code&gt; 표현식&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 '인생은 실전이다'를 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-3/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 187px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 144.44444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAdABQDASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAQFAgMG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAD/9oADAMBAAIQAxAAAAHHXaVecw6gpJOUItiYj//EABoQAAIDAQEAAAAAAAAAAAAAAAEDAAIEEBT/2gAIAQEAAQUC8rYc7QSlgj72pFsYDL6VVh2Q6Wk9/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAESEf/aAAgBAwEBPwGEQWzWf//EABcRAAMBAAAAAAAAAAAAAAAAAAABEhH/2gAIAQIBAT8BplkoxH//xAAgEAABAwIHAAAAAAAAAAAAAAAAAhEyASEQEiBScZGh/9oACAEBAAY/Ao+kCCijVYvmXhu4LI7JNo//xAAdEAACAgIDAQAAAAAAAAAAAAABEQAhEIExUWGR/9oACAEBAAE/IfNAkGL6uEkflKjsbqFJBw4SAwYFttL69o4ahg4//9oADAMBAAIAAwAAABBn9f3/xAAZEQEAAgMAAAAAAAAAAAAAAAAAARFBUWH/2gAIAQMBAT8QwWrtMjs//8QAGREBAAIDAAAAAAAAAAAAAAAAAAERQVFh/9oACAECAQE/EMy+kROD/8QAIBABAAICAgEFAAAAAAAAAAAAAREhADFBYRBRgZGhsf/aAAgBAQABPxBoCmpBfePlejV88ZaA6b+YY5otJdazt7ijfA4Mk5PtKSJD34y89Zs+sXlB0IBk5CoE9b8f/9k=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1.jpeg&quot;
-        title=&quot;1.jpeg&quot;
-        src=&quot;/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg&quot;
-        srcset=&quot;/static/bf93e7c385717bbc10874c06450dd051/4ec73/1.jpg 180w,
-/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg 187w&quot;
-        sizes=&quot;(max-width: 187px) 100vw, 187px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;1-이-책을-읽은-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 이 책을 읽은 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;1. 이 책을 읽은 이유💡&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;단순하다 신박사님과 신사임당 님이 썼기 때문에 이 책이 나오자마자 구매를 했다. 특히 신박사님을 강연회에 가서 직접 뵈고 말씀을 듣고 신박사님과 고 작가님의 책들과 소개해준 책들을 읽으면서 스스로도 많이 성장함을 느꼈기에 특히, 이 책은 너무나 기대가 컸다. 역시나 읽으면서 아주 중요하지만 놓치면서 살고 있다는 것들을 많이 깨닫게 되었다. 요즘 특히 책을 읽으면서 시야가 넓어짐을 느낀다. 그래도 아직 부족하다. 책에 나온 내용들을 체화해서 더 나은 나를 만들고 싶다.&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;2-더-나은-인생을-만들기-위해&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%8D%94-%EB%82%98%EC%9D%80-%EC%9D%B8%EC%83%9D%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9C%84%ED%95%B4&quot; aria-label=&quot;2 더 나은 인생을 만들기 위해 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 더 나은 인생을 만들기 위해👋&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;책에서는 다양한 내용을 소개해준다. 정말 인생 실전에 필요한 무의식에 박혀야 할 내용들 말이다. 그 중에서 새롭게 다가왔던 챕터는 ‘젊어서 고생은 절대 하지 말아라’ 부분이다. 우리는 흔히 어른들로부터 ‘젋어서 고생은 사서 한다’는 이야기를 자주 듣곤 한다. 나도 물론 그렇다고 생각해 20대에 돈을 안 받고 하는 일들(서포터스, 자원봉사 등)을 많이 했다. 물론 하면서 잊지 못할 추억과 경험을 선사해주었다. 그렇지만 무조건 적으로 고생이 좋다는 막연한 사실을 신박사님이 나에게 일침을 날려주셨다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.124&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;125&lt;/span&gt;
-젊을 때는 고생이 아니라 좋은 경험을 해야 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-생산적인 경험을 얻을 수 있다면 자원을 투자해서라도 하는 것이 맞다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-내가 과거로 돌아갈 수 있다면 가장 듣고 싶은 조언중하나다가 바로 다음 내용이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-&quot;당신이 젋다고 생각하면 버는 돈의 액수에 너무 집착하지 말아라&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-능력치를 올리는 것이 돈을 버는 것보다 훨씬 중요하다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-능력만 있으면 큰 돈을 벌 기회는 나중에 많이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&quot;
-
-이 조언의 요지는 적은 돈이라도 제대로 버는 것이 중요하다는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-여기서 &lt;span class=&quot;token string&quot;&gt;&apos;제대로&apos;&lt;/span&gt;는 돈도 벌면서 무언가를 배우거나 삶에 대한 시야를 넓혀주는 일들을 말한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;결국 중요한 것은 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;이다. 지금도 주어진 일들에 대해 막연하게 하는 것이 아니라 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;해야 지금의 고생이 성장의 씨앗이 되어 무럭무럭 자라날 수 있다.&lt;br&gt;
-그러니 신박사님이 항상 이야기하는 &lt;code class=&quot;language-text&quot;&gt;의식적 노력을&lt;/code&gt; 체화하자&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;3-조급해하지-말자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%A1%B0%EA%B8%89%ED%95%B4%ED%95%98%EC%A7%80-%EB%A7%90%EC%9E%90&quot; aria-label=&quot;3 조급해하지 말자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;3. 조급해하지 말자💪&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;가끔 SNS를 보면 젊은 나이에 부자가 된 모습들을 보게 된다. 그럴 때면 ‘나는 이 나이 되도록 뭐했는지, 나는 과연 얻을 수 있을까?‘라는 의문과 조급함이 밀려온다.&lt;br&gt;
-나도 안다. 그들은 정말 극소수이고 내가 놀 때 노력해서 혹은 운이 좋아서 이른 나이에 부자가 되었다는 사실을 그리고 미래에 부자라고 장담할 수 없음을 알고 있다.&lt;br&gt;
-하지만 그래도 부러워 지금 내가 해야 하는 일에 손이 안 잡힐 때가 있다. 그럴 때 이 책을 읽다가 정신 차리게 해주는 챕터를 소개한다.&lt;br&gt;
-바로 &lt;code class=&quot;language-text&quot;&gt;30살 이란 무엇인가?&lt;/code&gt;라는 챕터이다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.97&lt;/span&gt;
-&lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;살은 젋다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-그것을 빨리 깨닫고 조금씩 부족한 부분을 채워가면 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-이때 부터 미리 준비하면 정말 좋은 것이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-바로 건강한 삶을 유지하기 위한 습관을 일찍부터 만드는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-
-내가 최선을 다한 일이 정답이 되는 과정이기 때문이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-내 인생의 문제는 스스로 만든 것이기 때문에 답도 내 안에 다 존재한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;그렇다. 30살은 젊다. 그리고 지금부터 하나씩 부족한 것들을 채워간다면 나는 꾸준히 성장할 수 있다.&lt;br&gt;
-그리고 내가 원하는 미래를 만들어 갈 수 있다. 그러니 제대로 하나씩 준비해 나아가자.&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;결론😋&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;이 책은 우리 가족 대대로 20살이 된 사람들에게 무조건 선물하고 싶은 책이다. 아니 우리가족 모두에게 선물해 주고 싶은 책인다.&lt;br&gt;
-그만큼 삶의 통찰과 내가 생각하지 못했던 생각들을 간접적으로 느낄 수 있는 계기를 만들어 주었으며 한편으로 조급해하던 나를 위로해주었다.&lt;br&gt;
-많은 사람들이 보이지 않은 곳에서 고군분투하고 있다. 물론 나도 열심히 살고 있다. 누구보다 나은 삶을 만들어 가기보다는 서로서로 함께 성장해서 더 나은 세상을 만들어 가고 싶다.&lt;br&gt;
-그렇기 위해서는 내가 먼저 성장해야 하고 좋은 에너지를 주변 사람들에게 주고 싶다.&lt;br&gt;
-요즘 자가격리로 쳐져 있었는데 좋은 동기부여가 되었다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[u 플래그, s 플래그]]></title><description><![CDATA[1. u 플래그 정규 표현식의 패턴을 유니코드의 코드 포인트로 변환하여 매치 u 플래그를 사용하지 않으면 코드 포인트를 문자로 매치 2. s 플래그 정규 표현식에서 dot(점.)은 모든 문자를 매치하지만 줄바꿈 문자는 매치 하지 않음 S…]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[u 플래그, s 플래그]]></title><description><![CDATA[1. u 플래그 정규 표현식의 패턴을 유니코드의 코드 포인트로 변환하여 매치 u 플래그를 사용하지 않으면 코드 포인트를 문자로 매치 2. s 플래그 정규 표현식에서 dot(점.)은 모든 문자를 매치하지만 줄바꿈 문자는 매치 하지 않음 S…]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  u 플래그, s 플래그
 &lt;/h1&gt;
@@ -8767,7 +8705,69 @@ status &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span clas
 &lt;li&gt;&lt;a href=&quot;#1-u-%ED%94%8C%EB%9E%98%EA%B7%B8&quot;&gt;1. u 플래그&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-s-%ED%94%8C%EB%9E%98%EA%B7%B8&quot;&gt;2. s 플래그&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[y 플래그]]></title><description><![CDATA[y 플래그  위치에 매치  부터가 아니라  위치에 매치 매치되면  값이 1증가 ,   값을 지정할 수 있음  프로퍼티에  설정 y 플래그]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-2/</guid><pubDate>Thu, 07 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 '인생은 실전이다'를 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-3/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-3/</guid><pubDate>Fri, 08 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 187px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 144.44444444444443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAdABQDASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAQFAgMG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAD/9oADAMBAAIQAxAAAAHHXaVecw6gpJOUItiYj//EABoQAAIDAQEAAAAAAAAAAAAAAAEDAAIEEBT/2gAIAQEAAQUC8rYc7QSlgj72pFsYDL6VVh2Q6Wk9/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAESEf/aAAgBAwEBPwGEQWzWf//EABcRAAMBAAAAAAAAAAAAAAAAAAABEhH/2gAIAQIBAT8BplkoxH//xAAgEAABAwIHAAAAAAAAAAAAAAAAAhEyASEQEiBScZGh/9oACAEBAAY/Ao+kCCijVYvmXhu4LI7JNo//xAAdEAACAgIDAQAAAAAAAAAAAAABEQAhEIExUWGR/9oACAEBAAE/IfNAkGL6uEkflKjsbqFJBw4SAwYFttL69o4ahg4//9oADAMBAAIAAwAAABBn9f3/xAAZEQEAAgMAAAAAAAAAAAAAAAAAARFBUWH/2gAIAQMBAT8QwWrtMjs//8QAGREBAAIDAAAAAAAAAAAAAAAAAAERQVFh/9oACAECAQE/EMy+kROD/8QAIBABAAICAgEFAAAAAAAAAAAAAREhADFBYRBRgZGhsf/aAAgBAQABPxBoCmpBfePlejV88ZaA6b+YY5otJdazt7ijfA4Mk5PtKSJD34y89Zs+sXlB0IBk5CoE9b8f/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1.jpeg&quot;
+        title=&quot;1.jpeg&quot;
+        src=&quot;/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg&quot;
+        srcset=&quot;/static/bf93e7c385717bbc10874c06450dd051/4ec73/1.jpg 180w,
+/static/bf93e7c385717bbc10874c06450dd051/d141b/1.jpg 187w&quot;
+        sizes=&quot;(max-width: 187px) 100vw, 187px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-이-책을-읽은-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 이 책을 읽은 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;1. 이 책을 읽은 이유💡&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;단순하다 신박사님과 신사임당 님이 썼기 때문에 이 책이 나오자마자 구매를 했다. 특히 신박사님을 강연회에 가서 직접 뵈고 말씀을 듣고 신박사님과 고 작가님의 책들과 소개해준 책들을 읽으면서 스스로도 많이 성장함을 느꼈기에 특히, 이 책은 너무나 기대가 컸다. 역시나 읽으면서 아주 중요하지만 놓치면서 살고 있다는 것들을 많이 깨닫게 되었다. 요즘 특히 책을 읽으면서 시야가 넓어짐을 느낀다. 그래도 아직 부족하다. 책에 나온 내용들을 체화해서 더 나은 나를 만들고 싶다.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-더-나은-인생을-만들기-위해&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%8D%94-%EB%82%98%EC%9D%80-%EC%9D%B8%EC%83%9D%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9C%84%ED%95%B4&quot; aria-label=&quot;2 더 나은 인생을 만들기 위해 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 더 나은 인생을 만들기 위해👋&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;책에서는 다양한 내용을 소개해준다. 정말 인생 실전에 필요한 무의식에 박혀야 할 내용들 말이다. 그 중에서 새롭게 다가왔던 챕터는 ‘젊어서 고생은 절대 하지 말아라’ 부분이다. 우리는 흔히 어른들로부터 ‘젋어서 고생은 사서 한다’는 이야기를 자주 듣곤 한다. 나도 물론 그렇다고 생각해 20대에 돈을 안 받고 하는 일들(서포터스, 자원봉사 등)을 많이 했다. 물론 하면서 잊지 못할 추억과 경험을 선사해주었다. 그렇지만 무조건 적으로 고생이 좋다는 막연한 사실을 신박사님이 나에게 일침을 날려주셨다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.124&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;125&lt;/span&gt;
+젊을 때는 고생이 아니라 좋은 경험을 해야 한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+생산적인 경험을 얻을 수 있다면 자원을 투자해서라도 하는 것이 맞다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+내가 과거로 돌아갈 수 있다면 가장 듣고 싶은 조언중하나다가 바로 다음 내용이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&quot;당신이 젋다고 생각하면 버는 돈의 액수에 너무 집착하지 말아라&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+능력치를 올리는 것이 돈을 버는 것보다 훨씬 중요하다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+능력만 있으면 큰 돈을 벌 기회는 나중에 많이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&quot;
+
+이 조언의 요지는 적은 돈이라도 제대로 버는 것이 중요하다는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+여기서 &lt;span class=&quot;token string&quot;&gt;&apos;제대로&apos;&lt;/span&gt;는 돈도 벌면서 무언가를 배우거나 삶에 대한 시야를 넓혀주는 일들을 말한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;결국 중요한 것은 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;이다. 지금도 주어진 일들에 대해 막연하게 하는 것이 아니라 &lt;code class=&quot;language-text&quot;&gt;제대로&lt;/code&gt;해야 지금의 고생이 성장의 씨앗이 되어 무럭무럭 자라날 수 있다.&lt;br&gt;
+그러니 신박사님이 항상 이야기하는 &lt;code class=&quot;language-text&quot;&gt;의식적 노력을&lt;/code&gt; 체화하자&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-조급해하지-말자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%A1%B0%EA%B8%89%ED%95%B4%ED%95%98%EC%A7%80-%EB%A7%90%EC%9E%90&quot; aria-label=&quot;3 조급해하지 말자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;3. 조급해하지 말자💪&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;가끔 SNS를 보면 젊은 나이에 부자가 된 모습들을 보게 된다. 그럴 때면 ‘나는 이 나이 되도록 뭐했는지, 나는 과연 얻을 수 있을까?‘라는 의문과 조급함이 밀려온다.&lt;br&gt;
+나도 안다. 그들은 정말 극소수이고 내가 놀 때 노력해서 혹은 운이 좋아서 이른 나이에 부자가 되었다는 사실을 그리고 미래에 부자라고 장담할 수 없음을 알고 있다.&lt;br&gt;
+하지만 그래도 부러워 지금 내가 해야 하는 일에 손이 안 잡힐 때가 있다. 그럴 때 이 책을 읽다가 정신 차리게 해주는 챕터를 소개한다.&lt;br&gt;
+바로 &lt;code class=&quot;language-text&quot;&gt;30살 이란 무엇인가?&lt;/code&gt;라는 챕터이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.97&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;살은 젋다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+그것을 빨리 깨닫고 조금씩 부족한 부분을 채워가면 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+이때 부터 미리 준비하면 정말 좋은 것이 있다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+바로 건강한 삶을 유지하기 위한 습관을 일찍부터 만드는 것이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+내가 최선을 다한 일이 정답이 되는 과정이기 때문이다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+내 인생의 문제는 스스로 만든 것이기 때문에 답도 내 안에 다 존재한다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그렇다. 30살은 젊다. 그리고 지금부터 하나씩 부족한 것들을 채워간다면 나는 꾸준히 성장할 수 있다.&lt;br&gt;
+그리고 내가 원하는 미래를 만들어 갈 수 있다. 그러니 제대로 하나씩 준비해 나아가자.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;결론&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B2%B0%EB%A1%A0&quot; aria-label=&quot;결론 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;결론😋&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;이 책은 우리 가족 대대로 20살이 된 사람들에게 무조건 선물하고 싶은 책이다. 아니 우리가족 모두에게 선물해 주고 싶은 책인다.&lt;br&gt;
+그만큼 삶의 통찰과 내가 생각하지 못했던 생각들을 간접적으로 느낄 수 있는 계기를 만들어 주었으며 한편으로 조급해하던 나를 위로해주었다.&lt;br&gt;
+많은 사람들이 보이지 않은 곳에서 고군분투하고 있다. 물론 나도 열심히 살고 있다. 누구보다 나은 삶을 만들어 가기보다는 서로서로 함께 성장해서 더 나은 세상을 만들어 가고 싶다.&lt;br&gt;
+그렇기 위해서는 내가 먼저 성장해야 하고 좋은 에너지를 주변 사람들에게 주고 싶다.&lt;br&gt;
+요즘 자가격리로 쳐져 있었는데 좋은 동기부여가 되었다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[y 플래그]]></title><description><![CDATA[y 플래그  위치에 매치  부터가 아니라  위치에 매치 매치되면  값이 1증가 ,   값을 지정할 수 있음  프로퍼티에  설정 y 플래그]]></description><link>https://free-ko.github.io/study-js-es6-RegExp-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-RegExp-2/</guid><pubDate>Thu, 07 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  y 플래그
 &lt;/h1&gt;
@@ -9296,51 +9296,6 @@ list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;li&gt;&lt;a href=&quot;#1-fill&quot;&gt;1. fill()&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-includes&quot;&gt;2. includes()&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Generic]]></title><description><![CDATA[Generic 스펙에서 아래 문장을 볼 수 있음  ES7 스펙, 22.1.3.3    사용 형태 의 뜻하는 것은? 이  메소드이므로  오브젝트가 처리 대상이지만 은  오브젝트가 아닌 , 를 처리할 수 있다는 것을 뜻함 Generic]]></description><link>https://free-ko.github.io/study-js-es6-array-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-array-3/</guid><pubDate>Fri, 01 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
-&lt;h1 align=&quot;center&quot;&gt;
-  👋  Generic
-&lt;/h1&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;generic&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#generic&quot; aria-label=&quot;generic permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Generic&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;스펙에서 아래 문장을 볼 수 있음&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;copyWithin function is intentionally(의도적) generic&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;ES7 스펙, 22.1.3.3 &lt;code class=&quot;language-text&quot;&gt;copyWithin()&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;MDN copyWithin()&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;generic&lt;/code&gt; 사용 형태&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; like &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; length&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;copyWithin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;like&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// {0: 10, 1: 20, 2: 30, length: 3};&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 1. call()의 첫번째 파라미터에 Array-like를 작성했으며, Array-like 타입은 Object임&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 2. copyWithin()이 Array 메소드이므로 Array를 넘겨주어야 하는데 Array-like를 넘겨주어도 처리가 됨&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 3. 이것이 Generic임, copyWithin()은 Generic 함수 임&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 4. 배열로 반환하지 않고 대상 오브젝트 형태로 반환함&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;generic&lt;/code&gt;의 뜻하는 것은?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;copyWithin()&lt;/code&gt;이 &lt;code class=&quot;language-text&quot;&gt;Array&lt;/code&gt; 메소드이므로 &lt;code class=&quot;language-text&quot;&gt;Array&lt;/code&gt; 오브젝트가 처리 대상이지만&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;generic&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Array&lt;/code&gt; 오브젝트가 아닌 &lt;code class=&quot;language-text&quot;&gt;Array-like&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;iterable object&lt;/code&gt;를 처리할 수 있다는 것을 뜻함&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#generic&quot;&gt;Generic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[find(), findIndex()]]></title><description><![CDATA[1. find() 배열의 엘리먼트를 하나씩 읽어가면서 콜백 함수 호출 파라미터 : 엘리먼트, 인덱스, 배열 전체 콜백 함수에서 를 반환하면 를 종료하면서 현재 처리중인 엘리먼트 값을 반환 2. findIndex…]]></description><link>https://free-ko.github.io/study-js-es6-array-4/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-array-4/</guid><pubDate>Fri, 01 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  find(), findIndex()
@@ -9426,6 +9381,51 @@ list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#1-find&quot;&gt;1. find()&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-findindex&quot;&gt;2. findIndex()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Generic]]></title><description><![CDATA[Generic 스펙에서 아래 문장을 볼 수 있음  ES7 스펙, 22.1.3.3    사용 형태 의 뜻하는 것은? 이  메소드이므로  오브젝트가 처리 대상이지만 은  오브젝트가 아닌 , 를 처리할 수 있다는 것을 뜻함 Generic]]></description><link>https://free-ko.github.io/study-js-es6-array-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-array-3/</guid><pubDate>Fri, 01 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  Generic
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;generic&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#generic&quot; aria-label=&quot;generic permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Generic&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;스펙에서 아래 문장을 볼 수 있음&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;copyWithin function is intentionally(의도적) generic&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ES7 스펙, 22.1.3.3 &lt;code class=&quot;language-text&quot;&gt;copyWithin()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;MDN copyWithin()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;generic&lt;/code&gt; 사용 형태&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; like &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; length&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;copyWithin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;like&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// {0: 10, 1: 20, 2: 30, length: 3};&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. call()의 첫번째 파라미터에 Array-like를 작성했으며, Array-like 타입은 Object임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. copyWithin()이 Array 메소드이므로 Array를 넘겨주어야 하는데 Array-like를 넘겨주어도 처리가 됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. 이것이 Generic임, copyWithin()은 Generic 함수 임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. 배열로 반환하지 않고 대상 오브젝트 형태로 반환함&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;generic&lt;/code&gt;의 뜻하는 것은?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;copyWithin()&lt;/code&gt;이 &lt;code class=&quot;language-text&quot;&gt;Array&lt;/code&gt; 메소드이므로 &lt;code class=&quot;language-text&quot;&gt;Array&lt;/code&gt; 오브젝트가 처리 대상이지만&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;generic&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Array&lt;/code&gt; 오브젝트가 아닌 &lt;code class=&quot;language-text&quot;&gt;Array-like&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;iterable object&lt;/code&gt;를 처리할 수 있다는 것을 뜻함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#generic&quot;&gt;Generic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 소프트웨어 장인을 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-2/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-2/</guid><pubDate>Fri, 01 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -9917,139 +9917,157 @@ two &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#template-literal&quot;&gt;Template Literal&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[prototype와 proto, 메소드 호출 방법]]></title><description><![CDATA[메소드 호출 방법 과 에 연결된 메소드를 호출하는 방법이 다름 에 연결된 메소드 호출  처럼 을 작성하여 호출 에 연결된 메소드 호출 인스턴스를 생성하여 호출  연산자로 생성한 인스턴스 구조 메소드 호출 방법]]></description><link>https://free-ko.github.io/study-js-es6-object-5/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-5/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[setPrototypeOf() - prototype 사용]]></title><description><![CDATA[setPorotytpeOf…]]></description><link>https://free-ko.github.io/study-js-es6-object-9/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-9/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
-  👋  prototype와 proto, 메소드 호출 방법
+  👋  setPrototypeOf() - prototype 사용
 &lt;/h1&gt;
 &lt;br&gt;
-&lt;h2 id=&quot;메소드-호출-방법&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A9%94%EC%86%8C%EB%93%9C-%ED%98%B8%EC%B6%9C-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;메소드 호출 방법 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;메소드 호출 방법&lt;/h2&gt;
+&lt;h2 id=&quot;setporotytpeof&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#setporotytpeof&quot; aria-label=&quot;setporotytpeof permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;setPorotytpeOf()&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;__proto__&lt;/code&gt;에 연결된 메소드를 호출하는 방법이 다름&lt;/li&gt;
+&lt;li&gt;첫 번째 파라미터에 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;을 작성&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;prototpye&lt;/code&gt;에 연결된 메소드 호출&lt;/p&gt;
+&lt;p&gt;첫 번째 파라미터의 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;에&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Array.prototype.slice()&lt;/code&gt; 처럼 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;을 작성하여 호출&lt;/li&gt;
+&lt;li&gt;두 번째 파라미터의 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;에 연결된 프로퍼티를 설정&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Book&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 결과&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// undefined&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// false&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// undefined&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 1. Book.prototype.getPoint() prototype을 작성하여 호출하면 getPoint()에서 this가 Book.prototype을 참조&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 2. Book.prototype.getPoint.call(Book) this가 Book을 참조함&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 3. this.point를 참조하려면 인스턴스를 생성하고 인스턴스의 메소드를 호출해야함&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;__proto__&lt;/code&gt;에 연결된 메소드 호출&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;인스턴스를 생성하여 호출&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산자로 생성한 인스턴스 구조&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt; 연결 후의 인스턴스 구조&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getBook&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+Point&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPrototypeOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Point&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;/*
-	1. 오른쪽 obj를 펼치면
-	- point: 100이 있으며 인스턴스 프로퍼티임
-	- 생성자 함수에서 this.point = 100으로 설정한 것
+	1. Point.prototype에
+	- Book.prototype에 연결된 프로퍼티(메소드 포함)를 설정함
 
-	2. __proto__를 펼치면
-	- prototype에 연결된 메소드가 표시됨
-	- getPoint는 Book.prototype.getPoint를 참조함
-	- __proto__에 복사하지 않음
+	2. Point.prototype에 설정하므로 이것을 펼치면
+	- Book.prototype.getBook()이 있어야 하는데 없음
+
+	3. 또한, Point.prototype에 연결한 메소드가
+	- 지워지지 않고 유지 됨 
+
+	4. 한편, Point.prototype.__proto__를 펼치면
+	- getBook()이 표시됨
+
+	5. setPrototypeOf() 함수 이름의 뉘앙스가
+	- prototype에 설정하는 것처럼 보이지만
+	- prototype에 __proto__를 만들고 여기에 설정함
+
+	6. prototype에 설정하면 getPoint()가 지워지므로
+	- Point에 작성된 메소드를 사용할 수 없게 됨
+
+	7. 이를 피하기 위해 __proto__를 만들어 설정한 것
+
+	8. __proto__로 구조적으로 계층을 만들어 설정하므로 
+	- 같은 이름의 메소드가 있더라도 대체되지 않음
+	
+	9. 식별자 해결을 할 때, __proto__ 순서로 검색하므로
+	- 같은 이름의 메소드가 있을 때,
+	- 앞의 메소드가 호출 됨
 */&lt;/span&gt;
 
-&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;/*
-	1. 생성한 인스턴스 이름을 사용하여
-	- getPoint() 메소드를 호출하면
-	- 호출된 메소드에서 this로 인스턴스를 참조 할 수 있음
+	1. new Point(300)를 실행하면
+	- Point.prototype에 연결된 메소드로 인스턴스를 생성함
+
+	2. 오른쪽의 obj를 펼치면
+	- obj.__proto__.proto__구조 임
+	- 이것은 Point.prototype 구조와 같음
+
+	3. 위의 __proto__에 Point.prototype에 연결된 메소드가 설정되고
+	- 아래의 __proto__에 Book.prototype에 연결된 메소드가 설정 됨
 */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;상속을 위한 목적이라면&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;super&lt;/code&gt; 등의 상속 처리 키워드를 제공하는&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Class&lt;/code&gt;를 사용하는 것이 좋음&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;table-of-contents&quot;&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%EB%A9%94%EC%86%8C%EB%93%9C-%ED%98%B8%EC%B6%9C-%EB%B0%A9%EB%B2%95&quot;&gt;메소드 호출 방법&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#setporotytpeof&quot;&gt;setPorotytpeOf()&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[인스턴스에 함수로 추가]]></title><description><![CDATA[함수로 추가  연산자로 인스턴스를 생성하고 인스턴스의 프로퍼티로 함수를 추가 다른 인스턴스와 공유하지 않음 인스턴스에 추가한 후의 인스턴스 구조 함수로 추가]]></description><link>https://free-ko.github.io/study-js-es6-object-6/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-6/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[setPrototypeOf() - 인스턴스 사용]]></title><description><![CDATA[setPorotytpeOf() 첫 번째 파라미터의으로 두 번째 파라미터를 설정 첫 번째 파라미터에 인스턴스 작성  실행 후 인스턴스 구조 ES5에 가 있음 setPorotytpeOf()]]></description><link>https://free-ko.github.io/study-js-es6-object-8/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-8/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
-  👋  인스턴스에 함수로 추가
+  👋  setPrototypeOf() - 인스턴스 사용
 &lt;/h1&gt;
 &lt;br&gt;
-&lt;h2 id=&quot;함수로-추가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%EB%A1%9C-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;함수로 추가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;함수로 추가&lt;/h2&gt;
+&lt;h2 id=&quot;setporotytpeof&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#setporotytpeof&quot; aria-label=&quot;setporotytpeof permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;setPorotytpeOf()&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산자로 인스턴스를 생성하고&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;인스턴스의 프로퍼티로 함수를 추가&lt;/li&gt;
-&lt;li&gt;다른 인스턴스와 공유하지 않음&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;첫 번째 파라미터의&lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;으로 두 번째 파라미터를 설정&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; length&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPrototypeOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. obj는 인스턴스임&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. 인스턴스에는 prototype이 없으며 __proto__가 있으므로 __proto__에 설정하는 것과 같음&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;인스턴스에 추가한 후의 인스턴스 구조&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 인스턴스 프로퍼티(함수)로 추가 함&lt;/span&gt;
-obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;setPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; param&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// obj를 펼치면 __proto__ 위에 setPoint가 표시됨&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 인스턴스의 함수 형태로 호출함&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 함수에서 this가 인스턴스를 참조함&lt;/span&gt;
-obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// prototype에 연결된 메소드를 호출 함&lt;/span&gt;
-&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; newObj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;newObj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setPoint&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// undefined&lt;/span&gt;
+&lt;p&gt;첫 번째 파라미터에 인스턴스 작성&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;setPrototypeOf()&lt;/code&gt; 실행 후 인스턴스 구조&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; length&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token comment&quot;&gt;/*
-	1. 새로운 인스턴스를 생성하면
-	- setPoint()를 인스턴스에서 사용할 수 없게 됨
+	1. Array-Like 오브젝트임
 
-	2. 인스턴스의 프로퍼티로 설정했기 때문
+	2. 오른쪽의 obj를 펼치면
+	- prototype은 없고 __proto__만 있음
 	
-	3. 인스턴스의 프로퍼티로 연결한 것과
-	- prototype에 연결한 메소드의 차이 임
-*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	3. 이것은 오브젝트가 아니라
+	- Object.prototype에 연결된 메소드로
+	- 생성된 인스턴스를 뜻함
+
+	4. __proto__에 Object.prototype에 연결된
+	- 메소드가 설정되어 있으므로
+	- Array 오브젝트의 메소드를 사용할 수 없음
+*/&lt;/span&gt;
+
+Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPrototypeOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. obj의 __proto__에 Array.prototype에 연결된
+	- 메소드를 설정함
+
+	2. 오른쪽의 obj를 펼치면
+	- Object.prototype에 연결된 메소드가 없어지고
+	- Array.prototype에 연결된 메소드가 표시됨
+
+	3. 설명을 위한 것으로 일반적으로 이렇게 사용하지 않지만
+	- 이처럼 __proto__에 설정된 메소드를 바꿀 수 있음
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;callBack&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;element&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;element&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;callback&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. obj가 배열이 아니므로 forEach()를 사용할 수 없지만,
+	- 바로 앞에서 __proto__에 Array.prototype에 연결된
+	- 메소드를 설정했으므로 사용할 수 있음
+
+	2. 콜백 함수가 호출되면서 반복하게 됨
+	- console에 10, 20출력 됨
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; check &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Object.prototype이 바뀌지 않음&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
+&lt;li&gt;ES5에 &lt;code class=&quot;language-text&quot;&gt;getPrototypeOf()&lt;/code&gt;가 있음&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;table-of-contents&quot;&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%EB%A1%9C-%EC%B6%94%EA%B0%80&quot;&gt;함수로 추가&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#setporotytpeof&quot;&gt;setPorotytpeOf()&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[__proto__에 메소드 추가]]></title><description><![CDATA[메소드 추가  에 을 추가하면 에 설정되며 메소드로 추가하는 것과 같음 에 추가한 후의  모습 추가한 메소드를 인스턴스에 공유 메소드 추가]]></description><link>https://free-ko.github.io/study-js-es6-object-7/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-7/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
@@ -10143,157 +10161,139 @@ beforeObj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#%EB%A9%94%EC%86%8C%EB%93%9C-%EC%B6%94%EA%B0%80&quot;&gt;메소드 추가&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[setPrototypeOf() - 인스턴스 사용]]></title><description><![CDATA[setPorotytpeOf() 첫 번째 파라미터의으로 두 번째 파라미터를 설정 첫 번째 파라미터에 인스턴스 작성  실행 후 인스턴스 구조 ES5에 가 있음 setPorotytpeOf()]]></description><link>https://free-ko.github.io/study-js-es6-object-8/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-8/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[인스턴스에 함수로 추가]]></title><description><![CDATA[함수로 추가  연산자로 인스턴스를 생성하고 인스턴스의 프로퍼티로 함수를 추가 다른 인스턴스와 공유하지 않음 인스턴스에 추가한 후의 인스턴스 구조 함수로 추가]]></description><link>https://free-ko.github.io/study-js-es6-object-6/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-6/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
-  👋  setPrototypeOf() - 인스턴스 사용
+  👋  인스턴스에 함수로 추가
 &lt;/h1&gt;
 &lt;br&gt;
-&lt;h2 id=&quot;setporotytpeof&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#setporotytpeof&quot; aria-label=&quot;setporotytpeof permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;setPorotytpeOf()&lt;/h2&gt;
+&lt;h2 id=&quot;함수로-추가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%EB%A1%9C-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;함수로 추가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;함수로 추가&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;첫 번째 파라미터의&lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;으로 두 번째 파라미터를 설정&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; length&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPrototypeOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 1. obj는 인스턴스임&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 2. 인스턴스에는 prototype이 없으며 __proto__가 있으므로 __proto__에 설정하는 것과 같음&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산자로 인스턴스를 생성하고&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;인스턴스의 프로퍼티로 함수를 추가&lt;/li&gt;
+&lt;li&gt;다른 인스턴스와 공유하지 않음&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;첫 번째 파라미터에 인스턴스 작성&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;setPrototypeOf()&lt;/code&gt; 실행 후 인스턴스 구조&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; length&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;인스턴스에 추가한 후의 인스턴스 구조&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 인스턴스 프로퍼티(함수)로 추가 함&lt;/span&gt;
+obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;setPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; param&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// obj를 펼치면 __proto__ 위에 setPoint가 표시됨&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 인스턴스의 함수 형태로 호출함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 함수에서 this가 인스턴스를 참조함&lt;/span&gt;
+obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// prototype에 연결된 메소드를 호출 함&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; newObj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;newObj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setPoint&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// undefined&lt;/span&gt;
 
 &lt;span class=&quot;token comment&quot;&gt;/*
-	1. Array-Like 오브젝트임
+	1. 새로운 인스턴스를 생성하면
+	- setPoint()를 인스턴스에서 사용할 수 없게 됨
 
-	2. 오른쪽의 obj를 펼치면
-	- prototype은 없고 __proto__만 있음
+	2. 인스턴스의 프로퍼티로 설정했기 때문
 	
-	3. 이것은 오브젝트가 아니라
-	- Object.prototype에 연결된 메소드로
-	- 생성된 인스턴스를 뜻함
-
-	4. __proto__에 Object.prototype에 연결된
-	- 메소드가 설정되어 있으므로
-	- Array 오브젝트의 메소드를 사용할 수 없음
-*/&lt;/span&gt;
-
-Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPrototypeOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;/*
-	1. obj의 __proto__에 Array.prototype에 연결된
-	- 메소드를 설정함
-
-	2. 오른쪽의 obj를 펼치면
-	- Object.prototype에 연결된 메소드가 없어지고
-	- Array.prototype에 연결된 메소드가 표시됨
-
-	3. 설명을 위한 것으로 일반적으로 이렇게 사용하지 않지만
-	- 이처럼 __proto__에 설정된 메소드를 바꿀 수 있음
-*/&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;callBack&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;element&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;element&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;callback&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;/*
-	1. obj가 배열이 아니므로 forEach()를 사용할 수 없지만,
-	- 바로 앞에서 __proto__에 Array.prototype에 연결된
-	- 메소드를 설정했으므로 사용할 수 있음
-
-	2. 콜백 함수가 호출되면서 반복하게 됨
-	- console에 10, 20출력 됨
-*/&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; check &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Object.prototype이 바뀌지 않음&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;ES5에 &lt;code class=&quot;language-text&quot;&gt;getPrototypeOf()&lt;/code&gt;가 있음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#setporotytpeof&quot;&gt;setPorotytpeOf()&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[setPrototypeOf() - prototype 사용]]></title><description><![CDATA[setPorotytpeOf…]]></description><link>https://free-ko.github.io/study-js-es6-object-9/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-9/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
-&lt;h1 align=&quot;center&quot;&gt;
-  👋  setPrototypeOf() - prototype 사용
-&lt;/h1&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;setporotytpeof&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#setporotytpeof&quot; aria-label=&quot;setporotytpeof permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;setPorotytpeOf()&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;첫 번째 파라미터에 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;을 작성&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;첫 번째 파라미터의 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;에&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;두 번째 파라미터의 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;에 연결된 프로퍼티를 설정&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt; 연결 후의 인스턴스 구조&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getBook&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-Point&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setPrototypeOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Point&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;/*
-	1. Point.prototype에
-	- Book.prototype에 연결된 프로퍼티(메소드 포함)를 설정함
-
-	2. Point.prototype에 설정하므로 이것을 펼치면
-	- Book.prototype.getBook()이 있어야 하는데 없음
-
-	3. 또한, Point.prototype에 연결한 메소드가
-	- 지워지지 않고 유지 됨 
-
-	4. 한편, Point.prototype.__proto__를 펼치면
-	- getBook()이 표시됨
-
-	5. setPrototypeOf() 함수 이름의 뉘앙스가
-	- prototype에 설정하는 것처럼 보이지만
-	- prototype에 __proto__를 만들고 여기에 설정함
-
-	6. prototype에 설정하면 getPoint()가 지워지므로
-	- Point에 작성된 메소드를 사용할 수 없게 됨
-
-	7. 이를 피하기 위해 __proto__를 만들어 설정한 것
-
-	8. __proto__로 구조적으로 계층을 만들어 설정하므로 
-	- 같은 이름의 메소드가 있더라도 대체되지 않음
-	
-	9. 식별자 해결을 할 때, __proto__ 순서로 검색하므로
-	- 같은 이름의 메소드가 있을 때,
-	- 앞의 메소드가 호출 됨
-*/&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;/*
-	1. new Point(300)를 실행하면
-	- Point.prototype에 연결된 메소드로 인스턴스를 생성함
-
-	2. 오른쪽의 obj를 펼치면
-	- obj.__proto__.proto__구조 임
-	- 이것은 Point.prototype 구조와 같음
-
-	3. 위의 __proto__에 Point.prototype에 연결된 메소드가 설정되고
-	- 아래의 __proto__에 Book.prototype에 연결된 메소드가 설정 됨
+	3. 인스턴스의 프로퍼티로 연결한 것과
+	- prototype에 연결한 메소드의 차이 임
 */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;상속을 위한 목적이라면&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;super&lt;/code&gt; 등의 상속 처리 키워드를 제공하는&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Class&lt;/code&gt;를 사용하는 것이 좋음&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%ED%95%A8%EC%88%98%EB%A1%9C-%EC%B6%94%EA%B0%80&quot;&gt;함수로 추가&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[prototype와 proto, 메소드 호출 방법]]></title><description><![CDATA[메소드 호출 방법 과 에 연결된 메소드를 호출하는 방법이 다름 에 연결된 메소드 호출  처럼 을 작성하여 호출 에 연결된 메소드 호출 인스턴스를 생성하여 호출  연산자로 생성한 인스턴스 구조 메소드 호출 방법]]></description><link>https://free-ko.github.io/study-js-es6-object-5/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-5/</guid><pubDate>Sat, 25 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  prototype와 proto, 메소드 호출 방법
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;메소드-호출-방법&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A9%94%EC%86%8C%EB%93%9C-%ED%98%B8%EC%B6%9C-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;메소드 호출 방법 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;메소드 호출 방법&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;__proto__&lt;/code&gt;에 연결된 메소드를 호출하는 방법이 다름&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;prototpye&lt;/code&gt;에 연결된 메소드 호출&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Array.prototype.slice()&lt;/code&gt; 처럼 &lt;code class=&quot;language-text&quot;&gt;prototype&lt;/code&gt;을 작성하여 호출&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Book&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 결과&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// undefined&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// false&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// undefined&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. Book.prototype.getPoint() prototype을 작성하여 호출하면 getPoint()에서 this가 Book.prototype을 참조&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. Book.prototype.getPoint.call(Book) this가 Book을 참조함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. this.point를 참조하려면 인스턴스를 생성하고 인스턴스의 메소드를 호출해야함&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;__proto__&lt;/code&gt;에 연결된 메소드 호출&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;인스턴스를 생성하여 호출&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;new&lt;/code&gt; 연산자로 생성한 인스턴스 구조&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+Book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;getPoint&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; obj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. 오른쪽 obj를 펼치면
+	- point: 100이 있으며 인스턴스 프로퍼티임
+	- 생성자 함수에서 this.point = 100으로 설정한 것
+
+	2. __proto__를 펼치면
+	- prototype에 연결된 메소드가 표시됨
+	- getPoint는 Book.prototype.getPoint를 참조함
+	- __proto__에 복사하지 않음
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;obj&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*
+	1. 생성한 인스턴스 이름을 사용하여
+	- getPoint() 메소드를 호출하면
+	- 호출된 메소드에서 this로 인스턴스를 참조 할 수 있음
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;table-of-contents&quot;&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#setporotytpeof&quot;&gt;setPorotytpeOf()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%EB%A9%94%EC%86%8C%EB%93%9C-%ED%98%B8%EC%B6%9C-%EB%B0%A9%EB%B2%95&quot;&gt;메소드 호출 방법&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Object 변환]]></title><description><![CDATA[1. entries() 열거 가능한 오브젝트의 를  형태로 변환 작성한 순서가 바뀌는 경우 문자열은 문자 하나씩 분리 2. values() 열거 가능한 오브젝트의 를  형태로 변환 작성한 순서가 바뀌는 경우 문자열은 문자 하나씩 분리…]]></description><link>https://free-ko.github.io/study-js-es6-object-4/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-object-4/</guid><pubDate>Fri, 24 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
@@ -12923,72 +12923,6 @@ Point&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototpe&lt;s
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%ED%8A%B9%EC%A7%95&quot;&gt;2. 화살표 함수 특징&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Arrow Function 구조]]></title><description><![CDATA[1) 화살표 함수 구조 을  로 표기하는 것이 전부가 아님 화살표 함수는 일반 함수와 구조가 다름 화살표 함수 나름의 특징이 있음 2) Arguments 사용 불가 (파라미터가 유동적일 때 사용하는 것) 사용 할 수 없음  대신에  파라미터 사용…]]></description><link>https://free-ko.github.io/study-js-es6-arrowFunction-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-arrowFunction-2/</guid><pubDate>Wed, 01 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
-&lt;h1 align=&quot;center&quot;&gt;
-  👋 화살표 함수 구조, arguments 사용 불가
-&lt;/h1&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;1-화살표-함수-구조&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;1 화살표 함수 구조 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 화살표 함수 구조&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;function&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;=&gt;&lt;/code&gt; 로 표기하는 것이 전부가 아님&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;화살표 함수는 일반 함수와 구조가 다름&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;화살표 함수 나름의 특징이 있음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 위의 함수는 prototype과 constructor가 있음&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// 1. 위의 화살표 함수는 prototype과 construcotr가 없음&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 2. prototype에 메소드를 연결하여 확장 할 수 없음&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 3. prototype이 없으므로 그만큼 가벼움(prototype에 있는 연산자가 없기 때문에)&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 4. new 연산자로 인스턴스를 생성할 수 없음&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 5. 이것이 화살표 함수의 특징이며 용도임&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;2-arguments-사용-불가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-arguments-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80&quot; aria-label=&quot;2 arguments 사용 불가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) Arguments 사용 불가&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Arguments&lt;/code&gt;(파라미터가 유동적일 때 사용하는 것) 사용 할 수 없음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;use strict&quot;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; args &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; arguments&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;arguments 사용 불가&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token function&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;/*
-1. point(10, 20) 형태로 호출하면
-- 일반 함수에서는 arguments에 10, 20이 설정되지만
-
-2. 화살표 함수에서 ReferenceError가 발생함
-- 즉, arguemtns를 사용할 수 없음
-
-3. point 함수 구조를 전개하면
-- arguements가 표시는 됨
-- 그 이유는 일반함수와 구조를 맞추기 위해서
-
-*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Arguemtns&lt;/code&gt; 대신에 &lt;code class=&quot;language-text&quot;&gt;rest&lt;/code&gt; 파라미터 사용&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%EA%B5%AC%EC%A1%B0&quot;&gt;1) 화살표 함수 구조&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-arguments-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80&quot;&gt;2) Arguments 사용 불가&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Arrow Function와 this]]></title><description><![CDATA[1. 화살표 함수와 this…]]></description><link>https://free-ko.github.io/study-js-es6-arrowFunction-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-arrowFunction-3/</guid><pubDate>Wed, 01 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋 화살표 함수와 this, this가 정적 스코프 참조
@@ -13129,6 +13063,72 @@ book&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-this%EA%B0%80-%EC%A0%95%EC%A0%81-%EC%8A%A4%EC%BD%94%ED%94%84-%EC%B0%B8%EC%A1%B0&quot;&gt;2. &lt;code class=&quot;language-text&quot;&gt;this&lt;/code&gt;가 정적 스코프 참조&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Arrow Function 구조]]></title><description><![CDATA[1) 화살표 함수 구조 을  로 표기하는 것이 전부가 아님 화살표 함수는 일반 함수와 구조가 다름 화살표 함수 나름의 특징이 있음 2) Arguments 사용 불가 (파라미터가 유동적일 때 사용하는 것) 사용 할 수 없음  대신에  파라미터 사용…]]></description><link>https://free-ko.github.io/study-js-es6-arrowFunction-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-arrowFunction-2/</guid><pubDate>Wed, 01 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋 화살표 함수 구조, arguments 사용 불가
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-화살표-함수-구조&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%EA%B5%AC%EC%A1%B0&quot; aria-label=&quot;1 화살표 함수 구조 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 화살표 함수 구조&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;function&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;=&gt;&lt;/code&gt; 로 표기하는 것이 전부가 아님&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;화살표 함수는 일반 함수와 구조가 다름&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;화살표 함수 나름의 특징이 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 위의 함수는 prototype과 constructor가 있음&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. 위의 화살표 함수는 prototype과 construcotr가 없음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. prototype에 메소드를 연결하여 확장 할 수 없음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. prototype이 없으므로 그만큼 가벼움(prototype에 있는 연산자가 없기 때문에)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. new 연산자로 인스턴스를 생성할 수 없음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 5. 이것이 화살표 함수의 특징이며 용도임&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-arguments-사용-불가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-arguments-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80&quot; aria-label=&quot;2 arguments 사용 불가 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) Arguments 사용 불가&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Arguments&lt;/code&gt;(파라미터가 유동적일 때 사용하는 것) 사용 할 수 없음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;use strict&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; point &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; args &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; arguments&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;arguments 사용 불가&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/*
+1. point(10, 20) 형태로 호출하면
+- 일반 함수에서는 arguments에 10, 20이 설정되지만
+
+2. 화살표 함수에서 ReferenceError가 발생함
+- 즉, arguemtns를 사용할 수 없음
+
+3. point 함수 구조를 전개하면
+- arguements가 표시는 됨
+- 그 이유는 일반함수와 구조를 맞추기 위해서
+
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Arguemtns&lt;/code&gt; 대신에 &lt;code class=&quot;language-text&quot;&gt;rest&lt;/code&gt; 파라미터 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98-%EA%B5%AC%EC%A1%B0&quot;&gt;1) 화살표 함수 구조&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-arguments-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80&quot;&gt;2) Arguments 사용 불가&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Arrow Function 사용]]></title><description><![CDATA[1) Arrow Function 의 사전적 의미 : 화살, 화살표 코드 형태   키워드 대신에 화살표  사용 표 양쪽에 공백 작성 가능 의 축약 형태이지만, 고려할 사항도 있음( 참조가 다름)…]]></description><link>https://free-ko.github.io/study-js-es6-arrowFunction-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-arrowFunction-1/</guid><pubDate>Wed, 01 Sep 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
@@ -13541,6 +13541,62 @@ sports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span clas
 &lt;li&gt;&lt;a href=&quot;#2-var-%EB%B3%80%EC%88%98-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85&quot;&gt;2) var 변수 호이스팅&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#3-let-%EB%B3%80%EC%88%98-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85-%EC%82%AC%EC%9A%A9-%EB%B6%88%EA%B0%80&quot;&gt;3) let 변수 호이스팅 사용 불가&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[변수 선언 위치]]></title><description><![CDATA[💡 요약 모든  파일에서 글로벌 오브젝트에 작성한  변수와  변수를 공유  안에 작성하면 공유하지 않음 변수를 어디에 선언하냐에 따라 저장 위치가 다름…]]></description><link>https://free-ko.github.io/study-js-es6-declaration-position/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-declaration-position/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋 변수 선언 위치 정리
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;-요약&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot; aria-label=&quot; 요약 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;💡 요약&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 &lt;code class=&quot;language-text&quot;&gt;JS&lt;/code&gt; 파일에서 글로벌 오브젝트에 작성한 &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt; 변수와 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수를 공유&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;블록&lt;/code&gt; 안에 작성하면 공유하지 않음&lt;/li&gt;
+&lt;li&gt;변수를 어디에 선언하냐에 따라 저장 위치가 다름&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-글로벌-오브젝트에-작성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%9E%91%EC%84%B1&quot; aria-label=&quot;1 글로벌 오브젝트에 작성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 글로벌 오브젝트에 작성&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Scope&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Window&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Local&lt;/code&gt;에 변수가 저장됨&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; global &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;var 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; global &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;let 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; globalBlock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;block 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt;에 설정됨, 공유가능&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;에 설정됨, 공유가능&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;window.sports = {}&lt;/code&gt;처럼 의도적으로 작성하지 않아도 됨&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;{ let 변수 }&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;에 설정됨, 공유 불가능&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;글로벌 오브젝트에서만 사용하는 로컬 변수로 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-함수에-작성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%ED%95%A8%EC%88%98%EC%97%90-%EC%9E%91%EC%84%B1&quot; aria-label=&quot;2 함수에 작성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) 함수에 작성&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;showLocal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; localVar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;var 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; localLet &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;let 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; BlockLet &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Block 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var 변수, let 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Local&lt;/code&gt;에 설정됨&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;{ let 변수 }&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;에 설정됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot;&gt;💡 요약&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%9E%91%EC%84%B1&quot;&gt;1) 글로벌 오브젝트에 작성&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%ED%95%A8%EC%88%98%EC%97%90-%EC%9E%91%EC%84%B1&quot;&gt;2) 함수에 작성&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[const 변수]]></title><description><![CDATA[1) const 문법 구문:  값을 바꿀 수 없는 변수 선언(예외로 배열이나, 객체면 값을 바꿀 수 있음) 에 변수 이름 작성, 식별자로 사용  sports를 로 선언하고 값 할당  try 블록도 별도의 스코프이지만 const, let…]]></description><link>https://free-ko.github.io/study-js-es6-const/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-const/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋 const 변수
@@ -13633,62 +13689,6 @@ book&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
 &lt;li&gt;&lt;a href=&quot;#1-const-%EB%AC%B8%EB%B2%95&quot;&gt;1) const 문법&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2-js%EC%97%90%EC%84%9C-%EC%83%81%EC%88%98%EB%8A%94-%EB%8C%80%EB%AC%B8%EC%9E%90-%EC%82%AC%EC%9A%A9%EC%9D%B4-%EA%B4%80%EB%A1%80&quot;&gt;2) JS에서 상수는 대문자 사용이 관례&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#3-const-%EB%B3%80%EC%88%98-%EC%82%AC%EC%9A%A9&quot;&gt;3) const 변수 사용&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[변수 선언 위치]]></title><description><![CDATA[💡 요약 모든  파일에서 글로벌 오브젝트에 작성한  변수와  변수를 공유  안에 작성하면 공유하지 않음 변수를 어디에 선언하냐에 따라 저장 위치가 다름…]]></description><link>https://free-ko.github.io/study-js-es6-declaration-position/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-declaration-position/</guid><pubDate>Tue, 31 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
-&lt;h1 align=&quot;center&quot;&gt;
-  👋 변수 선언 위치 정리
-&lt;/h1&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;-요약&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot; aria-label=&quot; 요약 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;💡 요약&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 &lt;code class=&quot;language-text&quot;&gt;JS&lt;/code&gt; 파일에서 글로벌 오브젝트에 작성한 &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt; 변수와 &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt; 변수를 공유&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;블록&lt;/code&gt; 안에 작성하면 공유하지 않음&lt;/li&gt;
-&lt;li&gt;변수를 어디에 선언하냐에 따라 저장 위치가 다름&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;1-글로벌-오브젝트에-작성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%9E%91%EC%84%B1&quot; aria-label=&quot;1 글로벌 오브젝트에 작성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1) 글로벌 오브젝트에 작성&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Scope&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Window&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Local&lt;/code&gt;에 변수가 저장됨&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; global &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;var 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; global &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;let 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; globalBlock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;block 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;window&lt;/code&gt;에 설정됨, 공유가능&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;let 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Script&lt;/code&gt;에 설정됨, 공유가능&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;window.sports = {}&lt;/code&gt;처럼 의도적으로 작성하지 않아도 됨&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;{ let 변수 }&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;에 설정됨, 공유 불가능&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;글로벌 오브젝트에서만 사용하는 로컬 변수로 사용&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;2-함수에-작성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%ED%95%A8%EC%88%98%EC%97%90-%EC%9E%91%EC%84%B1&quot; aria-label=&quot;2 함수에 작성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2) 함수에 작성&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;showLocal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; localVar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;var 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; localLet &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;let 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; BlockLet &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Block 변수&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;var 변수, let 변수&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Local&lt;/code&gt;에 설정됨&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;{ let 변수 }&lt;/code&gt; : &lt;code class=&quot;language-text&quot;&gt;Block&lt;/code&gt;에 설정됨&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#-%EC%9A%94%EC%95%BD&quot;&gt;💡 요약&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#1-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%9E%91%EC%84%B1&quot;&gt;1) 글로벌 오브젝트에 작성&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-%ED%95%A8%EC%88%98%EC%97%90-%EC%9E%91%EC%84%B1&quot;&gt;2) 함수에 작성&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[function 블록, try-catch, switch-case]]></title><description><![CDATA[1) function 블록 도 블록 스코프  안과 밖에 같은 이름의  변수 선언 가능 스코프가 다르기 때문 그래서 밖의 와 안의 는 다르게 저장되어 있음  밖의  변수를  안에서 사용 가능() 2) try-catch…]]></description><link>https://free-ko.github.io/study-js-es6-scope/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-scope/</guid><pubDate>Mon, 30 Aug 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
