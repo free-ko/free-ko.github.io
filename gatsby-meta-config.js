@@ -1,6 +1,6 @@
 module.exports = {
-  title: `WooGi-Codding`,
-  description: `우기의 개발노트`,
+  title: `WooGi's Blog`,
+  description: `우기의 성장 기록소`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://free-ko.github.io/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
