@@ -1,5 +1,5 @@
 module.exports = {
-  title: `WooGi's Blog`,
+  title: `WooGi Log`,
   description: `우기의 성장 기록소`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://free-ko.github.io/`,
