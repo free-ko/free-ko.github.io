@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi Log]]></title><description><![CDATA[우기의 성장 기록소]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 23 Dec 2021 02:01:28 GMT</lastBuildDate><item><title><![CDATA[async/await - 반환, 형태, for-await-of]]></title><description><![CDATA[1. await Syntax…]]></description><link>https://free-ko.github.io/study-js-es6-async-await-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-async-await-2/</guid><pubDate>Wed, 22 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi Log]]></title><description><![CDATA[우기의 성장 기록소]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 23 Dec 2021 23:52:41 GMT</lastBuildDate><item><title><![CDATA[async/await - Symbol.asyncIterator,  Symbol.iterator와 차이]]></title><description><![CDATA[1. Symbol.asyncIterator  는 에 대응하는 이면 비동기로 반복을 실행 함  은 1…]]></description><link>https://free-ko.github.io/study-js-es6-async-await-3/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-async-await-3/</guid><pubDate>Thu, 23 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h1 align=&quot;center&quot;&gt;
+  👋  async/await - Symbol.asyncIterator,  Symbol.iterator와 차이
+&lt;/h1&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-symbolasynciterator&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-symbolasynciterator&quot; aria-label=&quot;1 symbolasynciterator permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Symbol.asyncIterator&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.asyncIterator&lt;/code&gt; 는 &lt;code class=&quot;language-text&quot;&gt;for-await-of&lt;/code&gt;에 대응하는 &lt;code class=&quot;language-text&quot;&gt;Well-known Symbol&lt;/code&gt;이면 비동기로 반복을 실행 함&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Well-known Symbol&lt;/code&gt; 은 12개임&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.iterator&lt;/code&gt; 와 차이&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.asyncIterator()&lt;/code&gt; 를 호출하면 &lt;code class=&quot;language-text&quot;&gt;AsyncIterator&lt;/code&gt; 인스턴스를 생성하여 반환함&lt;/li&gt;
+&lt;li&gt;생성한 인스턴스의 &lt;code class=&quot;language-text&quot;&gt;next()&lt;/code&gt;를 호출하면 &lt;code class=&quot;language-text&quot;&gt;{value: 값, done: false}&lt;/code&gt; 형태로 반환하며 이 값을 &lt;code class=&quot;language-text&quot;&gt;Promise.resolve()&lt;/code&gt; 의 파라미터 값으로 사용함&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;for-await-of&lt;/code&gt; 로 반복함&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Symbol.asyncIterator&lt;/code&gt; 와 제너레이터 함수&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; gen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;gen&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Symbol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;toStringTag&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;gen&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Symbol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asyncIterator&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;gen&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Symbol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asyncIterator&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;next&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. const gen = point(); AsyncGenerator 인스턴스를 생성하여 반환함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. gen[Symbol.toStringTag], AsyncGenerator를 출력함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. gen[Symbol.asyncIterator, gen 인스턴스의 Symbol.asyncIterator를 출력하며 함수가 출력됨&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. gen[Symbol.asyncIterator]().next, asyncIterator 인스턴스를 생성하여 반환하며 인스턴스에는 next()가 있음&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 실행결과&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// AsyncGenerator&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// function[Symbol.asyncIterator]() { [native code] }&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// function next() { [native code] }&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;for-await-of&lt;/code&gt; 반복&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; gen &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; point &lt;span class=&quot;token keyword&quot;&gt;of&lt;/span&gt; gen&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;point&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 1. for await (const point of gen) {...}, gen은 AsyncGenerator 인스턴스 임 gen의 Symbol.asyncIterator()를 호출함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 2. AsyncIterator 인스턴스를 생성하여 반환하며 인스턴스의 next()를 호출함&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 3. yield 10을 { value: 10, done: false }로 반환하며 Promise.resolve(param)의 파라미터 값으로 사용하여 for-await-of로 보냄&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 4. { value: 10 }에서 10을 point에 설정함&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 실행결과&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 10&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 20&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-symbolasynciterator&quot;&gt;1. Symbol.asyncIterator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[async/await - 반환, 형태, for-await-of]]></title><description><![CDATA[1. await Syntax…]]></description><link>https://free-ko.github.io/study-js-es6-async-await-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-async-await-2/</guid><pubDate>Wed, 22 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  async/await - 반환, 형태, for-await-of
 &lt;/h1&gt;
