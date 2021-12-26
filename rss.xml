@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi Log]]></title><description><![CDATA[우기의 성장 기록소]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 Dec 2021 10:56:24 GMT</lastBuildDate><item><title><![CDATA[Bit 연산자 - OR 연산자, AND 연산자, XOR 연산자]]></title><description><![CDATA[1. 바이너리 비트 연산자  개요 왼쪽과 오른쪽에 피 연산자가 있는 2항 연산자 왼쪽과 오른쪽 피연산자 값을 비트로 변환하여 연산함 비트로 연산하므로 처리 속도가 빠름 2. 비트 OR연산자 연산자 기호 :  피연산자 한쪽이라도 1이면 1로 처리…]]></description><link>https://free-ko.github.io/study-js-es6-bit-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-bit-2/</guid><pubDate>Sat, 25 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[WooGi Log]]></title><description><![CDATA[우기의 성장 기록소]]></description><link>https://free-ko.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 26 Dec 2021 13:07:46 GMT</lastBuildDate><item><title><![CDATA[Bit 연산자 - OR 연산자, AND 연산자, XOR 연산자]]></title><description><![CDATA[1. 바이너리 비트 연산자  개요 왼쪽과 오른쪽에 피 연산자가 있는 2항 연산자 왼쪽과 오른쪽 피연산자 값을 비트로 변환하여 연산함 비트로 연산하므로 처리 속도가 빠름 2. 비트 OR연산자 연산자 기호 :  피연산자 한쪽이라도 1이면 1로 처리…]]></description><link>https://free-ko.github.io/study-js-es6-bit-2/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-bit-2/</guid><pubDate>Sat, 25 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Bit 연산자 - OR 연산자, AND 연산자, XOR 연산자
 &lt;/h1&gt;
@@ -109,6 +109,57 @@
 &lt;li&gt;&lt;a href=&quot;#3content-encoding--%ED%91%9C%ED%98%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9D%B8%EC%BD%94%EB%94%A9&quot;&gt;3.Content-Encoding : 표현 데이터 인코딩&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#4-content-language--%ED%91%9C%ED%98%84-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EC%9E%90%EC%97%B0-%EC%96%B8%EC%96%B4&quot;&gt;4. Content-Language : 표현 데이터의 자연 언어&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#5-content-length--%ED%91%9C%ED%98%84-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EA%B8%B8%EC%9D%B4&quot;&gt;5. Content-Length : 표현 데이터의 길이&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[12월 마지막 주 회고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/write-log-211226/</link><guid isPermaLink="false">https://free-ko.github.io/write-log-211226/</guid><pubDate>Sat, 25 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;h2 id=&quot;1-처음-겪는-사기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%B2%98%EC%9D%8C-%EA%B2%AA%EB%8A%94-%EC%82%AC%EA%B8%B0&quot; aria-label=&quot;1 처음 겪는 사기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 처음 겪는 사기&lt;/h2&gt;
+&lt;p&gt;난생처음으로 휴대폰&lt;code class=&quot;language-text&quot;&gt;사기&lt;/code&gt;를 겪었다. 지인의 지인을 통해 휴대폰 거래를 진행했다.
+생각만해도 스스로가 너무 부끄럽다…
+이번 사건을 통해 확실히 깨달은 것은 &lt;code class=&quot;language-text&quot;&gt;스스로 확실하지 않으면 행동하지 말자&lt;/code&gt;
+내가 확인하고 확신이 들기 전까지 심지어 확신을 해도 한 번쯤은 의심을 해보고 다시 생각을 해보자
+스스로를 너무 쉽게 믿지 말자.
+돌이켜보면 빨리 휴대폰을 교체하고 싶은 마음과 단돈 몇십만원 저렴하게 구입하고자 조급하게 행동했다
+다시한번 반성하고 다시는 이런일이 일어나지 않도록 스스로 다짐을 하고
+이번 일을 교훈삼아 앞으로 더 큰 일들이 있을 때 반면교사 삼자.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-yes맨이-되지-말자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-yes%EB%A7%A8%EC%9D%B4-%EB%90%98%EC%A7%80-%EB%A7%90%EC%9E%90&quot; aria-label=&quot;2 yes맨이 되지 말자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. YES맨이 되지 말자&lt;/h2&gt;
+&lt;p&gt;일을 진행하면서 상사가 나에게 업무 지시와 무언가를 설명할 때 &lt;code class=&quot;language-text&quot;&gt;YES, 즉 아는 척&lt;/code&gt;을 해서,
+로직을 잘못 개발하였다.
+다시 생각해도 너무나 어리석었다.
+DB에 대한 전반적인 지식도 없는데 지금까지 알고 있다고 생각했다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; 데이터베이스 정의 &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+
+데이터베이스는 일반적으로 컴퓨터 시스템에 전자적으로 저장되는 구조화된 정보 또는 데이터의 조직화된 모음입니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+데이터베이스는 일반적으로 데이터베이스 관리 &lt;span class=&quot;token function&quot;&gt;시스템&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;DBMS&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;에 의해 제어됩니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+연결된 애플리케이션과 함께 데이터와 &lt;span class=&quot;token constant&quot;&gt;DBMS&lt;/span&gt;를 하나로 묶어 데이터베이스 시스템이라고 하며 단축하여 데이터베이스라고도 합니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+오늘날 운영되고 있는 가장 일반적인 유형의 데이터베이스에서 데이터는 일반적으로 처리 및 데이터 쿼리를 효율적으로 수행하기 위해 일련의 테이블에서 행과 열로 모델링됩니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+그러면 데이터에 쉽게 액세스하고 관리&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 수정&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 업데이트&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 제어 및 구성할 수 있습니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; 대부분의 데이터베이스는 데이터 작성 및 쿼리에 &lt;span class=&quot;token constant&quot;&gt;SQL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Structured Query Language&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;을 사용합니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+
+
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; 데이터베이스와 스프레드 시트의 차이점 &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+
+데이터베이스와 스프레드 &lt;span class=&quot;token function&quot;&gt;시트&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;예&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Microsoft Excel&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 모두 정보를 편리하게 저장할 수 있는 방법입니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+두 기술 간의 주요 차이점은 다음과 같습니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; 데이터 저장 및 조작 방법
+&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; 데이터에 액세스 할 수 있는 사람
+&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; 저장할 수 있는 데이터 양
+
+스프레드 시트는 원래 한명의 사용자를 위해 설계되었기 때문에 해당 사용자의 특성이 반영되어 있습니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+’엄청나게 복잡한 데이터 조작을 수행할 필요가 없는’ 단일 사용자나 적은 수의 사용자에게 적합합니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+반면에 데이터베이스는 규모가 더 크고 —때로 엄청난 양의 조직화된 정보 모음을 보유하도록 설계되었습니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+데이터베이스를 사용하면 여러 사용자가 동시에 매우 복잡한 로직과 언어를 사용하여 데이터에 빠르고 안전하게 액세스 및 쿼리할 수 있습니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;출처 &lt;span class=&quot;token constant&quot;&gt;ORACLE&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그렇다 나는 DB와 스프레드 시트의 차이점을 정확히 몰랐다. 팀장님이 나중에 사용자 정보 중 특정 정보를 외래키로 사용할 수 있으니
+적절하게 MongoDB에 외래키로 사용할 수 있는 데이터를 셋팅하는 로직을 개발해 달라고 요청을 하셨다.
+그러나 MongoDB에 접근할 수 있는 외래키가 아닌, &lt;code class=&quot;language-text&quot;&gt;구글 스프레드 시트&lt;/code&gt;가 마치 &lt;code class=&quot;language-text&quot;&gt;접근&lt;/code&gt;할 수 있는 &lt;code class=&quot;language-text&quot;&gt;DB라고 인식&lt;/code&gt;하여, 구글 스프레드 시트의 특정 정보를 외래키로 생각해 로직을 개발하게 되었다.(정말 다시생각해도 아찔하다…)
+정말 다시 한번 질문하는 습관을 통해 확실하지 않으면, 다시 물어보는 연습을 해야 겠다.&lt;/p&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EC%B2%98%EC%9D%8C-%EA%B2%AA%EB%8A%94-%EC%82%AC%EA%B8%B0&quot;&gt;1. 처음 겪는 사기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-yes%EB%A7%A8%EC%9D%B4-%EB%90%98%EC%A7%80-%EB%A7%90%EC%9E%90&quot;&gt;2. YES맨이 되지 말자&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Bit 연산자 - 비트, 바이트, 2진수 연산, 사인 비트, 음수 표현]]></title><description><![CDATA[1. 개요 바이너리(Binary) 데이터 처리를 다룸 4개 섹션 비트 연산자 ArrayBufer TypedArray DataView 2. 비트, 바이트 값 표현의 기본 단위는 바이트(Byte) 1바이트는 8비트(Bit)이며 1비트 값은 0 아니면…]]></description><link>https://free-ko.github.io/study-js-es6-bit-1/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-bit-1/</guid><pubDate>Fri, 24 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
@@ -1500,10 +1551,66 @@ ex) &lt;code class=&quot;language-text&quot;&gt;/members&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#2%EB%A9%B1%EB%93%B1&quot;&gt;2.멱등&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#3%EC%BA%90%EC%8B%9C%EA%B0%80%EB%8A%A5&quot;&gt;3.캐시가능&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</content:encoded></item><item><title><![CDATA[2021년을 되돌아보며]]></title><description><![CDATA[1. 새로운 도전💡 2020년 12월 중순  개발자로 취업을 했다.
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📕 「함께 자라기, 에자일로 가는길」 을 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-4/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-4/</guid><pubDate>Sat, 18 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 181px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 153.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAfABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAQACBP/EABcBAQEBAQAAAAAAAAAAAAAAAAABAwT/2gAMAwEAAhADEAAAAeZLHg1ZjQaUiT//xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEhEBIg/9oACAEBAAEFAiCeHWGbUz//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAUEAEAAAAAAAAAAAAAAAAAAAAw/9oACAEBAAY/Ak//xAAbEAEAAgIDAAAAAAAAAAAAAAABABEhQRAgMf/aAAgBAQABPyGIHJcQ+FdNE1EqU2QGFcP/2gAMAwEAAgADAAAAEEjm/f/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EKqI/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAQ/9oACAECAQE/EGd//8QAHRAAAwEAAQUAAAAAAAAAAAAAAAERMSEgQVFxgf/aAAgBAQABPxAs1rMYzTTx5S6Im3LTe6ei5S5cEtJMf0Q3uSl+Wf/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1.jpeg&quot;
+        title=&quot;1.jpeg&quot;
+        src=&quot;/static/ce1c37e0c3c2dd4d6010d0f0c2005f0b/bcd8a/1.jpg&quot;
+        srcset=&quot;/static/ce1c37e0c3c2dd4d6010d0f0c2005f0b/4ec73/1.jpg 180w,
+/static/ce1c37e0c3c2dd4d6010d0f0c2005f0b/bcd8a/1.jpg 181w&quot;
+        sizes=&quot;(max-width: 181px) 100vw, 181px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;1-이-책을-읽은-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 이 책을 읽은 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;1. 이 책을 읽은 이유💡&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;우연히 개발관련 유튜브를 보다가 이 책을 소개하는 영상을 보게 되었다. 워낙 유명한 개발자 분이 추천해주신 책이라 안 읽어 볼 수 없었다. 무엇보다도 주니어 개발자에게 추천하는 책이라는 말씀에 더욱 내 마음을 사로잡아 이 책을 구매해 읽기 시작하였다.&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;2-경력은-무엇일까🧐&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EA%B2%BD%EB%A0%A5%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C%F0%9F%A7%90&quot; aria-label=&quot;2 경력은 무엇일까🧐 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 경력은 무엇일까?🧐&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;이 책을 읽기 전까지 &lt;code class=&quot;language-text&quot;&gt;나는 단순히 경력이 많으면, 실력이 높은 개발자&lt;/code&gt;가 될 줄 알았다.
+그러나 이 책에서는 경력보다는 &lt;code class=&quot;language-text&quot;&gt;실력&lt;/code&gt;의 중요성을 강조한 부분이 나에게는 새롭게 다가왔다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.21&lt;/span&gt;
+실력이 뛰어난 사람은 문제를 이해하는데 시간을 적게 쓰는것으로 나왔다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;나도 종종 일하면서 느끼는 거지만 확실히 실력이 있는 개발자 분들이 문제에 직면했을 때 빠르게 이해하고 처리하는 것을 본 적이 있었다. 이와 반대로 경력이 많지만 문제를 이해하지 못하고 문제와 상관없는 것들을 물어보는 안타까운 모습들을 보게 되었다.(물론 다시 한번 문제를 제대로 이해 시켜주기 위해 같이 이야기를 했지만, 안타깝게 자신의 주장을 고집하는 모습을 종종 보게되었다.)&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;3-그러면-어떻게-실력을-키울-수-있을까&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B7%B8%EB%9F%AC%EB%A9%B4-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%8B%A4%EB%A0%A5%EC%9D%84-%ED%82%A4%EC%9A%B8-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C&quot; aria-label=&quot;3 그러면 어떻게 실력을 키울 수 있을까 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;3. 그러면 어떻게 실력을 키울 수 있을까?💪&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;이 책의 저자는 일이 끝나면 &lt;code class=&quot;language-text&quot;&gt;회고&lt;/code&gt;라는 활동을 한다고 말씀한다. 이 문장을 읽으면서 실력을 키우기 앞서 먼저 나를 되돌아보고, 무엇이 부족한지 깨달아 채우는 과정이 실력을 키우는 것에 첫 걸음이라는 사실을 문득 깨닫게 되었다. 막연히 남들이 좋다고 하는 프레임워크나, 언어 공부 등을 하는 것이 아닌 내가 가야할 목표가 무엇이며, 그 목표를 도달하기 위해 무엇이 부족해, 어떠한 학습을 통해 실력을 키울지 이러한 순차적인 생각을 하는게, 먼저 인데 스스로도 조급함에 빠져 정작 중요한 것을 놓치고 있었다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.41&lt;/span&gt;
+완벽한 도구와 환경을 갖추는 데에 집착해서는 안 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+그런 식으로는 무엇도 영원히 얻을 수 없다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 생각들이 아직 정리는 되지 않았지만, 그래도 생각들을 차분히 고민하며, 책에서 제시해주는 실력 키우는 방법들을 적용해 필요한 사람이 되고 싶다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;39&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;
+
+&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; 자신이 이미 갖고 있는 것들을 잘 활용
+   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 이미 습득한 지식&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 기술&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 경험 등을 서로 연결지어서 시너지 효과가 날 수 있도록 하여&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 다른 영역으로 왔다 갔다하는 것을 자주 할 수 있도록 함
+   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 내가 그 지식을 얼마나 어떻게 활요하는지 반성하기
+   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 새로운 것이 들어오면 이미 갖고 있는 것들과 충돌을 시도
+   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 내가 하는 일이 차후에 밑거름이 될 수 있도록 하기
+
+&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; 자신을 개선하는 프로세스에 대해 생각
+    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 자신이 작업한 것들을 회고&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;반성 하는 활동을 주기적으로 하는 프로세스 만들기
+    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 나를 개선하는 과정을 어떻게 하면 개선할 수 있을지 고민
+
+&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; 피드백을 자주 받기
+    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 일찍&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 그리고 자주 실패하고 학습하기
+
+&lt;span class=&quot;token number&quot;&gt;4.&lt;/span&gt; 자신의 능력을 높여주는 도구와 환경을 점진적으로 만들기&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;느낀점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8A%90%EB%82%80%EC%A0%90&quot; aria-label=&quot;느낀점 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;느낀점😋&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;요즘 많은 사람들이 개발자로써 직업을 바꾸는 모습들을 보며(물론 나 또한 그랬지만) 또는 나보다 먼저 개발을 시작해 좋은 직장에서 개발을 하는 사람들의 이야기를 보면서 스스로에게 불안과 조급함이라는 방 안에 갖히게 만들곤 했었다. 그러나 이 책을 보면서 &lt;code class=&quot;language-text&quot;&gt;진짜 실력있는 개발자로&lt;/code&gt;써 학습하고 노력을 하면 나 또한 개발자로써 많은 기업으로 부터 필요한 사람이 될 수 있을 것 같다는 자신감이 생겼다.
+아직도 많이 부족하고 갈 길이 멀지만, 겸손한 자세와 기본기를 탄탄하게 만들어 개발자로서 어디서든 꼭 필요한 사람이 되고 싶다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[2021년을 되돌아보며]]></title><description><![CDATA[1. 새로운 도전💡 2020년 12월 중순  개발자로 취업을 했다.
 모든 것이 낯설고, 두렵고, 조급했다.
 늦은 나이에 개발자로 커리어를 시작한다는 생각에 사로 잡혀있었다.
-다행히 회사에 좋은 사람들을 만나 좋은 경험을 할 수 있었다.…]]></description><link>https://free-ko.github.io/reflect-2021/</link><guid isPermaLink="false">https://free-ko.github.io/reflect-2021/</guid><pubDate>Sat, 18 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+다행히 회사에 좋은 사람들을 만나 좋은 경험을 할 수 있었다.…]]></description><link>https://free-ko.github.io/write-log-2021/</link><guid isPermaLink="false">https://free-ko.github.io/write-log-2021/</guid><pubDate>Sat, 18 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h2 id=&quot;1-새로운-도전&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%8F%84%EC%A0%84&quot; aria-label=&quot;1 새로운 도전 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. &lt;strong&gt;새로운 도전💡&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;2020년 12월 중순 &lt;code class=&quot;language-text&quot;&gt;프론트 엔드&lt;/code&gt; 개발자로 취업을 했다.
 모든 것이 낯설고, 두렵고, 조급했다.
@@ -1610,16 +1717,6 @@ ex) &lt;code class=&quot;language-text&quot;&gt;/members&lt;/code&gt;&lt;/li&gt;
 그러나 요즘 날씨가 추워져서 그런가 몸에 힘도 없고 내가 제대로 하고 있는지 의심하는 시간들이 많아 졌다.
 그래서 유튜브 영상도 보면서 다시 한번 동기부여도 받고 운동할 때 많이 하는 것보다 제대로 할려고 노력을 하고 있다.
 내년에도 꾸준히 운동을 해 원하는 몸을 갖을 것이다.&lt;/p&gt;
-&lt;div class=&quot;table-of-contents&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%8F%84%EC%A0%84&quot;&gt;1. &lt;strong&gt;새로운 도전💡&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-%EC%8B%A4%EB%A0%A5%EC%9D%84-%EC%8C%93%EA%B8%B0-%EC%9C%84%ED%95%B4&quot;&gt;2. &lt;strong&gt;실력을 쌓기 위해👍&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3-%EB%82%98%EC%9D%98-%EC%9E%91%EC%97%85%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0%F0%9F%A7%91&quot;&gt;3. &lt;strong&gt;나의 작업을 돌아보며🧑‍💻&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#4-%EB%8F%85%EC%84%9C-%EB%AA%A9%ED%91%9C-%ED%9A%8C%EA%B3%A0&quot;&gt;4. &lt;strong&gt;독서 목표 회고📕&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#5-%EC%9A%B4%EB%8F%99-%ED%9A%8C%EA%B3%A0&quot;&gt;5. &lt;strong&gt;운동 회고🏃&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#6-2022%EB%85%84-%EB%AA%A9%ED%91%9C&quot;&gt;6. &lt;strong&gt;2022년 목표🌈&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;6-2022년-목표&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#6-2022%EB%85%84-%EB%AA%A9%ED%91%9C&quot; aria-label=&quot;6 2022년 목표 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6. &lt;strong&gt;2022년 목표🌈&lt;/strong&gt;&lt;/h2&gt;
 &lt;ol&gt;
@@ -1656,63 +1753,17 @@ ex) &lt;code class=&quot;language-text&quot;&gt;/members&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;개발, 비 개발 한달에 1권씩 읽고 블로그에 서평 작성&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[📕 「함께 자라기, 에자일로 가는길」 을 읽고]]></title><description><![CDATA[…]]></description><link>https://free-ko.github.io/read-book-4/</link><guid isPermaLink="false">https://free-ko.github.io/read-book-4/</guid><pubDate>Sat, 18 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 181px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 153.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAfABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAQACBP/EABcBAQEBAQAAAAAAAAAAAAAAAAABAwT/2gAMAwEAAhADEAAAAeZLHg1ZjQaUiT//xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEhEBIg/9oACAEBAAEFAiCeHWGbUz//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAUEAEAAAAAAAAAAAAAAAAAAAAw/9oACAEBAAY/Ak//xAAbEAEAAgIDAAAAAAAAAAAAAAABABEhQRAgMf/aAAgBAQABPyGIHJcQ+FdNE1EqU2QGFcP/2gAMAwEAAgADAAAAEEjm/f/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EKqI/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAQ/9oACAECAQE/EGd//8QAHRAAAwEAAQUAAAAAAAAAAAAAAAERMSEgQVFxgf/aAAgBAQABPxAs1rMYzTTx5S6Im3LTe6ei5S5cEtJMf0Q3uSl+Wf/Z&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1.jpeg&quot;
-        title=&quot;1.jpeg&quot;
-        src=&quot;/static/ce1c37e0c3c2dd4d6010d0f0c2005f0b/bcd8a/1.jpg&quot;
-        srcset=&quot;/static/ce1c37e0c3c2dd4d6010d0f0c2005f0b/4ec73/1.jpg 180w,
-/static/ce1c37e0c3c2dd4d6010d0f0c2005f0b/bcd8a/1.jpg 181w&quot;
-        sizes=&quot;(max-width: 181px) 100vw, 181px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;1-이-책을-읽은-이유&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4-%EC%B1%85%EC%9D%84-%EC%9D%BD%EC%9D%80-%EC%9D%B4%EC%9C%A0&quot; aria-label=&quot;1 이 책을 읽은 이유 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;1. 이 책을 읽은 이유💡&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;우연히 개발관련 유튜브를 보다가 이 책을 소개하는 영상을 보게 되었다. 워낙 유명한 개발자 분이 추천해주신 책이라 안 읽어 볼 수 없었다. 무엇보다도 주니어 개발자에게 추천하는 책이라는 말씀에 더욱 내 마음을 사로잡아 이 책을 구매해 읽기 시작하였다.&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;2-경력은-무엇일까🧐&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EA%B2%BD%EB%A0%A5%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C%F0%9F%A7%90&quot; aria-label=&quot;2 경력은 무엇일까🧐 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;2. 경력은 무엇일까?🧐&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;이 책을 읽기 전까지 &lt;code class=&quot;language-text&quot;&gt;나는 단순히 경력이 많으면, 실력이 높은 개발자&lt;/code&gt;가 될 줄 알았다.
-그러나 이 책에서는 경력보다는 &lt;code class=&quot;language-text&quot;&gt;실력&lt;/code&gt;의 중요성을 강조한 부분이 나에게는 새롭게 다가왔다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.21&lt;/span&gt;
-실력이 뛰어난 사람은 문제를 이해하는데 시간을 적게 쓰는것으로 나왔다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;나도 종종 일하면서 느끼는 거지만 확실히 실력이 있는 개발자 분들이 문제에 직면했을 때 빠르게 이해하고 처리하는 것을 본 적이 있었다. 이와 반대로 경력이 많지만 문제를 이해하지 못하고 문제와 상관없는 것들을 물어보는 안타까운 모습들을 보게 되었다.(물론 다시 한번 문제를 제대로 이해 시켜주기 위해 같이 이야기를 했지만, 안타깝게 자신의 주장을 고집하는 모습을 종종 보게되었다.)&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;3-그러면-어떻게-실력을-키울-수-있을까&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B7%B8%EB%9F%AC%EB%A9%B4-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%8B%A4%EB%A0%A5%EC%9D%84-%ED%82%A4%EC%9A%B8-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C&quot; aria-label=&quot;3 그러면 어떻게 실력을 키울 수 있을까 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;3. 그러면 어떻게 실력을 키울 수 있을까?💪&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;이 책의 저자는 일이 끝나면 &lt;code class=&quot;language-text&quot;&gt;회고&lt;/code&gt;라는 활동을 한다고 말씀한다. 이 문장을 읽으면서 실력을 키우기 앞서 먼저 나를 되돌아보고, 무엇이 부족한지 깨달아 채우는 과정이 실력을 키우는 것에 첫 걸음이라는 사실을 문득 깨닫게 되었다. 막연히 남들이 좋다고 하는 프레임워크나, 언어 공부 등을 하는 것이 아닌 내가 가야할 목표가 무엇이며, 그 목표를 도달하기 위해 무엇이 부족해, 어떠한 학습을 통해 실력을 키울지 이러한 순차적인 생각을 하는게, 먼저 인데 스스로도 조급함에 빠져 정작 중요한 것을 놓치고 있었다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;.41&lt;/span&gt;
-완벽한 도구와 환경을 갖추는 데에 집착해서는 안 된다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
-그런 식으로는 무엇도 영원히 얻을 수 없다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;위의 생각들이 아직 정리는 되지 않았지만, 그래도 생각들을 차분히 고민하며, 책에서 제시해주는 실력 키우는 방법들을 적용해 필요한 사람이 되고 싶다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;39&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;
-
-&lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt; 자신이 이미 갖고 있는 것들을 잘 활용
-   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 이미 습득한 지식&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 기술&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 경험 등을 서로 연결지어서 시너지 효과가 날 수 있도록 하여&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 다른 영역으로 왔다 갔다하는 것을 자주 할 수 있도록 함
-   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 내가 그 지식을 얼마나 어떻게 활요하는지 반성하기
-   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 새로운 것이 들어오면 이미 갖고 있는 것들과 충돌을 시도
-   &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 내가 하는 일이 차후에 밑거름이 될 수 있도록 하기
-
-&lt;span class=&quot;token number&quot;&gt;2.&lt;/span&gt; 자신을 개선하는 프로세스에 대해 생각
-    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 자신이 작업한 것들을 회고&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;반성 하는 활동을 주기적으로 하는 프로세스 만들기
-    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 나를 개선하는 과정을 어떻게 하면 개선할 수 있을지 고민
-
-&lt;span class=&quot;token number&quot;&gt;3.&lt;/span&gt; 피드백을 자주 받기
-    &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 일찍&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 그리고 자주 실패하고 학습하기
-
-&lt;span class=&quot;token number&quot;&gt;4.&lt;/span&gt; 자신의 능력을 높여주는 도구와 환경을 점진적으로 만들기&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;느낀점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8A%90%EB%82%80%EC%A0%90&quot; aria-label=&quot;느낀점 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;느낀점😋&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;요즘 많은 사람들이 개발자로써 직업을 바꾸는 모습들을 보며(물론 나 또한 그랬지만) 또는 나보다 먼저 개발을 시작해 좋은 직장에서 개발을 하는 사람들의 이야기를 보면서 스스로에게 불안과 조급함이라는 방 안에 갖히게 만들곤 했었다. 그러나 이 책을 보면서 &lt;code class=&quot;language-text&quot;&gt;진짜 실력있는 개발자로&lt;/code&gt;써 학습하고 노력을 하면 나 또한 개발자로써 많은 기업으로 부터 필요한 사람이 될 수 있을 것 같다는 자신감이 생겼다.
-아직도 많이 부족하고 갈 길이 멀지만, 겸손한 자세와 기본기를 탄탄하게 만들어 개발자로서 어디서든 꼭 필요한 사람이 되고 싶다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Promise - resolve(), thenable, reject()]]></title><description><![CDATA[1. resolve() 성공(fullfilled…]]></description><link>https://free-ko.github.io/study-js-es6-promise-4/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-promise-4/</guid><pubDate>Fri, 17 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%8F%84%EC%A0%84&quot;&gt;1. &lt;strong&gt;새로운 도전💡&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-%EC%8B%A4%EB%A0%A5%EC%9D%84-%EC%8C%93%EA%B8%B0-%EC%9C%84%ED%95%B4&quot;&gt;2. &lt;strong&gt;실력을 쌓기 위해👍&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-%EB%82%98%EC%9D%98-%EC%9E%91%EC%97%85%EC%9D%84-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0%F0%9F%A7%91&quot;&gt;3. &lt;strong&gt;나의 작업을 돌아보며🧑‍💻&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#4-%EB%8F%85%EC%84%9C-%EB%AA%A9%ED%91%9C-%ED%9A%8C%EA%B3%A0&quot;&gt;4. &lt;strong&gt;독서 목표 회고📕&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#5-%EC%9A%B4%EB%8F%99-%ED%9A%8C%EA%B3%A0&quot;&gt;5. &lt;strong&gt;운동 회고🏃&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#6-2022%EB%85%84-%EB%AA%A9%ED%91%9C&quot;&gt;6. &lt;strong&gt;2022년 목표🌈&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Promise - resolve(), thenable, reject()]]></title><description><![CDATA[1. resolve() 성공(fullfilled…]]></description><link>https://free-ko.github.io/study-js-es6-promise-4/</link><guid isPermaLink="false">https://free-ko.github.io/study-js-es6-promise-4/</guid><pubDate>Fri, 17 Dec 2021 15:00:00 GMT</pubDate><content:encoded>&lt;br&gt;
 &lt;h1 align=&quot;center&quot;&gt;
   👋  Promise -  resolve(), thenable, reject()
 &lt;/h1&gt;
