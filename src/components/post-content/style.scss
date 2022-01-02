@@ -11,6 +11,7 @@
   .post-content {
     display: flex;
     flex-direction: column;
+    letter-spacing: 0.05rem;
     @include content-max-width;
   }
 }
