@@ -1,7 +1,7 @@
 ---
 emoji: 👨‍💻
 title: var, let, const의 차이
-date: '2021-08-30 00:00:00'
+date: '2022-01-03 00:00:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: JS
