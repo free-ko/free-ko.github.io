@@ -88,6 +88,84 @@ map(p => p.price, products));
 ```
 
 <br>
+<br>
+
+## 이터러블 프로토콜을 따른 map의 다형성 1
+
+### 일반 Map함수는 Array만 순회 가능
+
+- `document.querySelectorAll`은 `Array`를 상속받은 객체가 아니기 때문에 map함수를 사용할 수 없음
+
+```tsx
+console.log([1,2,3].map(a => a+1));  // [2,3,4]
+
+// .map is not a function
+console.log(
+	document.querySelectorAll('*').map(el => el.nodeName);
+)
+```
+
+<br>
+
+### 하지만 밑에서 만든 Map함수는 이터러블도 사용 가능
+
+- `document.querySelectorAll`이 이터러블 프로토콜을 따르기 때문에
+- 밑에 `Map`사용 가능
+- 즉, 밑에 작성한 `Map`함수는 **배열** 뿐만아니라 **이터러블 프로토콜**을 따르는 것들도 순회가 가능함
+
+```tsx
+const map = (fun, iter) => {
+	const result = [];
+
+	for(const a of iter) {
+		result.push(fun(a));
+	}
+}
+
+// ["HTML", "HEAD", "SCRIPT", "SCRIPT", "BODY", "SCRIPT"]
+console.log(
+	map(el => el.nodeName, document.querySelectorAll('*'));
+)
+
+const it = document.querySelectorAll('*')[Symbol.iterator]();
+console.log(it.next());   // {vale:html, done:false}
+console.log(it.next());   // {vale:head, done:false}
+```
+
+<br>
+
+### 또한 제너레이터에서도 사용 가능
+
+```tsx
+function* gen() {
+  yield 2;
+  yield 3;
+  yield 4;
+}
+
+log(map((a) => a * a, gen())); //
+```
+
+- 제너레이터 안에 코드 문장도 사용 가능
+
+```tsx
+function* gen() {
+  yield 2;
+  if (false) yield 3;
+  yield 4;
+}
+
+log(map((a) => a * a, gen()));
+```
+
+<br>
+
+### 중요
+
+- 웹 API도 ECMAScript의 이터러블 프로토콜을 따르고 있기 때문에, 다양한 조합성을 갖을 수 있음
+- 클래스, 프로토타입의 뿌리로 가진 카테고리 안에 있는 값만 사용할 수 있는 것보다, 위의 방법이 유연하고 다형성이 높음
+
+<br>
 
 ## 느낀점
 
