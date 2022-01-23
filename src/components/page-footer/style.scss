@@ -12,6 +12,7 @@
   .page-footer {
     @include content-max-width;
     text-align: center;
+    color: var(--primary-text-color);
 
     .link {
       font-weight: 700;
@@ -21,7 +22,7 @@
     }
 
     a {
-      color: #3A95FF;
+      color: #3a95ff;
     }
   }
 }
