@@ -1,7 +1,7 @@
 ---
 emoji: 🔥
 title: '2월 2주 회고'
-date: '2022-02-05 11:41:00'
+date: '2022-02-12 11:41:00'
 author: 우기
 tags: 블로그 github-pages gatsby
 categories: Log
