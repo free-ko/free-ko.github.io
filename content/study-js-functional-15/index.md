@@ -19,7 +19,7 @@ categories: JS
 
 <br>
 
-### JS에서 비동기 동시정 프로그래밍을 하는 방법 2가지
+## JS에서 비동기 동시정 프로그래밍을 하는 방법 2가지
 
 1. 오랫동안 사용했던 `callback` 패턴
 2. `promise`를 기반으로 한 `promise 메서드 체인`을 통해 함수를 합성하는 방법과 `async - await`와 함께 사용하는 방법
@@ -28,7 +28,7 @@ categories: JS
 
 <br>
 
-### CallBack
+## CallBack
 
 ```tsx
 function add10(a, callback) {
@@ -42,7 +42,7 @@ add10(5, (res) => {
 
 <br>
 
-### Promise 적용
+## Promise 적용
 
 - Promise를 만들어서 return함
 - `return`한다는 의미가 중요함
@@ -57,7 +57,7 @@ add20(5).then(log);
 
 <br>
 
-### CallBack과 Promise의 가독성 차이
+## CallBack과 Promise의 가독성 차이
 
 - 함수를 연속적으로 실행시켰을 때 발생
 - 특히, CallBack함수의 깊이가 계속 깊어지기도 하고, 코드 가독성면에서도 떨어짐
@@ -78,7 +78,7 @@ add20(5).then(add20).then(add20).log();
 
 <br>
 
-### 비동기를 값으로 만드는 Promise
+## 비동기를 값으로 만드는 Promise
 
 - 일반적으로 CallBack함수와 Promise 함수의 차이가 코드 가독성 부분도 있지만,
 - Promise가 CallBack과 다른 점은 일급으로 비동기 상황을 일급 값으로 다룬 다는 점이 가장 중요하게 다름
@@ -88,7 +88,7 @@ add20(5).then(add20).then(add20).log();
 
 <br>
 
-### CallBack 함수 비동기 상황
+## CallBack 함수 비동기 상황
 
 - 콜백함수는 비동기적인 상황을 `코드`로만 표현됨
 
@@ -105,7 +105,7 @@ add10(5, (res) => {
 
 <br>
 
-### Promise 비동기 상황
+## Promise 비동기 상황
 
 - Promise는 비동기적인 상황을 `값`으로 만들어서 리턴하고 있다는 사실이 콜백 함수와 다르고 아주 중요함
 
@@ -116,7 +116,7 @@ add20(5).then(add20).then(add20).log();
 
 <br>
 
-### CallBack과 Promise 비동기 코드 차이
+## CallBack과 Promise 비동기 코드 차이
 
 - 밑에 코드에서 변수 a,b 값이 다름
 - b는 `Promise 인스턴스` 값으로 나오지만, a는 `undefined`가 나옴
@@ -151,9 +151,13 @@ console.log(b);
 
 ## 느낀점
 
+어렴풋이 알고 있었던 콜백함수와 Promise의 차이를 알게되는 좋은 시간이였다.
+특히 막연하게 사용하고 있었던 Promise에 대한 개념을 확실히 알게되어서 실무에서 Promise를 사용할 때, 학습한 내용을 기반으로 사고하며 개발을 할 수 있어 좋았다.
+
+<br>
 <br>
 
-### 참고
+## 참고
 
 ```js
 유인동님의 함수형 프로그래밍과 JS ES6+ 강의
