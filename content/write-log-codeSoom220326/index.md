@@ -4,7 +4,7 @@ title: '코드숨 React 7기 - 1주차 회고'
 date: '2022-03-26 13:37:00'
 author: 우기
 tags: 블로그 github-pages gatsby
-categories: Log
+categories: React
 ---
 
 <br>

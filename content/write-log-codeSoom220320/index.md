@@ -4,7 +4,7 @@ title: '코드숨 React 7기 OT'
 date: '2022-03-21 08:56:00'
 author: 우기
 tags: 블로그 github-pages gatsby
-categories: Log
+categories: React
 ---
 
 <br>
