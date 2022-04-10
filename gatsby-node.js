@@ -30,7 +30,7 @@ const getSortedCategoriesByCount = (categories) => {
 
 const createBlogPages = ({ createPage, results }) => {
   const blogPostTemplate = require.resolve(`./src/templates/blog-template.js`);
-  results.data.allMarkdownRemark.edges.forEach(({ node, next = '', previous }) => {
+  results.data.allMarkdownRemark.edges.forEach(({ node, next = '', previous = '' }) => {
     createPage({
       path: node.fields.slug,
       component: blogPostTemplate,
