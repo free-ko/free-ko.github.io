@@ -119,9 +119,27 @@ void function() {
 <br>
 <h1 id="-findings배운점" style="position:relative;"><a href="#-findings%EB%B0%B0%EC%9A%B4%EC%A0%90" aria-label=" findings배운점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>😋 Findings(배운점)</h1>
 <ul>
-<li>로컬에서 테스트가 통과하더라도, Git 원격에서 파일명(대소구문)이 제대로 적용되지 않으면 CI에 문제가 생기는 경우 발생 함(이럴 때 git mv 명령어를 통해 파일명 변경해야 함)</li>
-<li>문맥 또는 영어문법에 맞게 <code class="language-text">context</code> 사용</li>
+<li>로컬에서 테스트가 통과하더라도, Git 원격에서 파일명(대소구문)이 제대로 적용되지 않으면 CI에 문제가 생기는 경우 발생한다.(이럴 때 git mv 명령어를 통해 파일명 변경해야 함)</li>
+<li><code class="language-text">beforeEach</code>구문 안에 <code class="language-text">afterEach</code> 사용하지 않고, 독립적으로 사용하자.</li>
 <li><code class="language-text">event</code>객체 전체를 전달하는 것이 아닌, 필요한 <code class="language-text">value</code>를 하위 컴포넌트에게 전달(의존성 끊어주기 위해)</li>
+<li>코드 블록을 아무생각 없이 감싸지 말자.</li>
+<li>테스트 작성 후, 셀프 리뷰를 통해 테스트 구문이 영문법 적으로 맞는지 확인 하자.</li>
+<li>테스트 작성 시 문맥 또는 전제 조건에 맞게 테스트 상황을 나누고 싶을 때, <code class="language-text">context</code>를 통해 작성하자. ex) when, with id, without id 등</li>
+<li>
+<p><code class="language-text">given2</code>를 통해 test해야 할 상태 값을 lazy하게 할당하면서 테스트 가능(<code class="language-text">given2</code>은 <code class="language-text">context</code> 아래에 써주는게 직관적임)</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+useSelector<span class="token punctuation">.</span><span class="token function">mockImplementation</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">selector</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">selector</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  tasks<span class="token operator">:</span> given2<span class="token punctuation">.</span>tasks<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">given2</span><span class="token punctuation">(</span><span class="token string">'tasks'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">[</span>
+<span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'아무 것도 하지 않기 #1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">'아무 것도 하지 않기 #2'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">given2</span><span class="token punctuation">(</span><span class="token string">'tasks'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+</li>
 </ul>
 <br>
 <h1 id="-affirmation자기-선언" style="position:relative;"><a href="#-affirmation%EC%9E%90%EA%B8%B0-%EC%84%A0%EC%96%B8" aria-label=" affirmation자기 선언 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>👨‍💻 Affirmation(자기 선언)</h1>
