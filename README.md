@@ -1,4 +1,4 @@
-# [Woogi Log Blog](https://free-ko.github.io/)
+# [Kay Log Blog](https://free-ko.github.io/)
 
 <br>
 
