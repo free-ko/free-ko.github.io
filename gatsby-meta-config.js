@@ -1,6 +1,6 @@
 module.exports = {
-  title: `WooGi Log`,
-  description: `우기의 성장 기록소`,
+  title: `Log`,
+  description: `성장 일지`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://free-ko.github.io/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
@@ -59,8 +59,12 @@ module.exports = {
       //   },
       // },
       {
-        date: '2020.12 ~ ',
-        activity: '(주)에픽모바일 프론트엔드 개발🚀',
+        date: '2020.12 ~ 2022.06 ',
+        activity: '(주)에픽모바일 프론트엔드 개발',
+      },
+      {
+        date: '2022.07 ~ ',
+        activity: '(주)넥스트유니콘 프론트엔드 개발',
       },
     ],
 
