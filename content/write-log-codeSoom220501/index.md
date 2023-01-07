@@ -1,10 +1,10 @@
 ---
 emoji: 🔥
-title: '코드숨 React 7기 - 6주차 회고'
+title: '코드숨 7기 - 6주차 회고'
 date: '2022-05-01 15:55:00'
 author: Kay
 tags: 블로그 github-pages gatsby
-categories: React
+categories: Study
 ---
 
 ## ✅ Facts(사실, 객관)

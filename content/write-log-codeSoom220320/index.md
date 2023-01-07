@@ -1,10 +1,10 @@
 ---
 emoji: 🔥
-title: '코드숨 React 7기 OT'
+title: '코드숨 7기 OT'
 date: '2022-03-21 08:56:00'
 author: Kay
 tags: 블로그 github-pages gatsby
-categories: React
+categories: Study
 ---
 
 <br>
