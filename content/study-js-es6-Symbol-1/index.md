@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: primitive 값, wrapper 오브젝트
 date: '2021-10-18 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

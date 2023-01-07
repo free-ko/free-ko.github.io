@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Destructuring, Array 분할 할당
 date: '2021-09-08 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

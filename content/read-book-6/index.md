@@ -2,7 +2,7 @@
 emoji: 📕
 title: 📕 「고구려 7권」을 읽고
 date: '2022-01-09 14:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Book
 ---

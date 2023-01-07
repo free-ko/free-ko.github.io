@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Module - export/import 형태, 변수/함수/Class, as, *, default
 date: '2021-12-14 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

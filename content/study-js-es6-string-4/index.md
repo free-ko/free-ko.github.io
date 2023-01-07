@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 길이 늘리기, 공백 삭제
 date: '2021-09-21 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

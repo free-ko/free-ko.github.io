@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Built-in 오브젝트 상속, Object 상속, Image 오브젝트 상속, Audio 오브젝트 상속
 date: '2021-11-22 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

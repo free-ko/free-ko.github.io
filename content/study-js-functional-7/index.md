@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 함수형 프로그래밍 - Map, Filter, Reduce 중첩 사용
 date: '2022-01-22 18:22:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

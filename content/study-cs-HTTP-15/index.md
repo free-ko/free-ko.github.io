@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: HTTP - 7.HTTP 일반 헤더(2)
 date: '2021-12-26 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: CS
 ---

@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: HTTP - 1.인터넷 네트워크
 date: '2021-12-11 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: CS
 ---

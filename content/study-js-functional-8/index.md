@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 함수형 프로그래밍 - 코드를 값으로 다루어 표현력 높이기
 date: '2022-01-24 08:35:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

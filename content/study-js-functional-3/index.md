@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 함수형 프로그래밍 - 제너레이터
 date: '2022-01-14 19:31:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

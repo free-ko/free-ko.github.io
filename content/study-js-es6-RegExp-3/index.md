@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: u 플래그, s 플래그
 date: '2021-10-09 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

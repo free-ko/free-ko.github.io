@@ -2,7 +2,7 @@
 emoji: 🔥
 title: '12월 마지막 주 회고'
 date: '2021-12-26 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

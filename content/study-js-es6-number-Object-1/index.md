@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: IEEE 754, 64비트 구성, 값을 구하는 방법, Number 상수
 date: '2021-09-15 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Module - 스코프, export 값 유지, this 참조
 date: '2021-12-13 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

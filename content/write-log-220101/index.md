@@ -2,7 +2,7 @@
 emoji: 😎
 title: '2022년을 시작하며'
 date: '2022-01-01 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

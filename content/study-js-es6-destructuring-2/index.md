@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Object 분할 할당, 파라미터 분할 할당
 date: '2021-09-09 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

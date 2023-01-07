@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: WeakMap 오브젝트 메소드 - get(), set(), has(), delete()
 date: '2021-11-07 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

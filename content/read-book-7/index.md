@@ -2,7 +2,7 @@
 emoji: 📕
 title: 📕 「전념」을 읽고
 date: '2022-02-24 09:35:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Book
 ---

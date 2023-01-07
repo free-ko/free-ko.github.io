@@ -2,7 +2,7 @@
 emoji: 🔥
 title: '9월 2주 회고'
 date: '2022-09-10 09:28:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

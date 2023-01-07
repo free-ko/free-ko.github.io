@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Set과 이터레이터 오브젝트 - entries(), keys(), values(), Symbol.iterator()
 date: '2021-11-12 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

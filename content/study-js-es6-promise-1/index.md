@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Promise - 개요, 처리 흐름, 상태
 date: '2021-12-15 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

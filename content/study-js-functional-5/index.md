@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 함수형 프로그래밍 - Filter함수
 date: '2022-01-20 08:31:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

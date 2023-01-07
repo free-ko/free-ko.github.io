@@ -2,7 +2,7 @@
 emoji: 📕
 title: 📕 「함께 자라기, 에자일로 가는길」 을 읽고
 date: '2021-12-19 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Book
 ---

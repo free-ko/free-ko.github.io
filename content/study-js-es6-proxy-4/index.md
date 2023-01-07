@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Proxy 인스턴스 생성 - new Proxy(), Proxy.revocable()
 date: '2021-11-27 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

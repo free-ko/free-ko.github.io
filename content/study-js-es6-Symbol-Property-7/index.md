@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Symbol.iterator, Array.prototype[@@iterator], Object 이터레이션
 date: '2021-10-27 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

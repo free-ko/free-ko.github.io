@@ -2,7 +2,7 @@
 emoji: 🤔
 title: 'TIL - 220421'
 date: '2022-04-21 22:20:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: TIL
 ---

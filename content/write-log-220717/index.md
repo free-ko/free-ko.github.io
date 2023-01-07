@@ -2,7 +2,7 @@
 emoji: 🔥
 title: '7월 3주차'
 date: '2022-07-17 22:21:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

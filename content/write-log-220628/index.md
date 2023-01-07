@@ -2,7 +2,7 @@
 emoji: 🔥
 title: '그냥 기록'
 date: '2022-06-28 11:20:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

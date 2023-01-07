@@ -2,7 +2,7 @@
 emoji: 🔥
 title: '7월 마지막 주 회고'
 date: '2022-07-31 16:18:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: async/await - Symbol.asyncIterator,  Symbol.iterator와 차이
 date: '2021-12-24 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

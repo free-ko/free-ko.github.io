@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: super 키워드, constructor 호출
 date: '2021-11-21 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

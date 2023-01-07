@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Symbol.iterator에 제너레이터 함수 연결
 date: '2021-10-28 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

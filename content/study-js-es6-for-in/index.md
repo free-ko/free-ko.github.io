@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: for-of, for-in for-of 차이, for-of Object
 date: '2021-09-12 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

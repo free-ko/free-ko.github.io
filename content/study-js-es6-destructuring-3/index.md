@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Object 오퍼레이션, 프로퍼티 이름 조합
 date: '2021-09-10 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

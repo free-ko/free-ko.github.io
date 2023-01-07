@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Bit 연산자 - OR 연산자, AND 연산자, XOR 연산자
 date: '2021-12-26 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

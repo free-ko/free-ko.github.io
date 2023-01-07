@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Promise - 메커니즘 분석
 date: '2021-12-21 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

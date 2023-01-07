@@ -2,7 +2,7 @@
 emoji: 🔥
 title: '새로운 장소에서 도전 중'
 date: '2022-07-06 22:21:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

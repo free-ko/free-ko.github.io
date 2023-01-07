@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: get(), get() 트랩 호출, get() 트랩 준수사항
 date: '2021-11-30 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

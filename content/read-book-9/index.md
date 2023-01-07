@@ -2,7 +2,7 @@
 emoji: 📕
 title: 📕 「개발자의 글쓰기」을 읽고
 date: '2022-05-01 16:58:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Book
 ---

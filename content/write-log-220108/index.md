@@ -2,7 +2,7 @@
 emoji: 😎
 title: '에러에 대한 마음가짐'
 date: '2022-01-08 11:24:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

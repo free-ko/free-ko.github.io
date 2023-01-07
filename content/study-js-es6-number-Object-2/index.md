@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 진수, EPSILON
 date: '2021-09-16 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

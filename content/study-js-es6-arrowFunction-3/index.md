@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Arrow Function와 this
 date: '2021-09-02 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

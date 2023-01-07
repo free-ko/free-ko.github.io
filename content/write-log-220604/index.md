@@ -2,7 +2,7 @@
 emoji: 🔥
 title: '6월 1주 회고'
 date: '2022-06-04 20:06:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

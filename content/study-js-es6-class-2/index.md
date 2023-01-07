@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Class 선언, Class 구조 - Class 선언문, Class 표현식
 date: '2021-11-16 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

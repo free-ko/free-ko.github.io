@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Module - 접근 및 바탕, 코드 형태, html 파일 작성 방법
 date: '2021-12-12 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

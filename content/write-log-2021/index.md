@@ -2,7 +2,7 @@
 emoji: 🔥
 title: 2021년을 되돌아보며
 date: '2021-12-19 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Log
 ---

@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: async/await - 반환, 형태, for-await-of
 date: '2021-12-23 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

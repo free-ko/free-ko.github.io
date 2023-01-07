@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: HTTP - 4.HTTP 메서드(1)
 date: '2021-12-16 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: CS
 ---

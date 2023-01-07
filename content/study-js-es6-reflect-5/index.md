@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Reflect - defineProperty(), preventExtensions(), isExtensible()
 date: '2021-12-09 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

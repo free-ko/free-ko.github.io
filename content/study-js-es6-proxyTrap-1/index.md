@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: set(), set() 트랩 호출, set() 트랩 준수사항
 date: '2021-11-28 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

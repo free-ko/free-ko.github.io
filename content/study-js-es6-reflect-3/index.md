@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: this 참조 오브젝트, Proxy 핸들러의 set() 트랩
 date: '2021-12-07 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

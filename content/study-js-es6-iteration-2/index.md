@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 이터러블 오브젝트, 프로토콜
 date: '2021-09-04 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Proxy, 기본 오퍼레이션 논리
 date: '2021-11-24 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

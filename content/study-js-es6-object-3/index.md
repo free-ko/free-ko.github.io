@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 오브젝트 복사 - deep copy
 date: '2021-09-24 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

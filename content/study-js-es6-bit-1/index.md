@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: Bit 연산자 - 비트, 바이트, 2진수 연산, 사인 비트, 음수 표현
 date: '2021-12-25 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

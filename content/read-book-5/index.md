@@ -2,7 +2,7 @@
 emoji: 📕
 title: 📕 「모두를 움직이는 힘」을 읽고
 date: '2022-01-04 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Book
 ---

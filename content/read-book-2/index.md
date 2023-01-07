@@ -2,7 +2,7 @@
 emoji: 📕
 title: 📕 소프트웨어 장인을 읽고
 date: '2021-10-02 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: Book
 ---

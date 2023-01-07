@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: 값 설정, 추출 메소드 - set(), get(), has()
 date: '2021-11-03 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---

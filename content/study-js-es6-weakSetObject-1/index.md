@@ -2,7 +2,7 @@
 emoji: 👨‍💻
 title: WeakSet 오브젝트 개요, new WeakSet(), has(), add(), delete()
 date: '2021-11-14 00:00:00'
-author: 우기
+author: Kay
 tags: 블로그 github-pages gatsby
 categories: JS
 ---
