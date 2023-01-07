@@ -1,6 +1,6 @@
 module.exports = {
   title: `Log`,
-  description: `성장 일지`,
+  description: `개발을 하면서 배운 내용을 기록하는 장소 입니다.`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://free-ko.github.io/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
@@ -47,17 +47,6 @@ module.exports = {
           demo: '',
         },
       },
-      // ========================================================
-      // ========================================================
-      //{
-      //   date: '2021.08',
-      //   activity: '개인 블로그 디자인 및 개발',
-      //   links: {
-      //     post: '/gatsby-starter-zoomkoding-introduction',
-      //     github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-      //     demo: 'https://www.zoomkoding.com',
-      //   },
-      // },
       {
         date: '2020.12 ~ 2022.06 ',
         activity: '(주)에픽모바일 프론트엔드 개발',
@@ -85,8 +74,6 @@ module.exports = {
           demo: '',
         },
       },
-      // ========================================================
-      // ========================================================
     ],
   },
 };
