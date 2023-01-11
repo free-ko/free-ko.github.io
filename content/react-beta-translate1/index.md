@@ -30,8 +30,30 @@ categories: React
 
 <br>
 
-## 1. Component를 작성하는 방법
-React에서 Component는 핵심 개념입니다.
+## Component
+React App은 독립적인 UI Component들로 구성되어 있습니다. 하나의 Component는 JS 함수입니다.(마크업이 안에 존재합니다.)
+그리고 Component는 작은 버튼일 수도 있고, 전체 페이지일 수도 있습니다.
+```jsx
+function Profile() {
+  return (
+    <img
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+```
 
 <br>
 
