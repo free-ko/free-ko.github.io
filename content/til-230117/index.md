@@ -16,7 +16,6 @@ categories: TIL
 # Feelings
 - 자괴감이 든다.
 - `내가 왜 개발을 하는` 근본적인 질문까지 든다.
-- 
 
 <br/>
 
