@@ -21,7 +21,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Kay의 개발 성장 일지" />
+      <SEO title="Kay의 성장 일지" />
       <Bio author={author} language={language} />
       <Tabs className={'tabs'} value={tabIndex} onChange={onTabIndexChange} tabs={categories} />
       <PostCardsColumn
