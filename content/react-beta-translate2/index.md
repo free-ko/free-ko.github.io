@@ -1,13 +1,13 @@
 ---
 emoji: ✏️
-title: 'React Beta 번역 - Manipulating the DOM with Refs'
+title: 'React Beta 번역 - Ref를 통해 DOM(React)을 조작하는 방법'
 date: '2023-01-20 20:13:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: React
 ---
 
-# 🌈 Manipulating the DOM with Refs
+# 🌈 Ref를 통해 DOM을 조작하는 방법.
 React는 자동적으로 우리가 만든 JSX 컴포넌트를 DOM에 업데이트 합니다. 그래서 우리는 DOM을 조작할 일이 흔치 않게 됩니다.
 
 그러나, 우리는 때때로 React가 처리하는 DOM Node Element에 접근할 필요가 있습니다. 
@@ -28,7 +28,7 @@ React는 자동적으로 우리가 만든 JSX 컴포넌트를 DOM에 업데이�
 
 <br>
 
-## Getting a ref to the node
+## Ref를 통해 특정 Node에 접근하는 방법.
 
 React가 관리하는 DOM Node를 접근하기 위해서는 import useRef hook을 합니다.
 ```js
@@ -54,7 +54,7 @@ myRef.current.scrollIntoView();
 
 <br>
 
-## Example: Focusing a text input
+## Example: Input 태그를 Focus하는 방법.
 
 버튼을 클릭하면 input 태그를 focus하는 예제를 보겠습니다.
 ```jsx
@@ -90,18 +90,203 @@ State와 유사하지만, `ref`는 랜더링 과정에서 남아있습니다. �
 
 <br>
 
-## Example: Scrolling to an element
+## Example: 특정 Element로 스크롤 하는 방법.
+하나의 컴포넌트에 여러개의 `ref`가 존재할 수 있습니다.
 
+예를 들어 아래와 같이 Carousel Images가 있습니다. 
+
+각 버튼이 존재하며, 버튼을 누를 때마다 해당 DOM Node에 맞춰서 browser의 `scrollIntoView()`가 호출됩니다.
+```jsx
+import { useRef } from 'react';
+
+const CatFriends = () => {
+  const firstCatRef = useRef(null);
+  const secondCatRef = useRef(null);
+  const thirdCatRef = useRef(null);
+  
+  const handleScrollToFistrCat = () => {
+    firstCatRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center'
+    })
+  }
+  
+  const handleScrollToSecondCat = () => {
+    secondCatRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center'
+    })
+  }
+
+  const handleScrollToThirdCat = () => {
+    thirdCatRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center'
+    });
+  }
+  
+  return (
+    <>
+      <nav>
+        <button onClick={handleScrollToFistrCat}>
+          Tom
+        </button>
+        <button onClick={handleScrollToSecondCat}>
+          Taru
+        </button>
+        <button onClick={handleScrollToThirdCat}>
+          Jellylorum
+        </button>
+      </nav>
+      <div>
+        <ul>
+          <li>
+            <img
+              src="https://placekitten.com/g/200/200"
+              alt="Tom"
+              ref={firstCatRef}
+            />
+          </li>
+          <li>
+            <img
+              src="https://placekitten.com/g/300/200"
+              alt="Maru"
+              ref={secondCatRef}
+            />
+          </li>
+          <li>
+            <img
+              src="https://placekitten.com/g/250/200"
+              alt="Jellylorum"
+              ref={thirdCatRef}
+            />
+          </li>
+        </ul>
+      </div>
+    </>
+  )
+}
+
+export default CatFriends
+```
+
+### ref callback을 사용해서, List들의 ref를 관리하는 방법
+위 예시는 미리 정의된 ref를 사용했습니다. 그러나 때때로 우리는 List의 Item이 몇개가 있는지 모르는 상황에서, Item 마다 ref가 필요할 때가 있습니다.
+그 때 아래와 같이 코드를 작성하게 된다면 작동되지 않은 것을 볼 수 있습니다.
+```jsx
+<ul>
+  {itmes.map((item) => {
+    // 작동 X
+    const itemRef = useRef(null);
+    return <li ref={itemRef} />;
+  })}
+</ul>
+```
+왜냐하면 <b>Hook은 반드시 Component의 최상단에서 호출</b>되어야 하기 때문입니다.
+그래서 useRef를 반복문 안에서 호출 할 수 없습니다.
+
+그러나, 위 방법을 해결할 수 있는 방법은 하나의 부모 Element ref를 가져온 뒤에, `querySelectroAll`로 List Item Node를 찾아 조작하는 방법입니다.
+하지만 만약에 DOM 구조가 변경되었을 때, 이 방법은 해결책이 되지 못합니다.
+
+또 다른 방법은, 함수를 ref 속성으로 전달하는 것 입니다. 이는 `ref callback`이라고 불립니다.
+React는 ref를 셋팅할 때, `ref callbak`을 호출하고, ref가 삭제 될 때는 `null` 값으로 셋팅합니다.
+이렇게 하면 배열 안에서 배열의 index 또는 자신만의 배열의 id를 통해 ref에 접근할 수 있습니다.
+아래의 코드는 위 방법을 통해 긴 목록에서 스크롤을 통해 특정 Node로 이동하는 것을 구현한 코드 입니다.
+```jsx
+import { useRef } from 'react'
+
+const CatFriends = () => {
+  const itemsRef = useRef(null);
+
+  const catList = [];
+  for (let i = 0; i < 10; i++) {
+    catList.push({
+      id: i,
+      imageUrl: 'https://placekitten.com/250/200?image=' + i
+    });
+  }
+  
+  const getMap = () => {
+    if (!itemsRef.current) { 
+      itemsRef.current = new Map();
+    }
+    
+    return itemsRef.current;
+  }
+  
+  const scrollToId = (itemId) => {
+    const map = getMap();
+    const node = map.get(itemId);
+    node.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center'
+    })
+  }
+  
+  return (
+    <>
+      <nav>
+        <button onClick={() => scrollToId(0)}>
+          Tom
+        </button>
+        <button onClick={() => scrollToId(5)}>
+          Maru
+        </button>
+        <button onClick={() => scrollToId(9)}>
+          Jellylorum
+        </button>
+      </nav>
+
+      <div>
+        <ul>
+          {catList.map(cat => (
+            <li
+              key={cat.id}
+              ref={(node) => {
+                const map = getMap();
+                if (node) {
+                  map.set(cat.id, node);
+                } else {
+                  map.delete(cat.id);
+                }
+              }}
+            >
+              <img
+                src={cat.imageUrl}
+                alt={'Cat #' + cat.id}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  )
+}
+
+export default CatFriends
+```
+위의 예시는 `itemsRef` 단일 DOM Node(하나의 값이)가 없습니다. 대신, Map을 통해 Item의 ID로 DOM Node를 관리합니다.(Refs는 모든 값이 들어올 수 있습니다.)
+`ref callback` List Item이 Map을 통해 셋팅될 때마다 실행됩니다. 즉, `Map`을 통해서, List Item의 각각의 Node를 읽을 수 있습니다. 
+
+<br>
+
+## 다른 컴포넌트의 DOM Node에 접근하는 방법.
 
 
 <br>
 
-## React Ref를 사용할 때 주의사항
+## React Ref를 사용할 때 주의사항 by GPT
 1. When using refs, make sure to avoid using them in any performance-critical parts of your code, as they can negatively impact the performance of your application.
 2. Refs should be used with caution and only when necessary, as they can make your code more complex and harder to understand.
 3. Be sure to properly clean up any refs you create, as they can prevent your components from being garbage collected.
 4. Refs should be used only on class components and not on functional components because it is not recommended to use it on functional components.
 5. If possible, try to use React's state and props system instead of refs, as they are a more idiomatic way to manage the state and behavior of your components.
+
+<br>
 
 ### 📕 참고
 - [React Beta - Manipulating the DOM with Refs](https://beta.reactjs.org/learn/manipulating-the-dom-with-refs)
