@@ -275,7 +275,127 @@ export default CatFriends
 <br>
 
 ## 다른 컴포넌트의 DOM Node에 접근하는 방법.
+`<input />`와 같은 브라우저 Element에 `ref`를 넣게 되면, React는 해당 DOM Node(실제 브라우저의 `<input />`와 같은)에 current 속성 값을 셋팅합니다.
 
+그러나 만약에 우리가 만든 컴포넌트`(<MyInput />)`에 `ref`를 넣게 되면 기본 적으로  current 값이 `null`이 나옵니다.
+
+관련 예시는 아래와 같습니다.(버튼을 클릭하면 포커스가 되지 않습니다.)
+```jsx
+import { useRef } from 'react';
+
+const MyInput = (props) => <input {...props} />
+
+const MyForm = () => {
+  const inputRef = useRef();
+  
+  const handleClick = () => {
+    inputRef.current.focus();
+  }
+  
+  return (
+    <>
+      <MyInput ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button>
+    </>
+  )
+}
+```
+포커스를 누르게 되면 React에서 에러를 출력합니다. 이 문제는 기본적으로 React에서 Component가 다른 Component의 DOM Node에 접근할 수 없기 때문에 발생합니다.
+
+이를 해결하기 위해서, 다른 Component DOM Node에 접근을 허락할 수 있도록 옵션을 추가할 수 있습니다. 
+
+다시 말하면, `forwardRef`를 통해, 상위 컴포넌트가 하위 컴포넌트에게 ref를 전달 수 있습니다.
+```jsx
+const MyInput = forwardRef((props, ref) => {
+  return <input {...props} ref={ref} />;
+})
+```
+위의 코드를 설명하자면
+1. `<MyInput ref={inputRef} />`의미는 React에게 일치하는 DOM Node의 `inputRef.current`를 셋팅하라는 것 입니다. 그러나, 무조건적으로 셋팅을 하는 것은 아닙니다. 
+2. MyInput Component는 forwardRef를 선언해서 사용합니다. 이는 상위 컴포넌트에서 선언된 inputRef를 props로 전달 받습니다.
+3. 전달 받은 inputRef를 `<input>` props로 전달 합니다.
+
+수정된 밑에 코드는 정상 작동합니다.
+```jsx
+import { forwardRef, useRef } from 'react';
+
+const MyInput = forwardRef((props, ref) => {
+  return <input {...props} ref={ref} />;
+});
+
+export default function Form() {
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <>
+      <MyInput ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button>
+    </>
+  );
+}
+```
+디자인 시스템 안에서, Button, Input 등과 같은 Low-Level DOM Node 컴포넌트들에게 ref를 부모로 부터 전달하는 방법은 흔한 패턴 입니다.
+
+반면에, List, Page Section 등과 같은 High-Level DOM Node 컴포넌트들은 종속성을 피하긱 위해, 외부로 부터 ref를 전달받지 않습니다(DOM Node를 외부로 노출하지 않습니다).  
+
+<br />
+
+## 명령형 Handler 함수가 포함된 하위 API를 노출하는 방법
+위 예시는 `MyInput` 컴포넌트 안에서 웹 DOM input Element를 노출 시킵니다. 이렇게 하면 상위 컴포넌트가 `focus()` API를 호출 할 수 있습니다.
+
+이렇게 되면, 부모 컴포넌트는 하위 컴포넌트의 CSS를 변경시킬 수 있습니다.
+
+또한 흔치 않은 사례이지만, `useImperativeHandle`를 통해, 하위 컴포넌트를 상위 컴포넌트에게 노출을 제한 할 수 있습니다.
+```jsx
+import {
+  forwardRef, 
+  useRef, 
+  useImperativeHandle
+} from 'react';
+
+const MyInput = forwardRef((props, ref) => {
+  const realInputRef = useRef(null);
+  useImperativeHandle(ref, () => ({
+    focus() {
+      realInputRef.current.focus();
+    }
+  }));
+  
+  return <input {...props} ref={realInputRef} />;
+})
+
+const Form = () => {
+  const inputRef = useRef(null);
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
+  
+  return (
+    <>
+      <MyInput ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button>
+    </>
+  )
+}
+```
+여기서 MyInput 내부의 `realInputRef`는 실제 input DOM Node를 유지 합니다.
+그러나, `useImperativeHandle`는 부모 컴포넌트의 특별한 ref 객체 값을 React에게 제공하도록 지시 합니다.
+그래서 `Form` 컴포넌트 내부 `input.ref.current.`안에는 오직 `focus` 메서드만 있습니다.
+위 예제에서 ref "handle"은 `useImperativeHandle` call안에 생성한 DOM Node가 아닌, 커스텀된 객체입니다.
+
+<br>
+
+## When React attaches the refs
 
 <br>
 
