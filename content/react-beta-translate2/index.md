@@ -395,7 +395,27 @@ const Form = () => {
 
 <br>
 
-## When React attaches the refs
+## 언제 React가 refs를 붙일 까요??
+React는 2단계로 나눠서 업데이트 합니다.
+- Rendering 하는 동안, React는 화면에 표시할 것을 계산하기 위해 우리가 만든 Component를 호출합니다.
+- `commit`단계에서, React는 DOM에 변경사항을 적용합니다.
+
+일반적으로 우리는 랜더링 중에는 `refs`에 접근하지 않습니다.(우리가 `ref`를 통해, 설정한 DOM Node에도 마찬가지 입니다.)
+첫 번째 랜더링동안, DOM Node가 생성되지 않았으므로 `ref.current`가 null이 됩니다.
+업데이트한 Component를 랜더링 하는 동안 DOM Node는 아직 업데이트가 되지 않습니다.
+그래서 null 값이 나옵니다.
+
+React는 `commit`단계에서 `ref.current`값을 셋팅합니다.
+DOM을 업데이트하기 전에, `ref.current` 값을 null로 설정합니다. 그 후 DOM을 업데이트한 후, React는 해당 DOM Node로 즉시 설정합니다.
+
+일반적으로 이벤트 핸들러에서 `refs`를 접근합니다. 이벤트 핸들러를 통해서 `refs`를 사용하여 무언가를 하기 위해서는 `useEffect`를 사용해야 합니다.
+
+### React에서 "commit"의 의미
+- Component의 모든 State 변경사항을 적용하고, 다시 랜더링하는 처리과정을 말합니다.
+- 이 작업은 `setState()`를 통해 사용됩니다.
+- `commit`단계는 Component 업데이트의 마지막 단계로 Component의 State 변경사항이 적용되고 업데이트된 Component가 DOM에 랜더링됩니다.
+
+### Flushing state updates synchronously with flushSync
 
 <br>
 
