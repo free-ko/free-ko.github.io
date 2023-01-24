@@ -328,15 +328,228 @@ React는 ref를 셋팅할 때, <code class="language-text">ref callbak</code>을
 <code class="language-text">ref callback</code> List Item이 Map을 통해 셋팅될 때마다 실행됩니다. 즉, <code class="language-text">Map</code>을 통해서, List Item의 각각의 Node를 읽을 수 있습니다. </p>
 <br>
 <h2 id="다른-컴포넌트의-dom-node에-접근하는-방법" style="position:relative;"><a href="#%EB%8B%A4%EB%A5%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-dom-node%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="다른 컴포넌트의 dom node에 접근하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>다른 컴포넌트의 DOM Node에 접근하는 방법.</h2>
-<br>
-<h2 id="react-ref를-사용할-때-주의사항-by-gpt" style="position:relative;"><a href="#react-ref%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EB%95%8C-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD-by-gpt" aria-label="react ref를 사용할 때 주의사항 by gpt permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React Ref를 사용할 때 주의사항 by GPT</h2>
+<p><code class="language-text">&lt;input /></code>와 같은 브라우저 Element에 <code class="language-text">ref</code>를 넣게 되면, React는 해당 DOM Node(실제 브라우저의 <code class="language-text">&lt;input /></code>와 같은)에 current 속성 값을 셋팅합니다.</p>
+<p>그러나 만약에 우리가 만든 컴포넌트<code class="language-text">(&lt;MyInput />)</code>에 <code class="language-text">ref</code>를 넣게 되면 기본 적으로  current 값이 <code class="language-text">null</code>이 나옵니다.</p>
+<p>관련 예시는 아래와 같습니다.(버튼을 클릭하면 포커스가 되지 않습니다.)</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useRef <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">MyInput</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token spread"><span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">MyForm</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> inputRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    inputRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyInput</span></span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>inputRef<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        Focus the input
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>포커스를 누르게 되면 React에서 에러를 출력합니다. 이 문제는 기본적으로 React에서 Component가 다른 Component의 DOM Node에 접근할 수 없기 때문에 발생합니다.</p>
+<p>이를 해결하기 위해서, 다른 Component DOM Node에 접근을 허락할 수 있도록 옵션을 추가할 수 있습니다. </p>
+<p>다시 말하면, <code class="language-text">forwardRef</code>를 통해, 상위 컴포넌트가 하위 컴포넌트에게 ref를 전달 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> MyInput <span class="token operator">=</span> <span class="token function">forwardRef</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> ref</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token spread"><span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span></span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>ref<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>위의 코드를 설명하자면</p>
 <ol>
-<li>When using refs, make sure to avoid using them in any performance-critical parts of your code, as they can negatively impact the performance of your application.</li>
-<li>Refs should be used with caution and only when necessary, as they can make your code more complex and harder to understand.</li>
-<li>Be sure to properly clean up any refs you create, as they can prevent your components from being garbage collected.</li>
-<li>Refs should be used only on class components and not on functional components because it is not recommended to use it on functional components.</li>
-<li>If possible, try to use React’s state and props system instead of refs, as they are a more idiomatic way to manage the state and behavior of your components.</li>
+<li><code class="language-text">&lt;MyInput ref={inputRef} /></code>의미는 React에게 일치하는 DOM Node의 <code class="language-text">inputRef.current</code>를 셋팅하라는 것 입니다. 그러나, 무조건적으로 셋팅을 하는 것은 아닙니다. </li>
+<li>MyInput Component는 forwardRef를 선언해서 사용합니다. 이는 상위 컴포넌트에서 선언된 inputRef를 props로 전달 받습니다.</li>
+<li>전달 받은 inputRef를 <code class="language-text">&lt;input></code> props로 전달 합니다.</li>
 </ol>
+<p>수정된 밑에 코드는 정상 작동합니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> forwardRef<span class="token punctuation">,</span> useRef <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> MyInput <span class="token operator">=</span> <span class="token function">forwardRef</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> ref</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token spread"><span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span></span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>ref<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Form</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> inputRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    inputRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyInput</span></span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>inputRef<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        Focus the input
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>디자인 시스템 안에서, Button, Input 등과 같은 Low-Level DOM Node 컴포넌트들에게 ref를 부모로 부터 전달하는 방법은 흔한 패턴 입니다.</p>
+<p>반면에, List, Page Section 등과 같은 High-Level DOM Node 컴포넌트들은 종속성을 피하긱 위해, 외부로 부터 ref를 전달받지 않습니다(DOM Node를 외부로 노출하지 않습니다).  </p>
+<br />
+<h2 id="명령형-handler-함수가-포함된-하위-api를-노출하는-방법" style="position:relative;"><a href="#%EB%AA%85%EB%A0%B9%ED%98%95-handler-%ED%95%A8%EC%88%98%EA%B0%80-%ED%8F%AC%ED%95%A8%EB%90%9C-%ED%95%98%EC%9C%84-api%EB%A5%BC-%EB%85%B8%EC%B6%9C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="명령형 handler 함수가 포함된 하위 api를 노출하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>명령형 Handler 함수가 포함된 하위 API를 노출하는 방법</h2>
+<p>위 예시는 <code class="language-text">MyInput</code> 컴포넌트 안에서 웹 DOM input Element를 노출 시킵니다. 이렇게 하면 상위 컴포넌트가 <code class="language-text">focus()</code> API를 호출 할 수 있습니다.</p>
+<p>이렇게 되면, 부모 컴포넌트는 하위 컴포넌트의 CSS를 변경시킬 수 있습니다.</p>
+<p>또한 흔치 않은 사례이지만, <code class="language-text">useImperativeHandle</code>를 통해, 하위 컴포넌트를 상위 컴포넌트에게 노출을 제한 할 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+  forwardRef<span class="token punctuation">,</span> 
+  useRef<span class="token punctuation">,</span> 
+  useImperativeHandle
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> MyInput <span class="token operator">=</span> <span class="token function">forwardRef</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> ref</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> realInputRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">useImperativeHandle</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      realInputRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token spread"><span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span></span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>realInputRef<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Form</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> inputRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    inputRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyInput</span></span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>inputRef<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleClick<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        Focus the input
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>여기서 MyInput 내부의 <code class="language-text">realInputRef</code>는 실제 input DOM Node를 유지 합니다.
+그러나, <code class="language-text">useImperativeHandle</code>는 부모 컴포넌트의 특별한 ref 객체 값을 React에게 제공하도록 지시 합니다.
+그래서 <code class="language-text">Form</code> 컴포넌트 내부 <code class="language-text">input.ref.current.</code>안에는 오직 <code class="language-text">focus</code> 메서드만 있습니다.
+위 예제에서 ref “handle”은 <code class="language-text">useImperativeHandle</code> call안에 생성한 DOM Node가 아닌, 커스텀된 객체입니다.</p>
+<br>
+<h2 id="언제-react가-refs를-붙일-까요" style="position:relative;"><a href="#%EC%96%B8%EC%A0%9C-react%EA%B0%80-refs%EB%A5%BC-%EB%B6%99%EC%9D%BC-%EA%B9%8C%EC%9A%94" aria-label="언제 react가 refs를 붙일 까요 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>언제 React가 refs를 붙일 까요??</h2>
+<p>React는 2단계로 나눠서 업데이트 합니다.</p>
+<ul>
+<li>Rendering 하는 동안, React는 화면에 표시할 것을 계산하기 위해 우리가 만든 Component를 호출합니다.</li>
+<li><code class="language-text">commit</code>단계에서, React는 DOM에 변경사항을 적용합니다.</li>
+</ul>
+<p>일반적으로 우리는 랜더링 중에는 <code class="language-text">refs</code>에 접근하지 않습니다.(우리가 <code class="language-text">ref</code>를 통해, 설정한 DOM Node에도 마찬가지 입니다.)
+첫 번째 랜더링동안, DOM Node가 생성되지 않았으므로 <code class="language-text">ref.current</code>가 null이 됩니다.
+업데이트한 Component를 랜더링 하는 동안 DOM Node는 아직 업데이트가 되지 않습니다.
+그래서 null 값이 나옵니다.</p>
+<p>React는 <code class="language-text">commit</code>단계에서 <code class="language-text">ref.current</code>값을 셋팅합니다.
+DOM을 업데이트하기 전에, <code class="language-text">ref.current</code> 값을 null로 설정합니다. 그 후 DOM을 업데이트한 후, React는 해당 DOM Node로 즉시 설정합니다.</p>
+<p>일반적으로 이벤트 핸들러에서 <code class="language-text">refs</code>를 접근합니다. 이벤트 핸들러를 통해서 <code class="language-text">refs</code>를 사용하여 무언가를 하기 위해서는 <code class="language-text">useEffect</code>를 사용해야 합니다.</p>
+<h3 id="react에서-commit의-의미" style="position:relative;"><a href="#react%EC%97%90%EC%84%9C-commit%EC%9D%98-%EC%9D%98%EB%AF%B8" aria-label="react에서 commit의 의미 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React에서 “commit”의 의미</h3>
+<ul>
+<li>Component의 모든 State 변경사항을 적용하고, 다시 랜더링하는 처리과정을 말합니다.</li>
+<li>이 작업은 <code class="language-text">setState()</code>를 통해 사용됩니다.</li>
+<li><code class="language-text">commit</code>단계는 Component 업데이트의 마지막 단계로 Component의 State 변경사항이 적용되고 업데이트된 Component가 DOM에 랜더링됩니다.</li>
+</ul>
+<h3 id="flushsync를-통해-react-state를-동기적으로-업데이트-하는-방법" style="position:relative;"><a href="#flushsync%EB%A5%BC-%ED%86%B5%ED%95%B4-react-state%EB%A5%BC-%EB%8F%99%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="flushsync를 통해 react state를 동기적으로 업데이트 하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>flushSync를 통해, React State를 동기적으로 업데이트 하는 방법</h3>
+<p>밑에 예시는 Todo를 추가했을 때, 자동으로 해당 Todo로 스크롤되어집니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useRef <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> nextId <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> initialTodos <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  initialTodos<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    id<span class="token operator">:</span> nextId<span class="token operator">++</span><span class="token punctuation">,</span>
+    text<span class="token operator">:</span> <span class="token string">'Todo #'</span> <span class="token operator">+</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">TodoList</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> listRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>text<span class="token punctuation">,</span> setText<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">usestate</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>todos<span class="token punctuation">,</span> setTodos<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  
+  <span class="token keyword">const</span> <span class="token function-variable function">handleAdd</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> newTodo <span class="token operator">=</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> nextId<span class="token operator">++</span><span class="token punctuation">,</span> text<span class="token operator">:</span> text <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setTodos</span><span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token operator">...</span>todos<span class="token punctuation">,</span> newTodo<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    listRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span>lastChild<span class="token punctuation">.</span><span class="token function">scrollIntoView</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      behavior<span class="token operator">:</span> <span class="token string">'smooth'</span><span class="token punctuation">,</span>
+      block<span class="token operator">:</span> <span class="token string">'nearest'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleAdd<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        Add
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+        <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>text<span class="token punctuation">}</span></span>
+        <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=></span> <span class="token function">setText</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+      <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>listRef<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">todo</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>text<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>위 코드에서 생각해봐야 할 코드는 아래와 같습니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">  <span class="token function">setTodos</span><span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token operator">...</span>todos<span class="token punctuation">,</span> newTodo<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  listRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span>lastChild<span class="token punctuation">.</span><span class="token function">scrollIntoView</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>React에서 State 업데이트 방식은 Queue방식이며, <code class="language-text">setTodos</code>가 즉각적으로 DOM에 업데이트 되지 않기 때문에 실제로 Todo에 값을 추가해도 스크롤이 자연스럽게 되지 않습니다.</p>
+<p>위 문제를 해결하기 위해서 React 18 부터 제공하는 <code class="language-text">flushSync</code> 함수를 통해, React에서 DOM을 동기적으로 업데이트(“flush”)하라고 강제 시킬 수 있습니다.
+즉, 마지막 Todo를 동기적으로 DOM에 업데이트 시킵니다.
+사용방법은 아래와 같습니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token function">flushSync</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token function">setTodos</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>todos<span class="token punctuation">,</span> newTodos<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+listRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span>lastChild<span class="token punctuation">.</span><span class="token function">scrollIntoView</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<br>
+<h2 id="refs를-통해-dom을-조작한-가장-좋은-사례" style="position:relative;"><a href="#refs%EB%A5%BC-%ED%86%B5%ED%95%B4-dom%EC%9D%84-%EC%A1%B0%EC%9E%91%ED%95%9C-%EA%B0%80%EC%9E%A5-%EC%A2%8B%EC%9D%80-%EC%82%AC%EB%A1%80" aria-label="refs를 통해 dom을 조작한 가장 좋은 사례 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>refs를 통해 DOM을 조작한 가장 좋은 사례</h2>
+<p>일반적으로 refs를 사용할 때에는 React가 관여하지 않은, scroll 위치, Browser API 등에 사용해야 합니다.
+그 외에 refs를 사용하게 되면 React가 하는 작업과 충돌하게 됩니다.</p>
+<p>예를 들어, 하나의 토글 버튼은 State값에 따라 조건적으로 보여주는 역할을 하고, 또 다른 토글 버튼은 DOM API인 <code class="language-text">remove()</code>를 통해, 버튼을 제거 합니다.(React 영역 밖에서)</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useRef <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>show<span class="token punctuation">,</span> setShow<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> ref <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+        <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token function">setShow</span><span class="token punctuation">(</span><span class="token operator">!</span>show<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        Toggle with setState
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+        <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          ref<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        Remove from the DOM
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>show <span class="token operator">&amp;&amp;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>ref<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">Hello world</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">Remove from the DOM</code> 버튼을 누른 뒤에, <code class="language-text">Toggle with setState</code> 버튼을 누르면 에러가 발생합니다.
+이는 DOM 자체가 바뀌어버렸고, React는 DOM의 변동사항을 계속 관리하지 못합니다.</p>
+<p>그래서 React내에서 직접 DOM Node를 변경하는 것(DOM을 조작, 추가, 제거하는 것)을 피해야 합니다.</p>
+<p>그렇다고 해서 우리가 아무것도 못한다는 의미는 아닙니다. 다만 주의를 해야 합니다.
+우리는 안전하게 React를 통해 DOM의 일부분을 조작할 수 있습니다.(refs를 통해 focus, scroll 등)
+예를 들어 <code class="language-text">&lt;div>&lt;/div></code>안에 아무것도 없다면, 자식 Element를 추가하거나 제거하는 등의 조작은 안전합니다.</p>
+<br>
+<h1 id="복습" style="position:relative;"><a href="#%EB%B3%B5%EC%8A%B5" aria-label="복습 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>복습</h1>
+<ul>
+<li><code class="language-text">Refs</code>는 DOM Element를 조작할 때 사용됩니다.</li>
+<li>React에게 JSX로 만드는 DOM Node 속성에 <code class="language-text">myRef.current</code> 값을 <code class="language-text">&lt;div ref={myRef}></code>로 넣을 수 있습니다.</li>
+<li>Scroll, focusing 등의 작업을 refs를 통해 조작할 수 있습니다.</li>
+<li>기본적으로 Component DOM Node를 실제 DOM에 노출하지 않습니다. 그러나, <code class="language-text">forwardRef</code>를 통해, 실제 DOM Node에 접근할 수 있도록 노출 시킬 수 있습니다. <code class="language-text">forwarRef</code>의 두번째 인자에 특정 Node를 전달 합니다.   </li>
+<li>React로 DOM Node를 변경하는 것을 지양해야 합니다.</li>
+<li>만약에 React를 통해 DOM Node를 변경해야 한다면, React가 DOM을 업데이트 하지 않아야 하는 부분을 변경해야 합니다.(스크롤, 포커스 등)</li>
+</ul>
 <br>
 <h3 id="-참고" style="position:relative;"><a href="#-%EC%B0%B8%EA%B3%A0" aria-label=" 참고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📕 참고</h3>
 <ul>
@@ -356,8 +569,16 @@ React는 ref를 셋팅할 때, <code class="language-text">ref callbak</code>을
 </ul>
 </li>
 <li><a href="#%EB%8B%A4%EB%A5%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-dom-node%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">다른 컴포넌트의 DOM Node에 접근하는 방법.</a></li>
+<li><a href="#%EB%AA%85%EB%A0%B9%ED%98%95-handler-%ED%95%A8%EC%88%98%EA%B0%80-%ED%8F%AC%ED%95%A8%EB%90%9C-%ED%95%98%EC%9C%84-api%EB%A5%BC-%EB%85%B8%EC%B6%9C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">명령형 Handler 함수가 포함된 하위 API를 노출하는 방법</a></li>
 <li>
-<p><a href="#react-ref%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EB%95%8C-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD-by-gpt">React Ref를 사용할 때 주의사항 by GPT</a></p>
+<p><a href="#%EC%96%B8%EC%A0%9C-react%EA%B0%80-refs%EB%A5%BC-%EB%B6%99%EC%9D%BC-%EA%B9%8C%EC%9A%94">언제 React가 refs를 붙일 까요??</a></p>
+<ul>
+<li><a href="#react%EC%97%90%EC%84%9C-commit%EC%9D%98-%EC%9D%98%EB%AF%B8">React에서 “commit”의 의미</a></li>
+<li><a href="#flushsync%EB%A5%BC-%ED%86%B5%ED%95%B4-react-state%EB%A5%BC-%EB%8F%99%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">flushSync를 통해, React State를 동기적으로 업데이트 하는 방법</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#refs%EB%A5%BC-%ED%86%B5%ED%95%B4-dom%EC%9D%84-%EC%A1%B0%EC%9E%91%ED%95%9C-%EA%B0%80%EC%9E%A5-%EC%A2%8B%EC%9D%80-%EC%82%AC%EB%A1%80">refs를 통해 DOM을 조작한 가장 좋은 사례</a></p>
 <ul>
 <li><a href="#-%EC%B0%B8%EA%B3%A0">📕 참고</a></li>
 </ul>
