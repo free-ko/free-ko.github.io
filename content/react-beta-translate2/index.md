@@ -415,16 +415,124 @@ DOM을 업데이트하기 전에, `ref.current` 값을 null로 설정합니다. 
 - 이 작업은 `setState()`를 통해 사용됩니다.
 - `commit`단계는 Component 업데이트의 마지막 단계로 Component의 State 변경사항이 적용되고 업데이트된 Component가 DOM에 랜더링됩니다.
 
-### Flushing state updates synchronously with flushSync
+### flushSync를 통해, React State를 동기적으로 업데이트 하는 방법
+
+밑에 예시는 Todo를 추가했을 때, 자동으로 해당 Todo로 스크롤되어집니다.
+```jsx
+import { useState, useRef } from 'react';
+
+let nextId = 0;
+let initialTodos = [];
+for (let i = 0; i < 20; i++) {
+  initialTodos.push({
+    id: nextId++,
+    text: 'Todo #' + (i + 1)
+  });
+}
+
+const TodoList = () => {
+  const listRef = useRef(null);
+  const [text, setText] = usestate('');
+  const [todos, setTodos] = useState([])
+  
+  const handleAdd = () => {
+    const newTodo = { id: nextId++, text: text };
+    setText('');
+    setTodos([ ...todos, newTodo]);
+    listRef.current.lastChild.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  }
+
+  return (
+    <>
+      <button onClick={handleAdd}>
+        Add
+      </button>
+      <input
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+      <ul ref={listRef}>
+        {todos.map(todo => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+```
+
+위 코드에서 생각해봐야 할 코드는 아래와 같습니다.
+```jsx
+  setTodos([ ...todos, newTodo]);
+  listRef.current.lastChild.scrollIntoView();
+```
+React에서 State 업데이트 방식은 Queue방식이며, `setTodos`가 즉각적으로 DOM에 업데이트 되지 않기 때문에 실제로 Todo에 값을 추가해도 스크롤이 자연스럽게 되지 않습니다.
+
+위 문제를 해결하기 위해서 React 18 부터 제공하는 `flushSync` 함수를 통해, React에서 DOM을 동기적으로 업데이트("flush")하라고 강제 시킬 수 있습니다.
+즉, 마지막 Todo를 동기적으로 DOM에 업데이트 시킵니다. 
+사용방법은 아래와 같습니다.
+```jsx
+flushSync(() => {
+  setTodos([...todos, newTodos]);
+});
+listRef.current.lastChild.scrollIntoView();
+
+```
 
 <br>
 
-## React Ref를 사용할 때 주의사항 by GPT
-1. When using refs, make sure to avoid using them in any performance-critical parts of your code, as they can negatively impact the performance of your application.
-2. Refs should be used with caution and only when necessary, as they can make your code more complex and harder to understand.
-3. Be sure to properly clean up any refs you create, as they can prevent your components from being garbage collected.
-4. Refs should be used only on class components and not on functional components because it is not recommended to use it on functional components.
-5. If possible, try to use React's state and props system instead of refs, as they are a more idiomatic way to manage the state and behavior of your components.
+## refs를 통해 DOM을 조작한 가장 좋은 사례
+일반적으로 refs를 사용할 때에는 React가 관여하지 않은, scroll 위치, Browser API 등에 사용해야 합니다.
+그 외에 refs를 사용하게 되면 React가 하는 작업과 충돌하게 됩니다.
+
+예를 들어, 하나의 토글 버튼은 State값에 따라 조건적으로 보여주는 역할을 하고, 또 다른 토글 버튼은 DOM API인 `remove()`를 통해, 버튼을 제거 합니다.(React 영역 밖에서)
+```jsx
+import { useState, useRef } from 'react';
+
+const Counter = () => {
+  const [show, setShow] = useState(true);
+  const ref = useRef(null);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setShow(!show);
+        }}>
+        Toggle with setState
+      </button>
+      <button
+        onClick={() => {
+          ref.current.remove();
+        }}>
+        Remove from the DOM
+      </button>
+      {show && <p ref={ref}>Hello world</p>}
+    </div>
+  );
+}
+```
+`Remove from the DOM` 버튼을 누른 뒤에, `Toggle with setState` 버튼을 누르면 에러가 발생합니다.
+이는 DOM 자체가 바뀌어버렸고, React는 DOM의 변동사항을 계속 관리하지 못합니다.
+
+그래서 React내에서 직접 DOM Node를 변경하는 것(DOM을 조작, 추가, 제거하는 것)을 피해야 합니다.
+
+그렇다고 해서 우리가 아무것도 못한다는 의미는 아닙니다. 다만 주의를 해야 합니다.
+우리는 안전하게 React를 통해 DOM의 일부분을 조작할 수 있습니다.(refs를 통해 focus, scroll 등)
+예를 들어 `<div></div>`안에 아무것도 없다면, 자식 Element를 추가하거나 제거하는 등의 조작은 안전합니다.
+
+<br>
+
+# 복습
+- `Refs`는 DOM Element를 조작할 때 사용됩니다.
+- React에게 JSX로 만드는 DOM Node 속성에 `myRef.current` 값을 `<div ref={myRef}>`로 넣을 수 있습니다.
+- Scroll, focusing 등의 작업을 refs를 통해 조작할 수 있습니다.
+- 기본적으로 Component DOM Node를 실제 DOM에 노출하지 않습니다. 그러나, `forwardRef`를 통해, 실제 DOM Node에 접근할 수 있도록 노출 시킬 수 있습니다. `forwarRef`의 두번째 인자에 특정 Node를 전달 합니다.   
+- React로 DOM Node를 변경하는 것을 지양해야 합니다.
+- 만약에 React를 통해 DOM Node를 변경해야 한다면, React가 DOM을 업데이트 하지 않아야 하는 부분을 변경해야 합니다.(스크롤, 포커스 등)
 
 <br>
 
