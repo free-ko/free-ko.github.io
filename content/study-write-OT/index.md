@@ -1,6 +1,6 @@
 ---
 emoji: ✍️
-title: 글또 - O.T
+title: 글또 8기 - O.T
 date: '2023-01-29 22:07:00'
 author: Kay
 tags: 블로그 github-pages gatsby
