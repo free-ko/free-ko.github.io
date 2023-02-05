@@ -1,10 +1,10 @@
 ---
 emoji: ✏️
-title: 'React Beta 번역 - Describing th UI'
+title: 'React Beta - Describing th UI'
 date: '2023-01-07 18:24:00'
 author: Kay
 tags: 블로그 github-pages gatsby
-categories: React
+categories: 번역
 ---
 
 # 🌈 Describing the UI
