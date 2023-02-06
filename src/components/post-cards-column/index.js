@@ -1,5 +1,5 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+import { Button } from '@material-ui/core';
 
 import PostCard from '../post-card';
 import './style.scss';

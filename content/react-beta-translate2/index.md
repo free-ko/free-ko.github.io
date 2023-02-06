@@ -1,10 +1,10 @@
 ---
 emoji: ✏️
-title: 'React Beta 번역 - Ref를 통해 DOM(React)을 조작하는 방법'
+title: 'React Beta - Ref를 통해 DOM(React)을 조작하는 방법'
 date: '2023-01-20 20:13:00'
 author: Kay
 tags: 블로그 github-pages gatsby
-categories: React
+categories: 번역
 ---
 
 # 🌈 Ref를 통해 DOM을 조작하는 방법.
