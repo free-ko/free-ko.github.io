@@ -22,7 +22,21 @@ categories: React
 <br>
 
 ## Components: UI Building Blocks
-WEB에서 HTML을 사용하면 `<h1>`과 `<li>`와 같은 태그가 내장된 구조가 있는 문서를 만들 수 있습니다.
+WEB에서 HTML을 사용하면 `<h1>`과 `<li>`와 같은 태그가 내장된 구조가 있는 문서(Mark up)를 만들 수 있습니다.
+
+```html
+<article>
+  <h1>My First Component</h1>
+  <ol>
+    <li>Components: UI Building Blocks</li>
+    <li>Defining a Component</li>
+    <li>Using a Component</li>
+  </ol>
+</article>
+```
+
+이 마크업은 Article `<article>`, Heading `<h1>`(약칭) 목차 중 목록이 순서대로 정의되었다는 것을 `<ol>`로 나타냅니다.
+스타일을 위한 CSS와 상호작용을 위한 JS와 결합된 마크업은 웹에서 볼 수 있는 모든 UI(Sidebar, Avatar, Modal, Dropdown 등)를 제공합니다.
 
 <br/>
 
