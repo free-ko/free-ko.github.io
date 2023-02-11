@@ -4,7 +4,7 @@ title: 'React Beta - Your First Component'
 date: '2023-02-06 21:19:00'
 author: Kay
 tags: 블로그 github-pages gatsby
-categories: React
+categories: 번역
 ---
 
 > 이 글은 [React Beta 공식 문서 - Your First Component](https://beta.reactjs.org/learn/your-first-component)를 번역한 것 입니다.
