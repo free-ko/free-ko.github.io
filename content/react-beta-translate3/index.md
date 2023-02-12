@@ -77,7 +77,33 @@ export default function Profile() {
 ```
 
 ### Step 1: Export the component
+`export default`는 [JS의 기본 문법](https://developer.mozilla.org/ko/docs/web/javascript/reference/statements/export)입니다.
+나중에 다른 파일에서 가져올 수 있도록 할 수 있습니다.
 
+### Step 2: Define the function
+`function Profile() { }`이와 같이 작성하면, Profile이라는 JS함수를 정의 할 수 있습니다.
+
+<b>주의 사항</b> : 리액트 컴포넌트는 일반 JS함수이지만, 이름이 대문자로 시작해야 작동합니다.
+
+### Step 3: Step 3: Add markup
+아래의 컴포넌트는 src 및 alt 속성이 있는 `<img />` 태그를 반환합니디. `<img />`는 HTML처럼 작성되어있지만, 실제로 JS입니다. 이 구문을 `JSX`라고 하며, <b>JS안에 마크업을 삽입할 수 있습니다.</b>
+```jsx
+return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+```
+만약 아래와 같이 반환 라인이 2줄이상일 때에는 괄호()를 작성해야 합니다.
+```jsx
+return (
+  <div>
+    <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  </div>
+);
+```
+
+<b>주의 사항</b> : 만약 괄호가 없으면 반환 라인 뒷 줄에 있는 모든 코드는 무시됩니다.
+
+<br/>
+
+## Using a component
 
 
 <br/>
