@@ -104,7 +104,49 @@ return (
 <br/>
 
 ## Using a component
+`Profile` 컴포넌트를 정의할 수 있고, 다른 컴포넌트안에서 여러번 사용할 수도 있습니다. 아래와 같이 `Gallery`컴포넌트 안에 `Profile` 컴포넌트를 여러번 사용 할 수 있습니다.
+```jsx
+function Profile() {
+  return (
+    <img
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
 
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+```
+
+<br/>
+
+## What the browser sees
+브라우저가 바라보는 관점에서 아래와 같이 차이점이 존재 합니다.
+- `<section>` 이 태그는 소문자로 사용되고, React에서는 HTML Tag라고 인식합니다.
+- `<Profile />` 이 태그는 첫 문자가 대문자로 시작되고, React에서는 우리가 `Profile`이라는 컴포넌트로 사용되어지길 원한다고 인식합니다.
+그리고 `Profile` 컴포넌트 안에는 많은 HTML 요소가 들어갈 수 있습니다 ex) `<img />`, `<h1>` (이 요소는 브라우저가 인식하는 것 들입니다.)
+```html
+<section>
+  <h1>Amazing scientists</h1>
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+</section>
+```
+
+## Nesting and organizing components
+
+
+<br/>
 
 <br/>
 
