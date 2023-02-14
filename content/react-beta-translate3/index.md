@@ -143,14 +143,63 @@ export default function Gallery() {
 </section>
 ```
 
-## Nesting and organizing components
+<br/>
 
+## Nesting and organizing components
+Component는 일반적으로 JS함수입니다. 같은 파일 안에 여러 컴포넌트를 작성할 수 있습니다. 그리고 컴포넌트가 상대적으로 작거나, 서로 밀접하게 연관되어 있을 때 편리 합니다.
+
+만약에 파일 안에 코드가 복잡해지면, 다른 컴포넌트로 분리해 관리 할 수 있습니다.
+
+아래 코드를 보면, `Profile` 컴포넌트는 `Gallery` 컴포넌트 안에서 랜더링 됩니다.(여러번 랜더링도 가능합니다.)
+우리는 흔히 `Gallery` 컴포넌트를 <b>부모 컴포넌트</b>, `Profile`컴포넌트를 <b>자식 컴포넌트</b>라고 합니다.
+
+사실 컴포넌트를 어디에서 사용되어지는 가에 따라 부모, 자식 컴포넌트가 결정되며 React에서 컴포넌트를 자유자재로 사용할 수 있다는 것이 포인트 입니다.
+```jsx
+export default function Gallery() {
+  return (
+    <Profile/>
+  )
+}
+```
+
+
+<b>주의 사항</b> : 컴포넌트는 다른 컴포넌트 안에서 랜더링이 될 수 있지만, 절대로 내부 안에서 재 정의 하는 것은 안됩니다.
+
+아래 코드는 배우 느리고 버그를 유발합니다.
+```jsx
+export default function Gallery() {
+  // 🔴 Never define a component inside another component!
+  function Profile() {
+    // ...
+  }
+  // ...
+}
+```
+
+그래서 컴포넌트를 정의하고 싶다면 최상위에서 컴포넌트를 정의해야 합니다.
+```jsx
+export default function Gallery() {
+  // ...
+}
+
+// ✅ Declare components at the top level
+function Profile() {
+  // ...
+}
+```
+
+또한 자식 컴포넌트에 부모 컴포넌트의 일부 데이터가 필요한 경우, 컴포넌트르 정의를 안에서 하는 것 대신, 프로퍼티로 전달하세요.
 
 <br/>
+
+### Deep Dive : Components all the way down
+
+
 
 <br/>
 
 ### 📕 참고
+- [React Beta - Your First Component](https://beta.reactjs.org/learn/your-first-component)
 
 ```toc
 ```
