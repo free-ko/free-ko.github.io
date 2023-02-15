@@ -193,12 +193,30 @@ function Profile() {
 <br/>
 
 ### Deep Dive : Components all the way down
+React 어플리케이션는 `root` 컴포넌트에서 시작됩니다. 일반적으로 새 프로젝트를 시작할 때, src폴더 하위 `App.js 파일 내부 root` 컴포넌트가 자동으로 생성됩니다.(Next.js를 사용하는 경우, root 컴포넌트는 `page/index.js`에 생성됩니다.)
 
+대부분의 React 앱은 컴포넌트를 어디서든 사용합니다. Button, Sidebar, List와 같은 작은 단위 뿐만아니라, 페이지도 컴포넌트로 사용됩니다.
+
+`Next.js`와 같은 프레임워크는 이를 한 단계 더 고려해서 사용되어 집니다.
+React가 JS로 페이지를 관리하고 빈 HTML 파일을 사용하는 대신, React 컴포넌트를 통한 HTML을 자동적으로 생성하게 합니다.
+이렇게 하면 JS 코드가 로드되기 전, 앱에서 일부 콘텐츠를 표시할 수 있습니다.
+
+그래도 여전히, 많은 웹사이트에서 React를 통해 인터렉션을 구현합니다. 또한 많은 root 컴포넌트가 존재 합니다.
+즉, 우리는 상황에 따라 컴포넌트를 자유자재로 사용할 수 있습니다.
+
+<br/>
+
+## Recap
+- React를 통해, 앱에 사용되어지는 재사용가능한 UI 요소를 생성할 수 있습니다.
+- React 앱에서 모든 UI가 컴포넌트 입니다.
+- React 컴포넌트는 JS 함수입니다.
+  - 컴포넌트의 이름은 항상 대문자로 시작합니다.
+  - 컴포넌트는 JSX 마크업을 리턴합니다.
 
 
 <br/>
 
-### 📕 참고
+<b>📕 참고</b>
 - [React Beta - Your First Component](https://beta.reactjs.org/learn/your-first-component)
 
 ```toc
