@@ -156,8 +156,117 @@ React는 JS의 함수이기 때문에 자연스럽게 JS를 통해 인터렉션�
   <span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h3 id="step-1-export-the-component" style="position:relative;"><a href="#step-1-export-the-component" aria-label="step 1 export the component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1: Export the component</h3>
+<p><code class="language-text">export default</code>는 <a href="https://developer.mozilla.org/ko/docs/web/javascript/reference/statements/export">JS의 기본 문법</a>입니다.
+나중에 다른 파일에서 가져올 수 있도록 할 수 있습니다.</p>
+<h3 id="step-2-define-the-function" style="position:relative;"><a href="#step-2-define-the-function" aria-label="step 2 define the function permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2: Define the function</h3>
+<p><code class="language-text">function Profile() { }</code>이와 같이 작성하면, Profile이라는 JS함수를 정의 할 수 있습니다.</p>
+<p><b>주의 사항</b> : 리액트 컴포넌트는 일반 JS함수이지만, 이름이 대문자로 시작해야 작동합니다.</p>
+<h3 id="step-3-step-3-add-markup" style="position:relative;"><a href="#step-3-step-3-add-markup" aria-label="step 3 step 3 add markup permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3: Step 3: Add markup</h3>
+<p>아래의 컴포넌트는 src 및 alt 속성이 있는 <code class="language-text">&lt;img /></code> 태그를 반환합니디. <code class="language-text">&lt;img /></code>는 HTML처럼 작성되어있지만, 실제로 JS입니다. 이 구문을 <code class="language-text">JSX</code>라고 하며, <b>JS안에 마크업을 삽입할 수 있습니다.</b></p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.imgur.com/MK3eW3As.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Katherine Johnson<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span></code></pre></div>
+<p>만약 아래와 같이 반환 라인이 2줄이상일 때에는 괄호()를 작성해야 합니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.imgur.com/MK3eW3As.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Katherine Johnson<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p><b>주의 사항</b> : 만약 괄호가 없으면 반환 라인 뒷 줄에 있는 모든 코드는 무시됩니다.</p>
 <br/>
-<h3 id="-참고" style="position:relative;"><a href="#-%EC%B0%B8%EA%B3%A0" aria-label=" 참고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📕 참고</h3>
+<h2 id="using-a-component" style="position:relative;"><a href="#using-a-component" aria-label="using a component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using a component</h2>
+<p><code class="language-text">Profile</code> 컴포넌트를 정의할 수 있고, 다른 컴포넌트안에서 여러번 사용할 수도 있습니다. 아래와 같이 <code class="language-text">Gallery</code>컴포넌트 안에 <code class="language-text">Profile</code> 컴포넌트를 여러번 사용 할 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">Profile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+      <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.imgur.com/MK3eW3As.jpg<span class="token punctuation">"</span></span>
+      <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Katherine Johnson<span class="token punctuation">"</span></span>
+    <span class="token punctuation">/></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Gallery</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Amazing scientists</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Profile</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Profile</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Profile</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<br/>
+<h2 id="what-the-browser-sees" style="position:relative;"><a href="#what-the-browser-sees" aria-label="what the browser sees permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What the browser sees</h2>
+<p>브라우저가 바라보는 관점에서 아래와 같이 차이점이 존재 합니다.</p>
+<ul>
+<li><code class="language-text">&lt;section></code> 이 태그는 소문자로 사용되고, React에서는 HTML Tag라고 인식합니다.</li>
+<li>
+<p><code class="language-text">&lt;Profile /></code> 이 태그는 첫 문자가 대문자로 시작되고, React에서는 우리가 <code class="language-text">Profile</code>이라는 컴포넌트로 사용되어지길 원한다고 인식합니다.
+그리고 <code class="language-text">Profile</code> 컴포넌트 안에는 많은 HTML 요소가 들어갈 수 있습니다 ex) <code class="language-text">&lt;img /></code>, <code class="language-text">&lt;h1></code> (이 요소는 브라우저가 인식하는 것 들입니다.)</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Amazing scientists<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.imgur.com/MK3eW3As.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Katherine Johnson<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.imgur.com/MK3eW3As.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Katherine Johnson<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.imgur.com/MK3eW3As.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Katherine Johnson<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre></div>
+</li>
+</ul>
+<br/>
+<h2 id="nesting-and-organizing-components" style="position:relative;"><a href="#nesting-and-organizing-components" aria-label="nesting and organizing components permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nesting and organizing components</h2>
+<p>Component는 일반적으로 JS함수입니다. 같은 파일 안에 여러 컴포넌트를 작성할 수 있습니다. 그리고 컴포넌트가 상대적으로 작거나, 서로 밀접하게 연관되어 있을 때 편리 합니다.</p>
+<p>만약에 파일 안에 코드가 복잡해지면, 다른 컴포넌트로 분리해 관리 할 수 있습니다.</p>
+<p>아래 코드를 보면, <code class="language-text">Profile</code> 컴포넌트는 <code class="language-text">Gallery</code> 컴포넌트 안에서 랜더링 됩니다.(여러번 랜더링도 가능합니다.)
+우리는 흔히 <code class="language-text">Gallery</code> 컴포넌트를 <b>부모 컴포넌트</b>, <code class="language-text">Profile</code>컴포넌트를 <b>자식 컴포넌트</b>라고 합니다.</p>
+<p>사실 컴포넌트를 어디에서 사용되어지는 가에 따라 부모, 자식 컴포넌트가 결정되며 React에서 컴포넌트를 자유자재로 사용할 수 있다는 것이 포인트 입니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Gallery</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Profile</span></span><span class="token punctuation">/></span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><b>주의 사항</b> : 컴포넌트는 다른 컴포넌트 안에서 랜더링이 될 수 있지만, 절대로 내부 안에서 재 정의 하는 것은 안됩니다.</p>
+<p>아래 코드는 배우 느리고 버그를 유발합니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Gallery</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 🔴 Never define a component inside another component!</span>
+  <span class="token keyword">function</span> <span class="token function">Profile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>그래서 컴포넌트를 정의하고 싶다면 최상위에서 컴포넌트를 정의해야 합니다.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Gallery</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ✅ Declare components at the top level</span>
+<span class="token keyword">function</span> <span class="token function">Profile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>또한 자식 컴포넌트에 부모 컴포넌트의 일부 데이터가 필요한 경우, 컴포넌트르 정의를 안에서 하는 것 대신, 프로퍼티로 전달하세요.</p>
+<br/>
+<h3 id="deep-dive--components-all-the-way-down" style="position:relative;"><a href="#deep-dive--components-all-the-way-down" aria-label="deep dive  components all the way down permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deep Dive : Components all the way down</h3>
+<p>React 어플리케이션는 <code class="language-text">root</code> 컴포넌트에서 시작됩니다. 일반적으로 새 프로젝트를 시작할 때, src폴더 하위 <code class="language-text">App.js 파일 내부 root</code> 컴포넌트가 자동으로 생성됩니다.(Next.js를 사용하는 경우, root 컴포넌트는 <code class="language-text">page/index.js</code>에 생성됩니다.)</p>
+<p>대부분의 React 앱은 컴포넌트를 어디서든 사용합니다. Button, Sidebar, List와 같은 작은 단위 뿐만아니라, 페이지도 컴포넌트로 사용됩니다.</p>
+<p><code class="language-text">Next.js</code>와 같은 프레임워크는 이를 한 단계 더 고려해서 사용되어 집니다.
+React가 JS로 페이지를 관리하고 빈 HTML 파일을 사용하는 대신, React 컴포넌트를 통한 HTML을 자동적으로 생성하게 합니다.
+이렇게 하면 JS 코드가 로드되기 전, 앱에서 일부 콘텐츠를 표시할 수 있습니다.</p>
+<p>그래도 여전히, 많은 웹사이트에서 React를 통해 인터렉션을 구현합니다. 또한 많은 root 컴포넌트가 존재 합니다.
+즉, 우리는 상황에 따라 컴포넌트를 자유자재로 사용할 수 있습니다.</p>
+<br/>
+<h2 id="recap" style="position:relative;"><a href="#recap" aria-label="recap permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recap</h2>
+<ul>
+<li>React를 통해, 앱에 사용되어지는 재사용가능한 UI 요소를 생성할 수 있습니다.</li>
+<li>React 앱에서 모든 UI가 컴포넌트 입니다.</li>
+<li>
+<p>React 컴포넌트는 JS 함수입니다.</p>
+<ul>
+<li>컴포넌트의 이름은 항상 대문자로 시작합니다.</li>
+<li>컴포넌트는 JSX 마크업을 리턴합니다.</li>
+</ul>
+</li>
+</ul>
+<br/>
+<p><b>📕 참고</b></p>
+<ul>
+<li><a href="https://beta.reactjs.org/learn/your-first-component">React Beta - Your First Component</a></li>
+</ul>
 <div class="table-of-contents">
 <ul>
 <li><a href="#components-ui-building-blocks">Components: UI Building Blocks</a></li>
@@ -165,8 +274,18 @@ React는 JS의 함수이기 때문에 자연스럽게 JS를 통해 인터렉션�
 <p><a href="#defining-a-component">Defining a component</a></p>
 <ul>
 <li><a href="#step-1-export-the-component">Step 1: Export the component</a></li>
-<li><a href="#-%EC%B0%B8%EA%B3%A0">📕 참고</a></li>
+<li><a href="#step-2-define-the-function">Step 2: Define the function</a></li>
+<li><a href="#step-3-step-3-add-markup">Step 3: Step 3: Add markup</a></li>
 </ul>
 </li>
+<li><a href="#using-a-component">Using a component</a></li>
+<li><a href="#what-the-browser-sees">What the browser sees</a></li>
+<li>
+<p><a href="#nesting-and-organizing-components">Nesting and organizing components</a></p>
+<ul>
+<li><a href="#deep-dive--components-all-the-way-down">Deep Dive : Components all the way down</a></li>
+</ul>
+</li>
+<li><a href="#recap">Recap</a></li>
 </ul>
 </div></div></div></div><div class="post-cards-adjacent-wrapper"><div class="post-cards-adjacent"><div class="post-card-adjacent-wrapper"><a class="post-card prev" href="/translate1/"><div class="direction">이전 글</div><div class="title">React Hook Form vs Formik</div></a></div><div class="post-card-adjacent-wrapper"><a class="post-card next" href="/til-230208/"><div class="direction">다음 글</div><div class="title">TIL - 230208</div></a></div></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2023<!-- --> <a href="https://github.com/free-ko">고영욱</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/react-beta-translate3/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-384ea82b9c97dbd7ee60.js"],"app":["/app-586ee1316f4eeda15975.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"],"component---src-pages-404-js":["/component---src-pages-404-js-18966798326ae6e5a169.js"],"component---src-pages-about-js":["/component---src-pages-about-js-0ed5203fa036aa596443.js"],"component---src-pages-index-js":["/component---src-pages-index-js-7121b25218aa20356f5a.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-5ea40d560b401e429c55.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-d01b478dab935d07b01d.js"]};/*]]>*/</script><script src="/polyfill-384ea82b9c97dbd7ee60.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-5ea40d560b401e429c55.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-124f2e553d01fd5c127a.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-586ee1316f4eeda15975.js" async=""></script><script src="/framework-81279cacaab4bdba7685.js" async=""></script><script src="/webpack-runtime-3e8e1f1277e2c8753778.js" async=""></script></body></html>
