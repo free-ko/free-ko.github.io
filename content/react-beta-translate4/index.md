@@ -25,10 +25,62 @@ categories: 번역
 <br>
 
 ## The root component file
+기본적으로 CRA(Create React App)을 실행하면, `scr/App.js`에 루트 컴포넌트 파일이 생성됩니다. 그러나 `Next.js`는 루트 컴포넌트가 페이지마다 다를 수 있습니다.  
 
 <br/>
 
 ## Exporting and importing a component
+Export, Import 하는 단계를 살펴보면 아래와 같습니다.
+1. 컴포넌트가 있는 JS 파일을 생성합니다.
+2. 해당 컴포넌트를 export를 합니다.(default, named export를 사용)
+3. 컴포넌트를 사용하는 곳에서 Import합니다.
+
+아래는 위의 단계를 코드로 작성해보았습니다.
+
+### `Gallery.js`
+- `Profile` 컴포넌트가 정의되어 있고, 오직 한 번만 사용했으며 export는 하지 않았습니다.
+- `Gallery` 컴포넌트는 default export로 export되어 있습니다. 
+
+```jsx
+function Profile() {
+  return (
+    <img
+      src="https://i.imgur.com/QIrZWGIs.jpg"
+      alt="Alan L. Hart"
+    />
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+```
+
+### App.js
+- `Gallery` 컴포넌트를 default import를 했습니다.
+- `App` 컴포넌트를 default export했습니다.
+
+```jsx
+import Gallery from './Gallery.js';
+
+export default function App() {
+  return (
+    <Gallery />
+  );
+}
+```
+
+### Note
+`import Gallery from './Gallery';`
+위 코드를 보면, import 할 때, `.js`확장자 명을 붙이지 않았습니다. 그 이유는 React에서 알아서 인지하고 작동되어지기 때문입니다. 
+다만, `.js`확장자 명을 붙이는 것이 [ES Modules](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)가 작동하는 것과 비슷합니다.
 
 <br/>
 
