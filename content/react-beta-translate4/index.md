@@ -1,6 +1,6 @@
 ---
 emoji: ✏️
-title: 'React Beta - Importing and Exporting Components'
+title: 'React Beta - Importing and Exporting Components 번역 중'
 date: '2023-02-16 11:46:00'
 author: Kay
 tags: 블로그 github-pages gatsby
