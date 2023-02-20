@@ -85,6 +85,20 @@ export default function App() {
 <br/>
 
 ### Deep Dive : Default vs named exports
+JS에서 값을 내보내는 주요 방법은 `export` and `named export`입니다. 
+아래는 컴포넌트를 다양하게 내보내는 방법입니다.
+
+![다양한 export하는 방법](1.png)
+
+컴포넌트를 내보내는 방식에 따라 가져오는 방식이 결정됩니다. export로 내보낸 컴포넌트를 named export 방식으로 import할 때에는 오류가 발생합니다.
+아래 표는 위 에러를 해결하는데 도움을 줍니다.
+
+| Syntax  | Export Statement                    | Import Statement                     |
+|---------|-------------------------------------|--------------------------------------|
+| Default | export default function Button() {} | import Button from './button.js'     |
+| Named   | export function Button() {}         | import { Button } from './button.js' |
+
+
 
 <br/>
 
