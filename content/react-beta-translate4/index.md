@@ -98,7 +98,14 @@ JS에서 값을 내보내는 주요 방법은 `export` and `named export`입니�
 | Default | export default function Button() {} | import Button from './button.js'     |
 | Named   | export function Button() {}         | import { Button } from './button.js' |
 
+`default import`를 사용할 경우, 원하는 이름의 컴포넌트로 import를 할 수 있습니다. 예를 들어서 `import Banana from './button.js`으로 작성할 수 있습니다.
 
+반면에, `named import`를 사용할 경우에는 반드시 export 하는 컴포넌트 이름을 동일하게 명시해야 합니다. 이것이 `named import`를 사용해야 하는 이유 입니다.
+
+사람들은 종종 파일에서 하나의 컴포넌트만 내보내는 경우에는 `default export`를 사용합니다. 그리고 여러 컴포넌트를 하나의 파일에서 export 할 때에는 `named export`를 사용합니다.
+코드 스타일 관계 없이, <b>항상 의미있는</b> 함수명과 컴포넌트 이름을 사용해야 합니다. 
+
+`export default () => {}`와 같이 이름이 없는 컴포넌트는 디버깅을 어렵게 만들 수 있으므로 사용하지 않는 것이 좋습니다.
 
 <br/>
 
