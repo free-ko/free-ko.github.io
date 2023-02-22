@@ -110,6 +110,31 @@ JS에서 값을 내보내는 주요 방법은 `export` and `named export`입니�
 <br/>
 
 ## Exporting and importing multiple components from the same file
+위의 예제에서 만약에 `Profile` 컴포넌트를 내보내고 싶으면 어떻게 하나요? 이미 `Gallery.js` 파일에서 `default export`로 컴포넌트를 내보내고 있기 때문에 2개의 `default export`를 사용할 수 없습니다.
+새로운 파일을 만들어서 `default export`를 사용하던가, 하나의 파일에서 두개의 `named export`를 사용하면 됩니다.
+
+`Gallery.js`파일 내에서 Profile 컴포넌트를 default가 아닌 export로 내보내는 방법입니다.
+```jsx
+export function Profile() {
+  // ...
+}
+```
+
+`App.js`에서 Profile 컴포넌트를 사용하는 방법입니다.
+```jsx
+import { Profile } from './Gallery.js';
+
+export default function App() {
+  return <Profile />;
+}
+```
+
+즉, `default export`는 하나의 파일에서 한 번 사용할 수 있지만, `named export`는 여러번 사용할 수 있습니다.
+
+### 주의 사항
+기본적으로 `default export`와 `named export`를 사용할 때, 규칙을 가지고 사용해야 혼동을 줄일 수 있습니다.
+
+
 
 <br/>
 
