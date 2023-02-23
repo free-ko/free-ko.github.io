@@ -1,7 +1,7 @@
 ---
 emoji: ✏️
-title: 'React Beta - Importing and Exporting Components 번역 중'
-date: '2023-02-16 11:46:00'
+title: 'React Beta - Importing and Exporting Components'
+date: '2023-02-23 10:48:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: 번역
@@ -37,11 +37,9 @@ Export, Import 하는 단계를 살펴보면 아래와 같습니다.
 
 아래는 위의 단계를 코드로 작성해보았습니다.
 
-### `Gallery.js`
-- `Profile` 컴포넌트가 정의되어 있고, 오직 한 번만 사용했으며 export는 하지 않았습니다.
-- `Gallery` 컴포넌트는 default export로 export되어 있습니다. 
-
 ```jsx
+// Gallery.js
+
 function Profile() {
   return (
     <img
@@ -62,12 +60,14 @@ export default function Gallery() {
   );
 }
 ```
+- `Profile` 컴포넌트가 정의되어 있고, 오직 한 번만 사용했으며 export는 하지 않았습니다.
+- `Gallery` 컴포넌트는 default export로 export되어 있습니다.
 
-### App.js
-- `Gallery` 컴포넌트를 default import를 했습니다.
-- `App` 컴포넌트를 default export했습니다.
+<br/>
 
 ```jsx
+// App.js
+
 import Gallery from './Gallery.js';
 
 export default function App() {
@@ -76,10 +76,14 @@ export default function App() {
   );
 }
 ```
+- `Gallery` 컴포넌트를 default import를 했습니다.
+- `App` 컴포넌트를 default export했습니다.
+
+<br/>
 
 ### Note
 `import Gallery from './Gallery';`
-위 코드를 보면, import 할 때, `.js`확장자 명을 붙이지 않았습니다. 그 이유는 React에서 알아서 인지하고 작동되어지기 때문입니다. 
+위 코드를 보면, import 할 때, `.js`확장자 명을 붙이지 않았습니다. 그 이유는 React에서 알아서 인지하고 작동되기 때문입니다. 
 다만, `.js`확장자 명을 붙이는 것이 [ES Modules](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)가 작동하는 것과 비슷합니다.
 
 <br/>
@@ -131,18 +135,19 @@ export default function App() {
 
 즉, `default export`는 하나의 파일에서 한 번 사용할 수 있지만, `named export`는 여러번 사용할 수 있습니다.
 
-### 주의 사항
+<br/>
+
+<b><주의 사항></b>
+
 기본적으로 `default export`와 `named export`를 사용할 때, 규칙을 가지고 사용해야 혼동을 줄일 수 있습니다.
-
-
 
 <br/>
 
 ## Recap
-- 1
-- 2
-- 3
-
+- root 컴포넌트 파일에 대해 알아봤습니다.
+- 컴포넌트를 import 및 export하는 방법을 알아봤습니다.
+- `named export`와 `export`를 통해 컴포넌트를 언제, 어떻게 사용해야 하는지 알아봤습니다.
+- 같은 파일에서 여러개의 컴포넌트를 export하는 방법을 알아봤습니다.
 
 <br/>
 
