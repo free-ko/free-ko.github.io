@@ -1,6 +1,6 @@
 ---
 emoji: 🤔
-title: 'React Hook Form을 알게 되다.'
+title: 'React Hook Form을 알게 되다.(작성 중)'
 date: '2023-02-08 22:20:00'
 author: Kay
 tags: 블로그 github-pages gatsby
