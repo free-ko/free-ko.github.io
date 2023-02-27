@@ -49,8 +49,26 @@ JSX는 문법의 확장이지만, React는 JS 라이브러리 입니다.
 <br/>
 
 ## Converting HTML to JSX
-
-### Note
+아래의 HTML의 코드를 그래도 함수 리턴 값으로 넣게 되면 에러가 발생합니다.
+그 이유는 JSX 작성시 몇가지 규칙이 있기 때문입니다.
+```js
+  export default function TodoList() {
+    return (
+      // This doesn't quite work!
+      <h1>Hedy Lamarr's Todos</h1>
+      <img 
+        src="https://i.imgur.com/yXOvdOSs.jpg" 
+        alt="Hedy Lamarr" 
+        class="photo"
+      >
+      <ul>
+        <li>Invent new traffic lights
+        <li>Rehearse a movie scene
+        <li>Improve the spectrum technology
+      </ul>
+    );
+  }
+```
 
 <br/>
 
@@ -59,6 +77,41 @@ JSX는 문법의 확장이지만, React는 JS 라이브러리 입니다.
 ### 1. Return a single root element
 
 ### DEEP DIVE: Why do multiple JSX tags need to be wrapped?
+컴포넌트에서 여러 Element를 return할려면, <b>단일 부모 태그로 요소를 래핑해야 합니다.</b>
+
+아래는 `<div>`태그를 사용했습니다.
+```html
+  <div>
+    <h1>Hedy Lamarr's Todos</h1>
+    <img 
+      src="https://i.imgur.com/yXOvdOSs.jpg" 
+      alt="Hedy Lamarr" 
+      class="photo"
+    >
+    <ul>
+      ...
+    </ul>
+  </div>
+```
+
+`<>와 </>`도 사용할 수 있습니다. 이를 `Fragment`라고 합니다. Fragment를 사용하면 브라우저에서 HTML 트리에 흔적을 남기지 않고 사용할 수 있습니다.
+```js
+  <>
+    <h1>Hedy Lamarr's Todos</h1>
+    <img 
+      src="https://i.imgur.com/yXOvdOSs.jpg" 
+      alt="Hedy Lamarr" 
+      class="photo"
+    >
+    <ul>
+      ...
+    </ul>
+  </>
+```
+
+### Deep Dive: Why do multiple JSX tags need to be wrapped?
+JSX는 HTML처럼 보이지만, 내부적으로 일반 JS 객체로 변환됩니다. <b>함수에서 2개의 객체를 배열로 래핑하지 않고는 반환할 수 없습니다.</b>
+그래서 JSX태그를 작성할 때에는 최상단 부모를 랩핑해서 사용해야 합니다. [참고](https://javascript.plainenglish.io/why-do-we-have-to-wrap-react-components-b168232dbd3a)
 
 ### 2. Close all the tags
 
