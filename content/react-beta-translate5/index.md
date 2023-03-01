@@ -1,7 +1,7 @@
 ---
 emoji: ✏️
-title: 'React Beta - Writing Markup with JSX 번역 중'
-date: '2023-02-23 10:48:00'
+title: 'React Beta - Writing Markup with JSX 번역'
+date: '2023-03-01 13:08:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: 번역
@@ -147,16 +147,21 @@ JSX는 JS로 변환되고, JSX로 작성된 속성은 JS Object의 key가 됩니
       className="photo"
     />
 ```
+추가로 컴포넌트에 작성할 수 있는 [DOM 속성](https://beta.reactjs.org/reference/react-dom/components/common)을 확인 할 수 있습니다.
 
+### 주의 사항
+`aria-*`와 `data-*` 속성은 HTML에서 사용하는 것과 같이 대쉬(-)를 사용합니다.
 
 ### Pro-tip: Use a JSX Converter
+기존 마크업에 사용하는 속성을 `camelCase`로 다 전환하는 것은 지루한 일입니다. 그래서 [Convert](https://transform.tools/html-to-jsx)를 통해
+손 쉽게 전환할 수 있습니다. 하지만, 직접 JSX를 작성하면서 속성을 추가해 JSX가 어떻게 동작하는지 파악하는 것도 중요합니다.
 
 <br/>
 
 ## Recap
-- 1
-- 2
-- 3
+- React 컴포넌트는 렌더링 로직과 마크업이 서로 연관되어 있기 때문에, 렌더링 로직과 마크업을 함께 작성할 수 있습니다.
+- JSX는 HTML과 비슷하지만, DOM 속성을 작성할 때 `camelCase`로 작성해야하는 몇가지 차이가 있습니다.
+- React에서 제공하는 에러 메세지를 통해서 옳바르게 마크업을 작성할 수 있습니다.
 
 <br/>
 
