@@ -58,9 +58,39 @@ JSX 속성에 string을 전달 할려면, 따옴표나, 쌍따옴표를 사용�
 <br/>
 
 ## Using curly braces: A window into the JavaScript world
-
+JSX는 JS를 작성하는 특별한 방법입니다. 특히, JSX 문법에서 `{}`중괄호를 통해 JS를 사용할 수 있습니다.
+아래는 `name`이라는 변수를 JSX 문법에 적용했습니다.
+```jsx
+  export default function TodoList() {
+    const name = 'Gregorio Y. Zara';
+    return (
+      <h1>{name}'s To Do List</h1>
+    );
+  }
+```
+그리고 `formatDate()`함수를 통해, 실시간 데이터를 표현할 수 있습니다.
+```jsx
+  function formatDate(date) {
+    return new Intl.DateTimeFormat(
+      'en-US',
+      { weekday: 'long' }
+    ).format(date);
+  }
+  
+  export default function TodoList() {
+    return (
+      <h1>To Do List for {formatDate(today)}</h1>
+    );
+  }
+```
 
 ### Where to use curly braces
+JSX 내부에서 `{}`중괄호를 2가지 방법으로 사용할 수 있습니다.
+1. JSX 태그 안에 직접 텍스트로 입력해야 합니다.
+   - `<h1>{name}'s To Do List</h1>`는 작동하지만, `<{tag}>Gregorio Y. Zara's To Do List</{tag}>`는 작동하지 않습니다.
+2. JSX 속성에 JS 변수를 사용할 때 따옴표를 작성하면 안됩니다.
+   - `src={avatar} `는 JS 변수로서 작동합니다.
+   - `src="{avatar}"`는 `"{avatar}"`라는 문자열을 나타냅니다.
 
 <br/>
 
