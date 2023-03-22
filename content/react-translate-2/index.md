@@ -1,11 +1,15 @@
 ---
 emoji: ✏️
-title: 'React Beta - Ref를 통해 DOM(React)을 조작하는 방법'
+title: 'React - Ref를 통해 DOM(React)을 조작하는 방법 번역'
 date: '2023-01-20 20:13:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: 번역
 ---
+
+> 이 글은 [React - Manipulating the DOM with Refs](https://reactjs.org/learn/manipulating-the-dom-with-refs)를 번역한 것 입니다.
+
+<br>
 
 # 🌈 Ref를 통해 DOM을 조작하는 방법.
 React는 자동적으로 우리가 만든 JSX 컴포넌트를 DOM에 업데이트 합니다. 그래서 우리는 DOM을 조작할 일이 흔치 않게 됩니다.
@@ -537,7 +541,7 @@ const Counter = () => {
 <br>
 
 ### 📕 참고
-- [React Beta - Manipulating the DOM with Refs](https://beta.reactjs.org/learn/manipulating-the-dom-with-refs)
+- [React - Manipulating the DOM with Refs](https://reactjs.org/learn/manipulating-the-dom-with-refs)
 - [Ref란 - DOM에 직접 접근하는 방법](https://chanhuiseok.github.io/posts/react-7/)
 - [useRef 200%로 사용하기](https://velog.io/@juno7803/React-useRef-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0)
 

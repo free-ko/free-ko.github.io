@@ -1,11 +1,15 @@
 ---
 emoji: ✏️
-title: 'React Beta - Describing th UI'
+title: 'React - Describing the UI 번역'
 date: '2023-01-07 18:24:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: 번역
 ---
+
+> 이 글은 [React - Describing the UI](https://reactjs.org/learn/describing-the-ui)를 번역한 것 입니다.
+
+<br>
 
 # 🌈 Describing the UI
 리액트는 UI를 랜더링하는 JS 라이브러리 입니다. UI는 `button`, `text`, `images` 같은 작은 단위로 구성되어 있습니다.
@@ -58,8 +62,7 @@ export default function Gallery() {
 <br>
 
 ### 📕 참고
-- [React Beta - Describing the UI](https://beta.reactjs.org/learn/describing-the-ui)
-
+- [React - Describing the UI](https://reactjs.org/learn/describing-the-ui)
 
 ```toc
 ```

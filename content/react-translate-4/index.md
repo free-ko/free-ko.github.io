@@ -1,13 +1,13 @@
 ---
 emoji: ✏️
-title: 'React Beta - Importing and Exporting Components'
+title: 'React - Importing and Exporting Components 번역'
 date: '2023-02-23 10:48:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: 번역
 ---
 
-> 이 글은 [React Beta 공식 문서 - Importing and Exporting Components](https://beta.reactjs.org/learn/importing-and-exporting-components)를 번역한 것 입니다.
+> 이 글은 [React 공식 문서 - Importing and Exporting Components](https://reactjs.org/learn/importing-and-exporting-components)를 번역한 것 입니다.
 
 <br>
 
@@ -152,7 +152,7 @@ export default function App() {
 <br/>
 
 <b>📕 참고</b>
-- [React Beta - Importing and Exporting Components](https://beta.reactjs.org/learn/importing-and-exporting-components)
+- [React - Importing and Exporting Components](https://reactjs.org/learn/importing-and-exporting-components)
 
 ```toc
 ```

@@ -1,13 +1,13 @@
 ---
 emoji: ✏️
-title: 'React Beta - Writing Markup with JSX 번역'
+title: 'React - Writing Markup with JSX 번역'
 date: '2023-03-01 13:08:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: 번역
 ---
 
-> 이 글은 [React Beta 공식 문서 - Writing Markup with JSX
+> 이 글은 [React 공식 문서 - Writing Markup with JSX
 ](https://beta.reactjs.org/learn/writing-markup-with-jsx)를 번역한 것 입니다.
 
 <br>
@@ -166,7 +166,7 @@ JSX는 JS로 변환되고, JSX로 작성된 속성은 JS Object의 key가 됩니
 <br/>
 
 <b>📕 참고</b>
-- [React Beta - Writing Markup with JSX
+- [React - Writing Markup with JSX
   ](https://beta.reactjs.org/learn/writing-markup-with-jsx)
 
 ```toc

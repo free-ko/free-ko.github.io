@@ -1,13 +1,13 @@
 ---
 emoji: ✏️
-title: 'React Beta - Your First Component'
+title: 'React - Your First Component 번역'
 date: '2023-02-06 21:19:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: 번역
 ---
 
-> 이 글은 [React Beta 공식 문서 - Your First Component](https://beta.reactjs.org/learn/your-first-component)를 번역한 것 입니다.
+> 이 글은 [React 공식 문서 - Your First Component](https://reactjs.org/learn/your-first-component)를 번역한 것 입니다.
 
 <br>
 
@@ -217,7 +217,7 @@ React가 JS로 페이지를 관리하고 빈 HTML 파일을 사용하는 대신,
 <br/>
 
 <b>📕 참고</b>
-- [React Beta - Your First Component](https://beta.reactjs.org/learn/your-first-component)
+- [React - Your First Component](https://reactjs.org/learn/your-first-component)
 
 ```toc
 ```
