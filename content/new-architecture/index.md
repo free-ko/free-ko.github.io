@@ -4,7 +4,7 @@ title: 'FE 새로운 아키텍처 개발 후기'
 date: '2023-03-02 20:26:00'
 author: Kay
 tags: 블로그 github-pages gatsby
-categories: Log
+categories: TIL
 ---
 
 > 아래의 아키텍처가 정답이 아니라고 생각합니다. 너그러운 마음과 피드백을 주시면 감사하겠습니다.🙇🏻‍
