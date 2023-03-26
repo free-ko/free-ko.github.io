@@ -65,8 +65,8 @@ categories: TIL
 
 <br>
 
-### Next.js에 구조화 데이터 적용 방법
-1. Head 컴포넌트와  외부 라이브러리 next-seo에서 제공하는 [`ArticleJsonLd`](https://github.com/garmeeh/next-seo#json-ld)사용하여, HTML head 태그에 구조화된 데이터를 추가하는 방법
+### Next.js에 구조화된 데이터 적용 방법
+1. Head 컴포넌트와  외부 라이브러리 next-seo에서 제공하는 [`ArticleJsonLd`](https://github.com/garmeeh/next-seo#json-ld)사용하여, HTML head 태그에 구조화된 데이터를 추가할 수 있습니다.
    ```jsx
    import Head from 'next/head';
    import { ArticleJsonLd } from 'next-seo';
@@ -97,7 +97,7 @@ categories: TIL
    }
    ```
 
-2. getInitialProps를 사용하여 JSON-LD 형식의 구조화된 데이터를 추가하는 방법
+2. getInitialProps를 사용하여 JSON-LD 형식의 구조화된 데이터를 dangerouslySetInnerHTM을 통해 추가할 수 있습니다.
    ```jsx
    function MyPage({ article }) {
      return (
@@ -131,9 +131,12 @@ categories: TIL
 
 <br/>
 
-> dangerouslySetInnerHTM은 브라우저 DOM에서 innerHTML을 사용하기 위한 React의 대체 방법이지만, 일반적으로 코드에서 HTML을 설정하는 것은 사이트 간 스크립팅 공격에 쉽게 노출될 수 있기 때문에 위험합니다. 
+## 추가로 알아보기
+dangerouslySetInnerHTM 이란?
+
+> dangerouslySetInnerHTM은 브라우저 DOM에서 innerHTML을 사용하기 위한 React의 대체 방법이지만, 일반적으로 코드에서 HTML을 설정하는 것은 XSS, CSRF에 취약합니다. 
 > 
-> 따라서 React에서 직접 HTML을 설정할 수는 있지만, 위험하다는 것을 상기시키기 위 dangerouslySetInnerHTML을 작성하고 __html 키로 객체를 전달해야 합니다.
+> 따라서 React에서 직접 HTML을 설정할 수는 있지만, 위험하다는 것을 상기시키기 위해 dangerously라는 접두어를 붙여 작성하고 __html 키로 객체를 전달해야 합니다.
 
 ```jsx
 const termsContent = `${data?.terms?.content}`;
