@@ -193,10 +193,10 @@ void function() {
   <span class="token punctuation">}</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre></div>
 <br>
-<h3 id="nextjs에-구조화-데이터-적용-방법" style="position:relative;"><a href="#nextjs%EC%97%90-%EA%B5%AC%EC%A1%B0%ED%99%94-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%81%EC%9A%A9-%EB%B0%A9%EB%B2%95" aria-label="nextjs에 구조화 데이터 적용 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next.js에 구조화 데이터 적용 방법</h3>
+<h3 id="nextjs에-구조화된-데이터-적용-방법" style="position:relative;"><a href="#nextjs%EC%97%90-%EA%B5%AC%EC%A1%B0%ED%99%94%EB%90%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%81%EC%9A%A9-%EB%B0%A9%EB%B2%95" aria-label="nextjs에 구조화된 데이터 적용 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next.js에 구조화된 데이터 적용 방법</h3>
 <ol>
 <li>
-<p>Head 컴포넌트와  외부 라이브러리 next-seo에서 제공하는 <a href="https://github.com/garmeeh/next-seo#json-ld"><code class="language-text">ArticleJsonLd</code></a>사용하여, HTML head 태그에 구조화된 데이터를 추가하는 방법</p>
+<p>Head 컴포넌트와  외부 라이브러리 next-seo에서 제공하는 <a href="https://github.com/garmeeh/next-seo#json-ld"><code class="language-text">ArticleJsonLd</code></a>사용하여, HTML head 태그에 구조화된 데이터를 추가할 수 있습니다.</p>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> Head <span class="token keyword">from</span> <span class="token string">'next/head'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> ArticleJsonLd <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'next-seo'</span><span class="token punctuation">;</span>
 
@@ -226,7 +226,7 @@ void function() {
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 <li>
-<p>getInitialProps를 사용하여 JSON-LD 형식의 구조화된 데이터를 추가하는 방법</p>
+<p>getInitialProps를 사용하여 JSON-LD 형식의 구조화된 데이터를 dangerouslySetInnerHTM을 통해 추가할 수 있습니다.</p>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">MyPage</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> article <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
  <span class="token keyword">return</span> <span class="token punctuation">(</span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
@@ -258,9 +258,11 @@ MyPage<span class="token punctuation">.</span><span class="token function-variab
 </li>
 </ol>
 <br/>
+<h2 id="추가로-알아보기" style="position:relative;"><a href="#%EC%B6%94%EA%B0%80%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0" aria-label="추가로 알아보기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>추가로 알아보기</h2>
+<p>dangerouslySetInnerHTM 이란?</p>
 <blockquote>
-<p>dangerouslySetInnerHTM은 브라우저 DOM에서 innerHTML을 사용하기 위한 React의 대체 방법이지만, 일반적으로 코드에서 HTML을 설정하는 것은 사이트 간 스크립팅 공격에 쉽게 노출될 수 있기 때문에 위험합니다. </p>
-<p>따라서 React에서 직접 HTML을 설정할 수는 있지만, 위험하다는 것을 상기시키기 위 dangerouslySetInnerHTML을 작성하고 __html 키로 객체를 전달해야 합니다.</p>
+<p>dangerouslySetInnerHTM은 브라우저 DOM에서 innerHTML을 사용하기 위한 React의 대체 방법이지만, 일반적으로 코드에서 HTML을 설정하는 것은 XSS, CSRF에 취약합니다. </p>
+<p>따라서 React에서 직접 HTML을 설정할 수는 있지만, 위험하다는 것을 상기시키기 위해 dangerously라는 접두어를 붙여 작성하고 __html 키로 객체를 전달해야 합니다.</p>
 </blockquote>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> termsContent <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token operator">?.</span>terms<span class="token operator">?.</span>content<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 
@@ -318,7 +320,12 @@ MyPage<span class="token punctuation">.</span><span class="token function-variab
 <li>
 <p><a href="#%EA%B5%AC%EC%A1%B0%ED%99%94%EB%90%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%81%EC%9A%A9json-ld">구조화된 데이터 적용(JSON-LD)</a></p>
 <ul>
-<li><a href="#nextjs%EC%97%90-%EA%B5%AC%EC%A1%B0%ED%99%94-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%81%EC%9A%A9-%EB%B0%A9%EB%B2%95">Next.js에 구조화 데이터 적용 방법</a></li>
+<li><a href="#nextjs%EC%97%90-%EA%B5%AC%EC%A1%B0%ED%99%94%EB%90%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%81%EC%9A%A9-%EB%B0%A9%EB%B2%95">Next.js에 구조화된 데이터 적용 방법</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%B6%94%EA%B0%80%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0">추가로 알아보기</a></p>
+<ul>
 <li><a href="#xss-csrf-%EA%B3%B5%EA%B2%A9">XSS, CSRF 공격</a></li>
 </ul>
 </li>
