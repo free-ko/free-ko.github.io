@@ -1,4 +1,4 @@
-# [Kay Log Blog](https://free-ko.github.io/)
+# [Kay Blog](https://free-ko.github.io/)
 
 <br>
 
