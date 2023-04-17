@@ -220,7 +220,6 @@ categories: Study
 ## 참고
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
 - [이펙티브 타입스크립트 책](http://www.yes24.com/Product/Goods/102124327)
-- [이펙티브 타입스크립트 1장](https://zigsong.github.io/2021/12/02/effective-typescript-1/)
 - [구조적 타이핑](https://yozm.wishket.com/magazine/detail/1661/)
 
 ```toc
