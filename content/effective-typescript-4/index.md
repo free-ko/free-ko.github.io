@@ -97,6 +97,78 @@ categories: Study
 
 <br>
 
+## ✏️ 아이템 31: 타입 주변에 null 값 배치하기
+1. 문제가 있는 예제
+```ts
+  // 최솟값이나 최댓값이 0인 경우
+  // nums 배열이 비어있는 경우
+   function extent(nums: number[]) {
+     let min, max;
+     
+     for (const num of nums) {
+       if (!min) {
+         min = num;
+         max = num;
+       } else {
+         min = Math.min(min, num);
+         max = Math.max(max, num);
+       }
+     }
+     
+     return [min, max];
+   }
+```
+   - min과 max를 한 객체 안에 넣고 null이거나 null이 아니게 하기
+   ```ts
+      function extent(nums: number[]) {
+          let result: [number, number] | null = null;
+        
+          for (const num of nums) {
+            if (!result) {
+              result = [num, num];
+            } else {
+              result = [Math.min(num, result[0]), Math.max(num, result[1])];
+            }
+          }
+        
+          return [min, max];
+      }
+   ```
+   - null과 null이 아닌 값을 섞어서 클래스 만들기
+   ```ts
+      class userPosts {
+          user: UserInfo;
+          posts: Post[];
+      
+          constructor(user: UserInfo, posts: Post[]) {
+            this.user = user;
+            this.posts = posts;
+          }
+      
+          static async init(userId: string): Promise<UserPosts> {
+            const [user, posts] = await Promise.all([
+              fetchUser(userId),
+              fetchPostsForUser(userId),
+            ]);
+            
+            return new UserPosts(user, posts);
+          }
+      
+          getUserName() {
+            return this.user.name;
+          }
+      } 
+   ```
+2. 정리
+   - 값들 중 null 여부에 따라, 다른 값이 암시적으로 null이 될 수있는 가능성을 두고 설계하면 안 됨
+   - API 작성 시에는 반환 타입을 큰 객체로 만들고, 반환 타입 전체가 null 이거나 null이 아니게 만들어야 함
+   - 클래스를 만들 때는 필요한 모든 값이 준비되었을 때, 생성하여 null이 존재하지 않도록 하는 것이 좋음
+
+
+
+
+<br>
+
 ## 참고
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
 - [이펙티브 타입스크립트 책](http://www.yes24.com/Product/Goods/102124327)
