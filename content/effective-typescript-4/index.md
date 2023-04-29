@@ -164,8 +164,57 @@ categories: Study
    - API 작성 시에는 반환 타입을 큰 객체로 만들고, 반환 타입 전체가 null 이거나 null이 아니게 만들어야 함
    - 클래스를 만들 때는 필요한 모든 값이 준비되었을 때, 생성하여 null이 존재하지 않도록 하는 것이 좋음
 
+<br>
 
-
+## ✏️ 아이템 32: 유니온의 인터페이스보다는 인터페이스의 유니온을 사용하기
+1. 문제가 있는 예제
+```ts
+   interface Layer {
+     layout: FillLayout | LineLayout | PointLayout;
+     paint: FillPaint | LinePaint | PointPaint;
+   }
+```
+→ 각각 타입의 계층을 분리된 인터페이스로 나누기
+```ts
+   interface FillLayer {
+     type: "fill";
+     layout: FillLayout;
+     paint: FillPaint;
+   }
+   
+   interface LineLayer {
+     type: "line";
+     layout: LineLayout;
+     paint: LinePaint;
+   }
+   
+   interface PointLayer {
+     type: "point";
+     layout: PointLayout;
+     paint: PointPaint;
+   }
+   
+   type Layer = FillLayer | LineLayer | PointLayer;
+```
+2. 태그드 유니온 사용(TS는 태그를 참고하여 범위를 좁힐 수 있음)
+```ts
+   function drawLayer(layer: Layer) {
+     if (layer.type === 'fill') {
+       const { paint } = layer; // 타입이 FillPaint
+       const { layout } = layer; // 타입이 FillLayout
+     } else // ...
+```
+3. 여러 개의 선택적 필드가 동시에 값이 있거나 동시에 undefined인 경우, 두 개의 속성을 하나의 객체로 모음
+```ts
+   interface Person {
+     name: string;
+     // birthPlace와 birthDate를 하나로 모음
+     birth?: {
+       place: string;
+       date: Date;
+     };
+   }
+```
 
 <br>
 
