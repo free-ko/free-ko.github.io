@@ -218,6 +218,62 @@ categories: Study
 
 <br>
 
+## ✏️ 아이템 33: string 타입보다 더 구체적인 타입 사용하기
+1. 좋지 못한 예시
+```ts
+   interface Album {
+     artist: string;
+     title: string;
+     releaseDate: string;
+     recordingType: string;
+   }
+```
+2. 타입을 제한하거나, 유니온 타입을 사용하
+```ts
+   type RecordingType = "studio" | "live";
+   
+   interface Album {
+     artist: string;
+     title: string;
+     releaseDate: Date;
+     recordingType: RecordingType;
+   }
+```
+3. 함수의 매개변수에 string을 잘못 사용하지 않도록 주의
+```ts
+   // 🚨 '{}' 형식에 인덱스 시그니처가 없으므로 요소에 암시적으로 'any' 형식이 있음
+   function pluck(records: any[], key: string): any[] {
+     return records.map((r) => r[key]);
+   }
+```
+   - 제네릭과 `keyof`을 사용
+   ```ts
+      type K = keyof Album;
+      
+      // 이때 TS는 반환 타입을 추론함
+      function pluck<T>(records: T[], key: keyof T) {
+          return records.map((r) => r[key]);
+      }
+   ```
+   - keyof T로 범위 더 좁힐 수 있음
+   ```ts
+      function pluck<T, K extends keyof T>(records: T[], key: K): T[K][] {
+         return records.map((r) => r[key]);
+      }
+   ```
+   - 결과
+   ```ts
+      pluck(albums, "releaseDate"); // 타입이 Date[]
+      pluck(albums, "artist"); // 타입이 string[]
+      pluck(albums, "recordingType"); // 타입이 RecordingType[]
+   ```
+
+
+
+
+
+<br>
+
 ## 참고
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
 - [이펙티브 타입스크립트 책](http://www.yes24.com/Product/Goods/102124327)
