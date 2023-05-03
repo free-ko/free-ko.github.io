@@ -268,6 +268,72 @@ categories: Study
       pluck(albums, "recordingType"); // 타입이 RecordingType[]
    ```
 
+<br>
+
+## ✏️ 아이템 34: 부정확한 타입보다는 미완성 타입을 사용하기
+
+1. 코드를 더 정밀하게 만들어서 코드가 오히려 더 부정확해지는 문제
+```ts
+   interface Point {
+     type: "Point";
+     coordinates: number[];
+   }
+   
+   interface LineString {
+     type: "LineString";
+     coordinates: number[][];
+   }
+   
+   interface Polygon {
+     type: "Polygon";
+     coordinates: number[][];
+   }
+   
+   type Geometry = Point | LineString | Polygon; // 다른 것들도 추가될 수 있다
+```
+2. 아래와 같이 구체화하는 경우 GeoJSON의 위치정보에는 추가 정보가 들어갈 수 없게 됨
+```ts
+type GeoPosition = [number, number];
+
+interface Point {
+  type: "Point";
+  coordinates: GeoPosition;
+}
+```
+3. 부정확함을 바로잡는 방법을 쓰는 대신, 테스트 세트를 추가하여 놓친 부분이 없는지 확인
+```ts
+   type CallExpression = MathCall | CaseCall | RGBCall;
+   type Expression = number | string | CallExpression;
+   
+   interface MathCall {
+     0: "+" | "-" | "/" | "*" | ">" | "<";
+     1: Expression;
+     2: Expression;
+     length: 3;
+   }
+   
+   interface CaseCall {
+     0: "case";
+     1: Expression;
+     2: Expression;
+     3: Expression;
+     length: 4 | 6 | 8 | 10 | 12 | 14 | 16; // 등등
+   }
+   
+   interface RGBCall {
+     0: "rgb";
+     1: Expression;
+     2: Expression;
+     3: Expression;
+     length: 4;
+   }
+```
+   → 잘못 사용된 코드에서 오류가 발생하기는 하지만 오류 메시지가 더 난해 해짐
+4. 타입이 구체적으로 정제된다고 해서 정확도가 무조건 올라가지는 않음
+5. 현 상황을 고려하면서 타입 설계
+
+
+
 
 
 
