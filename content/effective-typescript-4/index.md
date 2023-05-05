@@ -291,15 +291,17 @@ categories: Study
    
    type Geometry = Point | LineString | Polygon; // 다른 것들도 추가될 수 있다
 ```
+
 2. 아래와 같이 구체화하는 경우 GeoJSON의 위치정보에는 추가 정보가 들어갈 수 없게 됨
 ```ts
-type GeoPosition = [number, number];
-
-interface Point {
-  type: "Point";
-  coordinates: GeoPosition;
-}
+   type GeoPosition = [number, number];
+   
+   interface Point {
+     type: "Point";
+     coordinates: GeoPosition;
+   }
 ```
+
 3. 부정확함을 바로잡는 방법을 쓰는 대신, 테스트 세트를 추가하여 놓친 부분이 없는지 확인
 ```ts
    type CallExpression = MathCall | CaseCall | RGBCall;
@@ -332,10 +334,47 @@ interface Point {
 4. 타입이 구체적으로 정제된다고 해서 정확도가 무조건 올라가지는 않음
 5. 현 상황을 고려하면서 타입 설계
 
+<br>
 
+## ✏️ 아이템 35: 데이터가 아닌, API와 명세를 보고 타입 만들기
+1. 명세를 기반으로 타입을 작성한다면, 사용 가능한 모든 값에 대해서 코드가 작동한다는 확신을 가질 수 있음
 
+<br>
 
+## ✏️ 아이템 36: 해당 분야의 용어로 타입 이름 짓기
+1. 동일한 의미를 나타낼 때는 같은 용어를 사용
+2. data, info, thing, item, object, entity같은 모호하고 의미없는 이름 지양
+3. 네이밍 할 때, 포함된 내용이나 계산 방식이 아니라 데이터 자체가 무엇인지를 고려
 
+<br>
+
+## ✏️ 아이템 37: 공식 명칭에는 상표를 붙이기
+1. 공식 명칭 (nominal typing)
+   - 타입이 아니라 값의 관점
+
+   ```ts
+    interface Vector2D {
+      x: number;
+      y: number;
+      _brand: "2d";
+    }
+   
+    function vec2D(x: number, y: number): Vector2D {
+      return { x, y, _brand: "2d" };
+    }  
+   
+    function calculateNorm(p: Vector2D) {
+      return Math.sqrt(p.x * p.x + p.y * p.y);
+    }
+   
+    calculateNorm(vec2D(3, 4)); // 정상
+   
+    const vec3D = { x: 3, y: 4, z: 1 };
+   
+    calculateNorm(vec3D); // 🚨 '_brand' 속성이 ... 형식에 없습니다
+   ```
+2. 상표 시스템은 타입 시스템에서 동작하지만, 런타임에 상표를 검사하는 것과 동일한 효과를 얻을 수 있음
+3. TS는 구조적 타이핑(덕 타이핑)을 사용하기 때문에, 값을 구분하기 위해 공식 명칭이 필요할 경우 상표를 붙일 수 있음
 
 
 <br>
