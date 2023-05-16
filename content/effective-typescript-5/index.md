@@ -7,7 +7,7 @@ tags: 블로그 github-pages gatsby
 categories: Study
 ---
 
-## 아이템 38: any 타입은 가능한 한 좁은 범위에서만 사용
+## 아이템 38: any 타입은 가능한 한 좁은 범위에서만 사용하기
 
 1. any 작성 방식
 
@@ -58,6 +58,44 @@ categories: Study
        key: value as any,
      },
    };
+   ```
+
+<br>
+
+# 아이템 39: any를 구체적으로 변형해서 사용하기
+
+1. 일반적인 상황에서는 any보다 더 구체적으로 표현할 수 있는 타입이 존재할 가능성이 높음
+
+   ```ts
+   function getLengthBad(array: any) {
+     // X
+     return array.length;
+   }
+
+   function getLength(array: any[]) {
+     return array.length;
+   }
+   ```
+
+2. 함수 매개변수로 객체 사용 시 타입 구체화
+
+   ```ts
+   function hasTwelveLetterKey(o: { [key: string]: any }) {
+     for (const key in o) {
+       if (key.length === 12) {
+         return true;
+       }
+     }
+     return false;
+   }
+   ```
+
+3. 함수 타입 구체화
+
+   ```ts
+   type Fn0 = () => string; // 매개변수 없이 호출 가능한 모든 함수
+   type Fn1 = (arg: string[]) => string[]; // 매개변수 1개
+   type FnN = (...args: string[]) => string[]; // 모든 개수의 매개변수 ("Function" 타입과 동일)
    ```
 
 <br>
