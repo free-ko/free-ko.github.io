@@ -161,6 +161,47 @@ categories: Study
 
 <br>
 
+# 아이템 41: Any 타입의 변환
+
+1. 예제 코드
+
+   ```ts
+   // out의 타입은 any[]로 선언되었지만,
+   // number 타입의 값을 넣는 순간부터 타입은 number[]로 변환
+   function range(start: number, limit: number) {
+     const out = []; // 타입이 any[]
+
+     for (let i = start; i < limit; i++) {
+       out.push(i); // out의 타입이 any[]
+     }
+
+     return out; // 타입이 number[]
+   }
+   ```
+
+2. 타입의 전환
+
+- 배열에 다양한 타입의 요소를 넣으면 배열의 타입이 변환됨
+
+  ```ts
+  const result = []; // 타입 any[]
+  result.push('a'); // 타입 string[]
+
+  result.push(1);
+  result; // 타입 (string | number)[]
+  ```
+
+3. 기타
+
+- 조건문에서는 분기에 따라 타입이 변환
+- 변수의 초깃값이 null인 경우도 any의 변환 발생
+
+4. any 타입의 변환은 noImplicitAny가 설정된 상태에서 변수의 타입이 암시적 any인 경우에만 발생한며, 명시적 any 선언 시 타입이 그대로 유지됨
+5. any 타입의 변환은 암시적 any 타입에 어떤 값을 할당할 때만 발생하며, 암시적 any 타입은 함수 호출을 거쳐도 변환되지 않음
+6. 타입을 안전하게 지키기 위해서는 암시적 any를 진화시키는 방식보다, 명시적 타입 구문을 사용하는 것이 좋음
+
+<br>
+
 ## 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
