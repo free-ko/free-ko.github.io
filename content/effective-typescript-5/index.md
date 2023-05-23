@@ -202,6 +202,87 @@ categories: Study
 
 <br>
 
+# 아이템 42: 모르는 타입에는 any 대신 unknown을 사용하기
+
+1. 함수의 반환값에 unknown 사용
+
+   ```ts
+   function parseYAML(yaml: string): any {
+     // ...
+   }
+
+   function safeParseYAML(yaml: string): unknown {
+     return parseYAML(yaml);
+   }
+
+   const book = safeParseYAML(`
+     name: Villette
+     author: Charlotte Bronte
+   `) as Book;
+
+   alert(book.title); // 🚨 'Book' 형식에 'title' 속성이 없습니다.
+   book('read'); // 🚨 이 식은 호출할 수 없습니다.
+   ```
+
+2. any가 강력하면서도 위험한 이유
+
+- 어떠한 타입이든 any 타입에 할당 가능
+- 어떠한 타입이든 unknown 타입에 할당 가능
+- 어떠한 타입도 never에 할당할 수 업음
+- any 타입은 어떠한 타입으로도 할당 가능
+- unknown은 오직 unknown과 any에만 할당 가능
+- never 타입은 어떠한 타입으로도 할당 가능
+  → 타입 시스템과 상충됨
+
+3. instanceof 체크 후 unknown에서 원하는 타입으로 변환
+
+```ts
+function processValue(val: unknown) {
+  if (val instanceof Date) {
+    val; // 타입이 Date
+  }
+}
+```
+
+4. 사용자 정의 타입 가드로 unknown에서 원하는 타입으로 변환
+
+```ts
+function isBook(val: unknown): val is Book {
+  return typeof val === 'object' && val !== null && 'name' in val && 'author' in val;
+}
+
+function processValue(val: unknown) {
+  if (isBook(val)) {
+    val; // 타입이 Book
+  }
+}
+```
+
+5. unknown 대신 제네릭 매개변수 사용
+
+   ```ts
+   //  타입 단언문과 똑같음
+   // 제네릭보다는 unknown을 반환하고, 사용자가 직접 단언문을 사용하거나 원하는 대로 타입을 좁히도록 강제하는 것이 좋음
+   function safeParseYAML<T>(yaml: string): T {
+     return parseYAML(yaml);
+   }
+   ```
+
+6. 단언문
+
+   ```ts
+   declare const foo: Foo;
+
+   let barAny = (foo as any) as Bar;
+   let barUnk = (foo as unknown) as Bar;
+   ```
+
+   - unknown의 경우 분리되는 즉시 오류를 발생하므로 any보다 안전(에러가 전파되지 않음)
+
+7. 정말 null과 undefined가 불가능하다면 unknown 대신 {} 사용
+
+<br>
+
 ## 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
