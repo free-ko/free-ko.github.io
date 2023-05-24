@@ -62,7 +62,7 @@ categories: Study
 
 <br>
 
-# 아이템 39: any를 구체적으로 변형해서 사용하기
+## 아이템 39: any를 구체적으로 변형해서 사용하기
 
 1. 일반적인 상황에서는 any보다 더 구체적으로 표현할 수 있는 타입이 존재할 가능성이 높음
 
@@ -100,7 +100,7 @@ categories: Study
 
 <br>
 
-# 아이템 40: 함수 안으로 타입 단언문 감추기
+## 아이템 40: 함수 안으로 타입 단언문 감추기
 
 1. 함수 내부에는 타입 단언 사용하고, 함수 외부로 드러나는 타입은 정의를 정확히 명시하는 것이 좋음
 
@@ -161,7 +161,7 @@ categories: Study
 
 <br>
 
-# 아이템 41: Any 타입의 변환
+## 아이템 41: Any 타입의 변환
 
 1. 예제 코드
 
@@ -202,7 +202,7 @@ categories: Study
 
 <br>
 
-# 아이템 42: 모르는 타입에는 any 대신 unknown을 사용하기
+## 아이템 42: 모르는 타입에는 any 대신 unknown을 사용하기
 
 1. 함수의 반환값에 unknown 사용
 
@@ -283,7 +283,59 @@ function processValue(val: unknown) {
 
 <br>
 
-## 참고
+## 아이템 43: 몽키 패치보다는 안전한 타입을 사용하기
+
+1. JS는 객체나 클래스에 임의의 속성을 추가할 수 있음
+
+   ```ts
+   window.monkey = 'Tamarin';
+   document.monkey = 'Howler';
+
+   // 'Document' 유형에 'monkey' 속성이 없습니다
+   document.monkey = 'Tamarin';
+
+   // 해결
+   // 단 타입 안정성을 해치는 안 좋은 코드
+   (document as any).monkey = 'Tamarin'; // 정상
+   ```
+
+   - 일반적으로 좋은 설계는 아님(전역 변수 사이드 이펙트의 문제)
+
+2. interface 의 보강(augmentation)
+
+   - 보강은 전역적으로 적용되기 때문에, 코드의 다른 부분이나 라이브러리로부터 분리할 수 없음
+
+     ```ts
+     interface Document {
+       monkey: string;
+     }
+
+     document.monkey = 'Tamarin'; // 정상
+
+     // 모듈 관점에서라면 global 선언 추가
+     export {};
+     declare global {
+       interface Document {
+         monkey: string;
+       }
+     }
+
+     document.monkey = 'Tamarin'; // 정상
+     ```
+
+3. 더 구체적인 타입 단언문 사용
+
+   ```ts
+   interface MonkeyDocument extends Document {
+     monkey: string;
+   }
+
+   (document as MonkeyDocument).monkey = 'Macaque'; // 정상
+   ```
+
+<br>
+
+### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
 - [이펙티브 타입스크립트 책](http://www.yes24.com/Product/Goods/102124327)
