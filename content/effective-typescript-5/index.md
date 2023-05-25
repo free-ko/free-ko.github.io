@@ -335,6 +335,27 @@ function processValue(val: unknown) {
 
 <br>
 
+## 아이템 44: 타입 커버리지를 추적하여 타입 안전성 유지하기
+
+1. `any` 타입이 여전히 프로그램 내에 존재할 수 있는 2가지 경우
+
+- 명시적 any 타입 ex) `any[], {[key: string]: any}`
+- 서드파티 타입 선언
+
+  - @types 선언 파일로부터 any 타입이 전파되는 경우
+  - 가장 극단적인 예시는 전체 모듈에 any 타입을 부여하는 경우
+
+        ```ts
+        // my-module 에서 어떤 것이든 오류 없이 임포트할 수 있음
+        declare module 'my-module';
+        ```
+
+  - 타입에 버그가 있는 경우 : 선언된 타입과 실제 반환된 타입이 맞지 않는 경우
+
+2. npm의 type-coverage 패키지 활용하여 any 추적하기
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
