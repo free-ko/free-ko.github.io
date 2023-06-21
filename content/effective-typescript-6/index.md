@@ -157,6 +157,42 @@ categories: Study
 
 <br>
 
+## 아이템 49: 콜백에서 this에 대한 타입 제공하기
+
+1. JS에서 this는 다이나믹 스코프
+
+- ‘정의된’ 방식이 아니라 ‘호출된’ 방식에 따라 달라짐
+
+2.  TS는 JS의 this 바인딩을 그대로 모델링 함
+3.  this를 사용하는 콜백 함수에서 this 바인딩 문제 해결
+
+    - 콜백 함수의 매개변수에 this를 추가하고, 콜백 함수를 call로 호출하는 방법
+
+      ```ts
+      // 이때 반드시 call 을 사용해야 함
+      function addKeyListener(el: HTMLElement, fn: (this: HTMLElement, e: KeyboardEvent) => void) {
+        el.addEventListener('keydown', (e) => {
+          fn.call(el, e);
+        });
+      }
+      ```
+
+    - 만약 라이브러리 사용자가 콜백을 화살표 함수로 작성하고 this를 참조하려고 하면 TS가 문제를 잡아 냄
+
+      ```ts
+      class Foo {
+        registerHandler(el: HTMLElement) {
+          addKeyListener(el, (e) => {
+            this.innerHTML; // 'Foo' 유형에 'innerHTML' 속성이 없음
+          });
+        }
+      }
+      ```
+
+4.  콜백 함수에서 this 값을 사용해야 한다면, this는 API의 일부가 되는 것이기 때문에 반드시 타입 선언에 포함해야 함
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
