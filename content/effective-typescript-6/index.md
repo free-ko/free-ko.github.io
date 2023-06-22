@@ -193,6 +193,51 @@ categories: Study
 
 <br>
 
+## 아이템 50: 오버로딩 타입보다는 조건부 타입을 사용하기
+
+1. 두 가지 타입의 매개변수를 받는 함수
+
+   ```ts
+   // 선언문에는 number 타입을 매개변수로 넣고 string 타입을 반환하는 경우도 포함되어 있음
+   function double(x: number | string): number | string;
+   function double(x: any) {
+     return x + x;
+   }
+
+   const num = double(12); // string | number
+   const str = double('x'); // string | number
+   ```
+
+   → 제네릭을 사용하여 동작을 모델링할 수 있음
+
+   ```ts
+   // 타입이 너무 과하게 구체적인 문제
+   function double<T extends number | string>(x: T): T;
+   function double(x: any) {
+     return x + x;
+   }
+
+   const num = double(12); // 타입이 12
+   const str = double('x'); // 타입이 'x' (😮 string을 원하고 있다.)
+   ```
+
+2. 조건부 타입
+
+- 타입 공간의 if 구문
+
+  ```ts
+  function double<T extends number | string>(x: T): T extends string ? string : number;
+
+  function double(x: any) {
+    return x + x;
+  }
+  ```
+
+- 개별 타입의 유니온으로 일반화하기 때문에 타입이 더 정확해짐
+- 각각이 독립적으로 처리되는 타입 오버로딩과 달리, 조건부 타입은 타입 체커가 단일 표현식으로 받아들이기 때문에 유니온 문제를 해결할 수 있음
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
