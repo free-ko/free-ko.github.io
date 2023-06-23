@@ -238,6 +238,37 @@ categories: Study
 
 <br>
 
+## 아이템 51: 의존성 분리를 위해 미러 타입 사용
+
+1. CSV 파일을 파싱하는 라이브러리 작성 시, NodeJS 사용자를 위해 매개변수에 Buffer 타입을 허용하는 경우
+
+   - Buffer 타입 정의를 위해 `@types/node` 패키지 필요
+   - 그러나 다른 라이브러리 사용자들은 해당 패키지가 불필요
+
+2. 각자가 필요한 모듈만 사용할 수 있도록 구조적 타이핑 적용
+
+   ```ts
+   // CsvBuffer가 Buffer 타입과 호환되기 때문에 NodeJS 프로젝트에서도 사용 가능
+   interface CsvBuffer {
+     toString(encoding: string): string;
+   }
+   function parseCSV(contents: string | CsvBuffer): { [column: string]: string }[] {
+     // ...
+   }
+
+   parseCSV(new Buffer('column1, column2\nval2,val2', 'utf-8'));
+   ```
+
+3. 미러링
+
+   - 작성 중인 라이브러리가 의존하는 라이브러리의 구현과 무관하게 타입에만 의존한다면, 필요한 선언부만 추출하여 작성 중인 라이브러리에 넣는 것
+
+4. 다른 라이브러리의 타입이 아닌 구현에 의존하는 경우에도 동일한 기법을 적용할 수 있고 타입 의존성을 피할 수 있음
+
+→ 유닛 테스트와 상용 시스템 간의 의존성을 분리하는 데도 유용
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
