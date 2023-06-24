@@ -269,6 +269,97 @@ categories: Study
 
 <br>
 
+## 아이템 52: 테스팅 타입의 함정에 주의하기
+
+1.  타입 선언 테스트
+
+    - 유틸리티 라이브러리에서 제공하는 `map` 함수의 타입 작성
+
+    ```ts
+    // 단순히 함수를 호출하는 테스트만으로는 반환값에 대한 체크가 누락될 수 있음 (’실행’에서의 오류만 검사함)
+    declare function map<U, V>(array: U[], fn: (u: U) => V): V[];
+    ```
+
+2.  반환값을 특정 타입의 변수에 할당하여 간단히 반환 타입을 체크할 수 있는 방법
+
+    ```ts
+    // number[] 타입 선언은 map 함수의 반환 타입이 number[] 임을 보장
+
+    const lengths: number[] = map(['john', 'paul'], (name) => name.length);
+    ```
+
+3.  그러나 테스팅을 위해 할당을 사용하는 방법에는 두 가지 문제가 있음
+
+    - 불필요한 변수를 만들어야 함 그래서 일반적인 해결책은 변수 도입 대신 헬퍼 함수를 정의하는 것
+
+          ```ts
+          function assertType<T>(x: T) {}
+          assertType<number[]>(map(['john', 'paul'], (name) => name.length));
+          ```
+
+    - 두 타입이 동일한지 체크하는 것이 아니라 할당 가능성을 체크
+
+      - 객체의 타입을 체크하는 경우
+
+        ```ts
+        const beatles = ['john', 'paul', 'george', 'ringo'];
+
+        // 반환된 배열은 {name: string}[] 에 할당 가능하지만, inYellowSubmarine 속성에 대한 부분이 체크되지 않음
+        assertType<{ name: string }[]>(
+          map(beatles, (name) => ({
+            name,
+            inYellowSubmarine: name === 'ringo',
+          })),
+        ); // 정상
+        ```
+
+      - TS의 함수는 매개변수가 더 적은 함수 타입에 할당 가능하다는 문제
+
+        ```ts
+        const double = (x: number) => 2 * x;
+        assertType<(a: number, b: number) => number>(double); //  정상?!
+        ```
+
+      - Parameters와 ReturnType 제네릭 타입을 이용해, 함수의 매개변수 타입과 반환 타입만 분리하여 테스트할 수 있음
+
+      ```ts
+      const double = (x: number) => 2 * x;
+      let p: Parameters<typeof double> = null;
+
+      assertType<[number, number]>(p);
+
+      // 🚨 '[number]' 형식의 인수는 '[number, number]' 형식의 매개변수에 할당될 수 없습니다
+      let r: ReturnType<typeof double> = null;
+      assertType<number>(r); // 정상
+      ```
+
+      - map의 콜백 함수에서 사용하게 되는 this 값에 대한 타입 선언 테스트
+
+      ```ts
+      declare function map<U, V>(
+        array: U[],
+        fn: (this: U[], u: U, i: number, array: U[]) => V,
+      ): V[];
+      ```
+
+4.  타입 시스템 내에서 암시적 any 타입을 발견하기 위해 DefinitelyTyped의 타입 선언을 위한 도구 `tslint` 사용함
+
+    ```ts
+    // dtslint는 할당 가능성을 체크하는 대신 각 심벌의 타입을 추출하여 글자 자체가 같은지 비교한다
+    const beatles = ['john', 'paul', 'george', 'ringo'];
+
+    map(beatles, function (
+      name, // $ExpectType string
+      i, // $ExpectType number
+      array, // $ExpectType string[]
+    ) {
+      this; // $ExpectType string[]
+      return name.length; // $ExpectType number[]
+    });
+    ```
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
