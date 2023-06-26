@@ -4,11 +4,6 @@ module.exports = {
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://free-ko.github.io/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
-  comments: {
-    utterances: {
-      repo: `zoomkoding/zoomkoding-gatsby-blog`,
-    },
-  },
   ga: '0', // Google Analytics Tracking ID
   author: {
     name: `고영욱`,
