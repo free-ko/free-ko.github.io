@@ -72,6 +72,64 @@ foo.bar();
 
 <br>
 
+## 아이템 54: 객체를 순회하는 노하우
+
+1. 편집기에서 오류가 발생하는 경우
+
+   ```ts
+   const obj = {
+     one: 'uno',
+     two: 'dos',
+     three: 'tres',
+   };
+
+   for (const k in obj) {
+     const v = obj[k];
+     // 🚨 obj에 인덱스 시그니처가 없기 때문에 엘리먼트는 암시적으로 'any' 타입
+   }
+
+   // k가 string 으로 인식되기 때문
+   // k의 타입을 더욱 구체적으로 명시해서 해결가능
+   let k: keyof typeof obj;
+   for (k in obj) {
+     const v = obj[k]; // 정상
+   }
+   ```
+
+   - `k`가 `string`으로 추론된 이유
+
+     ```ts
+     // a, b, c 외에 다른 속성이 존재하는 객체도 foo 함수의 매개변수 abc에 할당 가능하기 때문
+     interface ABC {
+       a: string;
+       b: string;
+       c: number;
+     }
+
+     function foo(abc: ABC) {
+       for (const k in abc) {
+         const v = abc[k]; // 🚨
+       }
+     }
+     ```
+
+2. `keyof`을 사용하는 것의 문제
+
+   - `v`도 `string | number`로 한정되어 범위가 너무 좁아짐
+
+3. 단지 객체의 키와 값을 순회하고 싶다면 `Object.entries`를 사용
+
+   ```ts
+   function foo(abc: ABC) {
+     for (const [k, v] of Object.entries(abc)) {
+       k; // string 타입
+       v; // any 타입
+     }
+   }
+   ```
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
