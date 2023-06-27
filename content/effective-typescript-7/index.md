@@ -130,6 +130,48 @@ foo.bar();
 
 <br>
 
+## 아이템 55: DOM 계층 구조 이해하기
+
+1. DOM 엘리먼트를 사용할 때 TS 에러
+
+   - EventTarget : DOM 타입 중 가장 추상화된 타입으로, 이벤트리스너의 추가/제거, 이벤트 보내기만 가능
+
+   ```ts
+      // 'EventTarget' 형식에 'classList' 속성이 없음
+      // Event의 currentTarget 속성의 타입은 EventTarget | null
+      function handleDrag(eDown: Event) {
+        const targetEl = eDown.currentTarget;
+        targetEl.classList.add('dragging');
+   ```
+
+   - Node : Element가 아닌 Node, 텍스트 조각과 주석
+   - Element와 HTMLElement : HTML이 아닌 엘리먼트, SVGSvgElement
+   - HTMLxxxElement
+
+     - HTMLxxxElement 형태의 특정 엘리먼트들은 자신만의 고유한 속성을 가지고 있음 ex) HTMLImageElement(src), HTMLInputElement(value)
+     - 항상 정확한 타입을 얻을 수 있는 것은 아님
+
+       ```ts
+       // 정확한 타입
+       document.createElement('button'); // HTMLButtonElement
+
+       // 정확한 타입이 아닌 경우
+       document.getElementById('my-div'); // HTMLElement
+       ```
+
+     - 타입 단언문 사용
+
+       ```ts
+       document.getElementById('my-div') as HTMLDivElement;
+       ```
+
+   - strictNullChecks 설정 시, 엘리먼트가 null인 경우를 체크함
+   - Event 는 가장 추상화된 이벤트로, 별도의 계층구조를 가짐
+     - ex) UIEvent, MouseEvent, TouchEvent, WheelEvent, KeyboardEvent
+     - 더 많은 문맥 정보를 제공하여 DOM에 대한 타입 추론을 가능하게 해야 함
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
