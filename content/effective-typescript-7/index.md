@@ -132,43 +132,88 @@ foo.bar();
 
 ## 아이템 55: DOM 계층 구조 이해하기
 
-1. DOM 엘리먼트를 사용할 때 TS 에러
+1.  DOM 엘리먼트를 사용할 때 TS 에러
 
-   - EventTarget : DOM 타입 중 가장 추상화된 타입으로, 이벤트리스너의 추가/제거, 이벤트 보내기만 가능
+    - EventTarget : DOM 타입 중 가장 추상화된 타입으로, 이벤트리스너의 추가/제거, 이벤트 보내기만 가능
+
+          ```ts
+          // 'EventTarget' 형식에 'classList' 속성이 없음
+          // Event의 currentTarget 속성의 타입은 EventTarget | null
+          function handleDrag(eDown: Event) {
+            const targetEl = eDown.currentTarget;
+            targetEl.classList.add('dragging');
+          }
+          ```
+
+    - Node : Element가 아닌 Node, 텍스트 조각과 주석
+    - Element와 HTMLElement : HTML이 아닌 엘리먼트, SVGSvgElement
+    - HTMLxxxElement
+
+      - HTMLxxxElement 형태의 특정 엘리먼트들은 자신만의 고유한 속성을 가지고 있음 ex) HTMLImageElement(src), HTMLInputElement(value)
+      - 항상 정확한 타입을 얻을 수 있는 것은 아님
+
+        ```ts
+        // 정확한 타입
+        document.createElement('button'); // HTMLButtonElement
+
+        // 정확한 타입이 아닌 경우
+        document.getElementById('my-div'); // HTMLElement
+        ```
+
+      - 타입 단언문 사용
+
+        ```ts
+        document.getElementById('my-div') as HTMLDivElement;
+        ```
+
+    - strictNullChecks 설정 시, 엘리먼트가 null인 경우를 체크함
+    - Event 는 가장 추상화된 이벤트로, 별도의 계층구조를 가짐
+      - ex) UIEvent, MouseEvent, TouchEvent, WheelEvent, KeyboardEvent
+      - 더 많은 문맥 정보를 제공하여 DOM에 대한 타입 추론을 가능하게 해야 함
+
+<br>
+
+## 아이템 56: 정보를 감추는 목적으로 private 사용하지 않기
+
+1. public, protected, private 같은 접근 제어자
+   - TS 키워드기 때문에 컴파일 후에 제거 됨
+2. 심지어 단언문을 사용하면 TS 상태에서도 private 속성에 접근 가능
 
    ```ts
-      // 'EventTarget' 형식에 'classList' 속성이 없음
-      // Event의 currentTarget 속성의 타입은 EventTarget | null
-      function handleDrag(eDown: Event) {
-        const targetEl = eDown.currentTarget;
-        targetEl.classList.add('dragging');
+   // 정보를 감추기 위해 private 을 사용하면 안 됨
+   class Diary {
+     private secret = 'test';
+   }
+
+   const diary = new Diary();
+   (diary as any).secret; // 정상
    ```
 
-   - Node : Element가 아닌 Node, 텍스트 조각과 주석
-   - Element와 HTMLElement : HTML이 아닌 엘리먼트, SVGSvgElement
-   - HTMLxxxElement
+3. 정보를 감추기 위해 클로저 사용
 
-     - HTMLxxxElement 형태의 특정 엘리먼트들은 자신만의 고유한 속성을 가지고 있음 ex) HTMLImageElement(src), HTMLInputElement(value)
-     - 항상 정확한 타입을 얻을 수 있는 것은 아님
+   ```ts
+   // PasswordChecker 의 생성자 외부에서 passwordHash 변수에 접근할 수 없기 때문에 정보가 숨겨 짐
+   // 이때 passwordHash에 접근하는 메서드 역시 생성자 내부에 정의되어야 함
+   // 메서드 정의가 생성자 내부에 있으면, 인스턴스 메서드로 생성된다는 점을 기억(메모리 낭비)
+   declare function hash(text: string): number;
 
-       ```ts
-       // 정확한 타입
-       document.createElement('button'); // HTMLButtonElement
+   class PasswordChecker {
+     checkPassword: (password: string) => boolean;
+     constructor(passwordHash: number) {
+       this.checkPassword = (password: string) => {
+         return hash(password) === passwordHash;
+       };
+     }
+   }
 
-       // 정확한 타입이 아닌 경우
-       document.getElementById('my-div'); // HTMLElement
-       ```
+   const checker = new PasswordChecker(hash('s3cret'));
+   checker.checkPassword('s3cret'); // true
+   ```
 
-     - 타입 단언문 사용
-
-       ```ts
-       document.getElementById('my-div') as HTMLDivElement;
-       ```
-
-   - strictNullChecks 설정 시, 엘리먼트가 null인 경우를 체크함
-   - Event 는 가장 추상화된 이벤트로, 별도의 계층구조를 가짐
-     - ex) UIEvent, MouseEvent, TouchEvent, WheelEvent, KeyboardEvent
-     - 더 많은 문맥 정보를 제공하여 DOM에 대한 타입 추론을 가능하게 해야 함
+4. 비공개 필드 (현재 표준화 진행중) 사용
+   - 접두사 #
+   - 타입 체크와 런타임 모두에서 비공개
+   - 클래스 외부에서는 접근할 수 없지만, 클래스 메서드나 동일 클래스의 개별 인스턴스끼리는 접근이 가능
 
 <br>
 
