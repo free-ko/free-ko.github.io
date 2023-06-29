@@ -224,6 +224,125 @@ foo<span class="token punctuation">.</span><span class="token function">bar</spa
 </li>
 </ol>
 <br>
+<h2 id="아이템-55-dom-계층-구조-이해하기" style="position:relative;"><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-55-dom-%EA%B3%84%EC%B8%B5-%EA%B5%AC%EC%A1%B0-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0" aria-label="아이템 55 dom 계층 구조 이해하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아이템 55: DOM 계층 구조 이해하기</h2>
+<ol>
+<li>
+<p>DOM 엘리먼트를 사용할 때 TS 에러</p>
+<ul>
+<li>
+<p>EventTarget : DOM 타입 중 가장 추상화된 타입으로, 이벤트리스너의 추가/제거, 이벤트 보내기만 가능</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">// 'EventTarget' 형식에 'classList' 속성이 없음</span>
+<span class="token comment">// Event의 currentTarget 속성의 타입은 EventTarget | null</span>
+<span class="token keyword">function</span> <span class="token function">handleDrag</span><span class="token punctuation">(</span>eDown<span class="token operator">:</span> Event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> targetEl <span class="token operator">=</span> eDown<span class="token punctuation">.</span>currentTarget<span class="token punctuation">;</span>
+  targetEl<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'dragging'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+</li>
+<li>Node : Element가 아닌 Node, 텍스트 조각과 주석</li>
+<li>Element와 HTMLElement : HTML이 아닌 엘리먼트, SVGSvgElement</li>
+<li>
+<p>HTMLxxxElement</p>
+<ul>
+<li>HTMLxxxElement 형태의 특정 엘리먼트들은 자신만의 고유한 속성을 가지고 있음 ex) HTMLImageElement(src), HTMLInputElement(value)</li>
+<li>항상 정확한 타입을 얻을 수 있는 것은 아님</li>
+</ul>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">// 정확한 타입</span>
+document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// HTMLButtonElement</span>
+
+<span class="token comment">// 정확한 타입이 아닌 경우</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'my-div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// HTMLElement</span></code></pre></div>
+<ul>
+<li>타입 단언문 사용</li>
+</ul>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'my-div'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> HTMLDivElement<span class="token punctuation">;</span></code></pre></div>
+</li>
+<li>strictNullChecks 설정 시, 엘리먼트가 null인 경우를 체크함</li>
+<li>
+<p>Event 는 가장 추상화된 이벤트로, 별도의 계층구조를 가짐</p>
+<ul>
+<li>ex) UIEvent, MouseEvent, TouchEvent, WheelEvent, KeyboardEvent</li>
+<li>더 많은 문맥 정보를 제공하여 DOM에 대한 타입 추론을 가능하게 해야 함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<br>
+<h2 id="아이템-56-정보를-감추는-목적으로-private-사용하지-않기" style="position:relative;"><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-56-%EC%A0%95%EB%B3%B4%EB%A5%BC-%EA%B0%90%EC%B6%94%EB%8A%94-%EB%AA%A9%EC%A0%81%EC%9C%BC%EB%A1%9C-private-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EA%B8%B0" aria-label="아이템 56 정보를 감추는 목적으로 private 사용하지 않기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아이템 56: 정보를 감추는 목적으로 private 사용하지 않기</h2>
+<ol>
+<li>
+<p>public, protected, private 같은 접근 제어자</p>
+<ul>
+<li>TS 키워드기 때문에 컴파일 후에 제거 됨</li>
+</ul>
+</li>
+<li>
+<p>심지어 단언문을 사용하면 TS 상태에서도 private 속성에 접근 가능</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">// 정보를 감추기 위해 private 을 사용하면 안 됨</span>
+<span class="token keyword">class</span> <span class="token class-name">Diary</span> <span class="token punctuation">{</span>
+ <span class="token keyword">private</span> secret <span class="token operator">=</span> <span class="token string">'test'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> diary <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Diary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span>diary <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>secret<span class="token punctuation">;</span> <span class="token comment">// 정상</span></code></pre></div>
+</li>
+<li>
+<p>정보를 감추기 위해 클로저 사용</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">// PasswordChecker 의 생성자 외부에서 passwordHash 변수에 접근할 수 없기 때문에 정보가 숨겨 짐</span>
+<span class="token comment">// 이때 passwordHash에 접근하는 메서드 역시 생성자 내부에 정의되어야 함</span>
+<span class="token comment">// 메서드 정의가 생성자 내부에 있으면, 인스턴스 메서드로 생성된다는 점을 기억(메모리 낭비)</span>
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">hash</span><span class="token punctuation">(</span>text<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">PasswordChecker</span> <span class="token punctuation">{</span>
+ <span class="token function-variable function">checkPassword</span><span class="token operator">:</span> <span class="token punctuation">(</span>password<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+ <span class="token function">constructor</span><span class="token punctuation">(</span>passwordHash<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">checkPassword</span> <span class="token operator">=</span> <span class="token punctuation">(</span>password<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token function">hash</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span> <span class="token operator">===</span> passwordHash<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> checker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PasswordChecker</span><span class="token punctuation">(</span><span class="token function">hash</span><span class="token punctuation">(</span><span class="token string">'s3cret'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+checker<span class="token punctuation">.</span><span class="token function">checkPassword</span><span class="token punctuation">(</span><span class="token string">'s3cret'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre></div>
+</li>
+<li>
+<p>비공개 필드 (현재 표준화 진행중) 사용</p>
+<ul>
+<li>접두사 #</li>
+<li>타입 체크와 런타임 모두에서 비공개</li>
+<li>클래스 외부에서는 접근할 수 없지만, 클래스 메서드나 동일 클래스의 개별 인스턴스끼리는 접근이 가능</li>
+</ul>
+</li>
+</ol>
+<br>
+<h2 id="아이템-57-소스맵을-사용하여-ts-디버깅하기" style="position:relative;"><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-57-%EC%86%8C%EC%8A%A4%EB%A7%B5%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-ts-%EB%94%94%EB%B2%84%EA%B9%85%ED%95%98%EA%B8%B0" aria-label="아이템 57 소스맵을 사용하여 ts 디버깅하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아이템 57: 소스맵을 사용하여 TS 디버깅하기</h2>
+<ol>
+<li>디버거는 런타임에 동작하며, 현재 동작하는 코드가 어떤 과정을 거쳤는지 모름</li>
+<li>
+<p>디버깅 문제를 해결하기 위해 브라우저는 소스맵(source map) 기능을 제공</p>
+<ul>
+<li>변환된 코드의 위치와 심벌들을 원본 코드의 원래 위치와 심벌들로 매핑함</li>
+</ul>
+</li>
+<li>
+<p>TS의 소스맵 활성화</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts">   <span class="token comment">// tsconfig.json</span>
+   <span class="token comment">// 각 .ts 파일에 대해서 .js와 .js.map 두 개의 파일을 생성</span>
+   <span class="token punctuation">{</span>
+     <span class="token string">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+       <span class="token string">"sourceMap"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span></code></pre></div>
+</li>
+<li>
+<p>소스맵에 대해 알아야 할 사항들</p>
+<ul>
+<li>TS와 함께 번들러나 압축기를 사용하고 있다면, 번들러나 압축기가 각자의 소스맵을 생성. 이상적인 디버깅을 위해서는 생성된 JS가 아닌 원본 TS 소스로 매핑되도록 해야 함</li>
+<li>상용 환경에 소스맵이 유출되고 있는지 확인해야 함. 소스맵에 원본 코드의 인라인 복사본이 포함되어 있다면 공개해서는 안될 내용이 들어있을 수 있음</li>
+</ul>
+</li>
+</ol>
+<br>
 <h3 id="참고" style="position:relative;"><a href="#%EC%B0%B8%EA%B3%A0" aria-label="참고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>참고</h3>
 <ul>
 <li><a href="https://github.com/pagers-org/Effective-TypeScript">이펙티브 타입스크립트 Study</a></li>
@@ -232,8 +351,11 @@ foo<span class="token punctuation">.</span><span class="token function">bar</spa
 <div class="table-of-contents">
 <ul>
 <li><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-53-ts-%EA%B8%B0%EB%8A%A5%EB%B3%B4%EB%8B%A4%EB%8A%94-ecmascript-%EA%B8%B0%EB%8A%A5%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">아이템 53: TS 기능보다는 ECMAScript 기능을 사용하기</a></li>
+<li><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-54-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%88%9C%ED%9A%8C%ED%95%98%EB%8A%94-%EB%85%B8%ED%95%98%EC%9A%B0">아이템 54: 객체를 순회하는 노하우</a></li>
+<li><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-55-dom-%EA%B3%84%EC%B8%B5-%EA%B5%AC%EC%A1%B0-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0">아이템 55: DOM 계층 구조 이해하기</a></li>
+<li><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-56-%EC%A0%95%EB%B3%B4%EB%A5%BC-%EA%B0%90%EC%B6%94%EB%8A%94-%EB%AA%A9%EC%A0%81%EC%9C%BC%EB%A1%9C-private-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EA%B8%B0">아이템 56: 정보를 감추는 목적으로 private 사용하지 않기</a></li>
 <li>
-<p><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-54-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%88%9C%ED%9A%8C%ED%95%98%EB%8A%94-%EB%85%B8%ED%95%98%EC%9A%B0">아이템 54: 객체를 순회하는 노하우</a></p>
+<p><a href="#%EC%95%84%EC%9D%B4%ED%85%9C-57-%EC%86%8C%EC%8A%A4%EB%A7%B5%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-ts-%EB%94%94%EB%B2%84%EA%B9%85%ED%95%98%EA%B8%B0">아이템 57: 소스맵을 사용하여 TS 디버깅하기</a></p>
 <ul>
 <li><a href="#%EC%B0%B8%EA%B3%A0">참고</a></li>
 </ul>
