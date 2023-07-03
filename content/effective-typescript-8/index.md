@@ -120,6 +120,64 @@ categories: Study
 
 <br>
 
+## 아이템 59: 타입스크립트 도입 전에 @ts-check와 JSDoc으로 시험해 보기
+
+1. `@ts-check` 지시자를 사용하여 타입 체커가 파일을 분석하고, 발견된 오류를 보고하도록 지시할 수 있음
+
+   - 매우 느슨한 수준으로 타입 체크를 수행
+   - 타입 불일치나 함수의 매개변수 개수 불일치 등
+
+2. 선언되지 않은 전역 변수
+
+   - 숨어 있는 변수라면 변수를 제대로 인식할 수 있게 별도로 타입 선언 파일을 만들기
+
+   ```ts
+   // @ts-check
+   console.log(user.firstName);
+
+   // types.d.ts
+   interface UserData {
+     firstName: string;
+     lastName: string;
+   }
+
+   declare let user: UserData;
+
+   // 선언 파일을 찾지 못하는 경우 ‘트리플 슬래시’ 참조를 사용하여 명시적으로 import
+   // @ts-check
+   // <reference path="./types.d.ts" />
+   console.log(user.firstName); // 정상
+   ```
+
+3. 알 수 없는 라이브러리
+
+   - 서드파티 라이브러리의 타입 정보
+   - `@types/xxx` 설치하기
+
+4. DOM 문제
+
+   ```ts
+   // @ts-check
+   const ageEl = /** @type {HTMLInputElement} */ document.getElementById('age');
+   ageEl.value = '12'; // 정상
+   ```
+
+5. 부정확한 JSDoc
+
+   - 타입스크립트 언어 서비스는 타입을 추론해서 JSDoc을 자동으로 생성
+
+   ```ts
+   // @ts-check
+   /**
+    * @param {number} val
+    */
+   function double(val) {
+     return 2 * val;
+   }
+   ```
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
