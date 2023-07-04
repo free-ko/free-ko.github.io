@@ -178,6 +178,18 @@ categories: Study
 
 <br>
 
+## 아이템 60: allowJS로 타입스크립트와 자바스크립트 같이 사용하기
+
+1. allowJS 옵션
+
+   - 타입 체크와 관련이 없지만, 기존 빌드 과정에 타입스크립트 컴파일러를 추가하기 위함
+   - 모듈 단위로 타입스크립트로 전환하는 과정에서 테스트를 수행하기 위함
+
+2. 프레임워크 없이 빌드 체인 직접 구성하기
+   - outDir 옵션 사용하기
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
