@@ -190,6 +190,57 @@ categories: Study
 
 <br>
 
+## 아이템 61: 의존성 관계에 따라 모듈 단위로 전환하기
+
+1. 의존성 관련 오류 없이 작업하려면, 다른 모듈에 의존하지 않는 최하단 모듈부터 작업을 시작해서 의존성의 최상단에 있는 모듈을 마지막으로 완성해야 함
+
+   - 서드파티 라이브러리 타입 정보를 가장 먼저 해결 (@types/)
+   - 외부 API의 타입 정보 추가
+
+2. 리팩터링은 타입스크립트 전환 작업이 완료된 후에 해야 함
+3. 선언되지 않은 클래스 멤버
+
+   - ‘누락된 모든 멤버 추가’ 빠른 수정
+
+     ```ts
+     class Greeting {
+       greeting: string;
+       name: any; // 직접 수정 필요
+
+       constructor(name) {
+         this.greeting = 'Hello';
+         this.name = name;
+       }
+
+       greet() {
+         return this.greeting + ' ' + this.name;
+       }
+     }
+     ```
+
+4. 타입이 바뀌는 값
+
+   ```ts
+   // 한번에 객체 생성 또는 타입 단언문 사용
+   const state = {};
+   state.name = 'New York';
+   // 🚨 '{}' 유형에 'name' 속성이 없습니다
+   state.capital = 'Albany';
+   // 🚨 '{}' 유형에 'capital' 속성이 없습니다
+   ```
+
+5. 자바스크립트에서 JSDoc과 @ts-check를 사용해 타입 정보를 추가한 상태라면, 타입스크립트로 전환하는 순간 타입 정보가 ‘무효화’된다는 점에 주의
+6. 마지막으로 테스트 코드를 타입스크립트로 전환
+
+<br>
+
+## 아이템 62: 마이그레이션의 완성을 위해 noImplicitAny 설정하기
+
+1. `noImplicitAny` 설정을 통해 타입 선언과 관련된 실제 오류를 드러낼 수 있음
+2. 최종적으로 가장 강력한 설정은 `"srict: true"`
+
+<br>
+
 ### 참고
 
 - [이펙티브 타입스크립트 Study](https://github.com/pagers-org/Effective-TypeScript)
