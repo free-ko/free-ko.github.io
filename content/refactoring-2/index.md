@@ -126,6 +126,59 @@ categories: Study
 
 <br>
 
+## 1.7 중간 점검: 두 파일(과 두 단계)로 분리됨
+
+1. statement.js
+
+   ```ts
+   import createStatementData from './createStatementData.js';
+
+   function statement(invoice, plays) {
+     return renderPlainText(createStatementData(invoice, plays));
+   }
+
+   function renderPlainText(data, plays) {
+     // ...
+   }
+
+   function htmlStatement(invoice, plays) {
+     return renderHtml(createStatementData(invoice, plays));
+   }
+
+   function renderHtml(data) {
+     // ...
+   }
+
+   function usd(aNumber) {
+     // ...
+   }
+   ```
+
+2. createStatementData.js
+
+   ```ts
+   export default function createStatementData(invoice, plays) {
+     const result = {};
+     result.customer = invoice.customer;
+     result.performances = invoice.performances.map(enrichPerformance);
+     result.totalAmount = totalAmount(result);
+     result.totalVolumeCredits = totalVolumeCredits(result);
+
+     return result;
+
+     function enrichPerformance(aPerformance) { ... }
+     function playFor(aPerformance) { ... }
+     function amountFor(aPerformance) { ... }
+     function volumeCreditsFor(aPerformance) { ... }
+     function totalAmount() { ... }
+     function totalVolumeCredits() { ... }
+   }
+   ```
+
+   - 함수를 추출하면서 코드량은 많이 늘었지만, 모듈화를 통해 전체 로직을 구성하는 요소 각각이 더 뚜렷해지고 계산하는 부분과 출력 형식을 다루는 부분이 분리됨
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
