@@ -179,6 +179,119 @@ categories: Study
 
 <br>
 
+## 1.8 다형성을 활용해 계산 코드 재구성하기
+
+1. 조건부 로직을 다형성으로 바꿀 수 있음. 여기서는 공연료 계산기를 만들고, 공연 관련 데이터를 계산하는 함수들로 구성된 클래스를 만들어 상속 계층을 정의함
+
+   ```ts
+   function enrichPerformance(aPerformance) {
+     const calculator = new PerformanceCalculator(aPerformance);
+     const result = Object.assign({}, aPerformance);
+     result.play = playFor(result);
+     // ...
+   }
+
+   class PerformanceCalculator {
+     constructor(aPerformance) {
+       this.performance = aPerformance;
+     }
+   }
+   ```
+
+2. 그리고 계산기 클래스의 생성자에 함수 선언 바꾸기를 적용하여 연극의 레코드를 계산기로 전달함
+
+   ```ts
+   class PerformanceCalculator {
+     constructor(aPerformance, aPlay) {
+       this.performance = aPerformance;
+       this.play = aPlay;
+     }
+   }
+   ```
+
+3. 이제 함수들을 계산기로 옮겨줌
+
+   ```ts
+   function enrichPerformance(aPerformance) {
+   const calculator = new PerformanceCalculator(aPerformance, playFor(aPerformance));
+   const result = Object.assign({}, aPerformance);
+   result.play = playFor(result);
+   // amountFor() 대신 계산기의 함수 이용
+   result.amount = calculator.amount;
+   // volumeCreditsFor() 대신 계산기의 함수 이용
+   result.volumeCredits = calculator.volumeCredits;
+   // ...
+   }
+
+   class PerformanceCalculator {
+   // amountFor() 함수의 코드를 계산기 클래스로 복사
+   get amount() {
+     let result = 0;
+
+     switch (this.play.type) {
+       case "tragedy":
+       // ...
+
+     }
+     return result;
+   }
+
+   // volumeCreditsFor() 함수의 코드를 계산기 클래스로 복사
+   get volumeCredits() { ... }
+   }
+
+   ```
+
+4. 상속 받은 서브클래스들을 활용하여 공연료 계산기를 다형성 버전으로 만들어 주고, 타입 코드를 서브클래스로 바꾸고, 생성자를 팩터리 함수로 바꿈
+
+   ```ts
+   function enrichPerformance(aPerformance) {
+     // 생성자 대신 팩터리 함수 이용
+     const calculator = createPerformanceCalculator(aPerformance, playFor(aPerformance));
+     // ...
+   }
+
+   function createPerformanceCalculator(aPerformance, aPlay) {
+     switch(aPlay.type) {
+       case "tragedy": return new TragedyCalculator(aPerformance, aPlay);
+       case "comedy": return new ComedyCalculator(aPerformance, aPlay);
+       default:
+         throw new Error('...');
+     }
+   }
+
+   class TragedyCalculator extends PerformanceCalculator { ... }
+
+   class ComedyCalculator extends PerformanceCalculator { ... }
+   ```
+
+5. 그러면 조건부 로직을 다형성으로 바꿔줄 수 있음
+
+   ```ts
+   class TragedyCalculator {
+     get amount() {
+       // ...
+     }
+   }
+
+   class PerformanceCalculator {
+     get amount() {
+       let result = 0;
+       switch (this.play.type) {
+         case 'tragedy':
+           throw '오류 발생'; // 비극 공연료는 TragedyCalculator를 이용하도록 유도
+         case 'comedy':
+         // ...
+       }
+       return result;
+     }
+   }
+   ```
+
+6. 장르를 통틀어서 공통되는 부분은 일반적인 경우를 기본으로 삼아 슈퍼클래스에 남겨두고, 장르마다 달라지는 부분은 필요할 때 오버라이드하게 만들어줌
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
