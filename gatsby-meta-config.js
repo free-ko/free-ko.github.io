@@ -26,7 +26,7 @@ module.exports = {
     },
     social: {
       github: `https://github.com/free-ko`,
-      linkedIn: `https://www.linkedin.com/in/youngwock-ko-74223921b/`,
+      linkedIn: `https://www.linkedin.com/in/%EC%98%81%EC%9A%B1-%EA%B3%A0-74223921b/`,
       email: `duddnr654@naver.com`,
     },
   },
@@ -52,8 +52,12 @@ module.exports = {
         activity: '(주)에픽모바일 프론트엔드 개발',
       },
       {
-        date: '2022.07 ~ ',
+        date: '2022.07 ~ 2023.04',
         activity: '(주)넥스트유니콘 프론트엔드 개발',
+      },
+      {
+        date: '2023.05 ~ ',
+        activity: '(주)모던라이언 프론트엔드 개발',
       },
     ],
 
