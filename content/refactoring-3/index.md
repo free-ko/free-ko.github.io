@@ -119,6 +119,12 @@ categories: Study
 
 <br>
 
+## 3.12 반복되는 switch문
+
+- switch문은 조건부 로직을 다형성으로 바꿔 대체할 수 있음
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
