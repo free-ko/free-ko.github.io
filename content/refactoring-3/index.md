@@ -125,6 +125,12 @@ categories: Study
 
 <br>
 
+## 3.13 반복문
+
+반복문을 파이프라인으로 바꿔 제거할 수 있음 (ex. filter, map 등)
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
