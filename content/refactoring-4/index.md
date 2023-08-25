@@ -29,6 +29,49 @@ categories: Study
 
 비즈니스 로직 코드를 UI와 분리하여 코드를 파악하고 테스트하기 편하게 만들어줄 수 있음
 
+## 4.3 첫 번째 테스트
+
+테스트를 두 단계로 진행
+
+```ts
+// 1. 테스트에 필요한 데이터와 객체를 뜻하는 픽스처를 설정
+// 2. 이 픽스처의 속성들을 검증
+describe('province', function () {
+  it('shortfall', function () {
+    const asia = new Province(sampleProvinceData()); // 1. 픽스처 설정
+    assert.equal(asia.shortfall, 5); // 2. 검증
+  });
+});
+```
+
+> 실패해야 할 상황에서는 반드시 실패하게 만들
+
+- 일시적으로 코드에 오류를 주입하여 각 테스트가 실패하는 모습을 한 번씩 보는 것도 좋은 방법임
+
+> 자주 테스트하라. 작성 중인 코드는 최소한 몇 분 간격으로 테스트하고, 적어도 하루에 한 번은 전체 테스트를 돌림
+
+- 차이(chai) 라이브러리의 assert문 또는 expect문을 이용해 코드를 검증할 수 있음
+
+```ts
+describe('province', function () {
+  it('shortfall', function () {
+    const asia = new Province(sampleProvinceData());
+    assert.equal(asia.shortfall, 5);
+  });
+});
+
+describe('province', function () {
+  it('shortfall', function () {
+    const asia = new Province(sampleProvinceData());
+    expect(asia.shortfall).equal(5);
+  });
+});
+```
+
+- 실패한 테스트가 하나라도 있으면 리팩터링하면 안 됨
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
