@@ -72,6 +72,36 @@ describe('province', function () {
 
 <br>
 
+## 4.4 테스트 추가하기
+
+- 테스트는 위험 요인을 중심으로 작성
+- 테스트의 목적은 어디까지나 현재 혹은 향후에 발생하는 버그를 찾는 데 있기에 단순히 필드를 읽고 쓰기만 하는 접근자는 테스트할 필요가 없음
+
+> 완벽하게 만드느라 테스트를 수행하지 못하느니, 불완전한 테스트라도 작성해 실행하는 게 낫다
+
+- 아래처럼 똑같은 픽스처가 중복되는 부분이 있다면, 픽스처를 여러 테스트문에서 접근할 수 있는 장소로 옮겨 중복을 제거할 수 있지만, ‘테스트끼리 상호작용하게 하는 공유 픽스처’를 생성하는 원인이 되어 테스트를 실행하는 순서에 따라 결과가 달라질 수 있기 때문에 문제가 됨
+
+- 이때는 `beforeEach` 를 사용할 수 있음
+
+```ts
+describe('province', function () {
+  let asia;
+  beforeEach(function () {
+    asia = new Province(sampleProvinceData());
+  });
+  it('shortfall', function () {
+    expect(asia.shortfall).equal(5);
+  });
+  it('profit', function () {
+    expect(asia.profit).equal(230);
+  });
+});
+```
+
+- 개별 테스트를 실행할 때마다 픽스처를 새로 만들면 모든 테스트를 독립적으로 구성할 수 있음
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
