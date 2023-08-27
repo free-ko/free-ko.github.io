@@ -102,6 +102,25 @@ describe('province', function () {
 
 <br>
 
+## 4.5 픽스처 수정하기
+
+```ts
+describe('province', function () {
+  // ...
+  it('change production', function () {
+    asia.producers[0].production = 20;
+    expect(asia.shortfall).equal(-6);
+    expect(asia.profit).equal(292);
+  });
+});
+```
+
+- 위 예제에서는 `beforeEach에서` ‘설정’한 표준 픽스처를 취해서, 테스트를 ‘수행’하고, 이 픽스처가 일을 기대한 대로 처리했는지를 ‘검증’
+
+- 이 테스트는 `it` 구문 하나에서 두 가지 속성을 검증하고 있지만, 일반적으로 `it` 구문 하나당 검증도 하나씩만 하는 게 좋음
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
