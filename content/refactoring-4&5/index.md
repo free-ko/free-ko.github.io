@@ -1,6 +1,6 @@
 ---
 emoji: 👋
-title: '리팩터링 4장'
+title: '리팩터링 4장&5장'
 date: '2023-08-23 22:03:00'
 author: Kay
 tags: 블로그 github-pages gatsby
