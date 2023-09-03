@@ -83,6 +83,46 @@ function printDetails(invoice, outstanding) {
 
 <br>
 
+## 6.2 함수 인라인하기
+
+- 함수 본문이 이름만큼 명확하거나, 리팩터링 과정에서 잘못 추출된 함수들은 인라인함.(간접 호출을 너무 과하게 쓰는 코드도 흔한 인라인 대상)
+
+절차
+
+1. 다형 메서드인지 확인(서브클래스에서 오버라이드하는 메서드는 인라인하면 안 됨)
+2. 인라인할 함수를 호출하는 곳을 모두 찾음
+3. 각 호출문을 함수 본문으로 교체함
+4. 하나씩 교체할 때마다 테스트함
+5. 함수 정의(원래 함수)를 삭제함
+
+```ts
+// before
+function reportLines(aCustomer) {
+  const lines = [];
+  gatherCustomerData(lines, aCustomer);
+  return lines;
+}
+
+function gatherCustomerData(out, aCustomer) {
+  out.push(['name', aCustomer.name]);
+  out.push(['location', aCustomer.location]);
+}
+```
+
+```ts
+// after
+function reportLines(aCustomer) {
+  const lines = [];
+  lines.push(['name', aCustomer.name]);
+  lines.push(['location', aCustomer.location]);
+  return lines;
+}
+```
+
+핵심은 항상 단계를 잘게 나눠서 처리하는 것
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
