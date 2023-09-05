@@ -197,6 +197,33 @@ class Order {
 
 <br>
 
+## 6.4 변수 인라인하기
+
+절차
+
+1. 대입문의 우변(표현식)에서 부작용이 생기지는 않는지 확인함
+2. 변수가 불변으로 선언되지 않았다면 불변으로 만든 후 테스트함
+3. 이 변수를 가장 처음 사용하는 코드를 찾아서 대입문 우변의 코드로 바꿈
+4. 테스트
+5. 변수를 사용하는 부분을 모두 교체할 때까지 이 과정을 반복
+6. 변수 선언문과 대입문을 지움
+7. 테스트
+
+예시 코드
+
+```ts
+// before
+let basePrice = anOrder.basePrice;
+return basePrice > 1000;
+```
+
+```ts
+// after
+return anOrder.basePrice > 1000;
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
