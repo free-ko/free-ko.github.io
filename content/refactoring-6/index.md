@@ -224,6 +224,55 @@ return anOrder.basePrice > 1000;
 
 <br>
 
+## 6.5 함수 선언 바꾸기
+
+- 함수는 프로그램을 작은 부분으로 나누는 주된 수단
+- 함수 선언은 각 부분이 서로 맞물리는 방식을 표현하며, 실질적으로 소프트웨어 시스템의 구성 요소를 조립하는 연결부 역할
+- 이러한 연결부에서 가장 중요한 것은 함수의 이름
+- 함수 구현 코드를 살펴볼 필요 없이 호출문만 보고도 무슨 일을 하는지 파악할 수 있어야 함
+- 함수의 매개변수 역시 중요
+- 매개변수는 함수를 사용하는 문맥을 설정 함
+- 매개변수를 적절히 사용하여 함수의 활용 범위를 넓힐 수 있으며, 다른 모듈과의 결합을 제거할 수도 있음
+
+간단한 절차
+
+1. 매개변수를 제거하려거든 먼저 함수 본문에서 제거 대상 매개변수를 참조하는 곳은 없는지 확인 함
+2. 메서드 선언을 원하는 형태로 바꿈
+3. 기존 메서드 선언을 참조하는 부분을 모두 찾아서 바뀐 형태로 수정함
+4. 테스트한다.
+
+마이그레이션 절차
+
+1. 이어지는 추출 단계를 수월하게 만들어야 한다면 함수의 본문을 적절히 리팩터링 함
+2. 함수 본문을 새로운 함수로 추출 함
+3. 추출한 함수에 매개변수를 추가해야 한다면 ‘간단한 절차’를 따라 추가 함
+4. 테스트한다.
+5. 기존 함수를 인라인
+6. 이름을 임시로 붙여뒀다면 함수 선언 바꾸기를 한 번 더 적용해서 원래 이름으로 되돌림
+7. 테스트
+
+예시 코드
+
+```ts
+// before
+function inNewEngland(aCustomer) {
+  return ['MA', 'CT', 'ME', 'VT', 'NH', 'RI'].includes(aCustomer.address.state);
+}
+
+const newEnglanders = someCustomers.filter((c) => inNewEngland(c));
+```
+
+```ts
+// after
+function inNewEngland(stateCode) {
+  return ['MA', 'CT', 'ME', 'VT', 'NH', 'RI'].includes(stateCode);
+}
+
+const newEnglanders = someCustomers.filter((c) => inNewEngland(c.address.satate));
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
