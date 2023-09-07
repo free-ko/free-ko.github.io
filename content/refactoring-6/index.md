@@ -273,6 +273,61 @@ const newEnglanders = someCustomers.filter((c) => inNewEngland(c.address.satate)
 
 <br>
 
+## 6.6 변수 선언하기
+
+- 데이터는 참조하는 모든 부분을 한 번에 바꿔야 코드가 제대로 작동하기 때문에 함수보다 다루기가 까다로움
+- 접근할 수 있는 범위가 넓은 데이터를 옮길 때는 먼저 그 데이터로의 접근을 독점하려는 함수를 만드는 식으로 캡슐화하는 것이 좋음
+- 데이터 캡슐화는 데이터 변경 전 검증이나 변경 후 추가 로직을 쉽게 끼워넣을 수 있다는 장점도 있음
+- 데이터의 캡슐화를 위해 객체 지향에서 객체의 데이터는 항상 private으로 유지해야 함
+
+절차
+
+1. 변수로의 접근과 갱신을 전담하는 캡슐화 함수들을 만듦
+2. 정적 검사를 수행
+3. 변수를 직접 참조하던 부분을 모두 적절한 캡슐화 함수 호출로 바꿈. 하나씩 바꿀 때마다 테스트 진행
+4. 변수의 접근 범위를 제한
+5. 테스트
+6. 변수 값이 레코드라면 레코드 캡슐화하기를 적용할지 고려해봄
+
+예시 코드
+
+```ts
+// before
+// 전역 변수에 중요한 데이터가 담겨 있는 경우
+let defaultOwner = { firstName: '마틴', lastName: '파울러' };
+// 데이터를 참조하는 코드
+spaceship.owner = defaultOwner;
+// 데이터를 갱신하는 코드
+defaultOwner = { firstName: '레베카', lastName: '파슨스' };
+```
+
+```ts
+// after
+// defaultOwner.js
+let defaultOwner = { firstName: '마틴', lastName: '파울러' };
+export function getDefaultOwner() {
+  return defaultOwner;
+}
+export function setDefaultOwner(arg) {
+  defaultOwner = arg;
+}
+```
+
+값 캡슐화하기
+
+- 변수뿐 아니라 변수에 담긴 내용을 변경하는 행위까지 제어할 수 있게 캡슐화
+- 게터가 데이터의 복제본을 반환하도록 수정
+
+```ts
+export function getDefaultOwner() {
+  return Object.assign({}, defaultOwner);
+}
+```
+
+- 레코드 캡슐화를 통해 아예 변경할 수 없게 만드는 방법도 있음
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
