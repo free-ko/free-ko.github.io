@@ -328,6 +328,48 @@ export function getDefaultOwner() {
 
 <br>
 
+## 6.7 변수 이름 바꾸기
+
+- 명확한 프로그래밍의 핵심은 이름짓기
+- 간단한 변수의 경우 대체로 파악이 쉽지만, 함수 호출 한 번으로 끝나지 않고 값이 영속되는 필드라면 신중하게 이름을 지어야 함
+
+### 절차
+
+1. 폭넓게 쓰이는 변수라면 변수 캡슐화하기를 고려
+2. 이름을 바꿀 변수를 참조하는 곳을 모두 찾아서, 하나씩 변경
+3. 테스트
+
+### 예시
+
+```ts
+// before
+let tpHd = 'untitled';
+
+// 변수를 읽기만 하는 경우
+result += `<h1>${tpHd}</h1>`;
+// 값을 수정하는 경우
+tpHd = obj['articleTitle'];
+```
+
+```ts
+// after: getter와 setter를 통해 변수 캡슐화하기
+result += `<h1>${title()}</h1>`;
+
+setTitle(obj['articleTitle']);
+
+let _title = 'untitled';
+
+function title() {
+  return _title;
+}
+
+function setTitle(arg) {
+  _title = arg;
+}
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
