@@ -438,6 +438,72 @@ alerts = readingsOutsideRange(station, range);
 
 <br>
 
+## 6.9 여러 함수를 클래스로 묶기
+
+- 클래스는 데이터와 함수를 하나의 공유 환경으로 묶은 후, 다른 프로그램 요소와 어우러질 수 있도록 그중 일부를 외부에 제공
+- 공통 데이터를 중심으로 긴밀하게 엮여 작동하는 함수 무리는 클래스 하나로 묶을 수 있음
+- 여러 함수를 클래스로 묶으면 클라이언트가 객체의 핵심 데이터를 변경할 수 있고, 파생 객체들을 일관되게 관리할 수 있음
+
+### 절차
+
+1. 함수들이 공유하는 공통 데이터 레코드를 캡슐화 함 2.공통 레코드를 사용하는 함수 각각을 새 클래스로 옮김
+2. 데이터를 조작하는 로직들은 함수로 추출해서 새 클래스로 옮김
+
+### 예시
+
+```ts
+// before
+// 클라이언트 1
+const aReading = acquireReading();
+const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity;
+
+// 클라이언트 2
+const aReading = acquireReading();
+const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity;
+const taxableCharge = Math.max(0, base - taxThreshold(aReading.year));
+```
+
+```ts
+// after
+class Reading {
+  constructor(data) {
+    this._customer = data.customer;
+    this._quantity = data.quantity;
+    this._month = data.month;
+    this._year = data.year;
+  }
+
+  get customer() {
+    return this._customer;
+  }
+  get quantity() {
+    return this._quantity;
+  }
+  get month() {
+    return this._month;
+  }
+  get year() {
+    return this._year;
+  }
+
+  get baseCharge() {
+    return baseRate(this.month, this.year) * this.quantity;
+  }
+
+  get taxableCharge() {
+    return Math.max(0, this.baseCharge - taxThreshold(this.year));
+  }
+}
+
+// 클라이언트 3
+const rawReading = acquireReading();
+const aReading = new Reading(rawReading);
+const basicChargeAmount = aReading.baseCharge;
+const taxableCharge = aReading.taxableCharge;
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
