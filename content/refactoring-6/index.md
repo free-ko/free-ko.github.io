@@ -504,6 +504,67 @@ const taxableCharge = aReading.taxableCharge;
 
 <br>
 
+## 6.10 여러 함수를 변환 함수로 묶기
+
+- 데이터를 입력받아서 여러 가지 정보를 도출하는 작업들을 한데로 모아두면 검색과 갱신을 일관된 장소에서 할 수 있고 로직 중복도 막을 수 있음
+- 변환 함수를 사용하면 원본 데이터를 입력받아서 필요한 정보를 모두 도출한 뒤, 각각을 출력 데이터의 필드에 넣어 반환 함
+
+> 💡 원본 데이터가 코드 안에서 갱신될 때는 클래스로 묶는 것이 좋음
+
+### 절차
+
+1. 변환할 레코드를 입력받아서 값을 그대로 반환하는 변환 함수를 만듦
+2. 묶을 함수 중 함수 하나를 골라서 본문 코드를 변환 함수로 옮기고, 처리 결과를 레코드에 새 필드로 기록 그런 다음 클라이언트 코드가 이 필드를 사용하도록 수정 함
+3. 테스트
+4. 나머지 관련 함수도 위 과정에 따라 처리함
+
+### 예시
+
+```ts
+// before
+// 클라이언트 1
+const aReading = acquireReading();
+const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity;
+
+// 클라이언트 2
+const aReading = acquireReading();
+const base = baseRate(aReading.month, aReading.year) * aReading.quantity;
+const taxableCharge = Math.max(0, base - taxThreshold(aReading.year));
+
+// 클라이언트 3
+const aReading = acquireReading();
+const basicChargeAmount = calculateBaseCharge(aReading);
+
+function calculateBaseCharge(aReading) {
+  return baseRate(aReading.month, aReading.year) * aReading.quantity;
+}
+```
+
+```ts
+// after
+// 클라이언트 1, 3
+const rawReading = acquireReading(); // 미가공 측정값
+const aReading = enrichReading(rawReading);
+const basicChargeAmount = aReading.baseCharge;
+
+// 클라이언트 2
+const rawReading = acquireReading(); // 미가공 측정값
+const aReading = enrichReading(rawReading);
+const taxableCharge = aReading.taxableCharge;
+
+function enrichReading(original) {
+  const result = _.cloneDeep(original);
+  result.baseCharge = calculateBaseCharge(aReading);
+  result.taxableCharge = Math.max(0, result.baseCharge - taxThreshold(result.year));
+
+  return result;
+}
+```
+
+- `enrichReading()` 처럼 정보를 추가해 반환할 때 원본 측정값 레코드는 변경하지 않아야 함
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
