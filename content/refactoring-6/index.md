@@ -565,6 +565,70 @@ function enrichReading(original) {
 
 <br>
 
+## 6.11 단계 쪼개기
+
+- 서로 다른 두 대상을 한꺼번에 다루는 코드를 발견하면 각각을 별개 모듈로 나눌 수 있음
+- 이렇게 분리하는 가장 간편한 방법 하나는 동작을 연이은 두 단계로 쪼개는 것
+- 가장 대표적인 예는 컴파일러
+- 컴파일 작업은 여러 단계가 순차적으로 연결된 형태로 분리되어 있음
+- 각 단계는 자신만의 문제에 집중하기 때문에 나머지 단계에 관해서는 자세히 몰라도 이해할 수 있음
+
+### 절차
+
+1. 두 번째 단계에 해당하는 코드를 독립 함수로 추출함
+2. 테스트
+3. 중간 데이터 구조를 만들어서 앞에서 추출한 함수의 인수로 추가함
+4. 테스트
+5. 추출한 두 번째 단계 함수의 매개변수를 하나씩 검토. 그중 첫 번째 단계에서 사용되는 것은 중간 데이터 구조로 옮김 하나씩 옮길 때마다 테스트함
+6. 첫 번째 단계 코드를 함수로 추출하면서 중간 데이터 구조를 반환하도록 만듦
+
+## 예시
+
+```ts
+// before
+function priceOrder(product, quantity, shippingMethod) {
+  const basePrice = product.basePrice * quantity;
+  const discount =
+    Math.max(quantity - product.discountThreshold, 0) * product.basePrice * product.discountRate;
+  const shippingPerCase =
+    basePrice > shippingMethod.discountThreshold
+      ? shippingMethod.discountedFee
+      : shippingMethod.feePerCase;
+  const shippingCost = quantity * shippingPerCase;
+  const price = basePrice - discount + shippingCost;
+
+  return price;
+}
+```
+
+```ts
+// after
+function priceOrder(product, quantity, shippingMethod) {
+  const priceData = calculatePricingData(product, quantity);
+  return applyShipping(priceData, shippingMethod);
+}
+
+function calculatePricingData(product, quantity) {
+  const basePrice = product.basePrice * quantity;
+  const discount =
+    Math.max(quantity - product.discountThreshold, 0) * product.basePrice * product.discountRate;
+  return { basePrice, quantity, discount };
+}
+
+function applyShipping(priceData, shippingMethod) {
+  const shippingPerCase =
+    priceData.basePrice > shippingMethod.discountThreshold
+      ? shippingMethod.discountedFee
+      : shippingMethod.feePerCase;
+  const shippingCost = priceData.quantity * shippingPerCase;
+  return priceData.basePrice - priceData.discount + shippingCost;
+}
+```
+
+- 험블 객체 패턴(Humble Object Pattern) : 명령줄 호출과 표준 출력에 쓰는 느리고 불편한 작업과 자주 테스트해야 할 복잡한 동작을 분리함으로써 테스트를 더 쉽게 수행하게 만듦
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
