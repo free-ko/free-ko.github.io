@@ -76,6 +76,93 @@ result += `<h1>${getOrganization().name}</h1>`;
 
 <br>
 
+## 7.2 컬렉션 캡슐화하기
+
+- 컬렉션 변수로의 접근을 캡슐화하면서 게터가 컬렉션 자체를 반환하도록 한다면, 그 컬렉션을 감싼 클래스가 눈치채지 못하는 상태에서 컬렉션의 원소들이 바뀌어버릴 수 있음
+- 컬렉션 게터가 원본 컬렉션을 반환하지 않게 만들어서 클라이언트가 실수로 컬렉션을 바꿀 가능성을 차단하는 것이 좋음
+- 내부 컬렉션을 직접 수정하지 못하게 막는 방법 중 하나로, 절대로 컬렉션 값을 반환하지 않게 할 수 있음
+- 컬렉션에 접근하려면 컬렉션이 소속된 클래스의 적절한 메서드를 반드시 거치게 하는 것
+- 또 다른 방법은 컬렉션을 읽기전용으로 제공할 수 있음
+- 프락시가 내부 컬렉션을 읽는 연산은 그대로 전달하고, 쓰기는 모두 막는 것
+- 가장 흔히 사용하는 방식은 아마도 컬렉션 게터를 제공하되 내부 컬렉션의 복제본을 반환하는 것
+- 복제본을 수정해도 캡슐화된 원본 컬렉션에는 아무런 영향을 주지 않음
+- 여기서 중요한 점은 코드베이스에 일관성을 주는 것. 컬렉션 접근 함수의 동작 방식을 통일해야 함
+
+### 절차
+
+1. 아직 컬렉션을 캡슐화하지 않았다면 변수 캡슐화하기부터 함
+2. 컬렉션에 원소를 추가/제거하는 함수를 추가함
+3. 정적 검사를 수행함
+4. 컬렉션을 참조하는 부분을 모두 찾음. 컬렉션의 변경자를 호출하는 코드가 모두 앞에서 추가한 추가/제거 함수를 호출하도록 수정함
+5. 컬렉션 게터를 수정해서 원본 내용을 수정할 수 없는 읽기전용 프락시나 복제본을 반환하게 함
+6. 테스트함
+
+## 예시
+
+```ts
+// before
+class Person {
+  constructor(name) {
+    this._name = name;
+    this._courses = [];
+  }
+
+  get name() {
+    return this._name;
+  }
+  get courses() {
+    return this._courses;
+  }
+  set courses(aList) {
+    this._courses = aList;
+  }
+}
+
+class Course {
+  constructor(name, isAdvanced) {
+    this._name = name;
+    this._isAdvanced = isAdvanced;
+  }
+
+  get name() {
+    return this._name;
+  }
+  get isAdvanced() {
+    return this._isAdvanced;
+  }
+}
+```
+
+- 모든 필드가 접근자 메서드로 보호받고 있으나, 세터를 이용해 수업 컬렉션을 통째로 설정한 클라이언트는 누구든 이 컬렉션을 마음대로 수정할 수 있음. 캡슐화가 깨지는 것
+
+```ts
+// after
+class Person {
+  // setter 제거
+
+  get courses() {
+    return this._courses.slice();
+  }
+
+  addCourse(aCourse) {
+    this._courses.push(aCourse);
+  }
+
+  removeCourse(
+    aCourse,
+    fnIfAbsent = () => {
+      throw new RangeError();
+    },
+  ) {
+    const index = this._courses.indexOf(aCourse);
+    if (index === -1) fnIfAbsent();
+    else this._courses.splice(index, 1);
+  }
+}
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
