@@ -163,6 +163,66 @@ class Person {
 
 <br>
 
+## 7.3 기본형을 객체로 바꾸기
+
+- 단순한 출력 이상의 기능이 필요해지는 순간 그 데이터를 표현하는 전용 클래스를 정의 함
+
+### 절차
+
+1. 아직 변수를 캡슐화하지 않았다면 캡슐화 함
+2. 단순한 값 클래스를 만듦. 생성자는 기존 값을 인수로 받아서 저장하고, 이 값을 반환하는 게터를 추가함
+3. 정적 검사를 수행함
+4. 값 클래스의 인스턴스를 새로 만들어서 필드에 저장하도록 세터를 수정함. 이미 있다면 필드의 타입을 적절히 변경함
+5. 새로 만든 클래스의 게터를 호출한 결과를 반환하도록 게터를 수정함
+6. 테스트함
+7. 함수 이름을 바꾸면 원본 접근자의 동작을 더 잘 드러낼 수 있는지 검토함
+
+### 예시
+
+```ts
+// before
+class Order {
+  constructor(data) {
+    this.priority = data.priority;
+    // ...
+  }
+}
+
+// 클라이언트
+const highPriorityCount = orders.filter((o) => 'high' === o.priority || 'rush' === o.priority)
+  .length;
+```
+
+```ts
+// after
+class Order {
+  get priority() {
+    return this._priority;
+  }
+  set priority(aString) {
+    this._priority = new Priority(aString);
+  }
+  // ...
+}
+
+class Priority {
+  constructor(value) {
+    this._value = value;
+  }
+  toString() {
+    return this._value;
+  }
+}
+
+const highPriorityCount = orders.filter(
+  (o) => 'high' === o.priority.toString() || 'rush' === o.priority.toString(),
+).length;
+```
+
+- 이렇게 하면 Priority 클래스를 새로운 동작을 담는 장소로 활용할 수 있게 됨
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
