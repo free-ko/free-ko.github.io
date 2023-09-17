@@ -219,7 +219,68 @@ const highPriorityCount = orders.filter(
 ).length;
 ```
 
-- 이렇게 하면 Priority 클래스를 새로운 동작을 담는 장소로 활용할 수 있게 됨
+- 이렇게 하면 `Priority` 클래스를 새로운 동작을 담는 장소로 활용할 수 있게 됨
+
+<br>
+
+## 7.4 임시 변수를 질의 함수로 바꾸기
+
+- 임시 변수를 사용하면 코드의 반복을 줄이고 값의 의미를 설명할 수도 있어 유용
+- 여기서 한 걸음 더 나아가 아예 함수로 만들어 사용하는 편이 나을 때가 많음
+- 변수 대신 함수로 만들어두면 비슷한 계산을 수행하는 다른 함수에서도 사용할 수 있어 코드 중복이 줄어듬
+- 특히 추출할 메서드들에 공유 컨텍스트를 제공하는 클래스 안에서 적용할 때 효과가 가장 큼
+
+### 절차
+
+1. 변수가 사용되기 전에 값이 확실히 결정되는지, 변수를 사용할 때마다 계산 로직이 매번 다른 결과를 내지는 않는지 확인함
+2. 읽기전용으로 만들 수 있는 변수는 읽기전용으로 만듦
+3. 테스트 함
+4. 변수 대입문을 함수로 추출함
+5. 테스트
+6. 변수 인라인하기로 임시 변수를 제거
+
+### 예시
+
+```ts
+// before
+class Order {
+  constructor(quantity, item) {
+    this._quantity = quantity;
+    this._item = item;
+  }
+
+  get price() {
+    var basePrice = this._quantity * this._item.price;
+    var discountFactor = 0.98;
+
+    if (basePrice > 1000) discountFactor -= 0.03;
+    return basePrice * discountFactor;
+}
+```
+
+```ts
+// after
+class Order {
+  constructor(quantity, item) {
+    this._quantity = quantity;
+    this._item = item;
+  }
+
+  get price() {
+    return this.basePrice * this.discountFactor;
+  }
+
+  get basePrice() {
+    return this._quantity * this._item.price;
+  }
+
+  get discountFactor() {
+    var discountFactor = 0.98;
+
+    if (basePrice > 1000) discountFactor -= 0.03;
+    return discountFactor;
+  }
+```
 
 <br>
 
