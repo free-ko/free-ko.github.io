@@ -284,6 +284,100 @@ class Order {
 
 <br>
 
+## 7.5 클래스 추출하기
+
+- 메서드와 데이터가 너무 많은 클래스는 이해하기가 쉽지 않으니 잘 살펴보고 적절히 분리하는 것이 좋음. 함께 변경되는 일이 많거나 서로 의존하는 테이블들도 분리
+
+### 절차
+
+1. 클래스의 역할을 분리할 방법을 정함
+2. 분리될 역할을 담당할 클래스를 새로 만듦
+3. 원래 클래스의 생성자에서 새로운 클래스의 인스턴스를 생성하여 필드에 저장해둠
+4. 분리될 역할에 필요한 필드들을 새 클래스로 옮김
+5. 메서드들도 새 클래스로 옮김. 이때 저수준 메서드, 즉 다른 메서드를 호출하기보다는 호출을 당하는 일이 많은 메서드부터 옮김
+6. 양쪽 클래스의 인터페이스를 살펴보면서 불필요한 메서드를 제거하고, 이름도 새로운 환경에 맞게 바꿈
+7. 새 클래스를 외부로 노출할지 정함. 노출하려거든 새 클래스에 참조를 값으로 바꾸기를 적용할지 고민해봄
+
+### 예시
+
+```ts
+// before
+class Person {
+  get name() {
+    return this._name;
+  }
+  set name(arg) {
+    this._name = arg;
+  }
+  get telephoneNumber() {
+    return `(${this.officeAreaCode}) ${this.officeNumber}`;
+  }
+  get officeAreaCode() {
+    return this._officeAreaCode;
+  }
+  set officeAreaCode(arg) {
+    this._officeAreaCode = arg;
+  }
+  get officeNumber() {
+    return this._officeNumber;
+  }
+  set officeNumber(arg) {
+    this._officeNumber = arg;
+  }
+}
+```
+
+```ts
+// after
+class Person {
+  constructor() {
+    this._telephoneNumber = new TelephoneNumber();
+  }
+
+  get name() {
+    return this._name;
+  }
+  set name(arg) {
+    this._name = arg;
+  }
+  get telephoneNumber() {
+    return this._telephoneNumber.toString();
+  }
+  get areaCode() {
+    return this._telephoneNumber.areaCode;
+  }
+  set areaCode(arg) {
+    this._telephoneNumber.areaCode = arg;
+  }
+  get officeNumber() {
+    return this._telephoneNumber.number;
+  }
+  set officeNumber(arg) {
+    this._telephoneNumber.number = arg;
+  }
+}
+
+class TelephoneNumber {
+  get areaCode() {
+    return this._areaCode;
+  }
+  set areaCode(arg) {
+    this._areaCode = arg;
+  }
+  get number() {
+    return this._number;
+  }
+  set number(arg) {
+    this._number = arg;
+  }
+  toString() {
+    return `(${this.areaCode}) ${this.number}`;
+  }
+}
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
