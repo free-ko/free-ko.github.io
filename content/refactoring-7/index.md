@@ -451,6 +451,71 @@ class Shipment {
 
 <br>
 
+## 7.7 위임 숨기기
+
+- 모듈화 설계를 제대로 하는 핵심은 캡슐화. 캡슐화는 모듈들이 시스템의 다른 부분에 대해 알아야 할 내용을 줄여줌
+
+### 절차
+
+1. 위임 객체의 각 메서드에 해당하는 위임 메서드를 서버에 생성
+2. 클라이언트가 위임 객체 대신 서버를 호출하도록 수정함
+3. 모두 수정했다면, 서버로부터 위임 객체를 얻는 접근자를 제거함
+4. 테스트
+
+### 예시
+
+```ts
+// before
+class Person {
+  constructor(name) {
+    this._name = name;
+  }
+  get name() {
+    return this._name;
+  }
+  get department() {
+    return this._department;
+  }
+  set department() {
+    this._department = arg;
+  }
+}
+
+class Department {
+  get chargeCode() {
+    return this._chargeCode;
+  }
+  set chargeCode() {
+    this._chargeCode = arg;
+  }
+  get manager() {
+    return this._manager;
+  }
+  set manager() {
+    this._manager = arg;
+  }
+}
+
+// 클라이언트
+const manager = aPerson.department.manager;
+```
+
+```ts
+// after
+// - 클라이언트가 Department 클래스를 몰라도 되도록, Person 클래스에 간단한 위임 메서드를 만들어 의존성을 줄일 수 있음
+class Person {
+  // ...
+  get manager() {
+    return this._department.manager;
+  }
+}
+
+// 클라이언트
+const manager = aPerson.manager;
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
