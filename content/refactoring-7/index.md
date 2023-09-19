@@ -378,6 +378,79 @@ class TelephoneNumber {
 
 <br>
 
+## 7.6 클래스 인라인하기
+
+- 클래스 인라인하기는 클래스 추출하기를 거꾸로 돌리는 리팩터링임
+- 더 이상 제 역할을 못 해서 그대로 두면 안 되는 클래스는 인라인 진행. 두 클래스의 기능을 지금과 다르게 배분하고 싶을 때도 클래스를 인라인함
+
+### 절차
+
+1. 소스 클래스의 각 `public` 메서드에 대응하는 메서드들을 타깃 클래스에 생성
+2. 소스 클래스의 메서드를 사용하는 코드를 모두 타깃 클래스의 위임 메서드를 사용하도록 바꿈
+3. 소스 클래스의 메서드와 필드를 모두 타깃 클래스로 옮김
+4. 소스 클래스를 삭제
+
+### 예시
+
+```ts
+// before
+class TrackingInformation {
+  // ...
+  get shippingCompany() {
+    return this._shippingCompany;
+  }
+  set shippingCompany(arg) {
+    this._shippingCompany = arg;
+  }
+  get trackingNumber() {
+    return this._trackingNumber;
+  }
+  set trackingNumber(arg) {
+    this._trackingNumber = arg;
+  }
+  get display() {
+    return `${this.shippingCompany}: ${this.trackingNumber}`;
+  }
+}
+
+class Shipment {
+  // ...
+  get trackingInfo() {
+    return this._trackingInformation.display;
+  }
+  get trackingInformation() {
+    return this._trackingInformation;
+  }
+  set trackingInformation(aTrackingInformation) {
+    this._trackingInformation = aTrackingInformation;
+  }
+}
+```
+
+```ts
+// TrackingInformation이 현재는 제 역할을 못 하고 있으니 Shipment 클래스로 인라인
+// TrackingInformation 클래스는 삭제
+class Shipment {
+  get trackingInfo() {
+    return `${this.shippingCompany}: ${this.trackingNumber}`;
+  }
+  get shippingCompany() {
+    return this._shippingCompany;
+  }
+  set shippingCompany(arg) {
+    this._shippingCompany = arg;
+  }
+  get trackingNumber() {
+    return this._trackingNumber;
+  }
+  set trackingNumber(arg) {
+    this._trackingNumber = arg;
+  }
+}
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
