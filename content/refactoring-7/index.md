@@ -516,6 +516,54 @@ const manager = aPerson.manager;
 
 <br>
 
+## 7.8 중개자 제거하기
+
+- 위임 메서드를 매번 추가하다 보면 서버 클래스는 그저 중개자 역할로 전락하여, 차라리 클라이언트가 위임 객체를 직접 호출하는 게 나을 수 있음
+
+### 절차
+
+1. 위임 객체를 얻는 게터를 만듦
+2. 위임 메서드를 호출하는 클라이언트가 모두 이 게터를 거치도록 수정함
+3. 모두 수정했다면 위임 메서드를 삭제함
+
+### 예시
+
+```ts
+// before
+const manager = aPerson.manager;
+
+class Person {
+  // ...
+  get manager() {
+    return this._department.manager;
+  }
+}
+
+class Department {
+  // ...
+  get manager() {
+    return this._manager;
+  }
+}
+```
+
+```ts
+// after
+class Person {
+  // ...
+  get department() {
+    return this._department;
+  }
+  // 삭제
+  // get manager() { return this._department.manager; }
+}
+
+// 클라이언트
+const manager = aPerson.department.manager;
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
