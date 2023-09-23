@@ -582,7 +582,7 @@ function enrichReading(original) {
 5. 추출한 두 번째 단계 함수의 매개변수를 하나씩 검토. 그중 첫 번째 단계에서 사용되는 것은 중간 데이터 구조로 옮김 하나씩 옮길 때마다 테스트함
 6. 첫 번째 단계 코드를 함수로 추출하면서 중간 데이터 구조를 반환하도록 만듦
 
-## 예시
+### 예시
 
 ```ts
 // before
@@ -629,7 +629,7 @@ function applyShipping(priceData, shippingMethod) {
 
 <br>
 
-### 참고
+## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
 

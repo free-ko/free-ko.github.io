@@ -126,7 +126,7 @@ invoices.map((invoice) => console.log(statement(invoice, plays)));
 
 <br>
 
-### 참고
+## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
 
