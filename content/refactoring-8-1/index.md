@@ -245,6 +245,73 @@ class CustomerContract {
 
 <br>
 
+## 8.3 문장을 함수로 옮기기
+
+- 중복 제거는 코드를 건강하게 관리하는 가장 효과적인 방법 중 하나임. 코드가 반복되면 피호출 함수로 합침. 이때 문장들을 함수로 옮기려면 그 문장들이 피호출 함수의 일부라는 확신이 있어야 함
+
+### 절차
+
+1. 반복 코드가 함수 호출 부분과 멀리 떨어져 있다면 문장 슬라이드하기를 적용해 근처로 옮김
+2. 타겟 함수를 호출하는 곳이 한 곳뿐이면, 단순히 소스 위치에서 해당 코드를 잘라내어 피호출 함수로 복사하고 테스트함
+3. 호출자가 둘 이상이면 호출자 중 하나에서 ‘타겟 함수 호출 부분과 그 함수로 옮기려는 문장들을 함께’ 다른 함수로 추출함. 추출한 함수에 기억하기 쉬운 임시 이름을 지어줌
+4. 다른 호출자 모두가 방금 추출한 함수를 사용하도록 수정함. 하나씩 수정할 때마다 테스트함
+5. 모든 호출자가 새로운 함수를 사용하게 되면 원래 함수를 새로운 함수 안으로 인라인한 후 원래 함수를 제거함
+6. 새로운 함수의 이름을 원래 함수의 이름으로 바꿔줌
+
+### 예시
+
+```ts
+// before
+function renderPerson(outStream, person) {
+  const result = [];
+  result.push(`<p>${person.name}</p>`);
+  result.push(renderPhoto(person.photo));
+  result.push(`<p>제목: ${person.photo.title}</p>`);
+  result.push(emitPhotoData(person.photo));
+
+  return result.join('\n');
+}
+
+function photoDiv(p) {
+  return ['<div>', `<p>제목: ${p.title}</p>`, emitPhotoData(p), '</div>'].join('\n');
+}
+
+function emitPhotoData(aPhoto) {
+  const result = [];
+
+  result.push(`<p>위치: ${aPhoto.location}</p>`);
+  result.push(`<p>날짜: ${aPhoto.date.toDateString()}</p>`);
+
+  return result.join('\n');
+}
+```
+
+```ts
+// after
+function renderPerson(outStream, person) {
+  const result = [];
+  result.push(`<p>${person.name}</p>`);
+  result.push(renderPhoto(person.photo));
+  result.push(emitPhotoData(person.photo));
+
+  return result.join('\n');
+}
+
+function photoDiv(aPhoto) {
+  return ['<div>', emitPhotoData(aPhoto), '</div>'].join('\n');
+}
+
+function emitPhotoData(aPhoto) {
+  return [
+    `<p>제목: ${aPhoto.title}</p>`,
+    `<p>위치: ${aPhoto.location}</p>`,
+    `<p>날짜: ${aPhoto.date.toDateString()}</p>`,
+  ].join('\n');
+}
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
