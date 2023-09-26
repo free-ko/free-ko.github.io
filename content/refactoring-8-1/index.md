@@ -312,6 +312,78 @@ function emitPhotoData(aPhoto) {
 
 <br>
 
+## 8.4 문장을 호출한 곳으로 옮기기
+
+- 코드베이스의 기능 범위가 달라지면 추상화의 경계도 움직임
+- 여러 곳에서 사용하던 기능이 일부 호출자에서는 다르게 동작하도록 바뀌어야 한다면, 함수가 여러 가지 일을 수행하게 될 수도 있음
+- 이럴 때는 우선 문장 슬라이드하기를 적용해 달라지는 호출자로 옮김
+
+### 절차
+
+1. 호출자가 한두 개뿐이고 피호출 함수도 간단한 단순한 상황이면, 피호출 함수의 처음(혹은 마지막) 줄(들)을 잘라내어 호출자(들)로 복사해 넣고 테스트만 통과하면 이번 리팩터링은 여기서 종료
+2. 더 복잡한 상황에서는, 이동하지 ‘않길’ 원하는 모든 문장을 함수로 추출한 다음 검색하기 쉬운 임시 이름을 지어줌
+3. 원래 함수를 인라인
+4. 추출된 함수의 이름을 원래 함수의 이름으로 변경함
+
+### 예시
+
+```ts
+// 호출자가 둘뿐인 단순한 상황
+
+// before
+function renderPerson(outStream, person) {
+  outStream.write(`<p>${person.name}</p>\n`);
+  renderPhoto(outStream, person.photo);
+  emitPhotoData(outStream, person.photo); // ✅
+}
+
+function listRecentPhotos(outStream, photos) {
+  photos
+    .filter((p) => p.date > recentDateCutoff())
+    .forEach((p) => {
+      outStream.write('<div>\n');
+      emitPhotoData(outStream, p); // ✅
+      outStream.write('</div>\n');
+    });
+}
+
+function emitPhotoData(outStream, photo) {
+  outStream.write(`<p>제목: ${photo.title}</p>\n`);
+  outStream.write(`<p>날짜: ${photo.date.toDateString()}</p>\n`);
+  outStream.write(`<p>위치: ${photo.location}</p>\n`);
+}
+```
+
+```ts
+// renderPerson()은 그대로 둔 채 listRecentPhotos()가 위치 정보(location)을 다르게 렌더링하도록 만들어 진행
+
+// after
+function renderPerson(outStream, person) {
+  outStream.write(`<p>${person.name}</p>\n`);
+  renderPhoto(outStream, person.photo);
+  emitPhotoData(outStream, person.photo);
+  outStream.write(`<p>위치: ${photo.location}</p>\n`);
+}
+
+function listRecentPhotos(outStream, photos) {
+  photos
+    .filter((p) => p.date > recentDateCutoff())
+    .forEach((p) => {
+      outStream.write('<div>\n');
+      emitPhotoData(outStream, p);
+      outStream.write(`<p>위치: ${p.location}</p>\n`);
+      outStream.write('</div>\n');
+    });
+}
+
+function emitPhotoData(outStream, photo) {
+  outStream.write(`<p>제목: ${photo.title}</p>\n`);
+  outStream.write(`<p>날짜: ${photo.date.toDateString()}</p>\n`);
+}
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
