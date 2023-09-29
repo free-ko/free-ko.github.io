@@ -79,6 +79,59 @@ chargeOrder(charge);
 
 <br>
 
+## ## 8.7 반복문 쪼개기
+
+- 종종 반복문 하나에서 두 가지 일을 수행하는 모습을 보게 됨. 이렇게 하면 반복문을 수정할 때마다 두 가지 일 모두를 잘 이해하고 진행해야 함
+- 반복문을 분리하면 사용하기가 쉬워짐. 한 가지 값만 계산하는 반복문이라면 그 값만 곧바로 반환할 수 있음
+
+### 절차
+
+1. 반복문을 복제해 두 개로 만듦
+2. 반복문이 중복되어 생기는 부수효과를 파악해서 제거함
+3. 테스트함
+4. 완료됐으면, 각 반복문을 함수로 추출할지 고민해봄
+
+### 예시
+
+```ts
+// before
+let youngest = people[0] ? people[0].age : Infinity;
+let totalSalary = 0;
+for (const p of people) {
+  if (p.age < youngest) youngest = p.age;
+  totalSalary += p.salary;
+}
+
+return `최연소: ${youngest}, 총 급여: ${totalSalary}`;
+```
+
+```ts
+// after
+let youngest = people[0] ? people[0].age : Infinity;
+let totalSalary = 0;
+for (const p of people) {
+  totalSalary += p.salary;
+}
+
+for (const p of people) {
+  if (p.age < youngest) youngest = p.age;
+}
+
+return `최연소: ${youngest}, 총 급여: ${totalSalary}`;
+
+// 각 반복문을 각각의 함수로 추출하고, 반복문을 파이프라인으로 바꿀 수 있음
+
+function totalSalary() {
+  return people.reduce((total, p) => total + p.salary, 0);
+}
+
+function youngestAge() {
+  return Math.min(...people.map((p) => p.age));
+}
+```
+
+<br>
+
 ### 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
