@@ -67,6 +67,58 @@ function distanceTraveled(scenario, time) {
 
 <br>
 
+## 9.2 필드 이름 바꾸기
+
+- 데이터 구조는 프로그램을 이해하는 데 큰 역할을 함
+- 클래스에서 게터와 세터 메서드의 이름은 레코드 구조체의 필드 이름만큼 중요함
+
+### 절차
+
+1. 레코드의 유효 범위가 제한적이라면 필드에 접근하는 모든 코드를 수정한 후 테스트함. 이후 단계는 필요 없음
+2. 레코드가 캡슐화되지 않았다면 우선 레코드를 캡슐화함
+3. 캡슐화된 객체 안의 `private` 필드명을 변경하고, 그에 맞게 내부 메서드들을 수정 함
+4. 테스트 함
+5. 생성자의 매개변수 중 필드와 이름이 겹치는 게 있다면 함수 선언 바꾸기로 변경함
+6. 접근자들의 이름도 바꿔줌
+
+### 예시
+
+```ts
+const organization = { name: 'KAY', country: 'KOR' };
+
+// name을 title로 하고, organization 레코드를 클래스로 캡슐화한 뒤, 입력 데이터 구조를 내부 데이터 구조와 분리
+
+class Organization {
+  constructor(data) {
+    this._title = data.title;
+    this._country = data.country;
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  set title(aString) {
+    this._title = aString;
+  }
+
+  get country() {
+    return this._country;
+  }
+
+  set country(aCountryCode) {
+    this._country = aCountryCode;
+  }
+}
+
+const organization = new Organization({
+  title: 'KAY',
+  country: 'KOR',
+});
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
