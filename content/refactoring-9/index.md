@@ -170,6 +170,110 @@ class ProductionPlan {
 
 <br>
 
+## 9.4 참조를 값으로 바꾸기
+
+- 객체(데이터 구조)를 다른 객체(데이터 구조)에 중첩하면 내부 객체를 참조 혹은 값으로 취급할 수 있음
+- 참조로 다루는 경우에는 내부 객체는 그대로 둔 채 그 객체의 속성만 갱신하며, 값으로 다루는 경우에는 새로운 속성을 담은 객체로 기존 내부 객체를 통째로 대체함
+- 필드를 값으로 다룬다면 내부 객체의 클래스를 수정하여 값 객체(Value Object)로 만들 수 있음
+- 값 객체는 불변이기 때문에 대체로 자유롭게 활용하기 좋음
+- 하지만 특정 객체를 여러 객체에서 공유하고자 한다면, 그래서 공유 객체의 값을 변경했을 때 이를 관련 객체 모두에 알려줘야 한다면 공유 객체를 참조로 다뤄야 함
+
+### 절차
+
+1. 후보 클래스가 불변인지, 혹은 불변이 될 수 있는지 확인함
+2. 각각의 세터를 하나씩 제거함
+3. 이 값 객체의 필드들을 사용하는 동치성 비교 메서드를 만듦
+
+### 예시
+
+- 생성 시점에는 전화번호가 올바로 설정되지 못한 사람(Person) 객체가 있음
+
+```ts
+class Person {
+  constructor() {
+    this._telephoneNumber = new TelephoneNumber();
+  }
+
+  get officeAreaCode() {
+    return this._telephoneNumber.areaCode;
+  }
+
+  set officeAreaCode(arg) {
+    this._telephoneNumber.areaCode = arg;
+  }
+
+  get officeNumber() {
+    return this._telephoneNumber.number;
+  }
+
+  set officeNumber(arg) {
+    this._telephoneNumber.number = arg;
+  }
+}
+
+class TelephoneNumber {
+  get areaCode() {
+    return this._areaCode;
+  }
+
+  set areaCode(arg) {
+    this._areaCode = arg;
+  }
+
+  get number() {
+    return this._number;
+  }
+
+  set number(arg) {
+    this._number = arg;
+  }
+}
+```
+
+1. 전화번호를 불변으로 만들고,
+2. 필드들의 세터만 제거한다.
+3. 전화번호를 ‘값’ 객체로 인정받기 위해 동치성 메서드를 만듦
+
+```ts
+class Person {
+  constructor() {
+    this._telephoneNumber = new TelephoneNumber();
+  }
+
+  get officeAreaCode() {
+    return this._telephoneNumber.areaCode;
+  }
+
+  set officeAreaCode(arg) {
+    this._telephoneNumber = new TelephoneNumber(arg, this.officeNumber);
+  }
+
+  get officeNumber() {
+    return this._telephoneNumber.number;
+  }
+
+  set officeNumber(arg) {
+    this._telephoneNumber = new TelephoneNumber(this.officeAreaCode, arg);
+  }
+}
+
+class TelephoneNumber {
+  constructor(areaCode, number) {
+    this._areaCode = areaCode;
+    this._number = number;
+  }
+
+  // getter와 setter
+
+  equals(other) {
+    if (!(other instanceof TelephoneNumber)) return false;
+    return this.areaCode === other.areaCode && this.number === other.number;
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
