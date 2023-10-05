@@ -274,6 +274,84 @@ class TelephoneNumber {
 
 <br>
 
+## 9.5 값을 참조로 바꾸기
+
+- 하나의 데이터 구조 안에 논리적으로 똑같은 제3의 데이터 구조를 참조하는 레코드가 여러 개 있을 때가 있음
+- 논리적으로 같은 데이터를 물리적으로 복제해 사용할 때 가장 크게 문제되는 상황은 그 데이터를 갱신해야 할 때
+- 이런 상황이라면 복제된 데이터들을 모두 참조로 바꿔주는 게 좋음
+- 값을 참조로 바꾸면 엔티티 하나당 객체도 단 하나만 존재하게 되는데, 그러면 보통 이런 객체들을 한데 모아놓고 클라이언트들의 접근을 관리해주는 일종의 저장소가 필요함
+
+### 절차
+
+1. 같은 부류에 속하는 객체들을 보관할 저장소를 만듦
+2. 생성자에서 이 부류의 객체들 중 특정 객체를 정확히 찾아내는 방법이 있는지 확인함
+3. 호스트 객체의 생성자들을 수정하여 필요한 객체를 이 저장소에서 찾도록 함. 하나 수정할 때마다 테스트함
+
+### 예시
+
+```ts
+class Order {
+  constructor(data) {
+    this._number = data.number;
+    this._customer = new Customer(data.customer);
+  }
+
+  get customer() {
+    return this._customer;
+  }
+}
+
+class Customer {
+  constructor(id) {
+    this._id = id;
+  }
+
+  get id() {
+    return this._id;
+  }
+}
+```
+
+- 이런 방식으로 생성한 고객 객체는 값이기 때문에, 고객 ID가 123인 주문을 다섯 개 생성한다면 독립된 고객 객체가 다섯 개 만들어짐
+- 이 중 하나를 수정하더라도 나머지 네 개에는 반영되지 않음
+- 저장소 객체를 만들고, 고객 객체를 값으로 변경함
+
+```ts
+let _repositoryData;
+
+export function initialize() {
+  _repositoryData = {};
+  _repositoryData.customers = new Map();
+}
+
+export function registerCustomer(id) {
+  if (!_repositoryData.customers.has(id)) {
+    _repositoryData.customers.set(id, new Customer(id))''
+  }
+  return findCustomer(id);
+}
+
+export function findCustomer(id) {
+  return _repositoryData.customers.get(id);
+}
+
+class Order {
+  constructor(data) {
+    this._number = data.number;
+    this._customer = registerCustomer(data.customer);
+  }
+
+  get customer() {
+    return this._customer;
+  }
+}
+```
+
+- 이 예에서는 특정 고객 객체를 참조하는 첫 번째 주문에서 해당 고객 객체를 생성함
+- 또 다른 방법으로, 고객 목록을 미리 다 만들어서 저장소에 저장해놓고 주문 정보를 읽을 때 연결해줄 수도 있음
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
