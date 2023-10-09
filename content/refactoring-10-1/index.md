@@ -150,6 +150,115 @@ function payAmount(employee) {
 
 <br>
 
+## 10.4 조건부 로직을 다형성으로 바꾸기
+
+- 복잡한 조건부 로직을 클래스와 다형성을 이용하여 분리할 수 있음
+- 타입을 여러 개 만들고 각 타입이 조건부 로직을 자신만의 방식으로 처리하도록 구성하는 방법이 있음
+- 또는 기본 동작을 위한 `case`문과 그 변형 동작으로 구성된 로직을 떠올릴 수 있음
+- 기본 동작 로직을 슈퍼클래스로 넣고, 변형 동작을 뜻하는 `case`들을 각각의 서브클래스로 만듦
+
+### 절차
+
+1. 다형적 동작을 표현하는 클래스들이 아직 없다면 만들고 팩터리 함수도 함께 만듦
+2. 호출하는 코드에서 팩터리 함수를 사용하게 함
+3. 조건부 로직 함수를 슈퍼클래스로 옮김
+4. 서브클래스 중 하나를 선택하여, 슈퍼클래스의 조건부 로직 메서드를 오버라이드함
+5. 같은 방식으로 각 조건절을 해당 서브클래스에서 메서드로 구현
+6. 슈퍼클래스 메서드에는 기본 동작 부분만 남김
+
+### 예시
+
+```ts
+// before
+function plumages(birds) {
+  return new Map(birds.map((b) => [b.name, plumage(b)]));
+}
+
+function speeds(birds) {
+  return new Map(birds.map((b) => [b.name, airSpeedVelocity(b)]));
+}
+
+function plumage(bird) {
+  switch (bird.type) {
+    case '유럽 제비':
+      return '보통이다';
+    case '아프리카 제비':
+      return bird.numberOfCoconuts > 2 ? '지쳤다' : '보통이다';
+    default:
+      return '알 수 없다';
+  }
+}
+
+function airSpeedVelocity(bird) {
+  switch (bird.type) {
+    case '유럽 제비':
+      return 35;
+    case '아프리카 제비':
+      return 40 - 2 * bird.numberOfCoconuts;
+    default:
+      return null;
+  }
+}
+```
+
+```ts
+// after
+function plumages(birds) {
+  return new Map(birds.map((b) => createBird(b)).map((bird) => [bird.name, bird.plumage]));
+}
+
+function speeds(birds) {
+  return new Map(birds.map((b) => createBird(b)).map((bird) => [bird.name, bird.airSpeedVelocity]));
+}
+
+class Bird {
+  constructor(birdObject) {
+    Object.assign(this, birdObject);
+  }
+
+  get plumage() {
+    return '알 수 없다';
+  }
+
+  get airSpeedVelocity() {
+    return null;
+  }
+}
+
+class EuropeanSwallow extends Bird {
+  get plumage() {
+    return '보통이다';
+  }
+
+  get airSpeedVelocity() {
+    return 35;
+  }
+}
+
+class AfricanSwallow extends Bird {
+  get plumage() {
+    return this.numberOfCoconuts > 2 ? '지쳤다' : '보통이다';
+  }
+
+  get airSpeedVelocity() {
+    return 40 - 2 * this.numberOfCoconuts;
+  }
+}
+
+function createBird(bird) {
+  switch (this.type) {
+    case '유럽 제비':
+      return new EuropeanSwallow(bird);
+    case '아프리카 제비':
+      return new AfricanSwallow(bird);
+    default:
+      return new Bird(bird);
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
