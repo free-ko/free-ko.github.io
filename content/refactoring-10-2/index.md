@@ -165,6 +165,46 @@ const weekDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
 
 <br>
 
+## 10.6 어서션 추가하기
+
+- 특정 조건이 참일 때만 제대로 동작하는 코드 영역이 있을 수 있음. 어서션을 이용하면, 코드 자체에 필요한 가정을 항상 명시적으로 기술할 수 있음
+- 어서션은 항상 참이라고 가정하는 조건부 문장으로, 어서션이 실패했다는 건 프로그래머가 잘못했다는 뜻. 어서션은 오류 찾기에 활용될 뿐 아니라, 프로그램이 어떤 상태임을 가정한 채 실행되는지를 다른 개발자에게 알려주는 훌륭한 소통 도구
+
+### 절차
+
+1. 참이라고 가정하는 조건이 보이면 그 조건을 명시하는 어서션을 추가
+
+### 예시
+
+```ts
+// 이 코드에는 할인율이 항상 양수라는 가정이 깔려 있음
+class Customer {
+  applyDiscount(aNumber) {
+    return this.discountRate ? aNumber - this.discountRate * aNumber : aNumber;
+  }
+}
+```
+
+```ts
+// 이런 어서션은 오류의 출처를 특정하기 어려울 때 도움이 됨
+class Customer {
+  applyDiscount(aNumber) {
+    if (!this.discountRate) return aNumber;
+    else {
+      assert(this.discountRate >= 0);
+      return aNumber - this.discountRate * aNumber;
+    }
+  }
+
+  set discountRate(aNumber) {
+    assert(null === aNumber || aNumber >= 0);
+    this._discountRate = aNumber;
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
