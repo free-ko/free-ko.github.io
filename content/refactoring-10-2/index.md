@@ -205,6 +205,56 @@ class Customer {
 
 <br>
 
+## 10.7 제어 플래그를 탈출문으로 바꾸기
+
+- 제어 플래그란 코드의 동작을 변경하는 데 사용되는 변수를 말하며, 어딘가에서 값을 계산해 제어 플래그에 설정한 후 다른 어딘가의 조건문에서 검사하는 형태로 쓰임
+- 제어 플래그는 리팩터링으로 충분히 간소화할 수 있음. 제어 플래그의 주 서식지는 반복문 안으로, 주로 `return, break, continue`와 함께 사용
+
+### 절차
+
+1. 제어 플래그를 사용하는 코드를 함수로 추출할지 고려 함
+2. 제어 플래그를 갱신하는 코드 각각을 적절한 제어문으로 바꿈. 하나 바꿀 때마다 테스트함
+3. 모두 수정했다면 제어 플래그를 제거
+
+### 예시
+
+```ts
+// before
+let found = false;
+for (const p of people) {
+  if (!found) {
+    if (p === '해적') {
+      sendAlert();
+      found = true;
+    }
+    if (p === '해병') {
+      sendAlert();
+      found = true;
+    }
+  }
+}
+```
+
+```ts
+// after
+checkForMiscreants(people);
+
+function checkForMiscreants(people) {
+  for (const p of people) {
+    if (p === '해적') {
+      sendAlert();
+      return;
+    }
+    if (p === '해병') {
+      sendAlert();
+      return;
+    }
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
