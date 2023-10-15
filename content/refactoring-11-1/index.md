@@ -132,6 +132,63 @@ function baseCharge(usage) {
 
 <br>
 
+## 11.3 플래그 인수 제거하기
+
+- 플래그 인수란 호출되는 함수가 실행할 로직을 호출하는 쪽에서 선택하기 위해 전달하는 인수
+
+```ts
+function bookConcert(aCustomer, isPremium) {
+  if (isPremium) {
+    // 프리미엄 예약용 로직
+  } else {
+    // 일반 예약용 로직
+  }
+}
+
+bookConcert(aCustomer, true);
+```
+
+- 플래그 인수를 사용하면, 호출할 수 있는 함수들이 무엇이고 어떻게 호출해야 하는지를 이해하기 어려워짐. 플래그 인수가 있으면 함수들의 기능 차이가 잘 드러나지 않음
+- 플래그 인수를 제거하면 코드가 깔끔해짐은 물론 프로그래밍 도구에도 도움을 줌. 코드 분석 도구는 프리미엄 로직 호출과 일반 로직 호출의 차이를 더 쉽게 파악할 수 있게 됨
+
+### 절차
+
+1. 매개변수로 주어질 수 있는 값 각각에 대응하는 명시적 함수들을 생성함
+
+2. 원래 함수를 호출하는 코드들을 모두 찾아서 각 리터럴 값에 대응되는 명시적 함수를 호출하도록 수정함
+
+### 예시
+
+```ts
+// before
+aShipment.deliveryDate = deliveryDate(anOrder, true);
+aShipment.deliveryDate = deliveryDate(anOrder, false);
+
+function deliveryDate(anOrder, isRush) {
+  if (isRush) {
+    // rush일 때 호출할 로직
+  } else {
+    // rush가 아닐 때 호출할 로직
+  }
+}
+```
+
+```ts
+// after
+function rushDeliveryDate(anOrder) {
+  // rush일 때 호출할 로직
+}
+
+function regularDeliveryRate(anOrder) {
+  // rush가 아닐 때 호출할 로직
+}
+
+aShipment.deliveryDate = rushDeliveryDate(anOrder);
+aShipment.deliveryDate = regularDeliveryRate(anOrder);
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
