@@ -73,6 +73,65 @@ function alertForMiscreant(people) {
 
 <br>
 
+## 11.2 함수 매개변수화하기
+
+- 두 함수의 로직이 아주 비슷하고 단지 리터럴 값만 다르다면, 그 다른 값만 매개변수로 받아 처리하는 함수 하나로 합쳐서 중복을 없앨 수 있음.
+
+### 절차
+
+1. 비슷한 함수 중 하나를 선택함
+2. 함수 선언 바꾸기로 리터럴들을 매개변수로 추가함
+3. 이 함수를 호출하는 곳 모두에 적절한 리터럴 값을 추가함
+4. 테스트함
+5. 매개변수로 받은 값을 사용하도록 함수 본문을 수정함. 하나 수정할 때마다 테스트함.
+6. 비슷한 다른 함수를 호출하는 코드를 찾아 매개변수화된 함수를 호출하도록 하나씩 수정함.
+   하나 수정할 때마다 테스트함
+
+### 예시
+
+```ts
+// before
+function baseCharge(usage) {
+  if (usage < 0) return usd(0);
+
+  const amount = bottomBand(usage) * 0.03 + middleBand(usage) * 0.05 + topBand(usage) * 0.07;
+
+  return usd(amount);
+}
+
+function bottomBand(usage) {
+  return Math.min(usage, 100);
+}
+
+function middleBand(usage) {
+  return usage > 100 ? Math.min(usage, 200) - 100 : 0;
+}
+
+function topBand(usage) {
+  return usage > 200 ? usage - 200 : 0;
+}
+```
+
+```ts
+// after
+function withinBand(usage, bottom, top) {
+  return usage > bottom ? Math.min(usage, top) - bottom : 0;
+}
+
+function baseCharge(usage) {
+  if (usage < 0) return usd(0);
+
+  const amount =
+    withinBand(usage, 0, 100) * 0.03 +
+    withinBand(usage, 100, 200) * 0.05 +
+    withinBand(usage, 200, Infinity) * 0.07;
+
+  return usd(amount);
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
