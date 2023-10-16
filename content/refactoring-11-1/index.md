@@ -189,6 +189,56 @@ aShipment.deliveryDate = regularDeliveryRate(anOrder);
 
 <br>
 
+## 11.4 객체 통째로 넘기기
+
+- 레코드를 통째로 넘기면 변화에 대응하기 쉬움. 함수가 더 다양한 데이터를 사용하도록 바뀌어도 매개변수 목록은 수정할 필요가 없음. 그리고 매개변수 목록이 짧아져서 일반적으로는 함수 사용법을 이해하기 쉬워짐
+- 하지만 함수가 레코드 자체에 의존하기를 원치 않을 때, 특히 레코드와 함수가 서로 다른 모듈에 속한 상황이라면 이 리팩터링을 수행하지 않음
+- 한편, 한 객체가 제공하는 기능 중 항상 똑같은 일부만을 사용하는 코드가 많다면, 그 기능만 따로 묶어서 클래스로 추출할 수도 있음
+
+### 절차
+
+1. 매개변수들을 원하는 형태로 받는 빈 함수를 만듦
+2. 새 함수의 본문에서는 원래 함수를 호출하도록 하며, 새 매개변수와 원래 함수의 매개변수를 매핑함
+3. 정적 검사를 수행함
+4. 모든 호출자가 새 함수를 사용하게 수정함. 하나씩 수정하며 테스트함
+5. 호출자를 모두 수정했다면 원래 함수를 인라인함
+6. 새 함수의 이름을 적절히 수정하고 모든 호출자에 반영함
+
+### 예시
+
+- 일일 최저/최고 기온이 난방 계획에서 정한 범위를 벗어나는지 확인하는 실내온도 모니터링 시스템을 생각
+
+```ts
+const low = aRoom.daysTempRange.low;
+const high = aRoom.daysTempRange.high;
+
+if (!aPlan.withinRange(low, high)) {
+  alerts.push("방 온도가 지정 범위를 벗어났습니다.");
+}
+
+// HeatingPlan 클래스
+withinRange(bottom, top) {
+  return (bottom >= this._temperatureRange.low)
+        && (top <= this._temperatureRange.high);
+}
+```
+
+```ts
+// 최저/최고 기온을 뽑아내어 인수로 건내는 대신 범위 객체를 통째로 건넬 수도 있음
+
+// HeatingPlan 클래스
+withinRange(aNumberRange) {
+  return (aNumberRange.low >= this._temperatureRange.low) &&
+         (aNumberRange.high <= this._temperatureRange.high);
+}
+
+if (!aPlan.withinRange(aRoom.daysTempRange)) {
+  alerts.push("방 온도가 지정 범위를 벗어났습니다.");
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
