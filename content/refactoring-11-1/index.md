@@ -239,6 +239,70 @@ if (!aPlan.withinRange(aRoom.daysTempRange)) {
 
 <br>
 
+## 11.5 매개변수를 질의 함수로 바꾸기
+
+- 매개변수 목록은 함수의 동작에 변화를 줄 수 있는 일차적인 수단. 매개변수 목록은 중복은 피하는 게 좋으며 짧을수록 이해하기 쉬움.
+- 피호출 함수가 스스로 ‘쉽게’ 결정할 수 있는 값을 매개변수로 건네는 것도 일종의 중복. 호출하는 쪽은 간소하게 만드는 것이 좋음. 즉, 책임 소재를 피호출 함수로 옮김
+- 매개변수 제거 시 피호출 함수에 원치 않는 의존성이 생긴다면 매개변수를 질의 함수로 바꾸지 말아야 함. 제거하려는 매개변수의 값을 다른 매개변수에 질의해서 얻을 수 있다면 안심하고 질의 함수로 바꿀 수 있음.
+- 이때 대상 함수가 참조 투명해야 한다. 즉, 함수에 똑같은 값을 건네 호출하면 항상 똑같이 동작해야 함.
+
+### 절차
+
+1. 필요하다면 대상 매개변수의 값을 계산하는 코드를 별도 함수로 추출해놓음
+2. 함수 본문에서 대상 매개변수로의 참조를 모두 찾아서 그 매개변수의 값을 만들어주는 표현식을 참조하도록 바꿈. 하나 수정할 때마다 테스트함.
+3. 함수 선언 바꾸기로 대상 매개변수를 없앰
+
+### 예시
+
+```ts
+// before
+class Order {
+  get finalPrice() {
+    let discountLevel;
+    const basePrice = this.quantity * this.itemPrice;
+
+    if (this.quantity > 100) discountLevel = 2;
+    else discountLevel = 1;
+
+    return this.discountedPrice(basePrice, discountLevel);
+  }
+
+  discountedPrice(basePrice, discountLevel) {
+    switch (discountLevel) {
+      case 1:
+        return basePrice * 0.95;
+      case 2:
+        return basePrice * 0.9;
+    }
+  }
+}
+```
+
+```ts
+// after
+class Order {
+  get finalPrice() {
+    const basePrice = this.quantity * this.itemPrice;
+    return this.discountedPrice(basePrice);
+  }
+
+  get discountLevel() {
+    return this.quantity > 100 ? 2 : 1;
+  }
+
+  discountedPrice(basePrice) {
+    switch (this.discountLevel) {
+      case 1:
+        return basePrice * 0.95;
+      case 2:
+        return basePrice * 0.9;
+    }
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
