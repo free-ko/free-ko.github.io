@@ -303,6 +303,56 @@ class Order {
 
 <br>
 
+## 11.6 질의 함수를 매개변수로 바꾸기
+
+- 함수 안에서 전역 변수를 참조한다거나, 제거하길 원하는 원소를 참조하는 경우가 있을때, 해당 참조를 매개변수로 바꿔 해결할 수 있음. 참조를 풀어내는 책임을 호출자로 옮기는 것
+- 이런 상황 대부분은 코드의 의존 관계를 바꾸려 할 때, 예컨대 대상 함수가 더 이상 (매개변수화하려는) 특정 원소에 의존하길 원치 않을 때 일어남
+- 이 리팩터링의 단점은, 호출자가 복잡해진다는 것. 이 문제는 결국 책임 소재를 프로그램의 어디에 배정하느냐의 문제로 귀결되는 것으로, 항상 정답이 있는 것은 아님
+
+### 절차
+
+1. 변수 추출하기로 질의 코드를 함수 본문의 나머지 코드와 분리
+2. 함수 본문 중 해당 질의를 호출하지 않는 코드들을 별도 함수로 추출
+3. 방금 만든 변수를 인라인하여 제거
+4. 원래 함수도 인라인
+5. 새 함수의 이름을 원래 함수의 이름으로 고침
+
+### 예시
+
+```ts
+// HeatingPlan 클래스
+get targetTemperature() {
+  if (thermostat.selectedTemperature > this._max) return this._max;
+  else if (thermostat.selectedTemperature < this._min) return this._min;
+  else return thermostat.selectedTemperature;
+}
+
+// 호출자
+if (thePlan.targetTemperature > thermostat.currentTemperature) setToHeat();
+else if (thePlan.targetTemperature < thermostat.currentTemperature) setToCool();
+else setOff();
+```
+
+```ts
+// targetTemperature() 메서드와 전역 객체인 thermostat사이의 의존성을 끊음
+// targetTemperature() 메서드와 전역 객체인 thermostat사이의 결합을 제거했을 뿐 아니라, HeatingPlan 클래스를 불변으로 만들었음
+// 모든 필드가 생성자에서 설정되며, 필드를 변경할 수 있는 메서드는 없음
+
+// HeatingPlan 클래스
+targetTemperature(selectedTemperature) {
+  if (selectedTemperature > this._max) return this._max;
+  else if (selectedTemperature < this._min) return this._min;
+  else return selectedTemperature;
+}
+
+// 호출자
+if (thePlan.targetTemperature(thermostat.selectedTemperature) > thermostat.currentTemperature) setToHeat();
+else if (thePlan.targetTemperature(thermostat.selectedTemperature) < thermostat.currentTemperature) setToCool();
+else setOff();
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
