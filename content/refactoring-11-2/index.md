@@ -63,6 +63,56 @@ martin.name = '마틴';
 
 <br>
 
+## 11.8 생성자를 팩터리 함수로 바꾸기
+
+- 생성자에는 이상한 제약이 따라붙기도 함.
+- 자바 생성자는 반드시 생성자를 정의한 클래스의 인스턴스를 반환해야 함.
+- 생성자의 이름도 고정되며, 생성자를 호출하려면 특별한 연산자(new)를 사용해야 함
+
+-> 팩터리 함수에는 이런 제약이 없다.
+
+### 절차
+
+1. 팩터리 함수를 만듦. 팩터리 함수의 본문에서는 원래의 생성자를 호출함
+2. 생성자를 호출하던 코드를 팩터리 함수 호출로 바꿈
+3. 하나씩 수정할 때마다 테스트
+4. 생성자의 가시 범위가 최소가 되도록 제한
+
+### 예시
+
+```ts
+// before
+class Employee {
+  constructor(name, typeCode) {
+    this._name = name;
+    this._typeCode = typeCode;
+  }
+
+  get name() {
+    return this._name;
+  }
+  get type() {
+    return Employee.legalTypeCodes[this._typeCode];
+  }
+  static get legalTypeCodes() {
+    return { E: 'Engineer', M: 'Manager', S: 'Salesperson' };
+  }
+}
+
+const leadEngineer = new Employee(document.leadEngineer, 'E');
+```
+
+```ts
+// afters
+function createEmployee(name) {
+  return new Employee(name, 'E');
+}
+
+const leadEngineer = createEmployee(document.leadEngineer);
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
