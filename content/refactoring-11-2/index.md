@@ -113,6 +113,87 @@ const leadEngineer = createEmployee(document.leadEngineer);
 
 <br>
 
+## 11.9 함수를 명령으로 바꾸기
+
+- 함수를 그 함수만을 위한 객체 안으로 캡슐화하면 더 유용해지는 상황이 있음
+- 이런 객체를 가리켜 ‘명령 객체’ 혹은 단순히 ‘명령’이라 함
+- 명령 객체 대부분은 메서드 하나로 구성되며, 이 메서드를 요청해 실행하는 것이 이 객체의 목적
+- 명령은 평범한 함수 메커니즘보다 훨씬 유연하게 함수를 제어하고 표현할 수 있음
+- 그러나 명령을 사용해 유연성을 얻더라도 복잡성이 커질 수 있음
+- 명령보다 더 간단한 방식으로는 얻을 수 없는 기능이 필요할 때만 명령을 선택
+
+### 절차
+
+1. 대상 함수의 기능을 옮길 빈 클래스를 만듦. 클래스 이름은 함수 이름에 기초해 지음
+2. 방금 생성한 빈 클래스로 함수를 옮김
+3. 함수의 인수들 각각은 명령의 필드로 만들어 생성자를 통해 설정할지 고민해봄
+
+### 예시
+
+```ts
+// before
+function score(candidate, medicalExam, scoringGuide) {
+  let result = 0;
+  let healthLevel = 0;
+  let highMedicalRiskFlag = false;
+
+  if (medicalExam.isSmoker) {
+    healthLevel += 10;
+    highMedicalRiskFlag = true;
+  }
+
+  let certificationGrade = 'regular';
+  if (scoringGuide.stateWithLowCertification(candidate.originState)) {
+    certificationGrade = 'low';
+    result -= 5;
+  }
+  // ...
+  result -= Math.max(healthLevel - 5, 0);
+  return result;
+}
+```
+
+```ts
+// after
+function score(candidate, medicalExam, scoringGuide) {
+  return new Scorer(candidate, medicalExam, scoringGuide).execute();
+}
+
+class Scorer {
+  constructor(candidate, medicalExam, scoringGuide) {
+    this._candidate = candidate;
+    this._medicalExam = medicalExam;
+    this._scoringGuide = scoringGuide;
+  }
+
+  execute(medicalExam, scoringGuide) {
+    this._result = 0;
+    this._healthLevel = 0;
+    this._highMedicalRiskFlag = false;
+
+    this.scoreSmoking();
+    this._certificationGrade = 'regular';
+
+    if (this._scoringGuide.stateWithLowCertification(this._candidate.originState)) {
+      this._certificationGrade = 'low';
+      this._result -= 5;
+    }
+    // ...
+    result -= Math.max(this._healthLevel - 5, 0);
+    return result;
+  }
+
+  scoreSmoking() {
+    if (this._medicalExam.isSmoker) {
+      this._healthLevel += 10;
+      this._highMedicalRiskFlag = true;
+    }
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
