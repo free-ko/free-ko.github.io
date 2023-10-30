@@ -243,6 +243,49 @@ const monthCharge = charge(customer, usage, provider);
 
 <br>
 
+## 11.11 수정된 값 반환하기
+
+- 데이터가 수정된다면 그 사실을 명확히 알려주어서, 어느 함수가 무슨 일을 하는지 쉽게 알 수 있게 하는 일이 대단히 중요
+- 데이터가 수정됨을 알려주는 방법 중 하나는, 변수를 갱신하는 함수라면 수정된 값을 반환하여 호출자가 그 값을 변수에 담아두는 것
+
+### 절차
+
+1. 함수가 수정된 값을 반환하게 하여 호출자가 그 값을 자신의 변수에 저장
+2. 피호출 함수 안에 반환할 값을 가리키는 새로운 변수를 선언
+3. 계산이 선언과 동시에 이뤄지도록 통합(즉, 선언 시점에 계산 로직을 바로 실행해 대입)
+4. 피호출 함수의 변수 이름을 새 역할에 어울리도록 바꿈
+
+```ts
+// before
+let totalAscent = 0;
+calculateAscent();
+
+function calculateAscent() {
+  for (let i = 1; i < points.length; i++) {
+    const verticalChange = points[i].elevation - points[i - 1].elevation;
+    totalAscent += verticalChange > 0 ? verticalChange : 0;
+  }
+}
+```
+
+```ts
+// calculateAscent() 안에서 totalAscent 가 갱신된다는 사실이 드러나지 않음
+
+// after
+const totalAscent = calculateAscent();
+
+function calculateAscent() {
+  let result = 0;
+  for (let i = 1; i < points.length; i++) {
+    const verticalChange = points[i].elevation - points[i - 1].elevation;
+    result += verticalChange > 0 ? verticalChange : 0;
+  }
+  return result;
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
