@@ -286,6 +286,80 @@ function calculateAscent() {
 
 <br>
 
+## 11.12 오류 코드를 예외로 바꾸기
+
+- 예외는 프로그래밍 언어에서 제공하는 독립적인 오류 처리 메커니즘으로, 예외가 던져지면 적절한 예외 핸들러를 찾을 때까지 콜스택을 타고 위로 전파됨
+- 예외는 프로그램의 정상 동작 범주에 들지 않는 오류를 나타낼 때만 쓰여야 함
+- 예외를 던지는 코드를 프로그램 종료 코드로 바꿔도 프로그램은 여전히 정상 동작 해야함
+- 정상 동작하지 않을 것 같다면, 예외 대신 오류를 검출하여 프로그램을 정상 흐름으로 되돌리게끔 처리해야 함
+
+### 절차
+
+- 콜스택 상위에 해당 예외를 처리할 예외 핸들러를 작성
+- 해당 오류 코드를 대체할 예외와 그 밖의 예외를 구분할 식별 방법을 찾음
+- 정적 검사를 수행
+- `catch`절을 수정하여 직접 처리할 수 있는 예외는 적절히 대처하고, 그렇지 않은 예외는 다시 던짐. 오류 코드를 반환하는 곳 모두에서 예외를 던지도록 수정
+- 모두 수정했다면 그 오류 코드를 콜스택 위로 전달하는 코드를 모두 제거
+
+### 예시
+
+```ts
+// before
+function localShippingRules(country) {
+  const data = countryData.shippingRules[country];
+  if (data) return new ShippingRules(data);
+  else return -23;
+}
+```
+
+```ts
+// before
+// 이 코드는 국가 정보(country)가 유효한지를 이 함수 호출 전에 다 검증했다고 가정
+// 이 함수에서 오류가 난다면 무언가 잘못됐음을 뜻함
+function calculateShippingCosts(anOrder) {
+  // ...
+  const shippingRules = localShippingRules(anOrder.country);
+  if (shippingRules < 0) return shippingRules; // 오류 전파
+}
+
+const status = calculateShippingCosts(orderData);
+if (status < 0) errorList.push({ order: orderData, errorCode: status });
+
+// after
+function localShippingRules(country) {
+  const data = countryData.shippingRules[country];
+  if (data) return new ShippingRules(data);
+  else throw new OrderProcessingError(-23);
+}
+
+function calculateShippingCosts(anOrder) {
+  // ...
+  const shippingRules = localShippingRules(anOrder.country);
+}
+
+try {
+  calculateShippingCosts(orderData);
+} catch (e) {
+  if (e instanceof OrderProcessingError) {
+    errorList.push({ order: orderData, errorCode: e.code });
+  } else {
+    throw e;
+  }
+}
+
+class OrderProcessingError extends Error {
+  constructor(errorCode) {
+    super(`주문 처리 오류: ${errorCode}`);
+    this.code = errorCode;
+  }
+  get name() {
+    return 'OrderProcessingError';
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
