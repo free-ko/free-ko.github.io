@@ -360,6 +360,41 @@ class OrderProcessingError extends Error {
 
 <br>
 
+## 11.13 예외를 사전확인으로 바꾸기
+
+- 함수 수행 시 문제가 될 수 있는 조건을 함수 호출 전에 검사할 수 있다면, 예외를 던지는 대신 호출하는 곳에서 조건을 검사하도록 해야 함
+
+### 절차
+
+1. 예외를 유발하는 상황을 검사할 수 있는 조건문을 추가. `catch` 블록의 코드를 조건문의 조건절 중 하나로 옮기고, 남은 `try` 블록의 코드를 다른 조건절로 옮김
+2. `catch` 블록에 어서션을 추가하고 테스트
+3. `try`문과 `catch` 블록을 제거
+
+### 예시(Java)
+
+```java
+// ResourcePool 클래스.
+public Resource get() {
+  Resource result;
+  try {
+    result = available.pop();
+    allocated.add(result);
+  } catch (NoSuchElementException e) {
+    result = Resource.create();
+    allocated.add(result);
+  }
+  return result;
+}
+
+private Deque<Resource> available;
+private List<Resource> allocated;
+
+```
+
+- 풀에서 자원이 고갈되는 건 예상치 못한 조건이 아님. 사용하기 전에 `allocated` 컬렉션의 상태를 쉽게 확인할 수 있음
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
