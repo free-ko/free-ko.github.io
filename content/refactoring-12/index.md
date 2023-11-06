@@ -151,6 +151,74 @@ class Department extends Party {
 
 <br>
 
+## 12.6 타입 코드를 서브클래스로 바꾸기
+
+- 타입 코드는 프로그래밍 언어에 따라 열거형이나 심볼, 문자열, 숫자 등으로 표현하며, 외부 서비스가 제공하는 데이터를 다루려 할 때 딸려오는 일이 흔함
+- 타입 코드는 조건에 따라 다르게 동작하도록 해주는 다형성을 제공. 또 특정 타입에서만 의미가 있는 값을 사용하는 필드나 메서드가 있을 때 유용.
+
+### 절차
+
+1. 타입 코드 필드를 자가 캡슐화
+2. 타입 코드 값 하나를 선택하여 그 값에 해당하는 서브클래스를 만듦. 타입 코드 게터 메서드를 오버라이드하여 해당 타입 코드의 리터럴 값을 반환하게 함.
+3. 매개변수로 받은 타입 코드와 방금 만든 서브클래스를 매핑하는 선택 로직을 만듦
+4. 타입 코드 값 각각에 대해 서브클래스 생성과 선택 로직 추가를 반복
+5. 타입 코드 필드를 제거
+6. 타입 코드 접근자를 이용하는 메서드 모두에 메서드 내리기와 조건부 로직을 다형성으로 바꾸기를 적용
+
+예시: 직접 상속할 때
+
+```ts
+// before
+// Employee 클래스...
+constructor(name, type) {
+  this.validateType(type);
+  this._name = name;
+  this._type = type;
+}
+
+validateType(arg) {
+  if (!["engineer", "manager", "salesperson"].includes(arg)) {
+    throw new Error(`${arg}라는 직원 유형은 없습니다.`);
+  }
+}
+
+toString() {
+  return `${this._name} (${this._type})`;
+}
+```
+
+```ts
+// after
+// Employee 클래스...
+constructor(name) {
+  this._name = name;
+}
+
+class Engineer extends Employee {
+  get type() { return "engineer"; }
+}
+
+class Salesperson extends Employee {
+  get type() { return "salesperson"; }
+}
+
+class Manager extends Employee {
+  get type() { return "manager"; }
+}
+
+function createEmployee(name, type) {
+  switch (type) {
+    case "engineer": return new Engineer(name);
+    case "salesperson": return new Salesperson(name);
+    case "manager": return new Manager(name);
+    default: throw new Error(`${type}라는 직원 유형은 없습니다.`);
+  }
+  return new Employee(name, type);
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
