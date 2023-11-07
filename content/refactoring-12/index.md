@@ -219,6 +219,103 @@ function createEmployee(name, type) {
 
 <br>
 
+## 12.7 서브클래스 제거하기
+
+- 서브클래싱은 원래 데이터 구조와는 다른 변종을 만들거나 종류에 따라 동작이 달라지게 할 수 있는 유용한 메커니즘. 하지만 더 이상 쓰이지 않는 서브클래스는 제거하는 것이 좋음
+
+### 절차
+
+1. 서브클래스의 생성자를 팩터리 함수로 바꿈
+2. 서브클래스의 타입을 검사하는 코드가 있다면 그 검사 코드에 함수 추출하기와 함수 옮기기를 차례로 적용하여 슈퍼클래스로 옮김
+3. 서브클래스의 타입을 나타내는 필드를 슈퍼클래스에 맏음
+4. 서브클래스를 참조하는 메서드가 방금 만든 타입 필드를 이용하도록 수정
+5. 서브클래스를 지움
+
+### 예시
+
+```ts
+// before
+// - 서브클래스가 하는 일이 이게 다라면 굳이 존재할 이유가 없음
+// - 서브클래스 만들기를 캡슐화하는 방법은 바로 생성자를 팩터리 함수로 바꾸기임
+class Person {
+  constructor(name) {
+    this._name = name;
+  }
+  get name() {
+    return this._name;
+  }
+  get genderCode() {
+    return 'X';
+  }
+  // ...
+}
+
+class Male extends Person {
+  get genderCode() {
+    return 'M';
+  }
+}
+
+class Female extends Person {
+  get genderCode() {
+    return 'F';
+  }
+}
+```
+
+```ts
+// after
+
+class Person {
+  constructor(name, genderCode) {
+    this._name = name;
+    this._genderCode = genderCode;
+  }
+  get name() {
+    return this._name;
+  }
+  get genderCode() {
+    return this._genderCode;
+  }
+  // ...
+  get isMale() {
+    return 'M' === this._genderCode;
+  }
+}
+
+class Male extends Person {
+  get genderCode() {
+    return 'M';
+  }
+}
+
+class Female extends Person {
+  get genderCode() {
+    return 'F';
+  }
+}
+
+function createPerson(aRecord) {
+  switch (aRecord.gender) {
+    case 'M':
+      return new Male(aRecord.name, 'M');
+    case 'F':
+      return new Female(aRecord.name, 'F');
+    default:
+      return new Person(aRecord.name, 'X');
+  }
+}
+
+function loadFromInput(data) {
+  return data.map((aRecord) => createPerson(aRecord));
+}
+
+// 클라이언트...
+const numberOfMales = people.filter((p) => p.isMale).length;
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
