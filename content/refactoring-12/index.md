@@ -316,6 +316,125 @@ const numberOfMales = people.filter((p) => p.isMale).length;
 
 <br>
 
+## 12.8 슈퍼클래스 추출하기
+
+- 비슷한 일을 수행하는 두 클래스가 보이면 상속 메커니즘을 이용해서 비슷한 부분을 공통의 슈퍼클래스로 옮겨 담을 수 있음
+
+### 절차
+
+1. 빈 슈퍼클래스를 만듦. 원래의 클래스들이 새 클래스를 상속하도록 함
+2. 생성자 본문 올리기, 메서드 올리기, 필드 올리기를 차례로 적용하여 공통 원소를 슈퍼클래스로 옮김
+3. 서브클래스에 남은 메서드들을 검토. 공통되는 부분이 있다면 함수로 추출한 다음 메서드 올리기를 적용
+4. 원래 클래스들을 사용하는 코드를 검토하여 슈퍼클래스의 인터페이스를 사용하게 할지 고민
+
+### 예시
+
+```ts
+// before
+class Employee {
+  constructor(name, id, monthlyCost) {
+    this._id = id;
+    this._name = name;
+    this._monthlyCost = monthlyCost;
+  }
+
+  get monthlyCost() {
+    return this._monthlyCost;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get id() {
+    return this._id;
+  }
+
+  get annualCost() {
+    return this.monthlyCost * 12;
+  }
+}
+
+class Department {
+  constructor(name, staff) {
+    this._name = name;
+    this._staff = staff;
+  }
+
+  get staff() {
+    return this._staff.slice();
+  }
+  get name() {
+    return this._name;
+  }
+
+  get totalMonthlyCost() {
+    return this.staff.map((e) => e.monthlyCost).reduce((sum, cost) => sum + cost);
+  }
+
+  get headCount() {
+    return this.staff.length;
+  }
+
+  get totalAnnualCost() {
+    return this.totalMonthlyCost * 12;
+  }
+}
+```
+
+```ts
+// after
+class Party {
+  constructor(name, id, monthlyCost) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get annualCost() {
+    return this.monthlyCost * 12;
+  }
+}
+
+class Employee extends Party {
+  constructor(name, id, monthlyCost) {
+    super(name);
+    this._id = id;
+    this._monthlyCost = monthlyCost;
+  }
+
+  get monthlyCost() {
+    return this._monthlyCost;
+  }
+  get id() {
+    return this._id;
+  }
+}
+
+class Department extends Party {
+  constructor(name, staff) {
+    super(name);
+    this._staff = staff;
+  }
+
+  get staff() {
+    return this._staff.slice();
+  }
+
+  get monthlyCost() {
+    return this.staff.map((e) => e.monthlyCost).reduce((sum, cost) => sum + cost);
+  }
+
+  get headCount() {
+    return this.staff.length;
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
