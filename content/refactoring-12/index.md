@@ -448,6 +448,143 @@ class Department extends Party {
 
 <br>
 
+## 12.10 서브클래스를 위임으로 바꾸기
+- 상속은 한 번만 쓸 수 있는 카드라는, 가장 명확한 단점이 있음. 무언가가 달라져야 하는 이유가 여러 개여도 상속에서는 그중 단 하나의 이유만 선택해 기준으로 삼을 수밖에 없음
+- 또 상속은 클래스들의 관계를 아주 긴밀하게 결합함. 부모를 수정하면 이미 존재하는 자식들의 기능을 해치기가 쉬움
+- 위임은 이 두 문제를 모두 해결해줌. 위임은 객체 사이의 일반적인 관계이므로 상호작용에 필요한 인터페이스를 명확히 정의할 수 있음. 즉, 상속보다 결합도가 훨씬 약함
+
+### 절차
+1. 생성자를 호출하는 곳이 많다면 생성자를 팩터리 함수로 바꿈
+2. 위임으로 활용할 빈 클래스를 만듦. 이 클래스의 생성자는 서브클래스에 특화된 데이터를 전부 받아야 하며, 보통은 슈퍼클래스를 가리키는 역참조도 필요함
+3. 위임을 저장할 필드를 슈퍼클래스에 추가함
+4. 서브클래스 생성 코드를 수정하여 위임 인스턴스를 생성하고 위임 필드에 대입해 초기화함
+5. 서브클래스의 메서드 중 위임 클래스로 이동할 것을 고름
+6. 함수 옮기기를 적용해 위임 클래스로 옮김. 원래 메서드에서 위임하는 코드는 지우지 않음
+7. 서브클래스 외부에도 원래 메서드를 호출하는 코드가 있다면 서브클래스의 위임 코드를 슈퍼클래스로 옮김. 이때 위임이 존재하는지를 검사하는 보호 코드로 감싸야 함. 호추하는 외부 코드가 없다면 원래 메서드는 죽은 코드가 되므로 제거.
+8. 서브클래스의 모든 메서드가 옮겨질 때까지 5~7 과정을 반복
+9. 서브클래스들의 생성자를 호출하는 코드를 찾아서 슈퍼클래스의 생성자를 사용하도록 수정
+10. 서브클래스를 삭제
+
+### 예시 
+```ts
+// before
+// Booking 클래스
+class Booking {
+  constructor(show, date) {
+    this._show = show;
+    this._date = date;
+  }
+
+  get hasTalkback() {
+    return this._show.hasOwnProperty("talkback") && !this.isPeakDay;
+  }
+
+  get basePrice() {
+    let result = this._show.price;
+    if (this.isPeakDay) result += Math.round(result * 0.15);
+    return result;
+  }
+}
+
+// PremiumBooking 클래스(Booking을 상속함)
+class PremiumBooking extends Booking {
+  constructor(show, date, extras) {
+    super(show, date);
+    this._extras = extras;
+  }
+
+  get hasTalkback() {
+    return this._show.hasOwnProperty("talkback");
+  }
+
+  get basePrice() {
+    return Math.round(super.basePrice + this._extras.premiumFee);
+  }
+
+  get hasDinner() {
+    return this._extras.hasOwnProperty("dinner") && !this.isPeakDay;
+  }
+}
+```
+- 위 예제에는 상속이 잘 들어맞지만, 현실은 이만큼 완벽하지만은 않음. 슈퍼클래스에는 서브클래스에 의해 완성되는, 즉 서브클래스 없이는 불완전한 어떤 구조가 존재할 수 있음
+- 상속은 한 번만 사용할 수 있는 도구. 따라서 상속을 사용해야 할 다른 이유가 생긴다면, 그리고 그 이유가 프리미엄 예약 서브클래스보다 가치가 크다고 생각된다면 프리미엄 예약을(상속이 아닌) 다른 방식으로 표현해야 함
+
+```ts
+// after
+// Booking 클래스
+class Booking {
+  constructor(show, date) {
+    this._show = show;
+    this._date = date;
+  }
+
+  get hasTalkback() {
+    return (this._premiumDelegate)
+    	? this._premiumDelegete.hasTalkback
+    	: this._show.hasOwnProperty('talkback') && !this.isPeakDay;
+  }
+
+  get basePrice() {
+    let result = this._show.price;
+    if (this.isPeakDay) result += Math.round(result * 0.15);
+    return (this._premiumDelegate)
+    	? this._premiumDelegate.extendBasePrice(result);
+    	: result;
+  }
+
+  get hasDinner() {
+    return (this._premiumDelegate)
+    	? this._premiumDelegate.hasDinner
+    	: undefined;
+  }
+
+  _bePremium(extras) {
+    this._premiumDelegate = new PremiumBookingDelegate(this, extras);
+  }
+}
+
+function createBooking(show, date) {
+  return new Booking(show, date);
+}
+
+function createPremiumBooking(show, date, extras) {
+  const result = new Booking(show, date, extras);
+  result._bePremium(extras);
+  return result;
+}
+
+// 클라이언트(일반 예약)
+aBooking = createBooking(show, date);
+
+// 클라이언트(프리미엄 예약)
+aBooking = createPremiumBooking(show, date, extras);
+
+class PremiumBookingDelegate {
+  constructor(hostBooking, extras) {
+    this._host = hostBooking;
+    this._extras = extras;
+  }
+
+  get hasTalkback() {
+    return this._host._show.hasOwnProperty('talkback');
+  }
+
+  get basePrice() {
+    return Math.round(this._host._privateBasePrice + this._extras.premiumFee);
+  }
+
+  extendBasePrice(base) {
+    return Math.round(base + this._extras.premiumFee);
+  }
+
+  get hasDinner() {
+    return this._extras.hasOwnProperty('dinner') && !this.isPeakDay;
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
