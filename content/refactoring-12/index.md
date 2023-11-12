@@ -585,6 +585,95 @@ class PremiumBookingDelegate {
 
 <br>
 
+## 12.11 슈퍼클래스를 위임으로 바꾸기
+- 제대로 된 상속이라면 서브클래스가 슈퍼클래스의 모든 기능을 사용함은 물론, 서브클래스의 인스턴스를 슈퍼클래스의 인스턴스로도 취급할 수 있어야 함. 즉 슈퍼클래스가 사용되는 모든 곳에서 서브클래스의 인스턴스를 대신 사용해도 이상없이 동작해야 함
+- 서브클래스 방식 모델링이 합리적일 때라도 슈퍼클래스를 위임으로 바꾸기도 함. 슈퍼/서브클래스는 강하게 결합된 관계라서 슈퍼클래스를 수정하면 서브클래스가 망가지기 쉽기 때문
+
+### 절차
+1. 슈퍼클래스 객체를 참조하는 필드를 서브클래스에 만듬. 위임 참조를 새로운 슈퍼클래스 인스턴스로 초기화 함
+2. 슈퍼클래스의 동작 각각에 대응하는 전달 함수를 서브클래스에 만듬. 서로 관련된 함수끼리 그룹으로 묶어 진행
+3. 슈퍼클래스의 동작 모두가 전달 함수로 오버라이드되었다면 상속 관계를 끊음
+
+### 예시
+```ts
+// before
+class CatalogItem {
+  constructor(id, title, tags) {
+    this._id = id;
+    this._title = title;
+    this._tags = tags;
+  }
+
+  get id() {
+    return this._id;
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  hasTag(arg) {
+    return this._tags.includes(arg);
+  }
+}
+
+class Scroll extends CatalogItem {
+  constructor(id, title, tags, dateLastCleaned) {
+    super(id, title, tags);
+    this._lastCleaned = dateLastCleaned;
+  }
+
+  needsCleaning(targetDate) {
+    const threshold = this.hasTag("revered") ? 700 : 1500;
+    return this.daysSinceLastCleaning(targetDate) > threshold;
+  }
+
+  daysSinceLastCleaning(targetDate) {
+    return this._lastCleaned.until(targetDate, ChronoUnit.DAYS);
+  }
+}
+```
+```ts
+// after
+class CatalogItem {
+  constructor(id, title, tags) {
+    this._id = id;
+    this._title = title;
+    this._tags = tags;
+  }
+
+  get id() {
+    return this._catalogItem._id;
+  }
+  
+  get title() {
+    return this._catalogItem._title;
+  }
+
+  hasTag(aString) {
+    return this._catalogItem.hasTag(aString);
+  }
+}
+
+class Scroll {
+  constructor(id, title, tags, dateLastCleaned) {
+    this._catalogItem = new CatalogItem(id, title, tags);
+    this._lastCleaned = dateLastCleaned;
+  }
+
+  needsCleaning(targetDate) {
+    const threshold = this.hasTag("revered") ? 700 : 1500;
+    return this.daysSinceLastCleaning(targetDate) > threshold;
+  }
+
+  daysSinceLastCleaning(targetDate) {
+    return this._lastCleaned.until(targetDate, ChronoUnit.DAYS);
+  }
+}
+```
+
+<br>
+
 ## 참고
 
 - [리팩터링 2판 책](https://www.yes24.com/Product/Goods/89649360)
