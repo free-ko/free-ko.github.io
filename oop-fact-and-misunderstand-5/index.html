@@ -304,6 +304,68 @@ void function() {
 </li>
 </ol>
 <br>
+<h2 id="인터페이스와-구현의-분리" style="position:relative;"><a href="#%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80-%EA%B5%AC%ED%98%84%EC%9D%98-%EB%B6%84%EB%A6%AC" aria-label="인터페이스와 구현의 분리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>인터페이스와 구현의 분리</h2>
+<ol>
+<li>
+<p>객체 관점에서 생각하는 방법</p>
+<ul>
+<li>좀 더 추상적인 인터페이스: 지나치게 상세한 수준의 메시지는 객체의 자율성을 저해함. 추상적인 인터페이스를 제공하여 수신자의 자율성을 보장하는 것이 좋음</li>
+<li>최소 인터페이스: 외부에서 사용할 필요가 없는 인터페이스는 최대한 노출 지양. 최소 인터페이스는 메시지를 먼저 결정하고 객체를 나중에 선택하는 책임-주도 설계 방법을 따를 때 달성할 수 있음</li>
+<li>인터페이스와 구현 간에 차이가 있다는 점을 인식: 객체의 외부와 내부를 명확하게 분리하는 것이 중요</li>
+</ul>
+</li>
+<li>
+<p>구현</p>
+<ul>
+<li>구현(implementation)은 객체지향의 세계에서 내부 구조와 작동 방식을 가리키는 것으로, 객체의 공용 인터페이스에 포함되지 않는 모든 것이 구현에 포함됨</li>
+<li>객체는 상태와 행동을 가짐. 상태를 어떻게 표현할 것인가는 객체의 구현에 해당함. 행동은 메시지 처리 방법을 가리키는 것으로, 메서드라고 부름. 메서드를 구성하는 코드 자체는 객체의 구현 부분에 포함됨</li>
+<li>객체의 외부와 내부를 분리하는 것은 결국 객체의 공용 인터페이스와 구현을 명확하게 분리하라는 것</li>
+</ul>
+</li>
+<li>
+<p>인터페이스와 구현의 분리 원칙</p>
+<ul>
+<li>훌륭한 객체란 구현을 모른 채 인터페이스만 알면 쉽게 상호작용할 수 있는 객체를 의미</li>
+<li>소프트웨어는 항상 변경됨. 객체의 모든 것이 외부에 공개돼 있다면 변경에 의한 파급효과가 어마어마할 것. 소프트웨어의 변경 시 안전 지대는 객체의 내부인 구현이고, 위험 지대는 객체의 외부인 공용 인터페이스. 변경에 대한 안전 지대를 만드는 것는 객체를 자율적인 존재를 만드는 데도 기여함</li>
+</ul>
+</li>
+<li>
+<p>캡슐화</p>
+<ul>
+<li>객체의 자율성을 보존하기 위해 구현을 외부로부터 감추는 것을 캡슐화라고 함. 정보 은닉이라고 부르기도 함</li>
+</ul>
+</li>
+<li>
+<p>상태와 행위의 캡슐화</p>
+<ul>
+<li>객체는 상태와 행위를 한데 묶은 후 외부에서 반드시 접근해야만 하는 행위만 골라 공용 인터페이스를 통해 노출함.</li>
+<li>프로그래밍 관점에서 상태를 주로 데이터로 구현되고 행동은 프로세스로 구현됨.</li>
+<li>객체지향에서는 데이터와 프로세스를 객체라는 하나의 틀 안으로 함께 묶어 놓음으로써 객체의 자율성을 보장함</li>
+</ul>
+</li>
+<li>
+<p>사적인 비밀의 캡슐화</p>
+<ul>
+<li>객체는 외부의 객체가 자신의 내부 상태를 직접 관찰하거나 제어할 수 없도록 막기 위해 의사소통 가능한 특별한 경로만 외부에 노출함. 이런 고정된 경로를 공용 인터페이스라고 함. 객체는 공용 인터페이스를 경계로 최대한의 자율성을 보장받을 수 있음</li>
+<li>객체를 자율적인 존재로 바라보는 것은 결국 객체의 내부와 외부를 엄격하게 분리한다는 것을 의미. 객체는 자신의 의지에 따라 변경하고 조작할 수 있는 비밀을 가지고 있는 부분인 내부와, 외부의 객체가 의지하고 접근할 수 있는 공용 인터페이스를 가리키는 외부로 구성됨</li>
+</ul>
+</li>
+</ol>
+<br>
+<h2 id="책임의-자율성이-협력의-품질을-결정" style="position:relative;"><a href="#%EC%B1%85%EC%9E%84%EC%9D%98-%EC%9E%90%EC%9C%A8%EC%84%B1%EC%9D%B4-%ED%98%91%EB%A0%A5%EC%9D%98-%ED%92%88%EC%A7%88%EC%9D%84-%EA%B2%B0%EC%A0%95" aria-label="책임의 자율성이 협력의 품질을 결정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>책임의 자율성이 협력의 품질을 결정</h2>
+<ul>
+<li>객체의 책임이 자율적일수록 협력이 이해하기 쉬워지고 유연하게 변경할 수 있게 되며, 결과적으로 책임이 얼마나 자율적인지가 전체적인 협력의 설계 품질을 결정함.</li>
+</ul>
+<h3 id="이유" style="position:relative;"><a href="#%EC%9D%B4%EC%9C%A0" aria-label="이유 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>이유</h3>
+<ol>
+<li>자율적인 책임은 협력을 단순하게 만듦. 자율적인 책임은 의도를 명확하게 표현함으로써 협력을 단순하고 이해하기 쉽게 만듦. 책임이 적절하게 추상화되는 것</li>
+<li>자율적인 책임은 모자 장수의 외부와 내부를 명확하게 분리함. 책임이 자율적이기 때문에 왕과 모자 장수 사이에 약속된 ‘증언하다’라는 책임만 완수할 수 있으면 어떤 방법을 선택할지는 전적으로 모자 장수의 권한임. 요청하는 객체가 몰라도 되는 사적인 부분이 객체 내부로 캡슐화되기 때문에 인터페이스와 구현이 분리됨.</li>
+<li>책임이 자율적일 경우 책임을 수행하는 내부적인 방법을 변경하더라도 외부에 영향을 미치지 않음. 변경의 파급효과가 객체 내부로 캡슐화되기 때문에 두 객체 간의 결합도가 낮아짐.</li>
+<li>자율적인 책임은 협력의 대상을 다양하게 선택할 수 있는 유연성을 제공함. 왕의 입장에서 ‘증언하라’라는 책임을 수행할 수 있다면 모자 장수가 아닌 어떤 사람이 요청을 수신하더라도 재판을 진행하는 데 문제가 없음. 책임이 자율적일수록 설계가 유연해지고 재사용성이 높아짐</li>
+<li>객체가 수행하는 책임들이 자율적일수록 객체의 역할을 이해하기 쉬워짐. 모자 장수는 자신의 의지를 기반으로 책임을 완수할 수 있을 정도로 충분히 자율적임. 책임이 자율적일수록 객체의 응집도를 높은 상태로 유지하기가 쉬워짐</li>
+</ol>
+<p>즉 책임이 자율적일수록 적절하게 ‘추상화’되며, ‘응집도’가 높아지고, ‘결합도’가 낮아지며, ‘캡슐화’가 증진되고, ‘인터페이스와 구현이 명확히 분리’되며, 설계의 ‘유연성’과 ‘재사용성’이 향상됨.</p>
+<br>
 <h2 id="참고" style="position:relative;"><a href="#%EC%B0%B8%EA%B3%A0" aria-label="참고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>참고</h2>
 <ul>
 <li><a href="https://www.yes24.com/Product/Goods/18249021">객체지향의 사실과 오해</a></li>
@@ -315,6 +377,13 @@ void function() {
 <li><a href="#%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EB%A9%94%EC%84%9C%EB%93%9C">메시지와 메서드</a></li>
 <li><a href="#%EB%A9%94%EC%8B%9C%EC%A7%80%EB%A5%BC-%EB%94%B0%EB%9D%BC%EB%9D%BC">메시지를 따라라</a></li>
 <li><a href="#%EA%B0%9D%EC%B2%B4-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4">객체 인터페이스</a></li>
+<li><a href="#%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80-%EA%B5%AC%ED%98%84%EC%9D%98-%EB%B6%84%EB%A6%AC">인터페이스와 구현의 분리</a></li>
+<li>
+<p><a href="#%EC%B1%85%EC%9E%84%EC%9D%98-%EC%9E%90%EC%9C%A8%EC%84%B1%EC%9D%B4-%ED%98%91%EB%A0%A5%EC%9D%98-%ED%92%88%EC%A7%88%EC%9D%84-%EA%B2%B0%EC%A0%95">책임의 자율성이 협력의 품질을 결정</a></p>
+<ul>
+<li><a href="#%EC%9D%B4%EC%9C%A0">이유</a></li>
+</ul>
+</li>
 <li><a href="#%EC%B0%B8%EA%B3%A0">참고</a></li>
 </ul>
 </div></div></div></div><div class="post-cards-adjacent-wrapper"><div class="post-cards-adjacent"><div class="post-card-adjacent-wrapper"><a class="post-card prev" href="/write-log-231202/"><div class="direction">이전 글</div><div class="title">12월 1주 회고</div></a></div><div class="post-card-adjacent-wrapper"><a class="post-card next" href="/write-log-231209/"><div class="direction">다음 글</div><div class="title">12월 2주 회고</div></a></div></div></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2023<!-- --> <a href="https://github.com/free-ko">고영욱</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/oop-fact-and-misunderstand-5/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-384ea82b9c97dbd7ee60.js"],"app":["/app-586ee1316f4eeda15975.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"],"component---src-pages-404-js":["/component---src-pages-404-js-18966798326ae6e5a169.js"],"component---src-pages-about-js":["/component---src-pages-about-js-0ed5203fa036aa596443.js"],"component---src-pages-index-js":["/component---src-pages-index-js-7121b25218aa20356f5a.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-5ea40d560b401e429c55.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-d01b478dab935d07b01d.js"]};/*]]>*/</script><script src="/polyfill-384ea82b9c97dbd7ee60.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-5ea40d560b401e429c55.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-124f2e553d01fd5c127a.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-586ee1316f4eeda15975.js" async=""></script><script src="/framework-81279cacaab4bdba7685.js" async=""></script><script src="/webpack-runtime-3e8e1f1277e2c8753778.js" async=""></script></body></html>
