@@ -50,6 +50,74 @@ categories: Study
 
 <br>
 
+## 설계하고 구현하기
+
+1. 커피를 주문하기 위한 협력 찾기
+
+   - 협력을 설계할 때는 메시지가 객체를 선택하게 해야 함
+   - 첫 번째 메시지는 ‘커피를 주문하라’임.
+   - 도메인 모델 안에 이 책임을 수행하기에 적절한 타입은 손님 타입으로, 이 메시지를 처리할 객체는 손님 타입의 인스턴스임
+   - 이때 손님은 메뉴 항목에 대해서는 알지 못하며, ‘메뉴 항목을 찾아라’라는 새로운 메시지가 등장 함.
+   - 메시지에 ‘메뉴 이름’이라는 인자를 포함해 함께 전송함. 메뉴 항목을 찾을 책임은 메뉴 항목 객체를 포함하고 있는 메뉴판 객체에게 할당함
+   - 손님은 자신이 주문한 커피에 대한 메뉴 항목을 얻었으니 이제 ‘커피를 제조하라’라는 메시지를 만듦.
+   - 인자로는 메뉴 항목을 전달하고 반환값으로는 제조된 커피를 받아야 함. 이 메시지는 바리스타 객체가 수신함
+   - 아메리카노를 만드는 데 필요한 지식은 바리스타의 상태로, 기술은 바리스타의 행동으로 간주할 수 있음.
+   - 이런 관점에서 바리스타는 스스로의 판단과 지식에 따라 행동하는 자율적인 존재
+
+2. 인터페이스 정리 및 구현
+
+   - 객체가 수신한 메시지가 객체의 인터페이스를 결정함.
+   - 메시지가 객체를 선택했고, 선택된 객체는 메시지를 자신의 인터페이스로 받아들임.
+   - 객체가 어떤 메시지를 수신할 수 있다는 것은 그 객체의 인터페이스 안에 메시지에 해당하는 오퍼레이션이 존재한다는 것을 의미
+
+   ```js
+   // 클래스를 이용하여 협력을 통해 식별된 타입의 오퍼레이션을 외부에서 접근 가능한 공용 인터페이스로 만듦
+   // 클래스의 인터페이스를 식별했으므로 이제 오퍼레이션을 수행하는 방법을 메서드로 구현
+   // 객체가 다른 객체에게 메시지를 전송하기 위해서는 먼저 객체에 대한 참조를 얻어야 함
+   // 객체의 속성은 객체의 내부 구현에 속하기 때문에 캡슐화돼야 함. 따라서 MenuItem의 목록을 Menu의 속성으로 포함시킴
+
+   class Barista {
+      public Coffee makeCoffee(MenuItem menuItem) {
+         Coffee coffee = new Coffee(menuItem);
+         return coffee;
+      }
+   }
+
+   class Coffee {
+      private String name;
+      private int price;
+
+      public Coffee(MenuItem menuItem) {
+         this.name = menuItem.getName();
+         this.price = menuItem.cost();
+      }
+   }
+
+   public class MenuItem {
+      private String name;
+      private int price;
+
+      public MenuItem(String name, int price) {
+         this.name = name;
+         this.price = price;
+      }
+
+      public int cost() {
+         return price;
+      }
+
+      public String getName() {
+         return name;
+      }
+   }
+   ```
+
+- 인터페이스를 통해 실제로 상호작용을 해보지 않은 채 인터페이스의 모습을 정확하게 예측하는 것은 불가능
+- 설계를 간단히 끝내고 최대한 빨리 구현에 돌입.
+- 설계가 제대로 그려지지 않는다면 고민하지 말고 실제로 코드를 작성해가면서 협력의 전체적인 밑그림 작성
+
+<br>
+
 ## 참고
 
 - [객체지향의 사실과 오해](https://www.yes24.com/Product/Goods/18249021)
