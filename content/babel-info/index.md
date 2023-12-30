@@ -15,6 +15,20 @@ categories: Study
 
 <br>
 
+## Babel 트랜스파일링 과정
+
+babel 컴파일 과정
+
+- 파싱(parsing) 단계: babel이 소스코드를 파싱하여 AST를 생성(이때 생성되는 트리는 JSON 형태와 비슷). AST에서 각각의 노드들은 관계를 형성
+- 변환(transform) 단계: AST를 브라우저가 지원하는 코드로 변환. 이때 개발자가 설정한 plugin과 preset들에 의해서 컴파일됨
+- 생성(generate) 단계: AST를 코드로 출력
+
+### AST란
+
+AST(Abstract Syntax Tree)란 프로그래밍 언어의 문법에 따라 소스코드 구조를 표시하는 계층적 프로그램 표현. HTML을 파싱할 때도 사용됨. babel 플러그인은 babel 컴파일 단계에서 AST(Abstract Syntax Tree)를 변형하는 역할을 수행함. Babel은 플러그인이 변형시킨 AST를 가지고 타깃 코드를 생성함
+
+<br>
+
 ## 참고
 
 - [Babel](https://babeljs.io/docs/usage)
