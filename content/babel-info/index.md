@@ -29,6 +29,72 @@ AST(Abstract Syntax Tree)란 프로그래밍 언어의 문법에 따라 소스�
 
 <br>
 
+## Babel config
+
+- babel 설정 파일을 만들어주는 방법에는 babel.config.json과 .babelrc.json이 있음. 각각은 사용하는 경우가 조금 다름
+
+### babel.config.json
+
+- babel 설정 파일을 root 폴더에 생성함.
+- 프로젝트 전체의 설정을 위해서 사용하며, 하나의 레포(monorepo)를 사용하고 있는 경우 권장됨.
+- babel 6 까지는 .babelrc로 설정을 관리했지만, babel 7부터는 babel.config.json 파일을 사용하는 것을 권장함
+- [babel 공식 문서](https://babeljs.io/docs/usage#configuration)에서 제공하는 babel.config.json 파일의 내용은 다음과 같음
+
+  ```json
+  {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "edge": "17",
+            "firefox": "60",
+            "chrome": "67",
+            "safari": "11.1"
+          }
+        }
+      ]
+    ]
+  }
+  ```
+
+### babel.config.json
+
+- babel 설정을 해당 파일이 속한 package에만 적용함.
+- 프로젝트의 일부에만 적용되는 설정 작성 시 사용하며, 특정 파일들에 대해서 컴파일을 할 때 유용함
+
+### babel-loader
+
+- webpack을 사용하고 있다면 babel을 webpack에서 실행시켜주는 도구인 babel-loader를 사용할 수 있음.
+- babel-loader 설치 후 webpack config의 loader 목록에에 babel-loader를 넣고 필요한 옵션을 추가하면 됨.
+- package.json에 명시한 scripts를 통해 webpack을 실행하면 번들링 과정에서 babel이 코드의 트랜스파일링을 진행함.
+- node_modules는 트랜스파일링이 필요 없으므로 exclude 옵션으로 제외시켜 줌.
+
+  ```js
+  // webpack.config.js
+  module.exports = {
+    module: {
+      rules: [
+        {
+          test: /\.(tsx|ts)$/,
+          exclude: 'node_modules',
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+              plugins: ['@babel/plugin-transform-runtime', 'babel-plugin-styled-components'],
+            },
+          },
+        },
+      ],
+    },
+  };
+  ```
+
+  - [참고](https://webpack.js.org/loaders/babel-loader/)
+
+<br>
+
 ## 참고
 
 - [Babel](https://babeljs.io/docs/usage)
