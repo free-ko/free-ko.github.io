@@ -95,6 +95,31 @@ AST(Abstract Syntax Tree)란 프로그래밍 언어의 문법에 따라 소스�
 
 <br>
 
+## plugin과 presets
+
+### plugin
+
+- babel에서 코드의 변환은 plugin의 구성에 따라 결정됨.
+- babel plugin은 babel 컴파일 단계에서 AST를 변형하는 역할을 함.
+- babel은 plugin이 변형시킨 AST를 가지고 타겟 코드를 생성함
+- [참고](https://tech.kakao.com/2020/12/01/frontend-growth-02/)
+
+### presets
+
+- preset은 plugin들의 집합임.
+- plugin을 하나하나 추가해주는 대신, 적용할 규칙들을 그룹으로 묶은 preset으로 한번에 지정해줄 수 있음.
+- 예를 들면 ES6 문법들을 모아둔 es2015 preset과 react에서 사용하는 문법들을 모아둔 react preset이 있음.
+- preset들을 우선적으로 추가하고, 추가적으로 사용하고 싶은 plugin들을 기재해줌
+- babel이 제공하는 공식 babel preset들은 아래와 같음
+  - @babel/preset-env
+  - @babel/preset-flow
+  - @babel/preset-react
+  - @babel/preset-typescript
+- 이 중 @babel/preset-env은 타겟 환경에 필요한 구문 변환(syntax transform), 브라우저 폴리필(browser polyfill)을 제공하며, 나머지 항목들은 각각 flow, react, typescript 사용 시 babel에서 지원해주는 preset임
+- [참고](https://babeljs.io/docs/en/babel-preset-env)
+
+<br>
+
 ## 참고
 
 - [Babel](https://babeljs.io/docs/usage)
