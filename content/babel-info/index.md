@@ -120,6 +120,35 @@ AST(Abstract Syntax Tree)란 프로그래밍 언어의 문법에 따라 소스�
 
 <br>
 
+## Babel과 React
+
+- React에서 babel을 사용하면 JSX 문법을 트랜스파일링해줄 수 있음. 이때 @babel/preset-react이 필요.
+- @babel/preset-react은 JSX 코드를 React.createElement 호출 코드로 바꿔줌
+
+```jsx
+// babel 컴파일 전
+const profile = (
+  <div>
+    <img src="profile.png" className="profile" />
+    <h1>{[user.firstName, user.lastName].join(' ')}</h1>
+  </div>
+);
+```
+
+```js
+// babel 컴파일 후
+const profile = React.createElement(
+  'div',
+  null,
+  React.createElement('img', { src: 'profile.png', className: 'profile' }),
+  React.createElement('h1', null, [user.firstName, user.lastName].join(' ')),
+);
+```
+
+- [참고](https://babeljs.io/docs/babel-preset-react)
+
+<br>
+
 ## 참고
 
 - [Babel](https://babeljs.io/docs/usage)
