@@ -149,6 +149,15 @@ const profile = React.createElement(
 
 <br>
 
+## Babel과 TypeScript
+
+- @babel/preset-typescript preset을 설치하여 babel을 TypeScript와 함께 사용할 수 있음.
+- 하지만 babel은 타입 체크까지 해주지는 않음. 타입 체킹은 TypeScript에게 맡기기 위해 webpack 설정에서 ts-loader를 사용할 수 있음
+- 다만 ts-loader는 속도가 느리기 때문에, babel-loader를 사용하는 것을 권장하고 있음. (ts-loader는 HMR도 지원하지 않음) babel-loader 단독으로는 타입 체킹을 해주지 않기 때문에, fork-ts-checker-webpack-plugin과 같은 별도의 타입 체크 plugin을 설치해줌
+- [참고](https://babeljs.io/docs/#type-annotations-flow-and-typescript)
+
+<br>
+
 ## 참고
 
 - [Babel](https://babeljs.io/docs/usage)
