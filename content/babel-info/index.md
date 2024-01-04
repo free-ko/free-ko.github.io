@@ -158,6 +158,51 @@ const profile = React.createElement(
 
 <br>
 
+## polyfill
+
+- Babel을 사용한다고 해서 모든 JavaScript 최신 함수를 사용할 수 있는 것은 아님.
+- babel 문법을 변환해주는 역할만 함. polyfill은 구형 브라우저에서 지원하지 않는 객체를 지원하도록 특별한 코드를 추가함. babel은 컴파일 타임에 실행되고, babel-polyfill은 런타임에 실행됨.
+
+### Babel 트랜스파일링 시 polyfill 동작 원리
+
+1. .babelrc, .babelrc.json, package.json, 또는 babel.config.js에 명시된 browserslist의 타겟 브라우저를 탐색함
+2. 타겟 브라우저를 core-js와 매핑함
+3. 특정 문법을 지원하지 않는 구형 브라우저의 경우 polyfill을 주입함
+
+- @babel/polyfill은 core-js와 regenerator-runtime을 포함하여 ES6 이상의 환경을 완전히 지원할 수 있음.
+- babel/polyfill은 Promise, WeakMap과 같은 객체들을 전역 스코프에 추가해줌. 그러나 필요하지 않은 코드까지 불러와 번들 크기가 커진다는 단점이 있음
+- 또한 전역에 import로 모듈들을 불러오기 때문에, 전역 스코프를 오염시키는 문제가 있음. 이제 바벨은 위 방식 대신 @babel/plugin-transform-runtime과 core-js@3 plugin을 사용하여 설정 파일을 작성할 것을 권장함. (webpack을 사용한다면 webpack 설정 파일에 추가해줌)
+
+```js
+// webpack.config.js
+{
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": 3, // corejs 설정
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false
+      }
+    ]
+  ]
+}
+```
+
+- @babel/plugin-transform-runtime babel은 모든 helper 함수들을 매번 중복으로 생성하는 것을 방지하기 위해, babel 런타임을 별도의 모듈로 분리하고자 사용함.
+- 설정 시 헬퍼 함수들을 한 곳(@babel/runtime)에서 참조하여 코드의 크기를 줄일 수 있음. 또 내부적으로 regenerator-runtime과 core-js를 peerDependencies로 갖고 있어 따로 설정을 해주지 않고 필요한 polyfill을 사용할 수 있음
+
+### 정리
+
+- babel은 자바스크립트의 최신 문법을 자바스크립트 ES5 표준으로 바꿔주는 역할을 함.
+- polyfill은 자바스크립트 문법으로 인식은 하고 있지만 Promise, Set, Map처럼 구형 브라우저에서 지원하지 않는 객체들을 정의해주는 역할을 함.
+
+[참고](https://ljs0705.medium.com/babel-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-a1d0e6bd021a)
+
+<br>
+
 ## 참고
 
 - [Babel](https://babeljs.io/docs/usage)
