@@ -203,6 +203,122 @@ const profile = React.createElement(
 
 <br>
 
+## Babel에서 Promise를 처리하는 방식
+
+- ES6에서 등장한 Promise는 구형 브라우저들에서는 이해하지 못하는 문법임. 따라서 polyfill이 필요함
+
+Promise는 babel에서 아래와 같이 컴파일됨
+
+```ts
+// <ES6에서 Promise>
+let promise = new Promise((resolve, reject) => {
+  return resolve(1);
+});
+
+promise.then((value) => console.log(value)).catch((e) => console.error(e));
+```
+
+```ts
+// <babel로 변환된 Promise>
+// - Promise 자체는 코드의 변화는 크지 않음.
+var promise = new Promise(function (resolve, reject) {
+  return resolve(1);
+});
+promise
+  .then(function (value) {
+    return console.log(value);
+  })
+  ['catch'](function (e) {
+    return console.error(e);
+  });
+```
+
+```ts
+// <ES6의 async-await>
+async function testFunc() {
+  let value = await promise;
+  console.log(`async ${value}`);
+}
+
+testFunc();
+```
+
+```ts
+// <babel로 변환된 async-await>
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+      args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'next', value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'throw', err);
+      }
+      _next(undefined);
+    });
+  };
+}
+function testFunc() {
+  return _testFunc.apply(this, arguments);
+}
+
+function _testFunc() {
+  _testFunc = _asyncToGenerator(
+    /*#__PURE__*/ regeneratorRuntime.mark(function _callee() {
+      var value;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch ((_context.prev = _context.next)) {
+            case 0:
+              _context.next = 2;
+              return promise;
+
+            case 2:
+              value = _context.sent;
+              console.log('async '.concat(value));
+
+            case 4:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }),
+  );
+  return _testFunc.apply(this, arguments);
+}
+
+testFunc();
+```
+
+- async 키워드는 generator에, await 키워드는 yield에 대응됨.
+- 하나의 로직이 종료될 때마다 이터레이터 객체의 메서드인 next를 호출하여 다음 로직을 수행함.
+- 이때 반환값이 완료(done) 상태라면 값을 성공적으로 반환(resolve)하고, 그렇지 않다면 다시 Promise를 재귀적으로 호출함
+- 이때 generator도 ES5에 정의되지 않았기 때문에 babel은 regenerator 라이브러리를 사용하여 generator를 흉내낸 함수를 구현함. 여기서는 `_asyncToGenerator`가 그 역할을 하고 있음
+- generator는 비동기적 패턴을 yield를 통해 동기적인 “모습”으로 바꾸어주고, promise는 generator로 만든 iterator를 반복해서 실행해주는 역할을 함. await keyword에 사용하는 함수가 항상 Promise를 반환해야하는 이유임
+
+[참고](https://betterprogramming.pub/how-polyfill-works-in-babel-b8cfbbc8351f?gi=11ec810deeea)
+
+<br>
+
 ## 참고
 
 - [Babel](https://babeljs.io/docs/usage)
