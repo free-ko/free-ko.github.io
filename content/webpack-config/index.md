@@ -16,6 +16,37 @@ categories: Study
 
 <br>
 
+## ✅ babel/preset-env의 target browserslist 설정
+
+- 앱을 만들 때 지원할 브라우저를 명시할 수 있음.
+- ES6와 같은 최신 자바스크립트 문법을 사용할 때 browserslist를 명시해 주면, 트랜스파일러나 모듈 번들러가 현재 타겟으로 하는 브라우저를 알 수 있음.
+- 최신 문법을 지원하지 않는 브라우저(IE 11버전 이하)를 그대로 사용한다면 별도의 polyfill을 설치해줘야 함.
+- 현재 프로젝트에서는 크롬 50버전 이상 또는 전체 브라우저의 최신 2개의 버전을 지원하며, IE 11 버전 이하의 브라우저는 지원하지 않기로 했음.
+- 전체 query 목록은 [여기](https://github.com/browserslist/browserslist#queries)서 확인할 수 있음.
+- babel의 `@babel/preset-env` 설정에 browserslist를 명시해주는 방법도 있지만, 현재 패키지에서 확인하는 방법이 좋다고 생각하여 package.json에 작성 후 webpack에서 참조하도록 했음
+
+```json
+// package.json
+{
+  // ...
+  "browserslist": "chrome > 50 or last 2 versions and not ie <= 11"
+}
+```
+
+```js
+// webpack.config.js
+// browserslist 설정이 있다면 target 옵션은 디폴트로 해당 browserslist를 가리키게 됨.
+
+module.exports = {
+  // ...
+  target: 'browserslist',
+};
+```
+
+- `npx browserslist` 명령어를 통해 현재 앱에서 타겟 환경으로 지정한 브라우저와 그 버전을 명시한 목록을 볼 수 있음
+
+<br>
+
 ## 참고
 
 ```toc
