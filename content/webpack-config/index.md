@@ -1,6 +1,6 @@
 ---
 emoji: 👋
-title: 'webpack config 설정'
+title: 'webpack config 설정 알아보기'
 date: '2024-01-07 11:19:00'
 author: Kay
 tags: 블로그 github-pages gatsby
@@ -44,6 +44,33 @@ module.exports = {
 ```
 
 - `npx browserslist` 명령어를 통해 현재 앱에서 타겟 환경으로 지정한 브라우저와 그 버전을 명시한 목록을 볼 수 있음
+
+<br>
+
+## ✅ file-loader 대신 asset/resource
+
+- file-loader 모듈은 개발 시 import/require 구문으로 사용되는 에셋 파일들을 번들 결과의 output 폴더에 생성해줌.
+- webpack v5부터 deprecate되었으며, 현재는 asset/resource를 사용함.
+- generator 옵션을 사용하여 번들 이후 생성될 파일의 이름을 설정해줄 수 있음.
+
+```js
+// webpack.config.js
+module.exports = {
+  // ...
+  module: {
+    rules: [
+      // ...
+      {
+        test: /\.(png|jpe?g|gif|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[name][ext]',
+        },
+      },
+    ],
+  },
+};
+```
 
 <br>
 
