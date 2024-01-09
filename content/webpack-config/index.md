@@ -74,6 +74,16 @@ module.exports = {
 
 <br>
 
+## ✅ 타입 체킹 기능 사용
+
+- babel은 ES6 코드를 ES5 이하의 문법으로 컴파일해주지만, 타입 체크는 해주지 않음.
+- babel에서 기본으로 제공하는 @babel/preset-typescript preset은 타입스크립트 문법을 브라우저가 이해할 수 있게끔 해주는 역할만 수행할 뿐, 타입 체크를 해주지 않음
+- 별도의 타입 체크를 위해 tsc와 같은 타입스크립트 컴파일러를 설치하여 타입 체크를 수행할 수 있지만, 그보다 webpack과의 결합도를 위해 fork-ts-checker-webpack-plugin을 적용 할 수 있음.
+- fork-ts-checker-webpack-plugin은 babel 컴파일 과정에서 별도로 동작하여, 타입 체크와 babel 컴파일을 병렬적으로 수행할 수 있다는 장점이 있음.
+- ts-loader를 사용하여 babel에서 타입 체크를 수행할 수 있지만, 혼자 트랜스파일링과 타입 체크를 모두 다 하게 되기 때문에 느리다는 단점이 있음. 공식 문서에서는 babel-loader의 사용을 권장함
+
+<br>
+
 ## 참고
 
 ```toc
