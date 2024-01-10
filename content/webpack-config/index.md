@@ -84,6 +84,31 @@ module.exports = {
 
 <br>
 
+## ✅ DefinePlugin
+
+- 컴파일 타임에 사용할 값들을 지정해줌.
+- 구체적으로는 production mode에서 사용할 환경변수들을 가져와 정의해줄 수 있음.
+- Github Actions나 Jenkins 등 CI/CD를 도와주는 툴에 secret variable로 앱에서 사용하는 API key 등의 환경변수를 설정하고, 빌드 시점에 해당 환경에서 필요한 변수를 취득하여 앱에 적용해 줌.
+- production mode에서 SENTRY의 DSN을 불러와 사용해주기 위해 작성.
+- DefinePlugin의 key-value 쌍에서 key값은 항상 아래처럼 문자열로 감싸줘야 하며, value도 JSON.stringify로 바꿔줘야 함
+
+```js
+// webpack.config.js
+// DefinePlugin과 유사하게 동작하지만, 환경 변수 전용으로 사용되는 EnvironmentPlugin이라는 플러그인도 있음
+
+module.exports = {
+  // ...
+  plugins: [
+    // ...
+    new DefinePlugin({
+      'process.env.SENTRY_DSN': JSON.stringify(process.env.SENTRY_DSN),
+    }),
+  ],
+};
+```
+
+<br>
+
 ## 참고
 
 ```toc
