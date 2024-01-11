@@ -109,6 +109,26 @@ module.exports = {
 
 <br>
 
+## ✅ filename vs chunkfilename
+
+- filename: 각 출력 번들의 이름을 결정하며, 각 번들에 대해 독립적임. 단일 entry 지점의 경우 정적인 이름으로 설정할 수 있음. (ex. bundle.js)
+- chunkFilename: 초기가 아닌 청크 파일의 이름을 결정하며, 런타임에서 파일 이름을 생성함. 코드 스플리팅 시 webpack에 의해 자동 생성되는 파일 이름. (async chunk의 경우 chunkFilename 채택하는 듯함. 그런데 아직 잘 안 됨)
+
+```js
+// webpack.config.js
+module.exports = {
+  output: {
+    path: path.resolve(\_dirname, './dist'),
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[id].js',
+    publicPath: '/',
+  },
+  // ...
+};
+```
+
+<br>
+
 ## 참고
 
 ```toc
