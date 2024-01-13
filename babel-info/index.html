@@ -242,16 +242,10 @@ module<span class="token operator">:</span> <span class="token punctuation">{</s
 <ul>
 <li>Babel을 사용한다고 해서 모든 JavaScript 최신 함수를 사용할 수 있는 것은 아님.</li>
 <li>babel 문법을 변환해주는 역할만 함. polyfill은 구형 브라우저에서 지원하지 않는 객체를 지원하도록 특별한 코드를 추가함. babel은 컴파일 타임에 실행되고, babel-polyfill은 런타임에 실행됨.</li>
-</ul>
-<h3 id="babel-트랜스파일링-시-polyfill-동작-원리" style="position:relative;"><a href="#babel-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8C%8C%EC%9D%BC%EB%A7%81-%EC%8B%9C-polyfill-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC" aria-label="babel 트랜스파일링 시 polyfill 동작 원리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Babel 트랜스파일링 시 polyfill 동작 원리</h3>
-<ol>
-<li>.babelrc, .babelrc.json, package.json, 또는 babel.config.js에 명시된 browserslist의 타겟 브라우저를 탐색함</li>
-<li>타겟 브라우저를 core-js와 매핑함</li>
-<li>특정 문법을 지원하지 않는 구형 브라우저의 경우 polyfill을 주입함</li>
 <li>@babel/polyfill은 core-js와 regenerator-runtime을 포함하여 ES6 이상의 환경을 완전히 지원할 수 있음.</li>
 <li>babel/polyfill은 Promise, WeakMap과 같은 객체들을 전역 스코프에 추가해줌. 그러나 필요하지 않은 코드까지 불러와 번들 크기가 커진다는 단점이 있음</li>
 <li>또한 전역에 import로 모듈들을 불러오기 때문에, 전역 스코프를 오염시키는 문제가 있음. 이제 바벨은 위 방식 대신 @babel/plugin-transform-runtime과 core-js@3 plugin을 사용하여 설정 파일을 작성할 것을 권장함. (webpack을 사용한다면 webpack 설정 파일에 추가해줌)</li>
-</ol>
+</ul>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
 <span class="token punctuation">{</span>
   <span class="token string">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
@@ -271,6 +265,12 @@ module<span class="token operator">:</span> <span class="token punctuation">{</s
 <li>@babel/plugin-transform-runtime babel은 모든 helper 함수들을 매번 중복으로 생성하는 것을 방지하기 위해, babel 런타임을 별도의 모듈로 분리하고자 사용함.</li>
 <li>설정 시 헬퍼 함수들을 한 곳(@babel/runtime)에서 참조하여 코드의 크기를 줄일 수 있음. 또 내부적으로 regenerator-runtime과 core-js를 peerDependencies로 갖고 있어 따로 설정을 해주지 않고 필요한 polyfill을 사용할 수 있음</li>
 </ul>
+<h3 id="babel-트랜스파일링-시-polyfill-동작-원리" style="position:relative;"><a href="#babel-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8C%8C%EC%9D%BC%EB%A7%81-%EC%8B%9C-polyfill-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC" aria-label="babel 트랜스파일링 시 polyfill 동작 원리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Babel 트랜스파일링 시 polyfill 동작 원리</h3>
+<ol>
+<li>.babelrc, .babelrc.json, package.json, 또는 babel.config.js에 명시된 browserslist의 타겟 브라우저를 탐색함</li>
+<li>타겟 브라우저를 core-js와 매핑함</li>
+<li>특정 문법을 지원하지 않는 구형 브라우저의 경우 polyfill을 주입함</li>
+</ol>
 <h3 id="정리" style="position:relative;"><a href="#%EC%A0%95%EB%A6%AC" aria-label="정리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>정리</h3>
 <ul>
 <li>babel은 자바스크립트의 최신 문법을 자바스크립트 ES5 표준으로 바꿔주는 역할을 함.</li>
