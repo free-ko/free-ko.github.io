@@ -129,7 +129,42 @@ module.exports = {
 
 <br>
 
+## ✅ Tree-shaking을 위한 sideEffects 설정
+
+- tree-shaking은 사용하지 않는 코드를 제거함으로써 용량을 줄이는 방식을 말함
+- webpack은 v5부터 terser 라이브러리를 통해 기본적인 tree-shaking을 수행하고 있음.
+- 하지만 ESM의 import/export 키워드를 사용할 때, import한 모듈들을 아무 곳에서도 참조하지 않는 등의 상황이 발생하면 webpack의 tree-shaking 과정에서 문제가 생김. 따라서 tree-shaking 시 sideEffects가 발생하지 않을 것이라고 개발자가 webpack을 안심시켜줘야(?) 함
+- package.json에 sideEffects: false 옵션을 명시해줌
+
+```json
+// package.json
+{
+  "name": "nolto",
+  "version": "1.0.1",
+  "sideEffects": false
+}
+```
+
+- import한 모듈을 사용하지 않는 경우 외에도 tree-shaking이 적용되지 않는 경우: 전역 함수를 사용하는 경우, 함수 실행 코드에서 멤버변수를 변경하고 반환하는 경우, static class properties를 사용하는 경우, class를 사용하는 경우 등
+
+| 원래는 babel config에 “modules”: false 옵션까지 지정하여, babel이 import 구문까지 commonJS의 require로 바꿔주는 것을 방지했음. (webpack의 tree-shaking은 import문만 이해하기 때문) 하지만 해당 옵션은 default로 false가 적용된다고 함
+
+| CommonJS의 require는 동기적으로 이루어짐. (원래 Node.js를 위한 것이며, 브라우저용으로 탄생한 방식이 아님) 반면 ESM은 가져온 스크립트를 바로 실행하지 않고 import/export 구문을 찾아서 스크립트를 파싱함. 그리고 더 이상 import 것이 없어질 때까지 import를 찾은 다음 dependencies의 모듈 그래프를 만들어 냄
+
+<br>
+
 ## 참고
+
+- [참고1](https://webpack.kr/guides/production/)
+- [참고2](https://ui.toast.com/weekly-pick/ko_20191212)
+- [참고3](https://webpack.js.org/guides/asset-modules/)
+- [참고4](https://www.debugbear.com/blog/bundle-splitting-components-with-webpack-and-react)
+- [참고5](https://github.com/styled-components/styled-components/issues/2254#issuecomment-560027361)
+- [참고6](https://github.com/browserslist/browserslist)
+- [참고7](https://webpack.js.org/plugins/define-plugin/)
+- [참고8](https://medium.com/naver-fe-platform/webpack에서-tree-shaking-적용하기-1748e0e0c365)
+- [참고9](https://webpack.js.org/configuration/optimization/#optimizationsideeffects)
+- [참고10](https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1)
 
 ```toc
 
