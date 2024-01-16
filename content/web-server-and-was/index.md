@@ -71,7 +71,17 @@ categories: Study
 
 <br>
 
+## ✅ Web Service Architecture
+
+- `Client → Web Server → WAS → DB` 구조로 데이터를 주고 받음
+
+<br>
+
 ## 참고
+
+- [참고1](https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html)
+- [참고2](https://goldsony.tistory.com/37)
+- [참고3](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EC%84%9C%EB%B8%94%EB%A6%BF)
 
 ```toc
 
