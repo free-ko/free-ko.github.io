@@ -126,7 +126,7 @@ categories: Study
   - 빌드 시 Direct import 구문에 대해 `<link ref="modulepreload">` 디렉티브를 이용해 미리 모듈을 캐싱하도록 자동으로 변환
   - 모든 Direct import 구문을 preload하여 불필요한 네트워크 요청을 줄임
 - tree-shaking, 코드 스플리팅을 지원하지 않음
-- rollup 번들러를 사용한 pre-configured 빌드 환경에서 rollup config를 뜯어내기가 아주 어움
+- rollup 번들러를 사용한 pre-configured 빌드 환경에서 rollup config를 뜯어내기가 아주 어려움
 
 <br>
 
