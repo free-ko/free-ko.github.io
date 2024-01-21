@@ -100,6 +100,36 @@ categories: Study
 
 <br>
 
+## ✅ Vite
+
+- react, vue, preact를 지원(CRA, vue-cli의 대체재)
+- 사전 번들링(Pre-bundling)
+  - esbuild를 사용하여 기존 번들링 대비 10-100배 빠른 속도
+- Native ESM 제공 (dev)
+  - 번들링 없이 온디맨드(on-demand)로 파일을 제공할 수 있음
+  - JSX, CSS 또는 Vue/Svelte 컴포넌트와 같이 컴파일링이 필요하고, 수정이 잦은 Non-plian JS 소스코드 → Native ESM을 이용해 소스코드를 제공하여, 브라우저를 번들러처럼 사용함
+- production에서는 rollup을 사용
+  - production에서는 esbuild가 아닌 번들링 방식을 사용하는 이유는 프로덕션에서 번들 되지 않은 ESM을 가져오는 것은 중첩된 import로 인한 추가 네트워크 통신으로 인해 여전히 비효율적임
+  - 프로덕션 환경에서 최적의 로딩 성능을 얻으려면 트리 셰이킹, 지연 로딩 및 청크 파일 분할(더 나은 캐싱을 위해)을 이용하여 번들링 하는 것이 더 좋음
+  - Esbuild는 번들링에 필수적으로 요구되는 기능인 코드 분할(Code-splitting) 및 CSS와 관련된 처리가 아직 미비함
+- esbuild(dev)와 rollup(prod)으로 구성되어 있음
+- dependencies(패키지)와 소스코드를 분리하여 빌드함
+  - 패키지: 설치 후에 내용이 바뀌지 않음
+  - 소스코드: 빈번하게 바뀜
+- 빠른 HMR 지원
+  - 번들러가 아닌 native ESM을 사용하기 때문(브라우저가 곧 번들러)
+  - 모듈 수정 시 해당 부분만 교체하고, 브라우저에서 해당 모듈을 요청할 때까진 사용되지 않음
+- 기본적으로 TypeScript, JSX, CSS 등을 지원
+  - 내부적으로 esbuild를 사용
+- 빌드 최적화
+  - CSS를 자동으로 추출해 파일로 분리
+  - 빌드 시 Direct import 구문에 대해 `<link ref="modulepreload">` 디렉티브를 이용해 미리 모듈을 캐싱하도록 자동으로 변환
+  - 모든 Direct import 구문을 preload하여 불필요한 네트워크 요청을 줄임
+- tree-shaking, 코드 스플리팅을 지원하지 않음
+- rollup 번들러를 사용한 pre-configured 빌드 환경에서 rollup config를 뜯어내기가 아주 어움
+
+<br>
+
 ## 참고
 
 ```toc
