@@ -85,6 +85,21 @@ categories: Study
 
 <br>
 
+## ✅ Esbuild
+
+- Go로 작성되어 있어 빠른 번들링 속도
+- 코드 파싱, 출력과 소스맵 생성을 모두 병렬로 처리함
+- CommonJS, ES6, JSX, Typescript, Tree shaking을 지원함
+  - ES5 이하의 문법을 아직 100% 지원하지 않기 때문에, IE 대응이 어려움
+- 빌드 도구이지 통합 툴이 아니라서, 기존의 툴(webpack, parcel, rollup 등)을 사용해야 함 → snowpack 또는 vite와 결합하여 사용함
+- 버전 1.0도 안됨
+- 대규모 프로덕션 사이트에는 사용 지양
+- live/hot reload(HMR) 지원하지 않음
+- PostCSS와 기타 전처리기 자동 변환 X
+- AST 변환 작업을 지원하지 않음 (플러그인 필요)
+
+<br>
+
 ## 참고
 
 ```toc
