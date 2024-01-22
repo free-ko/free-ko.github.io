@@ -132,6 +132,18 @@ categories: Study
 
 ## 참고
 
+- [참고1](https://webpack.js.org/concepts/)
+- [참고2](https://webpack.js.org/concepts/why-webpack/)
+- [참고3](https://parceljs.org/)
+- [참고4](https://heropy.blog/2018/01/20/parcel-1-start/)
+- [참고5](https://rollupjs.org/guide/en/)
+- [참고6](https://dantechblog.gatsbyjs.io/posts/rollup/)
+- [참고7](https://vitejs-kr.github.io/guide/why.html)
+- [참고8](https://vitejs-kr.github.io/guide/features.html#build-optimizations)
+- [참고9](https://engineering.ab180.co/stories/webpack-to-vite)
+- [참고10](https://ui.toast.com/posts/ko_20220127)
+- [참고11](https://velog.io/@subin1224/Parcel-vs-Rollup-vs-Webpack-비교)
+
 ```toc
 
 ```
