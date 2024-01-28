@@ -29,7 +29,7 @@ categories: Study
 
 - 빠른 빌드 속도
 
-  - parcel의 JS 컴파일러, CSS transformer, sourcemap은 성능을 위해 Rust로 작성되었으ㅁ
+  - parcel의 JS 컴파일러, CSS transformer, sourcemap은 성능을 위해 Rust로 작성되었음.
   - parcel의 JS 컴파일러는 SWC를 기반으로 트리셰이킹, 핫-리로딩 등을 지원
     - SWC는 Rust 기반
     - ES6 및 CommonJS 모듈 모두에 대해 tree-shaking을 지원
