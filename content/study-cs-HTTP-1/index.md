@@ -82,10 +82,16 @@ categories: CS
 
 <br>
 
-## 5. DNS
+## ✅ 5. DNS
 
-- 도메인 네임 시스템 = Domain Name System
-  - ex) 전화번호부, 도메인 명을 IP주소로 변환
+### IP 문제점
+
+- IP가 변경되거나, 숫자로 되어있어 구분이 용이 하지 않음.
+
+### 해결
+
+- 도메인 네임 시스템(Domain Name System) ex) 전화번호부, 도메인 명을 IP주소로 변환
+- 도메인 명(google.com)을 요청하면 DNS에서 알아서 도메인명과 부합하는 IP를 응답으로 주고 이 응답 IP를 통해 서버에게 데이터를 요청
 
 ```toc
 
