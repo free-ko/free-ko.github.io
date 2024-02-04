@@ -9,13 +9,7 @@ categories: CS
 
 <br>
 
-<h1 align="center">
-  👋  URL와 웹 브라우저 요청 흐름
-</h1>
-
-<br>
-
-## 1. URI 단어의 뜻
+## ✅ URI 의미
 
 - `Uniform`(리소스 식별하는 통일된 방식)
 - `Resource`(자원, URI로 식별할 수 있는 모든 것, 제한 없음)
@@ -23,16 +17,21 @@ categories: CS
 
 <br>
 
-## 2. URL, URN 단어 뜻
+## ✅ URL, URN 의미
 
-- URL - Locator: 리소스가 있는 위치를 지정
-- URN - Name: 리소스에 이름을 부여
-- 위치는 변할 수 있지만, 이름은 변하지 않음
-- ex) urn:isbn:8969777331(어떤 책의 isbn URN)
+- URL(Uniform Resource Locator): 리소스의 위치.
+- URN(Uniform Resource Name): 리소스의 이름.
+  ex) urn:isbn:8969777331(어떤 책의 isbn URN)
+
+### 참고
+
+- 위치(Locator)는 변할 수 있지만, 이름(Name)은 변하지 않음.
 
 <br>
 
-## 3. URL 전체 문법
+## URL 세부 내용
+
+`scheme://[userinfo@]host[:port][/path][?query][#fragment]`
 
 - 프로토콜 : https
 - 호스트명 : www.google.com
