@@ -29,9 +29,11 @@ categories: CS
 
 <br>
 
-## URL 세부 내용
+## ✅ URL 문법
 
 `scheme://[userinfo@]host[:port][/path][?query][#fragment]`
+
+ex) https://www.google.com:443/search?q=hello&hI=ko
 
 - 프로토콜 : https
 - 호스트명 : www.google.com
@@ -41,65 +43,45 @@ categories: CS
 
 <br>
 
-## 4. URL Scheme
+### Scheme
 
 - 주로 프로토콜 사용
 - 프로토콜 : 어떤 방식으로 자원에 접근할 것인가 하는 약속 규칙 ex) http, https, ftp 등
 - http는 80포트, https는 443 포트를 주로 사용, 포트는 생략 가능
 - https는 http에 보안 추가(HTTP Secure)
 
-<br>
+### User info
 
-## 5. URL userinfo
-
-- URL에 사용자 정보를 포함해서 인증
+- 사용자 정보를 포함해서 인증
 - 거의 사용하지 않음
-- ex) `scheme://[userinfo@]host[:port][/path][?query][#fragment]`
-- ex) `https://wwww.google.com:443/search?q=hello&hl=ko`
 
-<br>
-
-## 6. URL Host
+### Host
 
 - 호스트명
 - 도메인명 또는 IP 주소를 직접 사용가능
-- ex) `scheme://[userinfo@]host[:port][/path][?query][#fragment]`
-- ex) `https://wwww.google.com:443/search?q=hello&hl=ko`
 
-<br>
+### Port
 
-## 7. URL Port
-
-- 포트(PORT)
 - 접속 포트
 - 일반적으로 생략, 생략시 http는 80, https는 443
-- ex) `scheme://[userinfo@]host[:port][/path][?query][#fragment]`
-- ex) `https://wwww.google.com:443/search?q=hello&hl=ko`
 
 <br>
 
-## 8. URL Path
+### Path
 
-- 리소스 경로(path), 계층적 구조
-- ex) `/home/file1.jpg`
-- ex) `/members`
-- ex) `/members/100, items/iphone12`
+- 리소스 경로(path), 계층적 구조 ex) `/home/file1.jpg`, `/members`, `/members/100, items/iphone12`
 
-<br>
-
-## 8. URL Query
+### Query
 
 - `key=value` 형태
 - `?`로 시작, `&`로 추가 가능 `?keyA=valueA&keyB=valueB`
-- query parameter, query string으로 불림, 웹 서버에서 제공하는 파라미터, 문자 형태
+- query parameter, query string으로 불림
+- 웹 서버에서 제공하는 파라미터, 문자 형태
 
-<br>
-
-## 9. URL Fragment
+### Fragment
 
 - html 내부 북마크 등에 사용
 - 서버에 전송하는 정보 아님
-- ex) `https://docs.spring.io/sping-boot/docs/current/reference/html/getting-started.html#getting-started-introducing-spring-boot`
 
 ```toc
 
