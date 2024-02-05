@@ -9,13 +9,9 @@ categories: CS
 
 <br>
 
-<h1 align="center">
-  👋  HTTP(HyperText Transfer Protocol)
-</h1>
+## ✅ HTTP
 
-<br>
-
-## 1. 모든 것이 HTTP : HTTP 메시지에 모든 것을 전송
+### 1. HTTP 메시지에 모든 것을 전송
 
 - HTML, TEXT
 - Image, 음성, 영상, 파일
@@ -25,7 +21,7 @@ categories: CS
 
 <br>
 
-## 2. HTTP 역사
+### 2. HTTP 역사
 
 - HTTp/0.9 1991년 : GET 메서드만 지원, HTTP 헤더 X
 - HTTP/1.0 1995년 : 메서드, 헤더 추가
@@ -35,7 +31,7 @@ categories: CS
 
 <br>
 
-## 3. 기반 프로토콜
+### 3. 기반 프로토콜
 
 - TCP: HTTP/1.1, HTTP
 - UDP: HTTP/3
@@ -43,7 +39,7 @@ categories: CS
 
 <br>
 
-## 4. HTTP 특징
+### 4. HTTP 특징
 
 - 클라이언트 서버 구조
 - 무상태 프로토콜, 비연결성
