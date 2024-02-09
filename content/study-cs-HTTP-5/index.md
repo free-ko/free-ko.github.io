@@ -9,13 +9,9 @@ categories: CS
 
 <br>
 
-<h1 align="center">
-  👋  HTTP 메세지
-</h1>
+## ✅ HTTP 메세지
 
-<br>
-
-## 1.시작 라인 : 요청 메시지
+### 1.시작 라인 : 요청 메시지
 
 1. start-line = request-line / status-line
 2. request-line = method SP(공백) request-target SP HTTP-version CRLF(엔터)
@@ -27,14 +23,14 @@ categories: CS
 
 <br>
 
-## 2.시작 라인 : 요청 메시지(요청대상)
+### 2.시작 라인 : 요청 메시지(요청대상)
 
 1. `absolute-path[?query] : (절대경로[?쿼리])`
 2. 절대경로 = `"/"`로 시작하는 경로
 
 <br>
 
-## 3. 시작 라인 : 응답 메시지
+### 3. 시작 라인 : 응답 메시지
 
 1. HTTP 상태 코드 : 요청 성공, 실패를 나타냄
    - 200 : 성공
@@ -44,7 +40,7 @@ categories: CS
 
 <br>
 
-## 4.HTTP 헤더 : 용도
+### 4.HTTP 헤더 : 용도
 
 1. HTTP 전송에 필요한 모든 부가 정보
 
@@ -55,14 +51,14 @@ categories: CS
 
 <br>
 
-## 5.HTTP 메시지 바디 : 용도
+### 5.HTTP 메시지 바디 : 용도
 
 1. 실제 전송할 데이터
 2. HTML문서, 이미지, 영상, JSON 등등 byte로 표현할 수 있는 모든 데이터 전송 가능
 
 <br>
 
-## 6.단순함 확장 가능
+### 6.단순함 확장 가능
 
 1. HTTP는 단순함
 2. HTTP 메시지도 매우 단순
