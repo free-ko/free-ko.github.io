@@ -9,13 +9,7 @@ categories: CS
 
 <br>
 
-<h1 align="center">
-  👋  HTTP 메서드
-</h1>
-
-<br>
-
-## 1.HTTP API를 만들어보자
+## HTTP API를 만들어보자
 
 1. HTTP API를 만들어보자
 2. HTTP 메서드 - GET, POST
@@ -24,7 +18,7 @@ categories: CS
 
 <br>
 
-## 2.요구사항 ex) 회원 정보 관리 API를 만들어라
+### 요구사항 ex) 회원 정보 관리 API를 만들어라
 
 1. 회원 목록 조회
 2. 회원 조회
@@ -34,7 +28,7 @@ categories: CS
 
 <br>
 
-## 3.API URL 설정 : 초보 개발자
+### API URL 설정: 초보 개발자
 
 1. 회원 목록 조회 : `/read-member-list`
 2. 회원 조회 : `/read-member-by-id`
@@ -48,7 +42,7 @@ categories: CS
 
 <br>
 
-## 4.API URI 고민
+### API URI 고민
 
 1.  리소스의 의미는 뭘까?
     - 회원을 등록하고 수정하고 조회하는게 리소스가 아니다!
@@ -60,7 +54,7 @@ categories: CS
 
 <br>
 
-## 5.API URL 설정 : 위 상황 고려
+### API URL 설정: 위 상황 고려
 
 1. `회원` 목록 조회 : `/members`
 2. `회원` 조회 `/members/{id}` **—> 어떻게 구분하지?**
@@ -70,11 +64,11 @@ categories: CS
 
 <br>
 
-참고 : 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장 ( memeber —> members )
+참고 : 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장 ( member —> members )
 
 <br>
 
-## 6.리소스와 행위를 분리 : 가장 중요한 것은 리소스를 식별하는 것
+### 리소스와 행위를 분리: 가장 중요한 것은 리소스를 식별하는 것
 
 1. URI는 리소스만 식별
 2. **리소스와** 해당 리소스를 대상으로 하는 **행위를** 분리
