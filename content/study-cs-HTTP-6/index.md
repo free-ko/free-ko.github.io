@@ -9,7 +9,7 @@ categories: CS
 
 <br>
 
-## HTTP API를 만들어보자
+## ✅ HTTP API를 만들어보자
 
 1. HTTP API를 만들어보자
 2. HTTP 메서드 - GET, POST
@@ -32,7 +32,7 @@ categories: CS
 
 1. 회원 목록 조회 : `/read-member-list`
 2. 회원 조회 : `/read-member-by-id`
-3. 회원 등록 : `/create-memger`
+3. 회원 등록 : `/create-member`
 4. 회원 수정 : `/update-member`
 5. 회원 삭제 : `/delete-member`
 
@@ -62,9 +62,7 @@ categories: CS
 4. `회원` 수정 : `/members/{id}` **—> 어떻게 구분하지?**
 5. `회원` 삭제 : `/members/{id}` **—> 어떻게 구분하지?**
 
-<br>
-
-참고 : 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장 ( member —> members )
+참고: 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장 ( member —> members )
 
 <br>
 
