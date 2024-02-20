@@ -7,15 +7,7 @@ tags: 블로그 github-pages gatsby
 categories: CS
 ---
 
-<br>
-
-<h1 align="center">
-  👋  HTTP API 설계 예시
-</h1>
-
-<br>
-
-## 1.API 설계
+## ✅ HTTP API 설계
 
 1. HTTP API - 컬렉션
    - POST 기반 등록 ex) 회원 관리 API 제공
@@ -27,7 +19,7 @@ categories: CS
 
 <br>
 
-## 2.회원 관리 시스템 : API 설계 - POST 기반 등록
+## 1. 회원 관리 시스템: API 설계 - POST 기반 등록
 
 1. 회원 목록 `/members`—> GET
 2. 회원 등록 `/members` —> POST
@@ -37,7 +29,7 @@ categories: CS
 
 <br>
 
-## 3.회원 관리 시스템 : POST - 신규 자원 등록(실무에서 사용)
+## 2. 회원 관리 시스템: POST - 신규 자원 등록(실무에서 사용)
 
 1. 클라이언트는 등록될 리소스의 URI를 모른다.
 
@@ -55,7 +47,7 @@ categories: CS
 
 <br>
 
-## 4. 파일 관리 시스템 : API 설계 - PUT 기반 등록
+## 3. 파일 관리 시스템: API 설계 - PUT 기반 등록
 
 1. 파일 목록 `/files` —> GET
 2. 파일 조회 `/files/{finename}` —> GET
@@ -65,7 +57,7 @@ categories: CS
 
 <br>
 
-## 5.파일 관리 시스템 : PUT - 신규 자원 등록 특징
+## 4. 파일 관리 시스템: PUT - 신규 자원 등록 특징
 
 1. 클라이언트가 리소스 URI를 알고 잇어야 한다.
    - 파일 등록 `/files/{filename}` —> PUT
@@ -78,7 +70,7 @@ categories: CS
 
 <br>
 
-## 6.HTML FORM 사용
+## 5. HTML FORM 사용
 
 1. HTML FORM은 GET, POST만 지원
 2. 컨트롤 URI
@@ -100,7 +92,7 @@ categories: CS
 
 <br>
 
-## 7.정리 : 참고하면 좋은 URI 설계 개념
+## 6.정리: 참고하면 좋은 URI 설계 개념
 
 1. 문서 : Document
    - 단일 개념(파일 하나, 객체 인스턴스, 데이터베이스 row) ex) `/members/100`, `/files/star.jpg`
