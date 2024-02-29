@@ -53,6 +53,76 @@ categories: CS
   | text/html;level=2 | 0.4     |
   | text/html;level=3 | 0.7     |
 
+<br/>
+
+## ✅ HTTP 전송방식
+
+1. 단순 전송: Content-Length
+
+   ```
+   // 클라이언트
+   GET /event
+
+   // 서버
+   HTTP/1.1 200 OK
+   Content-Type: text/html;charset=UTF-8
+   Content-Length:3423
+
+   <html>
+     <body>...</body>
+   </html>
+   ```
+
+2. 압축 전송: Content-Encoding
+
+   ```
+   // 클라이언트
+   GET /event
+
+   // 서버
+   HTTP/1.1 200 OK
+   Content-Type: text/html;charset=UTF-8
+   Content-Encoding:gzip
+   Content-Length:521
+
+   <html>
+     <body>...</body>
+   </html>
+   ```
+
+3. 분할 전송: Transfer-Encoding cf) Content-Length를 표시 할 수 X
+
+   ```
+   // 클라이언트
+   GET /event
+
+   // 서버
+   HTTP/1.1 200 OK
+   Content-Type: text/plain
+    Transfer-Encoding: chunked
+
+   5
+   Hellow
+   5
+   World
+   0
+   \r\n
+   ```
+
+4. 범위 전송: Range, Content-Range(이미 받은 데이터 이외의 데이터를 요청할 때)
+
+   ```
+   // 클라이언트
+   GET /event
+
+   // 서버
+   HTTP/1.1 200 OK
+   Content-Type: text/plain
+   Content-Range: bytes 1001~2000 / 2000
+
+   qqwerwerqwer01910293qwer
+   ```
+
 ```toc
 
 ```
