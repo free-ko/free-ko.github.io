@@ -106,6 +106,47 @@ Q) `if-Modified-Since`: 이후에 데이터가 수정되었으면?
 
 <br/>
 
+## ✅ 캐시와 조건부 요청 헤더
+
+### 캐시 제어 헤더
+
+1. Cache-Control : 캐시 제어
+2. Pragma: 캐시 제어(하위 호환)
+3. Expires: 캐시 유한 기간(하위 호환)
+
+### 1.Cache-Control(캐시 지시어)
+
+1. Cache-Control: max-age
+   - 캐시 유효 시간, 초 단위
+2. Cache-Control: no-cache
+   - 데이터는 캐시해도 되지만, 항상 원(origin) 서버에 검증하고 사용
+3. Cache-Control: no-store
+   - 데이터에 민감한 정보가 있으므로 저장하면 안됨, 메모리에서 사용하고 최대한 빨리 삭제
+
+### 2.Pragma: 캐시제어(하위 호환)
+
+- Pragma: no-cache
+- HTTP 1.0 하위 호환
+
+### 3.Expires: 캐시 만료일 지정(하위 호환)
+
+- expires: Mon 01 Jan 1990 00:00:00 GMT
+- 캐시 만료일을 정확한 날짜로 지정
+- HTTP 1.0부터 사용
+- 지금은 더 유연한 Cache-Control: max-age 권장
+- Cache-Control: max-age와 함께 사용하면 Expires는 무시
+
+### 검증 헤더와 조건부 요청 헤더
+
+1. 검증 헤더 : Validator
+   - ETag: "v1.0", ETag: "asid93jkrh2I"
+   - Last-Modified: Thu, 04 Jun 2020 07:19:24 GMT
+2. 조건부 요청 헤더
+   - if-Match, if-None-Match:ETag 값 사용
+   - if-Modified-Since, if-Unmodified-Since: Last-Modified 값 사용
+
+<br/>
+
 ### 참고
 
 - [모든 개발자를 위한 HTTP 웹 기본 지식 by 김영한](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
