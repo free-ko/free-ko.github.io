@@ -65,6 +65,42 @@ categories: React
 
 - 초기 상태를 올바르게 설정하자
 
+<br/>
+
+## ✅ 업데이트 되지 않는 값
+
+### 예시
+
+- `INFO` 상수가 컴포넌트 안에 존재했을 때의 문제점
+  - 상수를 다루거나 아니면 일반적인 방치
+  - 컴포넌트가 렌더링 될 때마다 해당 객체가 새로 새성성되고 참조됨
+  - 업데이트가 되지 않는 일반적인 객체
+  - 리액트 상태로 바꾼다던가 혹은 아예 외부로 내보내야 함.
+
+```jsx
+const NotUpdateValue = (): Element => {
+   const INFO = {
+	   name: 'My Component'
+	   value: 'Clean Code React'
+   };
+
+   const [count, setCount] = useState(0);
+
+   const onIncrement = () => setCount((prevCount) => prevCount + 1);
+   const onDecrement = () => setCount((prevCount) => prevCount - 1);
+
+   return (
+	   <div className="App">
+		   <main className="App-main">
+			   <header>{INFO}</header>
+			   <ShowCount info={INFO} count={count} />
+			   <ButtonGroup onDecrement={onDecrement} onIncrement={onIncrement} />
+		   </main>
+	   </div>
+   )
+}
+```
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
