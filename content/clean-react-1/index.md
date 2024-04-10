@@ -101,6 +101,44 @@ const NotUpdateValue = (): Element => {
 }
 ```
 
+<br>
+
+# ✅ 불필요한 상태 제거하기
+
+### 🌈 결론
+
+```tsx
+// 기존
+const [userList, setUserList] = useState(MOCK_DATA);
+const [complUserList, setComplUserList] = useState(MOCK_DATA);
+
+useEffect(() => {
+	const newList = complUserList.filter((user) => user.completed === true);
+
+	setUserList(newList);
+}, [userList);
+
+// 변경
+const complUserList = complUserList.filter((user) => user.completed === true);
+```
+
+### ✍️ 내용
+
+불필요한 상태를 만든다면?
+
+- 결국에는 리액트에 의해 관리되는 값이 늘어나는 것
+- 그러다보면 렌더링에 양향을 주는 값이 늘어나서 관리 포인트가 더더욱 늘어 남
+
+컴포넌트 내부에서의 변수는?
+
+- 렌더링 마다 고유의 값을 가지는 계산된 값
+
+### ⭐️ 요약
+
+1. **props를 useState에 넣지 않고** 바로 return 문에 사용하기
+2. 컴포넌트 내부 변수는 **렌더링마다 고유한 값을 가짐**
+3. 따라서 useState가 아닐, const로 상태를 선언하는게 좋은 경우도 있음
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
