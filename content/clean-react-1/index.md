@@ -139,6 +139,52 @@ const complUserList = complUserList.filter((user) => user.completed === true);
 2. 컴포넌트 내부 변수는 **렌더링마다 고유한 값을 가짐**
 3. 따라서 useState가 아닐, const로 상태를 선언하는게 좋은 경우도 있음
 
+<br>
+
+# ✅ useState 대신 useRef
+
+### 🌈 결론
+
+```tsx
+// 기존
+export const component = () => {
+  ❌
+	const [isMount, setIsMount] = useState(false);
+
+	useEffect(() => {
+		if(!isMount) {
+			setIsMount(true);
+		}
+	}, [isMount]);
+};
+
+// 변경
+export const component = () => {
+  💡
+	const isMount = useRef(false);
+
+	useEffect(() => {
+		isMount.current = true;
+
+		return () => (isMOunt.current = false);
+	}, [isMount]);
+};
+```
+
+### ✍️ 내용
+
+### 리렌더링 방지가 필요하다면 `useState` 대신 `useRef`
+
+**useRef**
+
+- 가변 컨테이너
+- 한번 고정된 값을 컴포넌트 내부에서 사용할 경우 `useState`로 사용할 필요가 없음(컴포넌트의 전체적인 수명과 동일하게 지속된 정보를 일관적으로 제공해야 하는 경우)
+- 꼭 DOM을 직접 조작할 때만 useRef를 사용하는 것이 아님
+
+### ⭐️ 요약
+
+- `useState` 대신 `useRef` 를 사용하면 컴포넌트의 생명주기와 동일한 리렌더링되지 않는 상태를 만들 수 있다.
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
