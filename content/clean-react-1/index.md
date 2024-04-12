@@ -185,6 +185,68 @@ export const component = () => {
 
 - `useState` 대신 `useRef` 를 사용하면 컴포넌트의 생명주기와 동일한 리렌더링되지 않는 상태를 만들 수 있다.
 
+<br>
+
+# ✅ 연관된 상태 단순화하기
+
+### 🌈 결론
+
+```tsx
+// 기존
+const [isLoading, setIsLoading] = useState(false);
+const [isFinish, setIsFinish] = useState(false);
+
+// 변경
+const PROMISE_STATE = {
+	INIT: 'init',
+	LOADING; 'loading',
+	FINISH: 'finish'
+};
+
+const [promiseState, setPromiseState] = useState(PROMISE_STATE);
+```
+
+### ✍️ 내용
+
+- React 는 개발하는데 있어 자유로움
+- 여러 연관된 state를 만들어서 관리하는게 아니라, 하나의 불변의 값으로 관리
+
+  ```tsx
+  const PROMISE_STATE = {
+  	INIT: 'init',
+  	LOADING; 'loading',
+  	FINISH: 'finish'
+  	ERROR: 'error'
+  };
+
+  const FlatState = () => {
+  	const [promiseState, setPromiseState] = useState(PROMISE_STATE);
+
+  	const fetchData = () => {
+  		// fetch Data 시도
+  		setPromiseState(PROMISE_STATE.LOADING);
+
+  		fetch(url)
+  		.then(() => {
+  			// fetch Data 성공
+  			setPromiseState(PROMISE_STATE.FINISH);
+  		})
+  		.catch(() => {
+  			// fetch Data 실패
+  			setPromiseState(PROMISE_STATE.ERROR);
+  		})
+  	}
+
+  	if (promiseState === PROMISE_STATE.LOADING) return <LoadingComponent />
+  	if (promiseState === PROMISE_STATE.FINISH) return <FinishComponent />
+  	if (promiseState === PROMISE_STATE.ERROR) return <ErrorComponent />
+  }
+  ```
+
+### ⭐️ 요약
+
+- 리액트의 상태를 만들 때 `연관된 것들끼리 묶어서 처리`하면 에러를 방지하고 코드가 간결해진다.
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
