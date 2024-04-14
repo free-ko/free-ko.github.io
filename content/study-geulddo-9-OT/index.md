@@ -1,7 +1,7 @@
 ---
 emoji: ✍️
 title: 글또 9기 - O.T
-date: '2024-12-02 16:52:00'
+date: '2023-12-02 16:52:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: Study
