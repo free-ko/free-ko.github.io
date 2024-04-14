@@ -196,6 +196,130 @@ void function() {
 	   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
    <span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre></div>
+<br>
+<h1 id="-불필요한-상태-제거하기" style="position:relative;"><a href="#-%EB%B6%88%ED%95%84%EC%9A%94%ED%95%9C-%EC%83%81%ED%83%9C-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0" aria-label=" 불필요한 상태 제거하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>✅ 불필요한 상태 제거하기</h1>
+<h3 id="-결론" style="position:relative;"><a href="#-%EA%B2%B0%EB%A1%A0" aria-label=" 결론 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🌈 결론</h3>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token comment">// 기존</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>userList<span class="token punctuation">,</span> setUserList<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token constant">MOCK_DATA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>complUserList<span class="token punctuation">,</span> setComplUserList<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token constant">MOCK_DATA</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> newList <span class="token operator">=</span> complUserList<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token operator">=></span> user<span class="token punctuation">.</span>completed <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">setUserList</span><span class="token punctuation">(</span>newList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>userList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 변경</span>
+<span class="token keyword">const</span> complUserList <span class="token operator">=</span> complUserList<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token operator">=></span> user<span class="token punctuation">.</span>completed <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<h3 id="️-내용" style="position:relative;"><a href="#%EF%B8%8F-%EB%82%B4%EC%9A%A9" aria-label="️ 내용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>✍️ 내용</h3>
+<p>불필요한 상태를 만든다면?</p>
+<ul>
+<li>결국에는 리액트에 의해 관리되는 값이 늘어나는 것</li>
+<li>그러다보면 렌더링에 양향을 주는 값이 늘어나서 관리 포인트가 더더욱 늘어 남</li>
+</ul>
+<p>컴포넌트 내부에서의 변수는?</p>
+<ul>
+<li>렌더링 마다 고유의 값을 가지는 계산된 값</li>
+</ul>
+<h3 id="️-요약" style="position:relative;"><a href="#%EF%B8%8F-%EC%9A%94%EC%95%BD" aria-label="️ 요약 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>⭐️ 요약</h3>
+<ol>
+<li><strong>props를 useState에 넣지 않고</strong> 바로 return 문에 사용하기</li>
+<li>컴포넌트 내부 변수는 <strong>렌더링마다 고유한 값을 가짐</strong></li>
+<li>따라서 useState가 아닐, const로 상태를 선언하는게 좋은 경우도 있음</li>
+</ol>
+<br>
+<h1 id="-usestate-대신-useref" style="position:relative;"><a href="#-usestate-%EB%8C%80%EC%8B%A0-useref" aria-label=" usestate 대신 useref permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>✅ useState 대신 useRef</h1>
+<h3 id="-결론-1" style="position:relative;"><a href="#-%EA%B2%B0%EB%A1%A0-1" aria-label=" 결론 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🌈 결론</h3>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token comment">// 기존</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">component</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  ❌
+	<span class="token keyword">const</span> <span class="token punctuation">[</span>isMount<span class="token punctuation">,</span> setIsMount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>isMount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token function">setIsMount</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>isMount<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 변경</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">component</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  💡
+	<span class="token keyword">const</span> isMount <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+		isMount<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>isMOunt<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>isMount<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<h3 id="️-내용-1" style="position:relative;"><a href="#%EF%B8%8F-%EB%82%B4%EC%9A%A9-1" aria-label="️ 내용 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>✍️ 내용</h3>
+<h3 id="리렌더링-방지가-필요하다면-code-classlanguage-textusestatecode-대신-code-classlanguage-textuserefcode" style="position:relative;"><a href="#%EB%A6%AC%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%B0%A9%EC%A7%80%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4%EB%A9%B4-code-classlanguage-textusestatecode-%EB%8C%80%EC%8B%A0-code-classlanguage-textuserefcode" aria-label="리렌더링 방지가 필요하다면 code classlanguage textusestatecode 대신 code classlanguage textuserefcode permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>리렌더링 방지가 필요하다면 <code class="language-text">useState</code> 대신 <code class="language-text">useRef</code></h3>
+<p><strong>useRef</strong></p>
+<ul>
+<li>가변 컨테이너</li>
+<li>한번 고정된 값을 컴포넌트 내부에서 사용할 경우 <code class="language-text">useState</code>로 사용할 필요가 없음(컴포넌트의 전체적인 수명과 동일하게 지속된 정보를 일관적으로 제공해야 하는 경우)</li>
+<li>꼭 DOM을 직접 조작할 때만 useRef를 사용하는 것이 아님</li>
+</ul>
+<h3 id="️-요약-1" style="position:relative;"><a href="#%EF%B8%8F-%EC%9A%94%EC%95%BD-1" aria-label="️ 요약 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>⭐️ 요약</h3>
+<ul>
+<li><code class="language-text">useState</code> 대신 <code class="language-text">useRef</code> 를 사용하면 컴포넌트의 생명주기와 동일한 리렌더링되지 않는 상태를 만들 수 있다.</li>
+</ul>
+<br>
+<h1 id="-연관된-상태-단순화하기" style="position:relative;"><a href="#-%EC%97%B0%EA%B4%80%EB%90%9C-%EC%83%81%ED%83%9C-%EB%8B%A8%EC%88%9C%ED%99%94%ED%95%98%EA%B8%B0" aria-label=" 연관된 상태 단순화하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>✅ 연관된 상태 단순화하기</h1>
+<h3 id="-결론-2" style="position:relative;"><a href="#-%EA%B2%B0%EB%A1%A0-2" aria-label=" 결론 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🌈 결론</h3>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token comment">// 기존</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>isLoading<span class="token punctuation">,</span> setIsLoading<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>isFinish<span class="token punctuation">,</span> setIsFinish<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 변경</span>
+<span class="token keyword">const</span> <span class="token constant">PROMISE_STATE</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token constant">INIT</span><span class="token operator">:</span> <span class="token string">'init'</span><span class="token punctuation">,</span>
+	<span class="token constant">LOADING</span><span class="token punctuation">;</span> <span class="token string">'loading'</span><span class="token punctuation">,</span>
+	<span class="token constant">FINISH</span><span class="token operator">:</span> <span class="token string">'finish'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>promiseState<span class="token punctuation">,</span> setPromiseState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token constant">PROMISE_STATE</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<h3 id="️-내용-2" style="position:relative;"><a href="#%EF%B8%8F-%EB%82%B4%EC%9A%A9-2" aria-label="️ 내용 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>✍️ 내용</h3>
+<ul>
+<li>React 는 개발하는데 있어 자유로움</li>
+<li>
+<p>여러 연관된 state를 만들어서 관리하는게 아니라, 하나의 불변의 값으로 관리</p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">const</span> <span class="token constant">PROMISE_STATE</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token constant">INIT</span><span class="token operator">:</span> <span class="token string">'init'</span><span class="token punctuation">,</span>
+	<span class="token constant">LOADING</span><span class="token punctuation">;</span> <span class="token string">'loading'</span><span class="token punctuation">,</span>
+	<span class="token constant">FINISH</span><span class="token operator">:</span> <span class="token string">'finish'</span>
+	<span class="token constant">ERROR</span><span class="token operator">:</span> <span class="token string">'error'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">FlatState</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> <span class="token punctuation">[</span>promiseState<span class="token punctuation">,</span> setPromiseState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token constant">PROMISE_STATE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">const</span> <span class="token function-variable function">fetchData</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+		<span class="token comment">// fetch Data 시도</span>
+		<span class="token function">setPromiseState</span><span class="token punctuation">(</span><span class="token constant">PROMISE_STATE</span><span class="token punctuation">.</span><span class="token constant">LOADING</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+			<span class="token comment">// fetch Data 성공</span>
+			<span class="token function">setPromiseState</span><span class="token punctuation">(</span><span class="token constant">PROMISE_STATE</span><span class="token punctuation">.</span><span class="token constant">FINISH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+			<span class="token comment">// fetch Data 실패</span>
+			<span class="token function">setPromiseState</span><span class="token punctuation">(</span><span class="token constant">PROMISE_STATE</span><span class="token punctuation">.</span><span class="token constant">ERROR</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>promiseState <span class="token operator">===</span> <span class="token constant">PROMISE_STATE</span><span class="token punctuation">.</span><span class="token constant">LOADING</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LoadingComponent</span></span> <span class="token punctuation">/></span></span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>promiseState <span class="token operator">===</span> <span class="token constant">PROMISE_STATE</span><span class="token punctuation">.</span><span class="token constant">FINISH</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">FinishComponent</span></span> <span class="token punctuation">/></span></span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>promiseState <span class="token operator">===</span> <span class="token constant">PROMISE_STATE</span><span class="token punctuation">.</span><span class="token constant">ERROR</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ErrorComponent</span></span> <span class="token punctuation">/></span></span>
+<span class="token punctuation">}</span></code></pre></div>
+</li>
+</ul>
+<h3 id="️-요약-2" style="position:relative;"><a href="#%EF%B8%8F-%EC%9A%94%EC%95%BD-2" aria-label="️ 요약 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>⭐️ 요약</h3>
+<ul>
+<li>리액트의 상태를 만들 때 <code class="language-text">연관된 것들끼리 묶어서 처리</code>하면 에러를 방지하고 코드가 간결해진다.</li>
+</ul>
 <h3 id="참고" style="position:relative;"><a href="#%EC%B0%B8%EA%B3%A0" aria-label="참고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>참고</h3>
 <ul>
 <li><a href="https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview">클린 리액트</a></li>
@@ -218,6 +342,16 @@ void function() {
 <p><a href="#-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EA%B0%92">✅ 업데이트 되지 않는 값</a></p>
 <ul>
 <li><a href="#%EC%98%88%EC%8B%9C">예시</a></li>
+<li><a href="#-%EA%B2%B0%EB%A1%A0">🌈 결론</a></li>
+<li><a href="#%EF%B8%8F-%EB%82%B4%EC%9A%A9">✍️ 내용</a></li>
+<li><a href="#%EF%B8%8F-%EC%9A%94%EC%95%BD">⭐️ 요약</a></li>
+<li><a href="#-%EA%B2%B0%EB%A1%A0-1">🌈 결론</a></li>
+<li><a href="#%EF%B8%8F-%EB%82%B4%EC%9A%A9-1">✍️ 내용</a></li>
+<li><a href="#%EB%A6%AC%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%B0%A9%EC%A7%80%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4%EB%A9%B4-usestate-%EB%8C%80%EC%8B%A0-useref">리렌더링 방지가 필요하다면 <code class="language-text">useState</code> 대신 <code class="language-text">useRef</code></a></li>
+<li><a href="#%EF%B8%8F-%EC%9A%94%EC%95%BD-1">⭐️ 요약</a></li>
+<li><a href="#-%EA%B2%B0%EB%A1%A0-2">🌈 결론</a></li>
+<li><a href="#%EF%B8%8F-%EB%82%B4%EC%9A%A9-2">✍️ 내용</a></li>
+<li><a href="#%EF%B8%8F-%EC%9A%94%EC%95%BD-2">⭐️ 요약</a></li>
 <li><a href="#%EC%B0%B8%EA%B3%A0">참고</a></li>
 </ul>
 </li>
