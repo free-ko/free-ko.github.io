@@ -331,6 +331,109 @@ const StateToReducer = () => {
 
 - 여러 상태가 연관됐을 때, useState 대신, `useReducer를 사용하면 상태를 구조화` 할 수 있음
 
+<br>
+
+# ✅ 상태 로직 Custom Hooks로 뽑아내기
+
+### 🌈 결론
+
+```tsx
+// 기존
+const [state, setState] = useState();
+
+useEffect(() => {
+  const fetchData = () => {
+    setState(state);
+  };
+
+  fetchDate();
+}, []);
+
+if (state.isLoading) return <LoadingComponent />;
+if (state.isFail) return <FailComponent />;
+
+// 변경
+const { isLoading, isFail } = useFetchData();
+
+if (state.isLoading) return <LoadingComponent />;
+if (state.isFail) return <FailComponent />;
+```
+
+### ✍️ 내용
+
+- 로직만 뺌
+
+```tsx
+const INIT_STATE = {
+	isLoading: false,
+	isSuccess: false,
+	isFail: false,
+};
+
+// 오타 방지 및 타입 정확성
+const ACTION_TYPE = {
+	FETCH_LOADING: 'FETCH_LOADING',
+	FETCH_SUCCESS: 'FETCH_SUCCESS',
+	FETCH_FAIL: 'FETCH_FAIL',
+}
+
+// 다른 곳에서도 사용 가능
+// 순수 JS로 Third Party library 없이 상태를 관리 가능
+// 그 상태를 조금 더 체계적으로 구조화 가능
+const reducer = (state, action) => {
+	// 보통 type을 쓰지만 action 객체의 형태는 자유
+	switch (action.type) {
+		case 'FETCH_LOADING':
+			return { isLoading: true, isSuccess: false, isFail: false }
+
+		case 'FETCH_SUCCESS':
+			return { isLoading: false, isSuccess: true, isFail: false }
+
+		case 'FETCH_FAIL':
+			return { isLoading: false, isSuccess: false, isFail: true }
+
+		default:
+			return INIT_STATE;
+	}
+};
+
+const useFetchData = (url) => {
+	const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
+	useEffect(() => {
+		const fetchData = async () => {
+		// fetch Data 시도
+		// - 추상화
+		dispatch({ type: ACTION_TYPE.FETCH_LOADING });
+
+		await fetch(url)
+		.then(() => {
+			// fetch Data 성공
+			dispatch({ type: ACTION_TYPE.FETCH_SUCCESS });
+		})
+		.catch(() => {
+			// fetch Data 실패
+			dispatch({ type: ACTION_TYPE.FETCH_FAIL });
+			})
+		}
+	}, [url)
+
+	return state
+}
+
+const  CustomHooks= () => {
+	const { isLoading, isFail, isSuccess } = useFetchData('url);
+
+	if (state.isLoading === PROMISE_STATE.LOADING) return <LoadingComponent />
+	if (state.isSuccess === PROMISE_STATE.FINISH) return <FinishComponent />
+	if (state.isFail === PROMISE_STATE.ERROR) return <ErrorComponent />
+}
+```
+
+### ⭐️ 요약
+
+- `Custom Hooks를 사용하면` 코드를 확장성 있고 재사용 가능하게 작성할 수 있다.
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
