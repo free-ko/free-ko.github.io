@@ -434,6 +434,36 @@ const  CustomHooks= () => {
 
 - `Custom Hooks를 사용하면` 코드를 확장성 있고 재사용 가능하게 작성할 수 있다.
 
+<br>
+
+# ✅ 이전 상태 활용하기
+
+### 🌈 결론
+
+```tsx
+setAge(age + 1);
+
+setAge((prevAge) => prevAge + 1);
+```
+
+### ✍️ 내용
+
+- 타이밍을 확실히 하기 위해서 이전 상태 값을 가지고 업데이트 진행(update function)
+
+```tsx
+const PrevState = () => {
+  const [age, setAge] = useState(0);
+
+  const updateState = () => {
+    setAge((prevAge) => prevAge + 1);
+  };
+};
+```
+
+### ⭐️ 요약
+
+- **updater function을 사용해 prev state를 고려**하면 예상치 못한 결과를 예방할 수 있다.
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
