@@ -81,6 +81,47 @@ function component({ value }) {
 
 <br>
 
+# ✅ Props 축약하기
+
+---
+
+### 🌈 결론
+
+```tsx
+// 변경 전
+function component(props) {
+  <HeaderComponent hasPadding={props.hasPadding}>
+    <ChildComponent isDarkMode={props.isDarkMode} isLogin={props.isLogin} />
+  </HeaderComponent>;
+}
+
+// 변경 후
+function component({ hasPadding, ...props }) {
+  <HeaderComponent hasPadding>
+    <ChildComponent {...props} />
+  </HeaderComponent>;
+}
+```
+
+### ✍️ 내용
+
+ShortHand Props는언제 사용할까?
+
+- 토글링 값을 Props로 전달 할 때
+
+```tsx
+function component({ hasPadding, ...props }) {
+	<HeaderComponent hasPadding>
+		<ChildComponent {...props} />
+	</HeaderComponent>
+```
+
+### ⭐️ 요약
+
+- ShortHand Props로 Props를 축약할 수 있다.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
