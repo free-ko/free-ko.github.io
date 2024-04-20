@@ -51,6 +51,36 @@ function component({ value }) {
 
 <br>
 
+# ✅ Curly Braces
+
+---
+
+### 🌈 결론
+
+- 중괄호(Curly Braces) 사용법
+
+```tsx
+<Image alt="image" src="image.jpg" style={{ width: 100 }} className="clean-div" />
+```
+
+### ✍️ 내용
+
+- Curly Brace 사용 O
+  - 값이 계산되는 경우(논리적인 숫자, Boolean, 객체, 배열, 함수 표현식)
+  - 객체를 넣어야 하는 경우
+- Curly Brace 사용 X
+  - 문자열일 경우
+
+```tsx
+<Image alt={'image'} src={'image.jpg'} style={{ width: 100 }} className="clean-div" />
+```
+
+### ⭐️ 요약
+
+- String일 경우 Curly Brace 사용하지 않기
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
