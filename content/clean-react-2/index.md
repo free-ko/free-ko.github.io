@@ -83,8 +83,6 @@ function component({ value }) {
 
 # ✅ Props 축약하기
 
----
-
 ### 🌈 결론
 
 ```tsx
@@ -119,6 +117,38 @@ function component({ hasPadding, ...props }) {
 ### ⭐️ 요약
 
 - ShortHand Props로 Props를 축약할 수 있다.
+
+<br>
+
+# ✅ Single Quotes vs Double Quotes
+
+---
+
+### 🌈 결론
+
+```tsx
+// ✅
+<a href="https://www.naver.com">Naver</a>
+
+// ❌
+<input class='ccc' type="button" value='Clean' />
+
+// ❌
+<Clean style={{ backgroundPosition: "left" }} />
+```
+
+### ✍️ 내용
+
+- 팀에서 일반적인 규칙 ⇒ 일관성을 지키기 위함
+- HTML과 JS 환경에서 사용하는 부분 구분
+  - HTML은 Double Quotes 주로 사용(HTML Attribute를 위한 값)
+  - JS은 Single Quotes 주로 사용(객체의 값) cf) JSX는 Single Quotes
+- 결론적으로 규칙을 정하고 그 맥락을 파악하고 공유하자 ⇒ Lint, 포맷팅 도구(Prettier)에 위임하자
+
+### ⭐️ 요약
+
+- **HTML, JS를 구분해서** Single Quotes와 Double Quotes를 결정하자
+- 규칙은 팀끼리 정해서 자동 포맷팅 시키자
 
 <br>
 
