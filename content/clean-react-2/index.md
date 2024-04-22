@@ -152,6 +152,43 @@ function component({ hasPadding, ...props }) {
 
 <br>
 
+# ✅ Props 네이밍
+
+### 🌈 결론
+
+```tsx
+// ❌
+<ChildComponent
+	class="mt-0"
+	Clean="code"
+	clean_code="react"
+	otherComponent={OtherComponent}
+	isShow={true}
+/>
+
+// ✅
+<ChildComponent
+	className="mt-0"
+	clean="code"
+	cleanCode="react"
+	OtherComponent={OtherComponent}
+	isShow
+/>
+```
+
+### ✍️ 내용
+
+- React Component는 파스칼로 한다.
+
+### ⭐️ 요약
+
+- class는 `className`으로 사용하기
+- `camel case` 사용하기
+- 무조건 true라면 `isShow={true}`가 아닌, `isShow`로 축약하기
+- 컴포넌트라면 대문자로 시작하기
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
