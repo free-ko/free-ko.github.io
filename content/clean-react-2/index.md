@@ -189,6 +189,43 @@ function component({ hasPadding, ...props }) {
 
 <br>
 
+# ✅ 인라인 스타일 주의 하기
+
+### 🌈 결론
+
+```tsx
+// ❌
+function InlineStyle(): Element {
+  return <button style="background-color: 'red'; font-size: '14px';">Clean Code</button>;
+}
+
+// ✅
+function InlineStyle(): Element {
+  const myStyle = { backgroundColor: 'red', fontSize: '14px' };
+
+  return <button style={myStyle}>Clean Code</button>;
+}
+```
+
+### ✍️ 내용
+
+- JS로 HTML을 표현하는 문법이 바로 JSX임
+- 고정된 스타일 객체 값이라면, 컴포넌트 외부로 빼는 것이 좋음(매번 랜더링 될 때마다 계속 평가되기 때문)
+
+  ```tsx
+  const myStyle = { backgroundColor: 'red', fontSize: '14px' };
+
+  function InlineStyle(): Element {
+    return <button style={myStyle}>Clean Code</button>;
+  }
+  ```
+
+### ⭐️ 요약
+
+- JSX에서 인라인 스타일을 쓰려면 중괄호 안에 `camelCase key`를 가진 객체를 넣어야 한다.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
