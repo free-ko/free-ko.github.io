@@ -226,6 +226,81 @@ function InlineStyle(): Element {
 
 <br>
 
+# ✅ CSS IN JS 인라인 스타일 지양하기
+
+### 🌈 결론
+
+```tsx
+// ❌
+function InlineStyle(): Element {
+	return (
+		<button css={
+			css`
+				background-color: white;
+				border: 1px solid #eee;
+				border-radius: 0.5rem;
+				padding: 1rem;
+			`}
+		}>
+			Clean Code
+		</button>
+	);
+}
+
+// ✅
+function InlineStyle(): Element {
+	return (
+		<button css={cardCss.self}>Clean Code</button>
+	);
+}
+```
+
+### ✍️ 내용
+
+- css 백틱으로 진행했을 때에는 VSCode 자동완성과 DX 측면에서 좋지 않기 때문에 JS 스타일을 주는 것이 좋음
+- 아래와 같이 스타일을 외부 뺐을 때의 장점
+  - 외부로 분리했기 때문에 스타일이 렌더링 될 때마다 직렬화 되지 않는다. → 한번만 된다.
+  - 동적인 스타일을 실수로 건드는 확률이 적어진다.
+  - 스타일 관련 코드를 분리해서 로직에 집중하고 JSX를 볼 때 조금 더 간결하게 볼 수 있다.
+
+```tsx
+// 장점
+// - 타입 안정성
+// - 자동 완성으로 생산성 DX 향상
+// - export 할 경우, 외부 컴포넌트에서 사용 가능
+const cardCSS = {
+  self: css({
+    backgroundColor: 'white',
+    border: '1px solid #eee',
+    borderRadius: '0.5rem',
+    padding: '1rem',
+  }),
+  title: css({
+    fontSize: '1.25rem',
+  }),
+};
+
+// CSS IN JS 인라인 스타일 지양하기
+// - 성능에 민감함
+export function Card({ title, children }) {
+  return (
+    <div css={cardCss.self}>
+      <h5 css={cardCss.title}>{title}</h5>
+      {children}
+    </div>
+  );
+}
+```
+
+### ⭐️ 요약
+
+- CSS in JS 인라인 스타일을 지양해야 하는 이유
+  - 성능 저하를 일으킴
+  - 휴먼 에러가 발생할 수 있음
+  - export 할 수 없음
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
