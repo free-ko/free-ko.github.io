@@ -301,6 +301,58 @@ export function Card({ title, children }) {
 
 <br>
 
+# ✅ 객체 Props 지양하기
+
+### ✍️ 내용
+
+- React는 JS로 개발되어 있음
+
+```tsx
+// 객체 Props 지양하기
+// - 변하지 않는 값일 경우 컴포넌트 외부로 드러내기
+// - 필요한 값만 객체를 분해해서 Props로 내려 준다.
+// - 정말 값 비싼 연산, 너무 잦은 연산이 있을 경우 useMemo() 활용하여 계산된 값을 메모이제이션 한다.
+// - Props 값을 나누어서 다른 컴포넌트에 Props를 전달한다.
+function SomeComponent() {
+  return <ChildComponent propObj={{ hello: 'world' }} propArr={['hello', 'hello']} />;
+}
+
+// ✅ 방법 1
+function SomeComponent() {
+  const [propArr, setPropArr] = useState(['hello', 'hello']);
+
+  return <ChildComponent hello1="world" hello2={propArr.at(0)} />;
+}
+
+// ✅ 방법 2
+function SomeComponent({ heavyState }) {
+  const [propArr, setPropArr] = useState(['hello', 'hello']);
+  const computedState = useMemo(
+    () => ({
+      heavyState: heavyState,
+    }),
+    [heavyState],
+  );
+
+  return <ChildComponent hello1="world" hello2={propArr.at(0)} computedState={computedState} />;
+}
+
+// React의 Dependency 배열에 해당 Object.is 함수가 내장되어있음
+// 아래 결과 false
+Object.is(
+  { hello: 'world' }, // 초기 렌더링
+  { hello: 'world' }, // 두번째 렌더링
+);
+
+// 아래 결과 false
+Object.is(
+  ['hello'], // 초기 렌더링
+  ['hello'], // 두번째 렌더링
+);
+```
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
