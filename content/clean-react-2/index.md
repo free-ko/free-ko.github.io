@@ -353,6 +353,53 @@ Object.is(
 
 <br>
 
+# ✅ HTML Attribute 주의하기
+
+### 🌈 결론
+
+```tsx
+// ❌
+function MyButton({ children, type }) {
+  return <button type={type}>{children}</button>;
+}
+
+// ✅
+function MyButton({ children, ...rest }) {
+  return <button {...rest}>{children}</button>;
+}
+```
+
+### ✍️ 내용
+
+1. HTML 기본 속성 주의하기
+
+   - HTML와 JSX에서 사용하는 예약어 주의
+   - HTML 표준어 찾아서 주의(내가 만든 Component의 Props와 겹치지는지 확인)
+
+   ```tsx
+   function HTMLDefaultAttribute() {
+     const MyButton = ({ children, ...rest }) => <button {...rest}>{children}</button>;
+
+     return (
+       <>
+         <MyButton className="mt-0" type="submit">
+           Clean Code
+         </MyButton>
+
+         <MyButton type="number" maxLength="99">
+           Clean Code
+         </MyButton>
+       </>
+     );
+   }
+   ```
+
+### ⭐️ 요약
+
+- HTML, JS에서 정의한 예약어와 커스텀 컴포넌트 Props가 혼용되지 않도록 주의
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
