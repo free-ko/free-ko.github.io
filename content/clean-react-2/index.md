@@ -400,6 +400,36 @@ function MyButton({ children, ...rest }) {
 
 <br>
 
+# ✅ Spread 연산자 쓸 때 주의할 점
+
+### 🌈 결론
+
+```tsx
+// ❌
+const ParentComponent = (props) => {
+  return <childOrHOCComponent {...props} />;
+};
+
+// ✅
+const ParentComponent = (props) => {
+  const { 관련_없는_props, 관련_있는_props, ...나머지_props } = props;
+
+  return <childOrHOCComponent 관련_있는_props={관련_있는_props} {...나머지_props} />;
+};
+```
+
+### ✍️ 내용
+
+### Spread 연산으로 내려오는 Props 주의할 점
+
+- 코드를 예측하기 어렵다.
+
+### ⭐️ 요약
+
+- props에서 spread 연산자가 쓰이면 관련 있는 props, 없는 props, 나머지 props로 나눠보자
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
