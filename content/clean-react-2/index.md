@@ -430,6 +430,54 @@ const ParentComponent = (props) => {
 
 <br>
 
+# ✅ 많은 Props 분리하기
+
+### 🌈 결론
+
+```tsx
+// ❌
+<JoinForm
+	user={user}
+	auth={auth}
+	location={location}
+	favorite={favorite}
+	handleSubmit={handleSubmit}
+	handleReset={handleReset}
+	handleCancel={handleCancel}
+/>
+
+// ✅
+<JoinForm
+	handleSubmit={handleSubmit}
+	handleReset={handleReset}
+	handleCancel={handleCancel}
+>
+	<CheckBoxForm formData={user} />
+	<CheckBoxForm formData={auth} />
+	<RadioButtonForm formData={location} />
+	<SectionForm formData={favorite} />
+</JoinForm>
+```
+
+### ✍️ 내용
+
+### 너무 많은 Props를 넘기는 경우
+
+- 결과보다는 일단 실행 → 분리의 대상?
+- TanStack Query, Form Library, 상태 관리자, Context API, Composition
+
+### 리팩토링 과정
+
+1. One Depth 분리를 한다.
+2. 확장성을 위한 분리를 위해 도메인 로직을 다른 곳으로 모아넣는다.
+3. 꼭 라이브러리를 먼저 도입하는게 아니라, 먼저 분리 후 생각한다.
+
+### ⭐️ 요약
+
+- props가 많다면 컴포넌트를 분리해보자.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
