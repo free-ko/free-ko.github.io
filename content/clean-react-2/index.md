@@ -478,6 +478,46 @@ const ParentComponent = (props) => {
 
 <br>
 
+# ✅ 단순하게 Props 내리기
+
+### 🌈 결론
+
+```tsx
+// ❌
+const UserInfo = ({ user }) => {
+  return (
+    <div>
+      <img src={user.avatarImgUrl} />
+      <h3>{user.userName}</h3>
+      <h4>{user.email}</h4>
+    </div>
+  );
+};
+
+// ✅
+const UserInfo = ({ avatarImgUrl, userName, email }) => {
+  return (
+    <div>
+      <img src={avatarImgUrl} />
+      <h3>{userName}</h3>
+      <h4>{email}</h4>
+    </div>
+  );
+};
+```
+
+### ✍️ 내용
+
+### 객체보다는 단순한 Props
+
+- 불필요한 렌더링 방지
+
+### ⭐️ 요약
+
+- props에 객체 전체를 내리지 말고 꼭 필요한 값만 내리자
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
