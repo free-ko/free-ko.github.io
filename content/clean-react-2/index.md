@@ -1,7 +1,7 @@
 ---
 emoji: 👨‍💻
 title: Clean React - 02. Props
-date: '2024-04-19 07:27:00'
+date: '2024-04-30 07:27:00'
 author: Kay
 tags: 블로그 github-pages gatsby
 categories: React
