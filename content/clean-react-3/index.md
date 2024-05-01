@@ -45,6 +45,41 @@ categories: React
 
 <br>
 
+# ✅ Self Closing Tags
+
+### 🌈 결론
+
+- `Self Closing Tags`를 정확히 인지하고 사용하자
+
+### ✍️ 내용
+
+1. `Self Closing Tags` 의미
+
+   - 명시적으로 닫는 태그가 필요가 없음
+   - 기본 HTML 요소인지 아닌지 명확한 차이를 가져야 함
+   - `Vue`에서는 HTML에서 사용되어지는 header와 같은 태그 사용이 불가함 대신에 `app-header` 이런식으로 사용해야 함
+
+   ```tsx
+   function HelloWorld() {
+     return (
+       <Clean>
+         <Code>
+           <img />
+           <br />
+         </Code>
+       </Clean>
+     );
+   }
+   ```
+
+- [참고](https://developer.mozilla.org/en-US/docs/Glossary/Void_element)
+
+### ⭐️ 요약
+
+- `Self Closing Tags`를 정확히 인지하고 사용하자
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
