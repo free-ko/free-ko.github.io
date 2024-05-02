@@ -80,6 +80,36 @@ categories: React
 
 <br>
 
+# ✅ Fragment 지향하기
+
+### 🌈 결론
+
+- Fragment가 무엇인지 알고 쓰자.
+
+### ✍️ 내용
+
+- React v16.2 출시
+  - Fragment 런타임시 Fragment는 사라짐
+  - Babel 버젼에 따라서 Fragment Short Cut 사용 여부도 확인해야 됨
+  - index를 주입할 때, Short Cut이 아닌 Fragment 컴포넌트 사용해야 함
+    ```tsx
+    function Example() {
+      return (
+        <>
+          <Child />
+        </>
+      );
+    }
+    ```
+- 참고
+  - [https://velog.io/@yeonsubaek/React-JSX-문법-컴포넌트에-여러-요소가-있을-때-하나로-감싸는-이유](https://velog.io/@yeonsubaek/React-JSX-%EB%AC%B8%EB%B2%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90-%EC%97%AC%EB%9F%AC-%EC%9A%94%EC%86%8C%EA%B0%80-%EC%9E%88%EC%9D%84-%EB%95%8C-%ED%95%98%EB%82%98%EB%A1%9C-%EA%B0%90%EC%8B%B8%EB%8A%94-%EC%9D%B4%EC%9C%A0)
+
+### ⭐️ 요약
+
+- Fragment가 필요한 경우에만 사용하자.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
