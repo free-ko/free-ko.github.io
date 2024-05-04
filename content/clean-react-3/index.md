@@ -110,6 +110,58 @@ categories: React
 
 <br>
 
+# ✅ Fragment 지양하기
+
+
+### 🌈 결론
+
+- 상황에 따라 불필요한 Fragment를 줄이자.
+
+### ✍️ 내용
+
+- 불필요한 Fragment 사용을 줄이자.
+
+```tsx
+// 불필요한 계층 줄이기
+function Example() {
+	return (
+		<>
+			<div>
+				<div>
+				</div>
+			</div>
+		</>
+	)
+}
+```
+
+```tsx
+function StringRender() {
+	// return <>'Clean Code'</> ❌
+	return 'Clean Code'
+}
+```
+
+```tsx
+// 렌더링 될 필요 없는 JSX 줄이기
+function ConditionalRenderingEX() {
+	return(
+		<div>
+			<h1>{isLoggedIn ? 'User' : <></>}</h1>
+			<h1>{isLoggedIn ? 'User' : null}</h1>
+			<h1>{isLoggedIn && 'User'}</h1>
+			{isLoggedIn && <h1>User</h1>
+		</dvi>
+	)
+}
+```
+
+### ⭐️ 요약
+
+- 불필요한 Fragment 사용을 줄이자.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
