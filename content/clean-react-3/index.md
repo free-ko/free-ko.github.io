@@ -162,6 +162,41 @@ function ConditionalRenderingEX() {
 
 <br>
 
+# ✅ 알아두면 좋은 컴포넌트 네이밍
+
+### 🌈 결론
+
+```tsx
+function ComponentNaming() {
+	return (
+		<>
+			<h1></h1> // 🤔 lowercase
+			<h2></h2>
+			<div></div>
+			<input />
+			<MyuComponent></MyComponent>  // 🤔 pascal case
+			<my-component></my-component> // 🤔 kebab case
+		</>
+	)
+}
+```
+
+### ✍️ 내용
+
+### 컴포넌트 네이밍
+
+- 일반적으로 컴포넌트 PascalCase
+- 기본 HTML 요소는 lower case
+- route based file name
+    - `componet-naimng.jsx` ⇒ `<ComponentNaimng />`
+    - `component-namaing/index.jsx` ⇒ `<ComponentNaimng />`
+
+### ⭐️ 요약
+
+- 컴포넌트 네이밍 규칙을 이해하고 사용하자
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
