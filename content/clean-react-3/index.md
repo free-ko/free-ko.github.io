@@ -197,6 +197,67 @@ function ComponentNaming() {
 
 <br>
 
+# ✅ JSX 컴포넌트 함수로 반환
+
+
+### 🌈 결론
+
+```tsx
+// 🤔 어떤 형태가 맞을까?
+	return (
+		<div>
+			{TopRender()}
+			<TopRender />
+			{rednerMain()}
+		</div>
+	)
+```
+
+### ✍️ 내용
+
+- JSX 컴포넌트 함수로 반환시 문제점
+    - 스코프가 꼬임
+    - 언제 어떻게 쓰일지 몰라서 위험
+    - 컴파일 과정에서 캐치 못하면 치명적인 오류 발생
+    - 리턴 값이 무엇인지 파악하기 어려움
+    - props 넣기가 힘듦
+
+```tsx
+function ReturnJSXFunction() {
+	const TopRender = () => {
+		return (
+			<header>
+				<h1>Clean Code JS</h1>
+			</header>
+		);
+	};
+	
+	const rednerMain = () => {
+		return (
+			<main>
+				<p>Clean Code</p>
+			</main>
+		)
+	}
+	
+	return (
+		<div>
+			{TopRender()}
+			{rednerMain()}
+		</div>
+	)
+};
+```
+
+### ⭐️ 요약
+
+- 함수로 return 하는 경우 다음과 같은 단점이 발생
+    - scope를 알아보기 어려움
+    - 반환 값을 바로 알기 어려움
+    - props 전달 등 일반적인 패턴이 아님
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
