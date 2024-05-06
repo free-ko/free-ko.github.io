@@ -258,6 +258,53 @@ function ReturnJSXFunction() {
 
 <br>
 
+# ✅ 컴포넌트 내부에 컴포넌트 선언
+
+### 🌈 결론
+
+```tsx
+// ❌
+function OuterComponent() {
+	const InnerComponent = () => {
+		return <div>Inner component</div>;
+	};
+	
+	return (
+		<div>
+			<InnerComponent />
+		</div>
+	)
+}
+
+// ✅
+const InnerComponent = () => {
+	return <div>Inner component</div>;
+};
+	
+function OuterComponent() {
+	return (
+		<div>
+			<InnerComponent />
+		</div>
+	)
+}
+```
+
+### ✍️ 내용
+
+- 컴포넌트 내부에 컴포넌트 선언시 문제점
+    1. 결합도가 증가함
+        - 구조적으로 스코프적으로 종속된 개발이 됨
+        - 나중에 확장성이 생겨서 분리될 때 굉장히 힘듦
+    2. 성능 저하
+        - 상위 컴포넌트 리렌더 일어나면 ⇒ 하위 컴포넌트 재 생성
+
+### ⭐️ 요약
+
+- 컴포넌트 내부에 컴포넌트를 선언하면 결합도가 증가하고 성능이 저하될 수 있다.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
