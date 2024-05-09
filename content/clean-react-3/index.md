@@ -356,6 +356,92 @@ const withRouter = (Component) => {
 
 <br>
 
+# ✅ Component 구성하기
+
+### 🌈 결론
+
+- 개발을 할 때, 어떤 순서 및 흐름으로 개발을 진행해야 함
+
+### ✍️ 내용
+
+```tsx
+// ✅ 변하지 않은 값은 컴포넌트 외부로 빼기
+const DEFAULT_COUNT = 100;
+const DEFAULT_DELAY = 500;
+
+// ✅ 타입 또는 인터페이스도 컴포넌트 밖으로 빼기
+interface SomeComponentProps {
+
+}
+
+// ✅ 컴포넌트와 관련없는 로직은 컴포넌트 외부로 빼기
+const handleClose = () => {
+	// Date
+	// Local Storage
+}
+
+const SomeComponent = ({ prop1, prop2 }: SomeCompoentProps) => {
+	// ✅ flag 또는 ref는 상단에 표시
+	let isHold = false;
+	const ref = useRef(null);
+	
+	// ✅ React Third-Party 라이브러리의 훅을 사용시 상단에 표시
+	const location = useLocation();
+	const queryClient = useQueryClient();
+	const state = useSelector((state) => state);
+	
+	// ✅ 내가 만든 Hooks을 상단에 표시
+	const state = useCustomHooks((state) => state);
+	
+	// ✅ 컴포넌트 내부 상태를 상단에 표시
+	const [state, setState] = useState('someState");
+	
+	const onClose = () => handleClose();
+	
+	// Early Return JSX
+	if (isHold) {
+		return <div>데이터가 존재하지 않습니다.</div>
+	}	
+	
+	// ✅ Main JSX와 가장 가까운 곳에 위치
+	// - 최소 1개로 사용할 수 있도록 진행
+	useEffect(() => {
+	}, []);
+	
+	// ✅ JSX 반환은 항상 사전에 개행을 동반
+	return (
+		<div className="tooltip">
+			<div className="msg">Hellow World</div>
+			<button 
+				className="close"
+				type="button"
+				onClick={onClose}
+			/>
+		</div>
+	)
+}
+
+// ✅ 컴포넌트 외부로 빼기(컴포넌트 하단)
+// - 코드가 많을 경우, 파일로 빼기
+const Button = styled.a<{ $primary?: boolean; }>`
+	padding: 0.5rem 0;
+	transition: all 200ms ease-in-out;
+	width: 11rem;
+	
+	&:hover {
+		filter: brightness(0.85);
+	}
+`
+
+export default SomeComponent;
+```
+
+### ⭐️ 요약
+
+- 개발을 할 때 규칙을 가지고 개발을 진행하자.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
