@@ -305,6 +305,57 @@ function OuterComponent() {
 
 <br>
 
+# ✅ DisplayName
+
+### 🌈 결론
+
+- 확장성이 높은 컴포넌트를 디버깅하기 위해 `displayName`을 잘 활용하자
+
+### ✍️ 내용
+
+### DisplayName
+
+- 디버깅 하는데 좋은 요소
+
+```tsx
+// Case 1
+const InputText = forwardRef((props, ref)) => {
+	return <input type="text" ref={ref} />;
+});
+
+InputText.displayName = 'InputText' // 만약 🤔 displayName을 작성 안한다면?
+
+// Case 2
+const withRouter = (Component) => {
+	const WithRouter = (props) => {
+		const location = useLocation();
+		const navigate = useNavigaet();
+		const params = useParams();
+		const navigationType = useNavigationType();
+		
+		return (
+			<Compoent
+				{...props}
+				location={location}
+				navigate={navigate}
+				params={params}
+				navigationType={navigationType}
+			/>
+		);
+	};
+	WithRouter.displayName = Component.displayName ?? Component.name ?? 'WithRouterComponent'
+	
+	return WithRouter
+};
+
+```
+
+### ⭐️ 요약
+
+- React 개발시 디버깅을 위해 displayName을 잘 활용하자.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
