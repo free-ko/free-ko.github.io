@@ -112,7 +112,6 @@ categories: React
 
 # ✅ Fragment 지양하기
 
-
 ### 🌈 결론
 
 - 상황에 따라 불필요한 Fragment를 줄이자.
@@ -124,21 +123,20 @@ categories: React
 ```tsx
 // 불필요한 계층 줄이기
 function Example() {
-	return (
-		<>
-			<div>
-				<div>
-				</div>
-			</div>
-		</>
-	)
+  return (
+    <>
+      <div>
+        <div></div>
+      </div>
+    </>
+  );
 }
 ```
 
 ```tsx
 function StringRender() {
-	// return <>'Clean Code'</> ❌
-	return 'Clean Code'
+  // return <>'Clean Code'</> ❌
+  return 'Clean Code';
 }
 ```
 
@@ -188,8 +186,8 @@ function ComponentNaming() {
 - 일반적으로 컴포넌트 PascalCase
 - 기본 HTML 요소는 lower case
 - route based file name
-    - `componet-naimng.jsx` ⇒ `<ComponentNaimng />`
-    - `component-namaing/index.jsx` ⇒ `<ComponentNaimng />`
+  - `component-naming.jsx` ⇒ `<ComponentNaming />`
+  - `component-naming/index.jsx` ⇒ `<ComponentNaming />`
 
 ### ⭐️ 요약
 
@@ -199,62 +197,61 @@ function ComponentNaming() {
 
 # ✅ JSX 컴포넌트 함수로 반환
 
-
 ### 🌈 결론
 
 ```tsx
 // 🤔 어떤 형태가 맞을까?
-	return (
-		<div>
-			{TopRender()}
-			<TopRender />
-			{rednerMain()}
-		</div>
-	)
+return (
+  <div>
+    {TopRender()}
+    <TopRender />
+    {renderMain()}
+  </div>
+);
 ```
 
 ### ✍️ 내용
 
 - JSX 컴포넌트 함수로 반환시 문제점
-    - 스코프가 꼬임
-    - 언제 어떻게 쓰일지 몰라서 위험
-    - 컴파일 과정에서 캐치 못하면 치명적인 오류 발생
-    - 리턴 값이 무엇인지 파악하기 어려움
-    - props 넣기가 힘듦
+  - 스코프가 꼬임
+  - 언제 어떻게 쓰일지 몰라서 위험
+  - 컴파일 과정에서 캐치 못하면 치명적인 오류 발생
+  - 리턴 값이 무엇인지 파악하기 어려움
+  - props 넣기가 힘듦
 
 ```tsx
 function ReturnJSXFunction() {
-	const TopRender = () => {
-		return (
-			<header>
-				<h1>Clean Code JS</h1>
-			</header>
-		);
-	};
-	
-	const rednerMain = () => {
-		return (
-			<main>
-				<p>Clean Code</p>
-			</main>
-		)
-	}
-	
-	return (
-		<div>
-			{TopRender()}
-			{rednerMain()}
-		</div>
-	)
-};
+  const TopRender = () => {
+    return (
+      <header>
+        <h1>Clean Code JS</h1>
+      </header>
+    );
+  };
+
+  const renderMain = () => {
+    return (
+      <main>
+        <p>Clean Code</p>
+      </main>
+    );
+  };
+
+  return (
+    <div>
+      {TopRender()}
+      {renderMain()}
+    </div>
+  );
+}
 ```
 
 ### ⭐️ 요약
 
 - 함수로 return 하는 경우 다음과 같은 단점이 발생
-    - scope를 알아보기 어려움
-    - 반환 값을 바로 알기 어려움
-    - props 전달 등 일반적인 패턴이 아님
+  - scope를 알아보기 어려움
+  - 반환 값을 바로 알기 어려움
+  - props 전달 등 일반적인 패턴이 아님
 
 <br>
 
@@ -265,39 +262,39 @@ function ReturnJSXFunction() {
 ```tsx
 // ❌
 function OuterComponent() {
-	const InnerComponent = () => {
-		return <div>Inner component</div>;
-	};
-	
-	return (
-		<div>
-			<InnerComponent />
-		</div>
-	)
+  const InnerComponent = () => {
+    return <div>Inner component</div>;
+  };
+
+  return (
+    <div>
+      <InnerComponent />
+    </div>
+  );
 }
 
 // ✅
 const InnerComponent = () => {
-	return <div>Inner component</div>;
+  return <div>Inner component</div>;
 };
-	
+
 function OuterComponent() {
-	return (
-		<div>
-			<InnerComponent />
-		</div>
-	)
+  return (
+    <div>
+      <InnerComponent />
+    </div>
+  );
 }
 ```
 
 ### ✍️ 내용
 
 - 컴포넌트 내부에 컴포넌트 선언시 문제점
-    1. 결합도가 증가함
-        - 구조적으로 스코프적으로 종속된 개발이 됨
-        - 나중에 확장성이 생겨서 분리될 때 굉장히 힘듦
-    2. 성능 저하
-        - 상위 컴포넌트 리렌더 일어나면 ⇒ 하위 컴포넌트 재 생성
+  1. 결합도가 증가함
+     - 구조적으로 스코프적으로 종속된 개발이 됨
+     - 나중에 확장성이 생겨서 분리될 때 굉장히 힘듦
+  2. 성능 저하
+     - 상위 컴포넌트 리렌더 일어나면 ⇒ 하위 컴포넌트 재 생성
 
 ### ⭐️ 요약
 
@@ -329,12 +326,12 @@ InputText.displayName = 'InputText' // 만약 🤔 displayName을 작성 안한�
 const withRouter = (Component) => {
 	const WithRouter = (props) => {
 		const location = useLocation();
-		const navigate = useNavigaet();
+		const navigate = useNavigate();
 		const params = useParams();
 		const navigationType = useNavigationType();
-		
+
 		return (
-			<Compoent
+			<Component
 				{...props}
 				location={location}
 				navigate={navigate}
@@ -344,7 +341,7 @@ const withRouter = (Component) => {
 		);
 	};
 	WithRouter.displayName = Component.displayName ?? Component.name ?? 'WithRouterComponent'
-	
+
 	return WithRouter
 };
 
@@ -380,39 +377,39 @@ const handleClose = () => {
 	// Local Storage
 }
 
-const SomeComponent = ({ prop1, prop2 }: SomeCompoentProps) => {
+const SomeComponent = ({ prop1, prop2 }: SomeComponentProps) => {
 	// ✅ flag 또는 ref는 상단에 표시
 	let isHold = false;
 	const ref = useRef(null);
-	
+
 	// ✅ React Third-Party 라이브러리의 훅을 사용시 상단에 표시
 	const location = useLocation();
 	const queryClient = useQueryClient();
 	const state = useSelector((state) => state);
-	
+
 	// ✅ 내가 만든 Hooks을 상단에 표시
 	const state = useCustomHooks((state) => state);
-	
+
 	// ✅ 컴포넌트 내부 상태를 상단에 표시
 	const [state, setState] = useState('someState");
-	
+
 	const onClose = () => handleClose();
-	
+
 	// Early Return JSX
 	if (isHold) {
 		return <div>데이터가 존재하지 않습니다.</div>
-	}	
-	
+	}
+
 	// ✅ Main JSX와 가장 가까운 곳에 위치
 	// - 최소 1개로 사용할 수 있도록 진행
 	useEffect(() => {
 	}, []);
-	
+
 	// ✅ JSX 반환은 항상 사전에 개행을 동반
 	return (
 		<div className="tooltip">
-			<div className="msg">Hellow World</div>
-			<button 
+			<div className="msg">Hello World</div>
+			<button
 				className="close"
 				type="button"
 				onClick={onClose}
@@ -427,7 +424,7 @@ const Button = styled.a<{ $primary?: boolean; }>`
 	padding: 0.5rem 0;
 	transition: all 200ms ease-in-out;
 	width: 11rem;
-	
+
 	&:hover {
 		filter: brightness(0.85);
 	}
