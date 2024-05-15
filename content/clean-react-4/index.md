@@ -170,6 +170,67 @@ export default function App({ list }) {
 
 <br>
 
+# ✅ 안전하게 Raw HTML 다루기
+
+### 🌈 결론
+
+- React 에서 HTML과 악성 스크립트를 심을 수 있는 경우를 아래의 방법으로 대처하자
+  - https://github.com/cure53/DOMPurify
+  - HTML Sanitizer API
+  - eslint-plugin-risxss
+
+### ✍️ 내용
+
+안전하게 Raw HTML 다루기
+
+- 렌더링될 데이터
+- 유저가 다시 한번 입력모드로 수정할 수 있는 데이터
+  - 바로 input, textarea
+  - https://github.com/cure53/DOMPurify
+  - HTML Sanitizer API
+    - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API
+  - eslint-plugin-risxss
+    - https://www.npmjs.com/package/eslint-plugin-risxss?activeTab=readme
+
+```tsx
+const SERVER_DATA = '<p>some raw html</p>'
+
+function DangerouslySetInnerHTMLExample() {
+	const post = {
+
+		// XSS(악성 스크립트 공격)
+		content: `<img src="" onerror='alert("you were hacked")'>`
+	};
+
+	const markup = { __html: SERVER_DATA }
+
+	// DOMPurify 사용
+	const sanitizeContent = { __html: DOMPurify.sanitize(SERVER_DATA) };
+	setContentHTML(DOMPurify.sanitize(SERVER_DATA))
+
+	// ❌ 하지만 아래 것이 더 위험
+	return <div>{markup}</div>;
+
+	return <textarea>{수정할 수 있는 유저 컨텐츠를 넣으려면...?}</textarea>
+
+	// ✅ 아래가 그나마 괜찮음
+	return <textarea>{contentHTML}</textarea>
+
+	// 🤔 이것도 위험
+	return <div dangerouslySetInnerHTML={markup} />;
+
+
+	// 훨씬 안전하게 사용하는 방법
+	return <div>{sanitizeContent}</div>;
+}
+```
+
+### ⭐️ 요약
+
+- React에서 HTML을 다룰 때에는 조심해야 함
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
