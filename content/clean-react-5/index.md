@@ -85,6 +85,55 @@ const STatelessComponent = props = > <div>{props.name}</div>;
 
 <br>
 
+# ✅ useEffect() 기명함수와 함께 사용하기
+
+### 🌈 결론
+
+- `useEffect` 에러 파악할 때, 기명함수 사용하면 파악하기 쉬움
+
+### ✍️ 내용
+
+1. `useEffect` 안전하게 사용하기
+   - 에러 파악 cf) console.log, report, monitoring, React Devtools
+   - 기명함수로 넘기면 로그에 기명함수로 찍히기 때문에 에러 파악이 용이함
+
+```tsx
+// 기명함수로 가용하기
+useEffect(
+  function isInViewSomeComponent() {
+    // some logic
+  },
+  [isInView],
+);
+
+useEffect(
+  function onPopState() {
+    if (navigationType === 'POP') {
+      // some logic
+    }
+  },
+  [isInView],
+);
+
+useEffect(function onInit() {
+  // some logic
+});
+
+useEffect(function addEvent() {
+  document.addEventListener();
+
+  return function removeEvent() {
+    document.removeEventListener();
+  };
+}, []);
+```
+
+### ⭐️ 요약
+
+- 기명함수를 잘 사용해서 에러 파악 및 코드 파악을 용이하게 하자
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
