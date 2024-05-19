@@ -134,6 +134,53 @@ useEffect(function addEvent() {
 
 <br>
 
+# ✅ 한 가지 역할만 수행하는 useEffect
+
+### 🌈 결론
+
+- `useEffect` 를 작성할 때, 한가지의 역할을 할 수 있도록 작성하자.
+
+### ✍️ 내용
+
+- SRP - 단일책임 원칙
+  - 하나의 역할만 수행하는 무언가를 만들자 ⇒ `useEffect()`
+  - 확인 하는 방법
+    - 기명 함수를 작성해보자
+    - Dependency Arrays가 너무 많은 관찰 대상이 들어가고 있는게 아닌지 확인
+
+```tsx
+function LoginPage({ token, newPath }) {
+  // ❌ 위험
+  useEffect(() => {
+    redirect(newPath);
+
+    const userInfo = setLogin(token);
+    // ... 로그인 로직
+  }, [token, newPath]);
+
+  // ✅ 분리
+
+  useEffect(() => {
+    redirect(newPath);
+  }, [newPath]);
+
+  useEffect(() => {
+    const userInfo = setLogin(token);
+    // ... 로그인 로직
+
+    if (options) {
+      // 부가적인 로직 <= 추가 동작해도 이상이 없고 부작용이 생길 일이 업을 경우
+    }
+  }, [token, options]);
+}
+```
+
+### ⭐️ 요약
+
+- `useEffect` 를 사용할 때, 한 가지 역할만 할 수 있도록 작성하자.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
