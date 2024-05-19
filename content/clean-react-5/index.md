@@ -181,6 +181,56 @@ function LoginPage({ token, newPath }) {
 
 <br>
 
+# ✅ Custom Hook 반환의 종류
+
+### 🌈 결론
+
+- React에서 제공하는 컨벤션에 맞게 Custom Hook을 사용하자
+
+### ✍️ 내용
+
+1. Custom Hook 사용시 지켜야 할 규칙들
+
+   ```tsx
+   function ReturnCustomHooks() {
+   	// ❌
+   	const [setValue, value] = useSomeHooks(true);
+
+   	// ✅
+   	const [value, setValue] = useSomeHooks(true);
+
+
+   	// ❌
+   	const [oneValue] = useSomeHooks();
+
+     // ✅
+   	const oneValue = useSomeHooks();
+
+
+   	// ❌
+   	const [firstValue, secondValue, _, thirdValue] = useSomeHooks(true);
+
+     // ✅
+     const { firstValue, secondValue, rest} = useSomeHooks(true)
+
+
+   	// ❌
+   	const query = useQuery({ queryKey: ['hello', queryFn: getHello })
+   	const data = query.data;
+   	const refetch = query.refetch;
+   	const isSuccess = query.isSuccess
+
+   	// ✅
+     const { data, refetch, isSuccess } = useQuery({ queryKey: ['hello', queryFn: getHello })
+   }
+   ```
+
+### ⭐️ 요약
+
+- Custom Hook을 사용할 때, 일관된 컨벤션을 작성하자.
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
