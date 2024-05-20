@@ -231,6 +231,41 @@ function LoginPage({ token, newPath }) {
 
 <br>
 
+# ✅ useEffect 내부의 비동기 함수
+
+### 🌈 결론
+
+- `useEffect` 사용시 Promise 값을 리턴하는 비동기 함수 사용시 주의하자
+
+### ✍️ 내용
+
+1. `useEffect` 내부에서 비동기 함수 처리
+
+   ```tsx
+   // ❌
+   // useEffect 리턴 값은 undefined이거나 clean function임
+   useEffect(async () => {
+     // 비동기 작업
+     const result = await fetchData();
+   }, []);
+
+   // ✅
+   useEffect(async () => {
+     // 비동기 작업
+     const fetchData = async () => {
+       const result = await someFetch();
+     };
+
+     fetchData();
+   }, []);
+   ```
+
+### ⭐️ 요약
+
+- `useEffect` 내부에서 비동기 함수를 사용하는 것이 아닌, 커스텀 훅이나, 다른 곳에서 사용할 수 있도록 하자
+
+<br>
+
 ### 참고
 
 - [클린 리액트](https://www.udemy.com/course/clean-code-react/learn/lecture/41573010#overview)
