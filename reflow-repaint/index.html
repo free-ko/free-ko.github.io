@@ -102,19 +102,36 @@ void function() {
     </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="display:flex;flex-direction:column;min-height:100vh"><main><header class="post-header-wrapper"><div class="post-header"><div class="emoji">👋</div><div class="info"><div class="categories"><a class="category" href="/posts/TIL">TIL</a></div></div><h1 class="title">Reflow와 Repaint 차이</h1><div class="info">posted by <strong>Kay</strong> · <!-- -->October 22, 2024</div></div></header><div class="post-content-wrapper"><div class="post-content"><div class="markdown"><h1 id="브라우저-렌더링-과정" style="position:relative;"><a href="#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81-%EA%B3%BC%EC%A0%95" aria-label="브라우저 렌더링 과정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브라우저 렌더링 과정</h1>
 <p>브라우저 렌더링 과정은 웹페이지를 표시하는 데 필요한 리소스를 다운로드하고 화면에 표시하는 과정을 크게 4단계로 나눌 수 있습니다.</p>
 <ol>
-<li><strong>DOM + CSSOM 생성</strong></li>
+<li>
+<p><strong>DOM + CSSOM 생성</strong></p>
+<ul>
 <li>DOM (Document Object Model): HTML 파일을 분석하여 브라우저가 이해할 수 있는 DOM 트리를 만듭니다. 각 HTML 요소가 노드로 변환되어 트리 구조를 형성합니다.</li>
 <li>CSSOM (CSS Object Model): CSS 파일을 분석하여 CSSOM 트리를 생성합니다. 이 트리는 CSS 규칙을 이해하고 각 DOM 요소에 스타일을 적용할 수 있도록 도와줍니다.</li>
-<li><strong>Layout</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Layout</strong></p>
+<ul>
 <li>DOM과 CSSOM 트리를 조합하여 렌더 트리를 생성합니다.</li>
 <li>각 요소의 위치와 크기를 계산하고 화면에 요소들을 배치합니다. 이 과정을 통해 브라우저는 각 요소가 화면에서 어디에 위치할지 결정합니다.</li>
-<li><strong>Paint</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Paint</strong></p>
+<ul>
 <li>레이아웃 과정에서 배치된 요소에 색을 칠하고, 그림자나 테두리 같은 시각적 스타일을 적용합니다.</li>
 <li>이 단계에서 레이어로 요소를 분리하여, 이후의 단계에서 더 효율적으로 합칠 수 있도록 준비합니다.</li>
-<li><strong>Composite</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Composite</strong></p>
+<ul>
 <li>페인트 단계에서 분리된 레이어들을 GPU가 처리할 수 있도록 각각 합성합니다. 이 과정은 하드웨어 가속을 사용하여 더 빠르게 화면에 그려지도록 도와줍니다.</li>
+</ul>
+</li>
 </ol>
 <br />
+<h1 id="reflow와-repaint" style="position:relative;"><a href="#reflow%EC%99%80-repaint" aria-label="reflow와 repaint permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reflow와 Repaint</h1>
 <h3 id="reflow" style="position:relative;"><a href="#reflow" aria-label="reflow permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reflow</h3>
 <ul>
 <li>리플로우는 브라우저가 렌더링 과정을 재실행하는 과정입니다.</li>
@@ -140,7 +157,7 @@ void function() {
 </li>
 </ul>
 <br />
-<h3 id="reflow-repaint-줄이는-방법" style="position:relative;"><a href="#reflow-repaint-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="reflow repaint 줄이는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reflow, Repaint 줄이는 방법</h3>
+<h1 id="reflow-repaint-줄이는-방법" style="position:relative;"><a href="#reflow-repaint-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="reflow repaint 줄이는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reflow, Repaint 줄이는 방법</h1>
 <p><strong>CSS 속성 활용</strong></p>
 <ol>
 <li><code class="language-text">transform</code>과 <code class="language-text">opacity</code> 같은 속성은 레이아웃에 영향을 주지 않으므로 리플로우나 리페인트를 발생시키지 않고 성능을 최적화할 수 있습니다.</li>
