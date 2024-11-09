@@ -4,7 +4,7 @@ title: 'Emotion을 사용할 때 발생하는 FOUC 문제 해결 방법'
 date: '2024-11-09 10:39:00'
 author: Kay
 tags: 블로그 github-pages gatsby
-categories: Log
+categories: Study
 ---
 
 <br>
